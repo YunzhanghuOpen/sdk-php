@@ -42,6 +42,11 @@ final class ApiResponse
 
         $dataObj = new $responseDataClass();
         if ($dataObj instanceof BaseModel) {
+            // 兼容 data 不是数组的情况
+            if (!is_array($respData['data'])) {
+                $resp->server_data = $respData['data'];
+                return $resp;
+            }
             $dataInstanceArray = array();
             foreach ($respData['data'] as $dataArray) {
                 $dataInstance = new $responseDataClass();
