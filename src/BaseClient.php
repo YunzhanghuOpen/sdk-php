@@ -27,21 +27,24 @@ abstract class BaseClient
 
     protected static $env_service_host_map = array(
         self::ENV_PROD => array(
-            'payment' => 'https://api-service.yunzhanghu.com', // 支付服务接口域名
+            'payment' => 'https://api-service.yunzhanghu.com', // 实时支付服务接口域名
             'tax' => 'https://api-service.yunzhanghu.com',
             'authentication' => 'https://api-service.yunzhanghu.com',
             'invoice' => 'https://api-service.yunzhanghu.com',
             'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
-            'aic' => 'https://api-aic.yunzhanghu.com',         // 个体工商户服务接口域名
+            'aic' => 'https://api-aic.yunzhanghu.com',         // 个体工商户注册服务接口域名
             'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
             'dataservice' => 'https://api-service.yunzhanghu.com',    // 数据服务接口域名
+            'usersign' => 'https://api-service.yunzhanghu.com',    // 用户签约接口域名
+
         ),
         self::ENV_SANDBOX => array(
-            'payment' => 'https://api-service.yunzhanghu.com/sandbox',   // 支付服务接口域名
+            'payment' => 'https://api-service.yunzhanghu.com/sandbox',   // 实时支付服务接口域名
+            'usersign' => 'https://api-service.yunzhanghu.com/sandbox',   // 用户签约接口域名
             'ins' => '',       // 保险服务接口域名
-            'aic' => '',       // 个体工商户服务接口域名
+            'aic' => '',       // 个体工商户注册服务接口域名
             'task' => '',      // 任务库服务接口域名
-            'dataservice' => '', // 数据服务接口域名
+            'dataservice' => 'https://api-service.yunzhanghu.com/sandbox', // 数据服务接口域名
         ),
     );
 

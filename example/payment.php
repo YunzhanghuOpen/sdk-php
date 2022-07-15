@@ -139,7 +139,7 @@ $respdata = array('response' => $response->toArray());
 if ($respdata['response']['code'] == '0000') {
    //  TODO :  code=0000,订单查询成功，根据订单状态status判断订单状态，做业务订单的处理
    echo "查询成功:";
-   //    var_dump($respdata['response']['data']);
+     var_dump($respdata['response']['data']);
 } else if ($respdata['response']['code']  == '2018') {
    // 已上传过该流水
    # TODO :  code=2018,订单不存在，检查一下channel是否传递正确，若正确，则可以使用原order_id再次下单

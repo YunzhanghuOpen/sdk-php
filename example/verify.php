@@ -32,12 +32,12 @@ try {
 }
 //用户信息认证
 //身份实名认证
-//$request = new IDCardVerifyRequest(array(
-//    'real_name' => '张一',                        # 姓名
-//    'id_card' => '110185611',               # 身份证
-//));
-//$response = $authenticationClient->iDCardVerify($request);
-//var_dump(array('response' => $response->toArray()));
+$request = new IDCardVerifyRequest(array(
+    'real_name' => '张一',                        # 姓名
+    'id_card' => '110185611',               # 身份证
+));
+$response = $authenticationClient->iDCardVerify($request);
+var_dump(array('response' => $response->toArray()));
 
 ////银行卡三要素验证
 //$request = new BankCardThreeVerifyRequest(array(
