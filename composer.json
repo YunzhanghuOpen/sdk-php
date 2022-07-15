@@ -1,0 +1,19 @@
+{
+    "name": "yunzhanghuopen/sdk-php",
+    "description": "sdk for yunzhanghu",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yzh\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "guojunzhou",
+            "email": "junzhou.guo@yunzhanghu.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    }
+}
