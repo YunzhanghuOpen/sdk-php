@@ -5,7 +5,7 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 查询日流水数据请求
+ * 查询日流水数据请求
  * Class ListDailyBillRequest
  */
 class ListDailyBillRequest extends BaseRequest

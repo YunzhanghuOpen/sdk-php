@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
- * 
+ * 查询单笔订单信息请求
  * Class GetOrderRequest
  */
 class GetOrderRequest extends BaseRequest

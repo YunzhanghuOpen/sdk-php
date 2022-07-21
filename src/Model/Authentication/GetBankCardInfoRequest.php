@@ -5,7 +5,7 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 银行卡信息查询请求
+ * 银行卡信息查询请求
  * Class GetBankCardInfoRequest
  */
 class GetBankCardInfoRequest extends BaseRequest

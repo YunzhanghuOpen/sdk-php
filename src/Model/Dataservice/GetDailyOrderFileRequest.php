@@ -5,7 +5,7 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 查询日订单文件请求
+ * 查询日订单文件请求
  * Class GetDailyOrderFileRequest
  */
 class GetDailyOrderFileRequest extends BaseRequest

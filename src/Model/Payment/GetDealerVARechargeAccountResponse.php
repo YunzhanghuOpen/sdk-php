@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseResponse;
 
 /**
- * 
+ * 查询平台企业汇款信息返回
  * Class GetDealerVARechargeAccountResponse
  */
 class GetDealerVARechargeAccountResponse extends BaseResponse

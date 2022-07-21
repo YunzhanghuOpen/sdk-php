@@ -5,7 +5,7 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 查询平台企业已开具和待开具发票金额请求
+ * 查询平台企业已开具和待开具发票金额请求
  * Class GetInvoiceStatRequest
  */
 class GetInvoiceStatRequest extends BaseRequest

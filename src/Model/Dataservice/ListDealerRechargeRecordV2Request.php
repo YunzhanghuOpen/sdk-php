@@ -5,7 +5,7 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 平台企业充值记录请求
+ * 平台企业预付业务服务费记录请求
  * Class ListDealerRechargeRecordV2Request
  */
 class ListDealerRechargeRecordV2Request extends BaseRequest

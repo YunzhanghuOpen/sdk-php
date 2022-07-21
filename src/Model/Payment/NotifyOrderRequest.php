@@ -2,13 +2,13 @@
 
 namespace Yzh\Model\Payment;
 
-use Yzh\Model\BaseResponse;
+use Yzh\Model\BaseRequest;
 
 /**
- * 
- * Class GetOrderReply
+ * 订单回调消息
+ * Class NotifyOrderRequest
  */
-class GetOrderReply extends BaseResponse
+class NotifyOrderRequest extends BaseRequest
 {
 
     /**
@@ -190,4 +190,14 @@ class GetOrderReply extends BaseResponse
      * @var string
      */
     public $sys_fee;
+
+
+    public function __construct($params = array())
+    {
+        foreach (array_keys(get_object_vars($this)) as $property) {
+            if (isset($params[$property])) {
+                $this->{$property} = $params[$property];
+            }
+        }
+    }
 }

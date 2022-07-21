@@ -44,7 +44,7 @@ abstract class BaseClient
             'ins' => '',       // 保险服务接口域名
             'aic' => '',       // 个体工商户注册服务接口域名
             'task' => '',      // 任务库服务接口域名
-            'dataservice' => 'https://api-service.yunzhanghu.com/sandbox', // 数据服务接口域名
+            'dataservice' => '', // 数据服务接口域名
         ),
     );
 

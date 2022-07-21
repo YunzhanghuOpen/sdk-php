@@ -2,14 +2,26 @@
 
 namespace Yzh\Model\Invoice;
 
-use Yzh\Model\BaseResponse;
+use Yzh\Model\BaseRequest;
 
 /**
- * 查询开票申请状态返回
- * Class GetInvoiceStatusResponse
+ * 开票完成通知
+ * Class NotifyInvoiceDoneRequest
  */
-class GetInvoiceStatusResponse extends BaseResponse
+class NotifyInvoiceDoneRequest extends BaseRequest
 {
+
+    /**
+     * 发票申请编号
+     * @var string
+     */
+    public $application_id;
+
+    /**
+     * 发票申请编号
+     * @var string
+     */
+    public $invoice_apply_id;
 
     /**
      * 申请结果
@@ -94,4 +106,20 @@ class GetInvoiceStatusResponse extends BaseResponse
      * @var string[]
      */
     public $waybill_number;
+
+    /**
+     * 驳回原因
+     * @var string
+     */
+    public $reject_reason;
+
+
+    public function __construct($params = array())
+    {
+        foreach (array_keys(get_object_vars($this)) as $property) {
+            if (isset($params[$property])) {
+                $this->{$property} = $params[$property];
+            }
+        }
+    }
 }

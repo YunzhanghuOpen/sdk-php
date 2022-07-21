@@ -5,7 +5,7 @@ namespace Yzh\Dataservice;
 use Yzh\Model\BaseModel;
 
 /**
- *  * 平台企业打款订单信息
+ * 平台企业支付订单信息
  * Class DealerOrderInfo
  */
 class DealerOrderInfo extends BaseModel
@@ -42,7 +42,7 @@ class DealerOrderInfo extends BaseModel
     public $batch_id;
 
     /**
-    
+     * 姓名
      * @var string
      */
     public $real_name;
@@ -54,19 +54,19 @@ class DealerOrderInfo extends BaseModel
     public $card_no;
 
     /**
-     * 打款金额
+     * 综合服务主体订单金额
      * @var string
      */
     public $broker_amount;
 
     /**
-     * 打款金额
+     * 综合服务主体加成服务费
      * @var string
      */
     public $broker_fee;
 
     /**
-     * 渠道流水号
+     * 支付路径流水号
      * @var string
      */
     public $bill;
@@ -108,7 +108,7 @@ class DealerOrderInfo extends BaseModel
     public $bal_statement_id;
 
     /**
-     * 支付渠道
+     * 支付路径
      * @var string
      */
     public $channel;

@@ -5,7 +5,7 @@ namespace Yzh\Model\Tax;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 下载个税扣缴明细表请求
+ * 下载个税扣缴明细表请求
  * Class GetTaxFileRequest
  */
 class GetTaxFileRequest extends BaseRequest

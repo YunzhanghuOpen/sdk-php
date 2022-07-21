@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
- * 
+ * 支付宝实时下单请求
  * Class CreateAlipayOrderRequest
  */
 class CreateAlipayOrderRequest extends BaseRequest
@@ -54,7 +54,7 @@ class CreateAlipayOrderRequest extends BaseRequest
     public $phone_no;
 
     /**
-     * 打款金额
+     * 支付金额
      * @var string
      */
     public $pay;
@@ -78,7 +78,7 @@ class CreateAlipayOrderRequest extends BaseRequest
     public $project_id;
 
     /**
-     * 校验支付宝姓名，校验支付宝姓名，固定值：Check
+     * 校验支付宝账户姓名，校验支付宝账户姓名，固定值：Check
      * @var string
      */
     public $check_name;

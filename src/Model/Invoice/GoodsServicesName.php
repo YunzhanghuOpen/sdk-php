@@ -5,7 +5,7 @@ namespace Yzh\Invoice;
 use Yzh\Model\BaseModel;
 
 /**
- *  * 统支持的货物或应税劳务、服务名称
+ * 系统支持的货物或应税劳务、服务名称
  * Class GoodsServicesName
  */
 class GoodsServicesName extends BaseModel

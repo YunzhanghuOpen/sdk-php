@@ -5,7 +5,7 @@ $test_var = array(
     'app_dealer_id' => '25***15',
     //综合服务主体ID
     'app_broker_id' =>  '275***44',
-    //平台企业ID   登录云账户综合服务平台-> 业务中心 -> 业务管理 ->对接信息中获取
+    //平台企业ID   登录云账户综合服务平台->业务中心->业务管理->对接信息中获取
     'app_key' => '0gyU3F***k516ES',
     //平台企业 3DES Key
     'app_des3_key' => 'Isg2W***zx6iP',
@@ -26,5 +26,4 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDM8TIYAVN+xwvTyNOttvt+rVGo
 *
 bSPGVxNMgAMmu6PVLQIDAQAB
 -----END PUBLIC KEY-----',
-
 );

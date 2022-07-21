@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
- * 
+ * 银行卡实时下单请求
  * Class CreateBankpayOrderRequest
  */
 class CreateBankpayOrderRequest extends BaseRequest
@@ -54,7 +54,7 @@ class CreateBankpayOrderRequest extends BaseRequest
     public $phone_no;
 
     /**
-     * 打款金额
+     * 支付金额
      * @var string
      */
     public $pay;

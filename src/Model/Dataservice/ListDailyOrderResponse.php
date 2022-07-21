@@ -5,10 +5,10 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseResponse;
 
 /**
- *  * 查询日订单响应
- * Class ListDailyOrderReply
+ * 查询日订单返回
+ * Class ListDailyOrderResponse
  */
-class ListDailyOrderReply extends BaseResponse
+class ListDailyOrderResponse extends BaseResponse
 {
 
     /**

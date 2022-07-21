@@ -5,7 +5,7 @@ namespace Yzh\Dataservice;
 use Yzh\Model\BaseModel;
 
 /**
- *  * 账单信息详情
+ * 账单信息详情
  * Class StatementDetail
  */
 class StatementDetail extends BaseModel
@@ -36,7 +36,7 @@ class StatementDetail extends BaseModel
     public $dealer_id;
 
     /**
-     * 综合服务主体 名称
+     * 综合服务主体名称
      * @var string
      */
     public $broker_product_name;
@@ -60,7 +60,7 @@ class StatementDetail extends BaseModel
     public $total_money;
 
     /**
-     * 打款金额
+     * 支付金额
      * @var string
      */
     public $amount;

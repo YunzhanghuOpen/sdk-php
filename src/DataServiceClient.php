@@ -2,13 +2,13 @@
 
 namespace Yzh;
 use Yzh\Model\DataService\ListDailyOrderRequest;
-use Yzh\Model\DataService\ListDailyOrderReply;
-use Yzh\Model\DataService\GetOrderDownloadsUrlRequest;
-use Yzh\Model\DataService\GetOrderDownloadsUrlResponse;
+use Yzh\Model\DataService\ListDailyOrderResponse;
+use Yzh\Model\DataService\GetDailyOrderFileRequest;
+use Yzh\Model\DataService\GetDailyOrderFileResponse;
 use Yzh\Model\DataService\GetDailyOrderFileV2Request;
 use Yzh\Model\DataService\GetDailyOrderFileV2Response;
 use Yzh\Model\DataService\ListDailyBillRequest;
-use Yzh\Model\DataService\ListDailyBillReply;
+use Yzh\Model\DataService\ListDailyBillResponse;
 use Yzh\Model\DataService\GetDailyBillFileV2Request;
 use Yzh\Model\DataService\GetDailyBillFileV2Response;
 use Yzh\Model\DataService\ListDealerRechargeRecordV2Request;
@@ -38,28 +38,28 @@ class DataServiceClient extends BaseClient
      * 查询日订单数据
      * @param ListDailyOrderRequest $request
      * @param null $option
-     * @return ListDailyOrderReply
+     * @return ListDailyOrderResponse
      */
     public function listDailyOrder($request, $option = null)
     {
         if (!$request instanceof ListDailyOrderRequest) {
             throw new \Exception("DataService->listDailyOrder request 必须是 Yzh\\Model\\DataService\\ListDailyOrderRequest 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/orders', $request, "Yzh\\Model\\DataService\\ListDailyOrderReply", $option);
+        return $this->send('GET', '/api/dataservice/v1/orders', $request, "Yzh\\Model\\DataService\\ListDailyOrderResponse", $option);
     }
 
     /**
      * 查询日订单文件
-     * @param GetOrderDownloadsUrlRequest $request
+     * @param GetDailyOrderFileRequest $request
      * @param null $option
-     * @return GetOrderDownloadsUrlResponse
+     * @return GetDailyOrderFileResponse
      */
     public function getDailyOrderFile($request, $option = null)
     {
-        if (!$request instanceof GetOrderDownloadsUrlRequest) {
-            throw new \Exception("DataService->getDailyOrderFile request 必须是 Yzh\\Model\\DataService\\GetOrderDownloadsUrlRequest 实例");
+        if (!$request instanceof GetDailyOrderFileRequest) {
+            throw new \Exception("DataService->getDailyOrderFile request 必须是 Yzh\\Model\\DataService\\GetDailyOrderFileRequest 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/order/downloadurl', $request, "Yzh\\Model\\DataService\\GetOrderDownloadsUrlResponse", $option);
+        return $this->send('GET', '/api/dataservice/v1/order/downloadurl', $request, "Yzh\\Model\\DataService\\GetDailyOrderFileResponse", $option);
     }
 
     /**
@@ -80,14 +80,14 @@ class DataServiceClient extends BaseClient
      * 查询日流水数据
      * @param ListDailyBillRequest $request
      * @param null $option
-     * @return ListDailyBillReply
+     * @return ListDailyBillResponse
      */
     public function listDailyBill($request, $option = null)
     {
         if (!$request instanceof ListDailyBillRequest) {
             throw new \Exception("DataService->listDailyBill request 必须是 Yzh\\Model\\DataService\\ListDailyBillRequest 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/bills', $request, "Yzh\\Model\\DataService\\ListDailyBillReply", $option);
+        return $this->send('GET', '/api/dataservice/v1/bills', $request, "Yzh\\Model\\DataService\\ListDailyBillResponse", $option);
     }
 
     /**

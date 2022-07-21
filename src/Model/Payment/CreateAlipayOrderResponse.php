@@ -5,26 +5,26 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseResponse;
 
 /**
- * 
- * Class CreateAlipayOrderReply
+ * 支付宝实时下单返回
+ * Class CreateAlipayOrderResponse
  */
-class CreateAlipayOrderReply extends BaseResponse
+class CreateAlipayOrderResponse extends BaseResponse
 {
 
     /**
-     * 平台企业订单号，原值返回
+     * 平台企业订单号
      * @var string
      */
     public $order_id;
 
     /**
-     * 综合服务平台流水号，唯一
+     * 综合服务平台流水号
      * @var string
      */
     public $ref;
 
     /**
-     * 单位：元，支持小数点后两位
+     * 订单金额
      * @var string
      */
     public $pay;
