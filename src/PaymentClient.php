@@ -2,13 +2,13 @@
 
 namespace Yzh;
 use Yzh\Model\Payment\CreateBankpayOrderRequest;
-use Yzh\Model\Payment\CreateBankpayOrderReply;
+use Yzh\Model\Payment\CreateBankpayOrderResponse;
 use Yzh\Model\Payment\CreateAlipayOrderRequest;
-use Yzh\Model\Payment\CreateAlipayOrderReply;
+use Yzh\Model\Payment\CreateAlipayOrderResponse;
 use Yzh\Model\Payment\CreateWxpayOrderRequest;
-use Yzh\Model\Payment\CreateWxpayOrderReply;
+use Yzh\Model\Payment\CreateWxpayOrderResponse;
 use Yzh\Model\Payment\GetOrderRequest;
-use Yzh\Model\Payment\GetOrderReply;
+use Yzh\Model\Payment\GetOrderResponse;
 use Yzh\Model\Payment\GetDealerVARechargeAccountRequest;
 use Yzh\Model\Payment\GetDealerVARechargeAccountResponse;
 use Yzh\Model\Payment\ListAccountRequest;
@@ -40,60 +40,60 @@ class PaymentClient extends BaseClient
      * 银行卡实时下单
      * @param CreateBankpayOrderRequest $request
      * @param null $option
-     * @return CreateBankpayOrderReply
+     * @return CreateBankpayOrderResponse
      */
     public function createBankpayOrder($request, $option = null)
     {
         if (!$request instanceof CreateBankpayOrderRequest) {
             throw new \Exception("Payment->createBankpayOrder request 必须是 Yzh\\Model\\Payment\\CreateBankpayOrderRequest 实例");
         }
-        return $this->send('POST', '/api/payment/v1/order-bankpay', $request, "Yzh\\Model\\Payment\\CreateBankpayOrderReply", $option);
+        return $this->send('POST', '/api/payment/v1/order-bankpay', $request, "Yzh\\Model\\Payment\\CreateBankpayOrderResponse", $option);
     }
 
     /**
      * 支付宝实时下单
      * @param CreateAlipayOrderRequest $request
      * @param null $option
-     * @return CreateAlipayOrderReply
+     * @return CreateAlipayOrderResponse
      */
     public function createAlipayOrder($request, $option = null)
     {
         if (!$request instanceof CreateAlipayOrderRequest) {
             throw new \Exception("Payment->createAlipayOrder request 必须是 Yzh\\Model\\Payment\\CreateAlipayOrderRequest 实例");
         }
-        return $this->send('POST', '/api/payment/v1/order-alipay', $request, "Yzh\\Model\\Payment\\CreateAlipayOrderReply", $option);
+        return $this->send('POST', '/api/payment/v1/order-alipay', $request, "Yzh\\Model\\Payment\\CreateAlipayOrderResponse", $option);
     }
 
     /**
      * 微信实时下单
      * @param CreateWxpayOrderRequest $request
      * @param null $option
-     * @return CreateWxpayOrderReply
+     * @return CreateWxpayOrderResponse
      */
     public function createWxpayOrder($request, $option = null)
     {
         if (!$request instanceof CreateWxpayOrderRequest) {
             throw new \Exception("Payment->createWxpayOrder request 必须是 Yzh\\Model\\Payment\\CreateWxpayOrderRequest 实例");
         }
-        return $this->send('POST', '/api/payment/v1/order-wxpay', $request, "Yzh\\Model\\Payment\\CreateWxpayOrderReply", $option);
+        return $this->send('POST', '/api/payment/v1/order-wxpay', $request, "Yzh\\Model\\Payment\\CreateWxpayOrderResponse", $option);
     }
 
     /**
      * 查询单笔订单信息
      * @param GetOrderRequest $request
      * @param null $option
-     * @return GetOrderReply
+     * @return GetOrderResponse
      */
     public function getOrder($request, $option = null)
     {
         if (!$request instanceof GetOrderRequest) {
             throw new \Exception("Payment->getOrder request 必须是 Yzh\\Model\\Payment\\GetOrderRequest 实例");
         }
-        return $this->send('GET', '/api/payment/v1/query-order', $request, "Yzh\\Model\\Payment\\GetOrderReply", $option);
+        return $this->send('GET', '/api/payment/v1/query-order', $request, "Yzh\\Model\\Payment\\GetOrderResponse", $option);
     }
 
     /**
-     * 查询平台企业 VA 账户信息
+     * 查询平台企业汇款信息
      * @param GetDealerVARechargeAccountRequest $request
      * @param null $option
      * @return GetDealerVARechargeAccountResponse

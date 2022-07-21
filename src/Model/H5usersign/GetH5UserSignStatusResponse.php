@@ -5,10 +5,10 @@ namespace Yzh\Model\H5usersign;
 use Yzh\Model\BaseResponse;
 
 /**
- *  * 获取用户签约状态返回
- * Class GeH5UserSignStatusResponse
+ * 获取用户签约状态返回
+ * Class GetH5UserSignStatusResponse
  */
-class GeH5UserSignStatusResponse extends BaseResponse
+class GetH5UserSignStatusResponse extends BaseResponse
 {
 
     /**

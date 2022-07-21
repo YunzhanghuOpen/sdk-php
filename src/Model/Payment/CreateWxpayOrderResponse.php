@@ -5,14 +5,14 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseResponse;
 
 /**
- * 
- * Class CreateBankpayOrderReply
+ * 微信实时下单返回
+ * Class CreateWxpayOrderResponse
  */
-class CreateBankpayOrderReply extends BaseResponse
+class CreateWxpayOrderResponse extends BaseResponse
 {
 
     /**
-     * 平台企业订单号，原值返回
+     * 平台企业订单号
      * @var string
      */
     public $order_id;
@@ -24,7 +24,7 @@ class CreateBankpayOrderReply extends BaseResponse
     public $ref;
 
     /**
-     * 单位：元，支持小数点后两位
+     * 订单金额
      * @var string
      */
     public $pay;

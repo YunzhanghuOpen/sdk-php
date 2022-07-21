@@ -5,7 +5,7 @@ namespace Yzh\Model\Tax;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 查询纳税人是否为跨集团用户请求
+ * 查询纳税人是否为跨集团用户请求
  * Class GetUserCrossRequest
  */
 class GetUserCrossRequest extends BaseRequest

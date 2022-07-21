@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
- * 
+ * 取消待支付订单请求
  * Class CancelOrderRequest
  */
 class CancelOrderRequest extends BaseRequest

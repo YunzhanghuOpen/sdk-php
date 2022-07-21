@@ -5,7 +5,7 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 银行卡三要素验证请求
+ * 银行卡三要素验证返回
  * Class BankCardThreeVerifyRequest
  */
 class BankCardThreeVerifyRequest extends BaseRequest

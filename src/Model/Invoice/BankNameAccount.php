@@ -5,7 +5,7 @@ namespace Yzh\Invoice;
 use Yzh\Model\BaseModel;
 
 /**
- *  * 系统支持的开户行及账号
+ * 系统支持的开户行及账号
  * Class BankNameAccount
  */
 class BankNameAccount extends BaseModel

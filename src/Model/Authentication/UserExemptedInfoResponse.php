@@ -5,7 +5,7 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseResponse;
 
 /**
- *  * 上传用户免验证名单信息响应
+ * 上传免验证用户名单信息返回
  * Class UserExemptedInfoResponse
  */
 class UserExemptedInfoResponse extends BaseResponse

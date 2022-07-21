@@ -5,7 +5,7 @@ namespace Yzh\Model\Tax;
 use Yzh\Model\BaseResponse;
 
 /**
- *  * 查询纳税人是否为跨集团用户响应
+ * 查询纳税人是否为跨集团用户返回
  * Class GetUserCrossResponse
  */
 class GetUserCrossResponse extends BaseResponse

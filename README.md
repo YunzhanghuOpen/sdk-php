@@ -1,5 +1,3 @@
-# php-sdk
-
 # 云账户 SDK for PHP
 
 ## 功能概述
@@ -67,11 +65,14 @@ composer install
 composer require yunzhanghuopen/sdk-php
 ```
 
-### 3、功能列表 （请链到文件）
+### 3、功能列表      
 
-实时下单接口 payment.php  
-数据查询接口 dataService.php   
-用户信息验证接口 verify.php   
-发票接口 invoice.php  
-个税接口 tax.php  
-异步回调 notify.php   
+- [实时下单接口](example/payment.php )    
+- [数据查询接口](example/dataService.php )    
+- [用户信息验证接口](example/verify.php )      
+- [发票接口](example/invoice.php )     
+- [个税扣缴明细接口](example/tax.php )       
+- [订单异步回调](example/notify.php )  
+- [H5 签约](example/h5UserSign.php ) 
+- [API 签约](example/apiUserSign.php )  
+ 

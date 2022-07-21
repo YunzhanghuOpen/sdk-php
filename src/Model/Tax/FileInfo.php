@@ -5,7 +5,7 @@ namespace Yzh\Tax;
 use Yzh\Model\BaseModel;
 
 /**
- *  * 报税文件详情
+ * 报税文件详情
  * Class FileInfo
  */
 class FileInfo extends BaseModel
@@ -18,7 +18,7 @@ class FileInfo extends BaseModel
     public $name;
 
     /**
-     * 下载文件临时 url
+     * 下载文件临时 URL
      * @var string
      */
     public $url;

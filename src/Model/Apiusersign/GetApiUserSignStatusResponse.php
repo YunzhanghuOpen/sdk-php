@@ -5,7 +5,7 @@ namespace Yzh\Model\Apiusersign;
 use Yzh\Model\BaseResponse;
 
 /**
- *  * 获取用户签约状态返回
+ * 获取用户签约状态返回
  * Class GetApiUserSignStatusResponse
  */
 class GetApiUserSignStatusResponse extends BaseResponse

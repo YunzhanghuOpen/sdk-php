@@ -5,7 +5,7 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 查看用户免验证名单是否存在请求
+ * 查看免验证用户名单是否存在请求
  * Class UserWhiteCheckRequest
  */
 class UserWhiteCheckRequest extends BaseRequest

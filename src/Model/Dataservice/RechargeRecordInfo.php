@@ -5,32 +5,32 @@ namespace Yzh\Dataservice;
 use Yzh\Model\BaseModel;
 
 /**
- *  * 充值记录信息
+ * 预付业务服务费记录信息
  * Class RechargeRecordInfo
  */
 class RechargeRecordInfo extends BaseModel
 {
 
     /**
-     * 平台企业ID
+     * 平台企业 ID
      * @var string
      */
     public $dealer_id;
 
     /**
-     * 综合服务主体ID
+     * 综合服务主体 ID
      * @var string
      */
     public $broker_id;
 
     /**
-     * 充值记录ID
+     * 预付业务服务费记录ID
      * @var string
      */
     public $recharge_id;
 
     /**
-     * 充值金额
+     * 预付业务服务费
      * @var string
      */
     public $amount;
@@ -54,7 +54,7 @@ class RechargeRecordInfo extends BaseModel
     public $recharge_channel;
 
     /**
-     * 充值备注
+     * 预付业务服务费备注
      * @var string
      */
     public $remark;

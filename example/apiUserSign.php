@@ -3,7 +3,7 @@ define('TEST_PATH', dirname(__FILE__));
 include_once(TEST_PATH . '/../vendor/autoload.php');
 include_once(TEST_PATH . '/test_var.php');
 
-use Yzh\ApiUserSignClient;
+use Yzh\ApiUserSignServiceClient;
 use Yzh\Config;
 use Yzh\Model\Apiusersign\ApiUserSignRequest;
 use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
@@ -23,8 +23,8 @@ $config = Config::newFromArray(array(
 ));
 
 try {
-    $apiUserSignClient = new  ApiUserSignClient($config);
-    $apiUserSignClient->setEnv(ApiUserSignClient::ENV_PROD);
+    $apiUserSignClient = new ApiUserSignServiceClient($config);
+    $apiUserSignClient->setEnv(ApiUserSignServiceClient::ENV_PROD);
 } catch (\Exception $e) {
     die($e->getMessage());
 }
@@ -40,42 +40,38 @@ $response = $apiUserSignClient->apiUseSignContract($request);
 var_dump(array('response' => $response->toArray()));
 
 
-//////用户签约
-//$request = new ApiUserSignRequest(array(
-//    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
-//    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
-//    'real_name' => '张三',                         # 姓名
-//    'id_card' => '120242',                     # 证件号
-//    'card_type' => 'idcard',                    # 证件类型码
-//
-//));
-//$response = $apiUserSignClient->apiUserSign($request);
-//var_dump(array('response' => $response->toArray()));
-//
-////
-//////获取用户签约状态
-////$request = new GetApiUserSignStatusRequest(array(
-////    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
-////    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
-////    'real_name' => '张三',                         # 姓名
-////    'id_card' => '120242',              # 证件号
-////
-////));
-////$response = $apiUserSignClient->getApiUserSignStatus($request);
-////var_dump(array('response' => $response->toArray()));
-//
-////用户解约（测试账号专用接口）
-//$request = new ApiUserSignReleaseRequest(array(
-//    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
-//    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
-//    'real_name' => '张三',                         # 姓名
-//    'id_card' => '1202642',              # 证件号
-//    'card_type' => 'idcard',                    # 证件类型码
-//
-//));
-//$response = $apiUserSignClient->apiUserSignRelease($request);
-//var_dump(array('response' => $response->toArray()));
-//
-//
-//
-//
+/**
+//用户签约
+$request = new ApiUserSignRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
+    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
+    'real_name' => '张三',                         # 姓名
+    'id_card' => '120242',                     # 证件号
+    'card_type' => 'idcard',                    # 证件类型码
+));
+$response = $apiUserSignClient->apiUserSign($request);
+var_dump(array('response' => $response->toArray()));
+
+
+//获取用户签约状态
+$request = new GetApiUserSignStatusRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
+    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
+    'real_name' => '张三',                         # 姓名
+    'id_card' => '120242',                        # 证件号
+));
+$response = $apiUserSignClient->getApiUserSignStatus($request);
+var_dump(array('response' => $response->toArray()));
+
+//用户解约（测试账号专用接口）
+$request = new ApiUserSignReleaseRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
+    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
+    'real_name' => '张三',                         # 姓名
+    'id_card' => '1202642',              # 证件号
+    'card_type' => 'idcard',                    # 证件类型码
+
+));
+$response = $apiUserSignClient->apiUserSignRelease($request);
+var_dump(array('response' => $response->toArray()));  
+ */

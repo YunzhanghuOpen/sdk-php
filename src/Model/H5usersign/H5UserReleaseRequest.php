@@ -5,7 +5,7 @@ namespace Yzh\Model\H5usersign;
 use Yzh\Model\BaseRequest;
 
 /**
- *  * 用户解约请求
+ * 用户解约请求
  * Class H5UserReleaseRequest
  */
 class H5UserReleaseRequest extends BaseRequest

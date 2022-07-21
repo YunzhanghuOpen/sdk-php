@@ -5,7 +5,7 @@ namespace Yzh\Payment;
 use Yzh\Model\BaseModel;
 
 /**
- * 
+ * 账户信息
  * Class AccountInfo
  */
 class AccountInfo extends BaseModel

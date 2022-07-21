@@ -5,7 +5,7 @@ namespace Yzh\Dataservice;
 use Yzh\Model\BaseModel;
 
 /**
- *  * 流水详情
+ * 流水详情
  * Class DealerBillInfo
  */
 class DealerBillInfo extends BaseModel
@@ -36,13 +36,13 @@ class DealerBillInfo extends BaseModel
     public $ref;
 
     /**
-     * 综合服务主体名
+     * 综合服务主体名称
      * @var string
      */
     public $broker_product_name;
 
     /**
-     * 平台企业名
+     * 平台企业名称
      * @var string
      */
     public $dealer_product_name;

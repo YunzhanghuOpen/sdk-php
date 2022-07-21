@@ -107,7 +107,7 @@ class AuthenticationClient extends BaseClient
     }
 
     /**
-     * 上传用户免验证名单信息
+     * 上传免验证用户名单信息
      * @param UserExemptedInfoRequest $request
      * @param null $option
      * @return UserExemptedInfoResponse
@@ -121,7 +121,7 @@ class AuthenticationClient extends BaseClient
     }
 
     /**
-     * 查看用户免验证名单是否存在
+     * 查看免验证用户名单是否存在
      * @param UserWhiteCheckRequest $request
      * @param null $option
      * @return UserWhiteCheckResponse

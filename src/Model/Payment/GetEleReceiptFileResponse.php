@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseResponse;
 
 /**
- * 
+ * 查询电子回单返回
  * Class GetEleReceiptFileResponse
  */
 class GetEleReceiptFileResponse extends BaseResponse
