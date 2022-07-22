@@ -5,7 +5,7 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 下载 PDF 版发票 请求
+ * 下载 PDF 版发票请求
  * Class GetInvoiceFileRequest
  */
 class GetInvoiceFileRequest extends BaseRequest
