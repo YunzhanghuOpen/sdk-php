@@ -18,7 +18,7 @@ class UserExemptedInfoRequest extends BaseRequest
     public $card_type;
 
     /**
-     * 身份证号
+     * 证件号码
      * @var string
      */
     public $id_card;

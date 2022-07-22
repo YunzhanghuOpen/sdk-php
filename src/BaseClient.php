@@ -26,7 +26,7 @@ abstract class BaseClient
     protected static $service_name;
 
     protected static $env_service_host_map = array(
-        self::ENV_PROD => array(
+        self::ENV_PROD => array( // 正式环境
             'payment' => 'https://api-service.yunzhanghu.com', // 实时支付服务接口域名
             'tax' => 'https://api-service.yunzhanghu.com',
             'authentication' => 'https://api-service.yunzhanghu.com',
@@ -35,12 +35,16 @@ abstract class BaseClient
             'aic' => 'https://api-aic.yunzhanghu.com',         // 个体工商户注册服务接口域名
             'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
             'dataservice' => 'https://api-service.yunzhanghu.com',    // 数据服务接口域名
-            'usersign' => 'https://api-service.yunzhanghu.com',    // 用户签约接口域名
+            'apiusersignservice' => 'https://api-service.yunzhanghu.com',    // API 用户签约接口域名
+            'h5usersignservice' => 'https://api-service.yunzhanghu.com',    // H5 用户签约接口域名
+
 
         ),
-        self::ENV_SANDBOX => array(
+        self::ENV_SANDBOX => array( // 沙箱环境
             'payment' => 'https://api-service.yunzhanghu.com/sandbox',   // 实时支付服务接口域名
-            'usersign' => 'https://api-service.yunzhanghu.com/sandbox',   // 用户签约接口域名
+            'authentication' => 'https://api-service.yunzhanghu.com/sandbox', // 用户信息验证接口域名
+            'apiusersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // API 用户签约接口域名
+            'h5usersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // H5 用户签约接口域名
             'ins' => '',       // 保险服务接口域名
             'aic' => '',       // 个体工商户注册服务接口域名
             'task' => '',      // 任务库服务接口域名

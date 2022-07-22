@@ -36,7 +36,7 @@ class DealerOrderInfo extends BaseModel
     public $ref;
 
     /**
-     * 批次ID
+     * 批次 ID
      * @var string
      */
     public $batch_id;

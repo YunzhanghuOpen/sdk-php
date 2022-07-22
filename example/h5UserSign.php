@@ -28,52 +28,52 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-//H5 签约
-/**
-// H5预申请签约接口
+// H5 签约
+
+// H5 预申请签约接口
 $request = new H5UserPresignRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
-    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
-    'real_name' => '张三',                         # 姓名
-    'id_card' => '1202642',             # 证件号
-    'certificate_type' => 0,                               # 证件类型
+    'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
+    'real_name' => '张三',                          // 姓名
+    'id_card' => '110101012345678910',             // 证件号
+    'certificate_type' => 0,                       // 证件类型
 
 ));
 $response = $h5UserSignClient->h5UserPresign($request);
 var_dump(array('response' => $response->toArray()));
 
 
-//H5签约接口
+// H5 签约接口
 $request = new H5UserSignRequest(array(
 
-    'token' => '7db97222-2dfb-484b-b8ac-e39a69d2aba0',      # H5签约token
-    'color' => '',                                          # H5页面主题颜色
-    'url' => 'http://xxx',                                  # 回调URL地址
-    'redirect_url' => 'http://localhost',                   # 跳转URL
+    'token' => '7db97222-2dfb-484b-b8ac-e39a69d2aba0',      // H5 签约 token
+    'color' => '',                                          // H5页面主题颜色
+    'url' => 'http://xxx',                                  // 回调 URL 地址
+    'redirect_url' => 'http://localhost',                   // 跳转 URL
 
 ));
 $response = $h5UserSignClient->h5UserSign($request);
 var_dump(array('response' => $response->toArray()));
- */
 
-//获取用户签约状态
+
+// 获取用户签约状态
 $request = new GetH5UserSignStatusRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
-    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
-    'real_name' => '张三',                         # 姓名
-    'id_card' => '120642',              # 证件号
+    'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
+    'real_name' => '张三',                          // 姓名
+    'id_card' => '110101012345678910',             // 证件号
 
 ));
 $response = $h5UserSignClient->getH5UserSignStatus($request);
 var_dump(array('response' => $response->toArray()));
 
-////用户解约（测试账号专用接口）
+// 用户解约（测试账号专用接口）
 $request = new H5UserReleaseRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业ID(必填)
-    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体ID(必填)
-    'real_name' => '张三',                         # 姓名
-    'id_card' => '12025642',              # 证件号
-    'certificate_type' => 0,                    # 证件类型码
+    'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
+    'real_name' => '张三',                         // 姓名
+    'id_card' => '110101012345678910',            // 证件号
+    'certificate_type' => 0,                      // 证件类型码
 
 ));
 $response = $h5UserSignClient->h5UserRelease($request);

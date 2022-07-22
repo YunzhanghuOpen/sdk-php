@@ -1,6 +1,8 @@
 <?php
 
 namespace Yzh;
+
+
 use Yzh\Model\Payment\CreateBankpayOrderRequest;
 use Yzh\Model\Payment\CreateBankpayOrderResponse;
 use Yzh\Model\Payment\CreateAlipayOrderRequest;

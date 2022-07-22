@@ -28,70 +28,70 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-//数据接口
+// 数据接口
 
-//查询日订单文件
+// 查询日订单文件
 $request = new GetDailyOrderFileRequest(array(
-   'order_date' => '2022-04-24',                # 查询日期
+    'order_date' => '2022-04-24',                // 查询日期
 ));
 $response = $dataServiceClient->getDailyOrderFile($request);
 var_dump(array('response' => $response->toArray()));
 
-//查询日流水文件
+// 查询日流水文件
 $request = new GetDailyBillFileV2Request(array(
-   'bill_date' => '2022-04-24',                # 查询日期
+    'bill_date' => '2022-04-24',                // 查询日期
 ));
 $response = $dataServiceClient->getDailyBillFileV2($request);
 var_dump(array('response' => $response->toArray()));
 
 
-//查询平台企业预付业务服务费记录
+// 查询平台企业预付业务服务费记录
 $request = new ListDealerRechargeRecordV2Request(array(
-   'begin_at' => '2022-04-24',                # 查询开始日期
-   'end_at' => '2022-05-12',                # 查询结束日期
+    'begin_at' => '2022-04-24',                // 查询开始日期
+    'end_at' => '2022-05-12',                  // 查询结束日期
 
 ));
 $response = $dataServiceClient->listDealerRechargeRecordV2($request);
 var_dump(array('response' => $response->toArray()));
 
 
-//查询日订单数据
+// 查询日订单数据
 $request = new ListDailyOrderRequest(array(
-   'order_date' => '2022-06-13',                # 查询日期
-   'offeset' => 0,                              # 偏移量，最小从0开始
-   'length' => 20,                              # 每页最多返回条数，最大为200
-   'channel' => '支付宝',                        # 支付路径名，银行卡（默认）、支付宝、微信
-   'data_type' => 'encryption'                  # 如果为encryption，则对返回的data进行加密
+    'order_date' => '2022-06-13',                // 查询日期
+    'offeset' => 0,                              // 偏移量，最小从 0 开始
+    'length' => 20,                              // 每页最多返回条数，最大为 200
+    'channel' => '支付宝',                        // 支付路径名，银行卡（默认）、支付宝、微信
+    'data_type' => 'encryption'                  // 如果为 encryption，则对返回的data进行加密
 ));
 $response = $dataServiceClient->listDailyOrder($request);
 var_dump(array('response' => $response->toArray()));
 
 
 
-//查询日流水数据
+// 查询日流水数据
 $request = new ListDailyBillRequest(array(
-   'bill_date' => '2022-06-13',                # 查询日期
-   'offeset' => 0,                              # 偏移量，最小从0开始
-   'length' => 20,                              # 每页最多返回条数，最大为200
-   'channel' => '支付宝',                        # 支付路径名，银行卡（默认）、支付宝、微信
-   'data_type' => 'encryption'                  # 如果为encryption，则对返回的data进行加密
+    'bill_date' => '2022-06-13',                 // 查询日期
+    'offeset' => 0,                              // 偏移量，最小从 0 开始
+    'length' => 20,                              // 每页最多返回条数，最大为 200
+    'channel' => '支付宝',                        // 支付路径名，银行卡（默认）、支付宝、微信
+    'data_type' => 'encryption'                  // 如果为 encryption，则对返回的 data 进行加密
 ));
 $response = $dataServiceClient->listDailyBill($request);
 var_dump(array('response' => $response->toArray()));
 
 
-//查询日订单文件（支付和退款）
+// 查询日订单文件（支付和退款）
 $request = new GetDailyOrderFileV2Request(array(
-   'order_date' => '2022-06-14',                # 查询日期
+    'order_date' => '2022-06-14',                // 查询日期
 ));
 $response = $dataServiceClient->getDailyOrderFileV2($request);
 var_dump(array('response' => $response->toArray()));
 
 
 
-//查询余额日账单数据
+// 查询余额日账单数据
 $request = new ListBalanceDailyStatementRequest(array(
-    'statement_date' => '2022-04-14',                # 查询日期
+    'statement_date' => '2022-04-14',            // 查询日期
 ));
 $response = $dataServiceClient->listBalanceDailyStatement($request);
 var_dump(array('response' => $response->toArray()));

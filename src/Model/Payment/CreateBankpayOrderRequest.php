@@ -42,7 +42,7 @@ class CreateBankpayOrderRequest extends BaseRequest
     public $card_no;
 
     /**
-     * 身份证号
+     * 身份证号码
      * @var string
      */
     public $id_card;
@@ -54,7 +54,7 @@ class CreateBankpayOrderRequest extends BaseRequest
     public $phone_no;
 
     /**
-     * 支付金额
+     * 订单金额
      * @var string
      */
     public $pay;

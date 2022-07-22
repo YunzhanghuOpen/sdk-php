@@ -42,7 +42,7 @@ class CreateAlipayOrderRequest extends BaseRequest
     public $card_no;
 
     /**
-     * 身份证号
+     * 身份证号码
      * @var string
      */
     public $id_card;
@@ -54,7 +54,7 @@ class CreateAlipayOrderRequest extends BaseRequest
     public $phone_no;
 
     /**
-     * 支付金额
+     * 订单金额
      * @var string
      */
     public $pay;
@@ -78,7 +78,7 @@ class CreateAlipayOrderRequest extends BaseRequest
     public $project_id;
 
     /**
-     * 校验支付宝账户姓名，校验支付宝账户姓名，固定值：Check
+     * 校验支付宝账户姓名，固定值：Check
      * @var string
      */
     public $check_name;

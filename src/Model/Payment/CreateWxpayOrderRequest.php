@@ -42,7 +42,7 @@ class CreateWxpayOrderRequest extends BaseRequest
     public $openid;
 
     /**
-     * 身份证号
+     * 身份证号码
      * @var string
      */
     public $id_card;
@@ -54,7 +54,7 @@ class CreateWxpayOrderRequest extends BaseRequest
     public $phone_no;
 
     /**
-     * 支付金额
+     * 订单金额
      * @var string
      */
     public $pay;
@@ -90,7 +90,7 @@ class CreateWxpayOrderRequest extends BaseRequest
     public $project_id;
 
     /**
-     * 描述信息
+     * 描述信息，该字段已废弃
      * @var string
      */
     public $notes;

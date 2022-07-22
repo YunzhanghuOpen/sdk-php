@@ -48,7 +48,7 @@ class NotifyOrderRequest extends BaseRequest
     public $card_no;
 
     /**
-     * 身份证号
+     * 身份证号码
      * @var string
      */
     public $id_card;
@@ -162,7 +162,7 @@ class NotifyOrderRequest extends BaseRequest
     public $project_id;
 
     /**
-     * 主播 ID，该字段已废弃
+     * 新就业形态劳动者 ID，该字段已废弃
      * @var string
      */
     public $anchor_id;

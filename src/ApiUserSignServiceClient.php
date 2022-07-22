@@ -1,17 +1,19 @@
 <?php
 
 namespace Yzh;
-use Yzh\Model\ApiUserSignService\ApiUseSignContractRequest;
-use Yzh\Model\ApiUserSignService\ApiUseSignContractResponse;
-use Yzh\Model\ApiUserSignService\ApiUserSignRequest;
-use Yzh\Model\ApiUserSignService\ApiUserSignResponse;
-use Yzh\Model\ApiUserSignService\GetApiUserSignStatusRequest;
-use Yzh\Model\ApiUserSignService\GetApiUserSignStatusResponse;
-use Yzh\Model\ApiUserSignService\ApiUserSignReleaseRequest;
-use Yzh\Model\ApiUserSignService\ApiUserSignReleaseResponse;
+
+
+use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
+use Yzh\Model\Apiusersign\ApiUseSignContractResponse;
+use Yzh\Model\Apiusersign\ApiUserSignRequest;
+use Yzh\Model\Apiusersign\ApiUserSignResponse;
+use Yzh\Model\Apiusersign\GetApiUserSignStatusRequest;
+use Yzh\Model\Apiusersign\GetApiUserSignStatusResponse;
+use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
+use Yzh\Model\Apiusersign\ApiUserSignReleaseResponse;
 
 /**
- * API签约接口
+ * API 签约接口
  * Class ApiUserSignServiceClient
  */
 class ApiUserSignServiceClient extends BaseClient
@@ -37,9 +39,9 @@ class ApiUserSignServiceClient extends BaseClient
     public function apiUseSignContract($request, $option = null)
     {
         if (!$request instanceof ApiUseSignContractRequest) {
-            throw new \Exception("ApiUserSignService->apiUseSignContract request 必须是 Yzh\\Model\\ApiUserSignService\\ApiUseSignContractRequest 实例");
+            throw new \Exception("Apiusersign->apiUseSignContract request 必须是 Yzh\\Model\\Apiusersign\\ApiUseSignContractRequest 实例");
         }
-        return $this->send('GET', '/api/sign/v1/user/contract', $request, "Yzh\\Model\\ApiUserSignService\\ApiUseSignContractResponse", $option);
+        return $this->send('GET', '/api/sign/v1/user/contract', $request, "Yzh\\Model\\Apiusersign\\ApiUseSignContractResponse", $option);
     }
 
     /**
@@ -51,9 +53,9 @@ class ApiUserSignServiceClient extends BaseClient
     public function apiUserSign($request, $option = null)
     {
         if (!$request instanceof ApiUserSignRequest) {
-            throw new \Exception("ApiUserSignService->apiUserSign request 必须是 Yzh\\Model\\ApiUserSignService\\ApiUserSignRequest 实例");
+            throw new \Exception("Apiusersign->apiUserSign request 必须是 Yzh\\Model\\Apiusersign\\ApiUserSignRequest 实例");
         }
-        return $this->send('POST', '/api/sign/v1/user/sign', $request, "Yzh\\Model\\ApiUserSignService\\ApiUserSignResponse", $option);
+        return $this->send('POST', '/api/sign/v1/user/sign', $request, "Yzh\\Model\\Apiusersign\\ApiUserSignResponse", $option);
     }
 
     /**
@@ -65,9 +67,9 @@ class ApiUserSignServiceClient extends BaseClient
     public function getApiUserSignStatus($request, $option = null)
     {
         if (!$request instanceof GetApiUserSignStatusRequest) {
-            throw new \Exception("ApiUserSignService->getApiUserSignStatus request 必须是 Yzh\\Model\\ApiUserSignService\\GetApiUserSignStatusRequest 实例");
+            throw new \Exception("Apiusersign->getApiUserSignStatus request 必须是 Yzh\\Model\\Apiusersign\\GetApiUserSignStatusRequest 实例");
         }
-        return $this->send('GET', '/api/sign/v1/user/status', $request, "Yzh\\Model\\ApiUserSignService\\GetApiUserSignStatusResponse", $option);
+        return $this->send('GET', '/api/sign/v1/user/status', $request, "Yzh\\Model\\Apiusersign\\GetApiUserSignStatusResponse", $option);
     }
 
     /**
@@ -79,8 +81,8 @@ class ApiUserSignServiceClient extends BaseClient
     public function apiUserSignRelease($request, $option = null)
     {
         if (!$request instanceof ApiUserSignReleaseRequest) {
-            throw new \Exception("ApiUserSignService->apiUserSignRelease request 必须是 Yzh\\Model\\ApiUserSignService\\ApiUserSignReleaseRequest 实例");
+            throw new \Exception("Apiusersign->apiUserSignRelease request 必须是 Yzh\\Model\\Apiusersign\\ApiUserSignReleaseRequest 实例");
         }
-        return $this->send('POST', '/api/sign/v1/user/release', $request, "Yzh\\Model\\ApiUserSignService\\ApiUserSignReleaseResponse", $option);
+        return $this->send('POST', '/api/sign/v1/user/release', $request, "Yzh\\Model\\Apiusersign\\ApiUserSignReleaseResponse", $option);
     }
 }

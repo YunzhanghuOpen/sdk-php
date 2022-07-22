@@ -1,6 +1,8 @@
 <?php
 
 namespace Yzh;
+
+
 use Yzh\Model\Invoice\GetInvoiceStatRequest;
 use Yzh\Model\Invoice\GetInvoiceStatResponse;
 use Yzh\Model\Invoice\GetInvoiceAmountRequest;
@@ -16,7 +18,6 @@ use Yzh\Model\Invoice\SendReminderEmailResponse;
 
 /**
  * Invoice 发票接口
- * Class InvoiceClient
  */
 class InvoiceClient extends BaseClient
 {
@@ -89,7 +90,7 @@ class InvoiceClient extends BaseClient
     }
 
     /**
-     * 下载发票 PDF
+     * 下载 PDF 版发票
      * @param GetInvoiceFileRequest $request
      * @param null $option
      * @return GetInvoiceFileResponse

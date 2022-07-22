@@ -1,6 +1,8 @@
 <?php
 
 namespace Yzh;
+
+
 use Yzh\Model\Tax\GetTaxFileRequest;
 use Yzh\Model\Tax\GetTaxFileResponse;
 use Yzh\Model\Tax\GetUserCrossRequest;
@@ -39,7 +41,7 @@ class TaxClient extends BaseClient
     }
 
     /**
-     * GetUserCross 查询纳税人是否为跨集团用户
+     * 查询纳税人是否为跨集团用户
      * @param GetUserCrossRequest $request
      * @param null $option
      * @return GetUserCrossResponse
