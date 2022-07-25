@@ -72,13 +72,13 @@ class StatementDetail extends BaseModel
     public $reex_amount;
 
     /**
-     * 服务费金额
+     * 加成服务费金额
      * @var string
      */
     public $fee_amount;
 
     /**
-     * 服务费抵扣金额
+     * 加成服务费抵扣金额
      * @var string
      */
     public $deduct_rebate_fee_amount;

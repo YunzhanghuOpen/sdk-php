@@ -1,6 +1,8 @@
 <?php
 
 namespace Yzh;
+
+
 use Yzh\Model\Authentication\BankCardFourAuthVerifyRequest;
 use Yzh\Model\Authentication\BankCardFourAuthVerifyResponse;
 use Yzh\Model\Authentication\BankCardFourAuthConfirmRequest;

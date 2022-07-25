@@ -18,7 +18,7 @@ class BankCardFourAuthVerifyRequest extends BaseRequest
     public $card_no;
 
     /**
-     * 身份证号
+     * 身份证号码
      * @var string
      */
     public $id_card;

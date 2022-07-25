@@ -1,6 +1,8 @@
 <?php
 
 namespace Yzh;
+
+
 use Yzh\Model\Invoice\GetInvoiceStatRequest;
 use Yzh\Model\Invoice\GetInvoiceStatResponse;
 use Yzh\Model\Invoice\GetInvoiceAmountRequest;
@@ -89,7 +91,7 @@ class InvoiceClient extends BaseClient
     }
 
     /**
-     * 下载发票 PDF
+     * 下载 PDF 版发票
      * @param GetInvoiceFileRequest $request
      * @param null $option
      * @return GetInvoiceFileResponse

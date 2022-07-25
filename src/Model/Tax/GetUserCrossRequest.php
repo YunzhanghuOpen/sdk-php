@@ -24,7 +24,7 @@ class GetUserCrossRequest extends BaseRequest
     public $year;
 
     /**
-     * 身份证号
+     * 身份证号码
      * @var string
      */
     public $id_card;
