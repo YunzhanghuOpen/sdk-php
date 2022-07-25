@@ -54,7 +54,7 @@ class CreateAlipayOrderRequest extends BaseRequest
     public $phone_no;
 
     /**
-     * 支付金额
+     * 订单金额
      * @var string
      */
     public $pay;

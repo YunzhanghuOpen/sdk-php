@@ -63,21 +63,20 @@ $response = $invoiceClient->applyInvoice($request);
 var_dump(array('response' => $response->toArray()));
 
 
-//
-//    // 查询开票申请状态
+// 查询开票申请状态
 $request = new GetInvoiceStatusRequest(array(
 
     'invoice_apply_id' => 'apply123456789',      # 发票申请编号
-    'application_id' => '',                      # 发票申请单ID
+    'application_id' => '',                      # 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceStatus($request);
 var_dump(array('response' => $response->toArray()));
 
-//    // 下载发票PDF
+// 下载 PDF 版发票
 $request = new GetInvoiceFileRequest(array(
 
     'invoice_apply_id' => 'apply123456789',      # 发票申请编号
-    'application_id' => '',                      # 发票申请单ID
+    'application_id' => '',                      # 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceFile($request);
 var_dump(array('response' => $response->toArray()));
@@ -87,7 +86,7 @@ var_dump(array('response' => $response->toArray()));
 $request = new SendReminderEmailRequest(array(
 
     'invoice_apply_id' => 'apply123456789',      # 发票申请编号
-    'application_id' => '',                      # 发票申请单ID
+    'application_id' => '',                      # 发票申请单 ID
 ));
 $response = $invoiceClient->sendReminderEmail($request);
 var_dump(array('response' => $response->toArray()));

@@ -25,7 +25,6 @@ $config = Config::newFromArray(array(
 
 try {
     $paymentClient = new PaymentClient($config);
-    // $paymentClient->setEnv(PaymentClient::ENV_PROD);
     $paymentClient->setEnv(PaymentClient::ENV_PROD);
 } catch (\Exception $e) {
     die($e->getMessage());
@@ -58,7 +57,7 @@ if ($respdata['response']['code'] == '0000') {
         // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
         echo "订单已存在";
     } else
-        // TODO 根据返回的message处理订单请求，切记若需重试请求，请使用原订单号重试
+        // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
         echo  $respdata['response']['message'];
 
 //支付宝实时接口
@@ -88,7 +87,7 @@ if ($respdata['response']['code'] == '0000') {
         // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
         echo "订单已存在";
     } else
-        // TODO 根据返回的message处理订单请求，切记若需重试请求，请使用原订单号重试
+        // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
         echo  $respdata['response']['message'];
 
 //微信实时下单
@@ -101,8 +100,8 @@ $request = new CreateWxpayOrderRequest(array(
     'id_card' => '110101012345678910',            # 身份证号码（必填，报税时使用）
     'phone_no' => '18100000000',                  # ⽤户⼿机号
     'pay' => '0.1',                               # 订单⾦额（参数类型是 string，单位为元，支持两位小数，必填）
-    'pay_remark' => '测试订单',                    # 订单备注（选填，至多支持32个字符且不支持特殊字符，⼀个汉字占 2 个字符，不支持的特殊字符为 ' " & | @% ( ) - : # + / < > ¥ \ ,）
-    'wx_app_id' => '',                            # 平台企业微信支付 AppID（选填，最⼤⻓度为 200，注：若平台企业在云账户绑定了多个 AppID，则此处需指定 AppID）
+    'pay_remark' => '测试订单',                    # 订单备注（选填，至多支持 32 个字符且不支持特殊字符，⼀个汉字占 2 个字符，不支持的特殊字符为 ' " & | @% ( ) - : # + / < > ¥ \ ,）
+    'wx_app_id' => '',                            # 平台企业微信 AppID（选填，最⼤⻓度为 200，注：若平台企业在云账户绑定了多个 AppID，则此处需指定 AppID）
     'notify_url' => 'http://xxx',                 # 回调地址（选填，长度不超过 200 个字符）
     'wxpay_mode' => 'transfer',                   # 微信支付模式（必填，固定值：transfer）
     'project_id' => '001'                         # 项目 ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
@@ -120,7 +119,7 @@ if ($respdata['response']['code'] == '0000') {
         // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
         echo "订单已存在";
     } else {
-        // TODO 根据返回的message处理订单请求，切记若需重试请求，请使用原订单号重试
+        // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
         echo  $respdata['response']['message'];
     }
 }
@@ -129,21 +128,21 @@ if ($respdata['response']['code'] == '0000') {
 //单笔订单查询
 $request = new GetOrderRequest(array(
     'order_id' => 'Ali12345678910',               # 平台企业订单号，由平台企业保持唯⼀性
-    'channel' => '支付宝',                         # 银⾏卡，⽀付宝，微信（选填，不填默认为银⾏卡订单查询，注意 value 值为中文字符）
+    'channel' => '支付宝',                         # 支付路径名，银⾏卡，⽀付宝，微信（选填，不填默认为银⾏卡订单查询，注意 value 值为中文字符）
     'data_type' => '',                            # 如果为 encryption，则对返回的 data 进行加密
 ));
 $response = $paymentClient->getOrder($request);
 $respdata = array('response' => $response->toArray());
 if ($respdata['response']['code'] == '0000') {
-    //  TODO :  code=0000,订单查询成功，根据订单状态status判断订单状态，做业务订单的处理
+    //  TODO :  code=0000,订单查询成功，根据订单状态 status 判断订单状态，做业务订单的处理
     echo "查询成功:";
     var_dump($respdata['response']['data']);
 } else if ($respdata['response']['code']  == '2018') {
     // 已上传过该流水
-    # TODO :  code=2018,订单不存在，检查一下channel是否传递正确，若正确，则可以使用原 order_id 再次下单
+    // TODO :  code=2018,表示订单不存在，检查一下 channel 是否传递正确，若正确，则可以使用原 order_id 再次下单
     echo "订单不存在";
 } else {
-    # TODO :  其他code应当做异常情况，订单状态当“未知”处理，可稍后重试直至获取到 code=0000 或 2018，或者是联系云账户进行人工查询
+    // TODO :  其他 code 应当做异常情况，订单状态当“未知”处理，可稍后重试直至获取到 code=0000 或 2018，或者是联系云账户进行人工查询
     echo  $respdata['response']['message'];
 }
 

@@ -103,7 +103,7 @@ class Rsa
     }
 
     /**
-     * 验证方法
+     * 验证数据签名
      * @param $data, $sign
      * @return bool
      */

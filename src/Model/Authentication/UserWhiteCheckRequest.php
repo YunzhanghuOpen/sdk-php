@@ -12,7 +12,7 @@ class UserWhiteCheckRequest extends BaseRequest
 {
 
     /**
-     * 身份证号码
+     * 证件号码
      * @var string
      */
     public $id_card;

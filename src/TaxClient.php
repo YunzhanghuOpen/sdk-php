@@ -41,7 +41,7 @@ class TaxClient extends BaseClient
     }
 
     /**
-     * GetUserCross 查询纳税人是否为跨集团用户
+     * 查询纳税人是否为跨集团用户
      * @param GetUserCrossRequest $request
      * @param null $option
      * @return GetUserCrossResponse

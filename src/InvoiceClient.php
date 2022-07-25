@@ -18,7 +18,6 @@ use Yzh\Model\Invoice\SendReminderEmailResponse;
 
 /**
  * Invoice 发票接口
- * Class InvoiceClient
  */
 class InvoiceClient extends BaseClient
 {

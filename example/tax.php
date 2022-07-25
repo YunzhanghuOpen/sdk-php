@@ -27,7 +27,6 @@ try {
 //个税扣缴明细
 
 //下载个税扣缴明细表
-
 $request = new GetTaxFileRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],   # 平台企业 ID
     'ent_id' => 'accumulus_tj',                  # 平台企业签约主体，accumulus_tj：天津，accumulus_sh：上海，accumulus_gs：甘肃
@@ -46,7 +45,7 @@ $rsa = $rsa = Rsa::getInstance($config->app_private_key, $config->yzh_public_key
 $password = $rsa->privateKeyDecrypt(base64_decode($pwd));
 echo "解压缩明文密码:" . $password;
 
-////查询纳税人是否为跨集团用户
+//查询纳税人是否为跨集团用户
 $request = new GetUserCrossRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],   # 平台企业 ID
     'ent_id' => 'accumulus_tj',                  # 平台企业签约主体，accumulus_tj：天津，accumulus_gs：甘肃

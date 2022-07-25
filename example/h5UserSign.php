@@ -32,9 +32,9 @@ try {
 
 // H5预申请签约接口
 $request = new H5UserPresignRequest(array(
-'dealer_id' => $test_var['app_dealer_id'],    # 平台企业 ID
-'broker_id' => $test_var['app_broker_id'],    # 综合服务主体 ID
-'real_name' => '张三',                         # 姓名
+'dealer_id' => $test_var['app_dealer_id'],     # 平台企业 ID
+'broker_id' => $test_var['app_broker_id'],     # 综合服务主体 ID
+'real_name' => '张三',                          # 姓名
 'id_card' => '110101012345678910',             # 证件号
 'certificate_type' => 0,                       # 证件类型
 
@@ -58,16 +58,16 @@ var_dump(array('response' => $response->toArray()));
 
 //获取用户签约状态
 $request = new GetH5UserSignStatusRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],    # 平台企业 ID
-    'broker_id' => $test_var['app_broker_id'],    # 综合服务主体 ID
-    'real_name' => '张三',                         # 姓名
+    'dealer_id' => $test_var['app_dealer_id'],     # 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],     # 综合服务主体 ID
+    'real_name' => '张三',                          # 姓名
     'id_card' => '110101012345678910',             # 证件号
 
 ));
 $response = $h5UserSignClient->getH5UserSignStatus($request);
 var_dump(array('response' => $response->toArray()));
 
-////用户解约（测试账号专用接口）
+//用户解约（测试账号专用接口）
 $request = new H5UserReleaseRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    # 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    # 综合服务主体 ID
