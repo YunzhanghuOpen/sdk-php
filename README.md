@@ -6,15 +6,15 @@
 
 欢迎使用 云账户 SDK for PHP 。
 
-云账户 SDK for PHP 包含了请求的封装，加解密，签名验签等功能，使用 SDK 可以轻松、快速完成 API 的调用和结果处理。
+云账户 SDK for PHP 包含了请求的封装，加解密，签名验签等功能，使用 SDK 可轻松、快速完成 API 的调用和结果处理。
 
-这里向您介绍如何快速使用云账户 SDK for PHP 。 如果您在使用 云账户 SDK for PHP 的过程中遇到任何问题，欢迎在当前 GitHub 提交 Issues，或发送邮件至技术支持组 [techsupport@yunzhanghu.com](mailto:techsupport@yunzhanghu.com) 。
+这里向您介绍如何快速使用云账户 SDK for PHP 。 如果您在使用过程中遇到任何问题，欢迎在当前 GitHub 提交 Issues，或发送邮件至技术支持组 [techsupport@yunzhanghu.com](mailto:techsupport@yunzhanghu.com) 。
 
 ### 2、获取配置
 
 #### **获取 dealer_id、broker_id、3DES Key、App Key**
 
-根据开户邮件中的账号登录云账户综合服务平台：业务中心 -> 业务管理 -> 对接信息。
+使用根据开户邮件中的账号登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”查看并获取配置信息。
 
 ![获取配置信息](.doc/keyconfig.png)
 
@@ -29,7 +29,7 @@
 
 Openssl-> genrsa -out private_key.pem 2048 # 建议密钥⻓度⾄少为 2048
 
-【Java 开发者需要将私钥转换成 PKCS8 格式，非 Java 跳过本步骤】OpenSSL-> pkcs8 -topk8 -inform PEM -in private_key.pem -outform PEM -nocrypt -out private_key_pkcs8.pem
+【Java 开发者需要将私钥转换成 PKCS8 格式，非 Java，则跳过本步骤】OpenSSL-> pkcs8 -topk8 -inform PEM -in private_key.pem -outform PEM -nocrypt -out private_key_pkcs8.pem
 
 ② ⽣成公钥⽂件 pubkey.pem
 
@@ -42,8 +42,7 @@ Openssl-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 ##### **上传平台企业公钥**
 
-登录云账户综合服务平台，在业务中心 -> 业务管理 -> 对接信息，点击页面右上角的编辑，配置平台企业公钥。
-![配置平台企业公钥信息](.doc/publickeyconfig.png)
+登录云账户综合服务平台，选择“业务中心  > 业务管理  > 对接信息”，单击页面右上角的“编辑”，配置平台企业公钥。![配置平台企业公钥信息](.doc/publickeyconfig.png)
 
 ## 环境要求
 
@@ -65,14 +64,13 @@ composer install
 composer require yunzhanghuopen/sdk-php
 ```
 
-### 3、功能列表      
+### 3、示例功能列表      
 
 - [实时下单接口](example/payment.php )    
-- [数据查询接口](example/dataService.php )    
+- [数据接口](example/dataService.php )    
 - [用户信息验证接口](example/verify.php )      
 - [发票接口](example/invoice.php )     
 - [个税扣缴明细接口](example/tax.php )       
 - [订单异步回调](example/notify.php )  
 - [H5 签约](example/h5UserSign.php ) 
 - [API 签约](example/apiUserSign.php )  
- 
