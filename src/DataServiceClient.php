@@ -1,20 +1,22 @@
 <?php
 
 namespace Yzh;
-use Yzh\Model\DataService\ListDailyOrderRequest;
-use Yzh\Model\DataService\ListDailyOrderResponse;
-use Yzh\Model\DataService\GetDailyOrderFileRequest;
-use Yzh\Model\DataService\GetDailyOrderFileResponse;
-use Yzh\Model\DataService\GetDailyOrderFileV2Request;
-use Yzh\Model\DataService\GetDailyOrderFileV2Response;
-use Yzh\Model\DataService\ListDailyBillRequest;
-use Yzh\Model\DataService\ListDailyBillResponse;
-use Yzh\Model\DataService\GetDailyBillFileV2Request;
-use Yzh\Model\DataService\GetDailyBillFileV2Response;
-use Yzh\Model\DataService\ListDealerRechargeRecordV2Request;
-use Yzh\Model\RechargeRecordInfo;
-use Yzh\Model\DataService\ListBalanceDailyStatementRequest;
-use Yzh\Model\DataService\ListBalanceDailyStatementResponse;
+
+
+use Yzh\Model\Dataservice\ListDailyOrderRequest;
+use Yzh\Model\Dataservice\ListDailyOrderResponse;
+use Yzh\Model\Dataservice\GetDailyOrderFileRequest;
+use Yzh\Model\Dataservice\GetDailyOrderFileResponse;
+use Yzh\Model\Dataservice\GetDailyOrderFileV2Request;
+use Yzh\Model\Dataservice\GetDailyOrderFileV2Response;
+use Yzh\Model\Dataservice\ListDailyBillRequest;
+use Yzh\Model\Dataservice\ListDailyBillResponse;
+use Yzh\Model\Dataservice\GetDailyBillFileV2Request;
+use Yzh\Model\Dataservice\GetDailyBillFileV2Response;
+use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Request;
+use Yzh\Model\Dataservice\RechargeRecordInfo;
+use Yzh\Model\Dataservice\ListBalanceDailyStatementRequest;
+use Yzh\Model\Dataservice\ListBalanceDailyStatementResponse;
 
 /**
  * 数据接口
@@ -43,9 +45,9 @@ class DataServiceClient extends BaseClient
     public function listDailyOrder($request, $option = null)
     {
         if (!$request instanceof ListDailyOrderRequest) {
-            throw new \Exception("DataService->listDailyOrder request 必须是 Yzh\\Model\\DataService\\ListDailyOrderRequest 实例");
+            throw new \Exception("Dataservice->listDailyOrder request 必须是 Yzh\\Model\\Dataservice\\ListDailyOrderRequest 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/orders', $request, "Yzh\\Model\\DataService\\ListDailyOrderResponse", $option);
+        return $this->send('GET', '/api/dataservice/v1/orders', $request, "Yzh\\Model\\Dataservice\\ListDailyOrderResponse", $option);
     }
 
     /**
@@ -57,9 +59,9 @@ class DataServiceClient extends BaseClient
     public function getDailyOrderFile($request, $option = null)
     {
         if (!$request instanceof GetDailyOrderFileRequest) {
-            throw new \Exception("DataService->getDailyOrderFile request 必须是 Yzh\\Model\\DataService\\GetDailyOrderFileRequest 实例");
+            throw new \Exception("Dataservice->getDailyOrderFile request 必须是 Yzh\\Model\\Dataservice\\GetDailyOrderFileRequest 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/order/downloadurl', $request, "Yzh\\Model\\DataService\\GetDailyOrderFileResponse", $option);
+        return $this->send('GET', '/api/dataservice/v1/order/downloadurl', $request, "Yzh\\Model\\Dataservice\\GetDailyOrderFileResponse", $option);
     }
 
     /**
@@ -71,9 +73,9 @@ class DataServiceClient extends BaseClient
     public function getDailyOrderFileV2($request, $option = null)
     {
         if (!$request instanceof GetDailyOrderFileV2Request) {
-            throw new \Exception("DataService->getDailyOrderFileV2 request 必须是 Yzh\\Model\\DataService\\GetDailyOrderFileV2Request 实例");
+            throw new \Exception("Dataservice->getDailyOrderFileV2 request 必须是 Yzh\\Model\\Dataservice\\GetDailyOrderFileV2Request 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/order/day/url', $request, "Yzh\\Model\\DataService\\GetDailyOrderFileV2Response", $option);
+        return $this->send('GET', '/api/dataservice/v1/order/day/url', $request, "Yzh\\Model\\Dataservice\\GetDailyOrderFileV2Response", $option);
     }
 
     /**
@@ -85,9 +87,9 @@ class DataServiceClient extends BaseClient
     public function listDailyBill($request, $option = null)
     {
         if (!$request instanceof ListDailyBillRequest) {
-            throw new \Exception("DataService->listDailyBill request 必须是 Yzh\\Model\\DataService\\ListDailyBillRequest 实例");
+            throw new \Exception("Dataservice->listDailyBill request 必须是 Yzh\\Model\\Dataservice\\ListDailyBillRequest 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/bills', $request, "Yzh\\Model\\DataService\\ListDailyBillResponse", $option);
+        return $this->send('GET', '/api/dataservice/v1/bills', $request, "Yzh\\Model\\Dataservice\\ListDailyBillResponse", $option);
     }
 
     /**
@@ -99,9 +101,9 @@ class DataServiceClient extends BaseClient
     public function getDailyBillFileV2($request, $option = null)
     {
         if (!$request instanceof GetDailyBillFileV2Request) {
-            throw new \Exception("DataService->getDailyBillFileV2 request 必须是 Yzh\\Model\\DataService\\GetDailyBillFileV2Request 实例");
+            throw new \Exception("Dataservice->getDailyBillFileV2 request 必须是 Yzh\\Model\\Dataservice\\GetDailyBillFileV2Request 实例");
         }
-        return $this->send('GET', '/api/dataservice/v2/bill/downloadurl', $request, "Yzh\\Model\\DataService\\GetDailyBillFileV2Response", $option);
+        return $this->send('GET', '/api/dataservice/v2/bill/downloadurl', $request, "Yzh\\Model\\Dataservice\\GetDailyBillFileV2Response", $option);
     }
 
     /**
@@ -113,9 +115,9 @@ class DataServiceClient extends BaseClient
     public function listDealerRechargeRecordV2($request, $option = null)
     {
         if (!$request instanceof ListDealerRechargeRecordV2Request) {
-            throw new \Exception("DataService->listDealerRechargeRecordV2 request 必须是 Yzh\\Model\\DataService\\ListDealerRechargeRecordV2Request 实例");
+            throw new \Exception("Dataservice->listDealerRechargeRecordV2 request 必须是 Yzh\\Model\\Dataservice\\ListDealerRechargeRecordV2Request 实例");
         }
-        return $this->send('GET', '/api/dataservice/v2/recharge-record', $request, "Yzh\\Model\\DataService\\ListDealerRechargeRecordV2Response", $option);
+        return $this->send('GET', '/api/dataservice/v2/recharge-record', $request, "Yzh\\Model\\Dataservice\\ListDealerRechargeRecordV2Response", $option);
     }
 
     /**
@@ -127,8 +129,8 @@ class DataServiceClient extends BaseClient
     public function listBalanceDailyStatement($request, $option = null)
     {
         if (!$request instanceof ListBalanceDailyStatementRequest) {
-            throw new \Exception("DataService->listBalanceDailyStatement request 必须是 Yzh\\Model\\DataService\\ListBalanceDailyStatementRequest 实例");
+            throw new \Exception("Dataservice->listBalanceDailyStatement request 必须是 Yzh\\Model\\Dataservice\\ListBalanceDailyStatementRequest 实例");
         }
-        return $this->send('GET', '/api/dataservice/v1/statements-daily', $request, "Yzh\\Model\\DataService\\ListBalanceDailyStatementResponse", $option);
+        return $this->send('GET', '/api/dataservice/v1/statements-daily', $request, "Yzh\\Model\\Dataservice\\ListBalanceDailyStatementResponse", $option);
     }
 }

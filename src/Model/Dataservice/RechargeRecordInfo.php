@@ -24,7 +24,7 @@ class RechargeRecordInfo extends BaseModel
     public $broker_id;
 
     /**
-     * 预付业务服务费记录ID
+     * 预付业务服务费记录 ID
      * @var string
      */
     public $recharge_id;

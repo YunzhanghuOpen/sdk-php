@@ -30,7 +30,7 @@ class GetH5UserSignStatusRequest extends BaseRequest
     public $real_name;
 
     /**
-     * 身份证号
+     * 证件号码
      * @var string
      */
     public $id_card;

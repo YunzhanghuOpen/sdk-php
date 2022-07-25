@@ -5,7 +5,7 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseResponse;
 
 /**
- * 下载发票 PDF 返回
+ * 下载 PDF 版发票返回
  * Class GetInvoiceFileResponse
  */
 class GetInvoiceFileResponse extends BaseResponse

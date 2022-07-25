@@ -1,6 +1,8 @@
 <?php
 
 namespace Yzh;
+
+
 use Yzh\Model\Tax\GetTaxFileRequest;
 use Yzh\Model\Tax\GetTaxFileResponse;
 use Yzh\Model\Tax\GetUserCrossRequest;

@@ -18,7 +18,7 @@ class GetDealerVARechargeAccountResponse extends BaseResponse
     public $acct_name;
 
     /**
-     * 账号
+     * 专属账户
      * @var string
      */
     public $acct_no;
@@ -30,7 +30,7 @@ class GetDealerVARechargeAccountResponse extends BaseResponse
     public $bank_name;
 
     /**
-     * 平台企业账户名称
+     * 付款账户
      * @var string
      */
     public $dealer_acct_name;

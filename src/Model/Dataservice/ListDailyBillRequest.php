@@ -30,7 +30,7 @@ class ListDailyBillRequest extends BaseRequest
     public $length;
 
     /**
-     * 如果为encryption，则对返回的data进行加密
+     * 如果为 encryption，则对返回的 data 进行加密
      * @var string
      */
     public $data_type;
