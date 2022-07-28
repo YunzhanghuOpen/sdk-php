@@ -5,7 +5,7 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseRequest;
 
 /**
- * 身份证实名验证返回
+ * 身份证实名验证请求
  * Class IDCardVerifyRequest
  */
 class IDCardVerifyRequest extends BaseRequest

@@ -60,7 +60,7 @@ class StatementDetail extends BaseModel
     public $total_money;
 
     /**
-     * 支付金额
+     * 订单金额
      * @var string
      */
     public $amount;
