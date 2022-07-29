@@ -19,17 +19,17 @@ $config = Config::newFromArray(array(
 $dataString = "data=" . $_REQUEST['data'] . "&mess=" . $_REQUEST['mess'] . "&timestamp=" . $_REQUEST['timestamp'] . "&key=" . $config->app_key;
 
 $rsa = Rsa::getInstance($config->app_private_key, $config->yzh_public_key);
-$verifyResult = $rsa->verify($dataString, $_REQUEST['sign']);       //验签
-// var_dump($verifyResult);      //打印验签结果
-if ($verifyResult == true)     //验签成功
+$verifyResult = $rsa->verify($dataString, $_REQUEST['sign']);       // 验签
+// var_dump($verifyResult);      // 打印验签结果
+if ($verifyResult == true)     // 验签成功
 {
     $des3 = new Des($config->app_des3_key);
-    $datainfo = $des3->decrypt($_REQUEST['data']);   //对业务数据进行解密
+    $datainfo = $des3->decrypt($_REQUEST['data']);   // 对业务数据进行解密
     // 根据回调数据中的status做一下订单状态的判断和业务逻辑处理
     // 若有用户钱包体系，则在下单同步返回成功时，将用户钱包进行相应金额的扣减冻结
     $tempData = json_decode($datainfo, true);
     $status = $tempData['data']['status'];
-    //    var_dump($status);
+    // var_dump($status);
 
     switch ($status) {
         case "1":
