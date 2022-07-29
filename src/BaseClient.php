@@ -26,7 +26,7 @@ abstract class BaseClient
     protected static $service_name;
 
     protected static $env_service_host_map = array(
-        self::ENV_PROD => array(// 正式环境
+        self::ENV_PROD => array( // 正式环境
             'payment' => 'https://api-service.yunzhanghu.com', // 实时支付服务接口域名
             'tax' => 'https://api-service.yunzhanghu.com',
             'authentication' => 'https://api-service.yunzhanghu.com',
@@ -40,7 +40,7 @@ abstract class BaseClient
 
 
         ),
-        self::ENV_SANDBOX => array(//沙箱环境
+        self::ENV_SANDBOX => array( // 沙箱环境
             'payment' => 'https://api-service.yunzhanghu.com/sandbox',   // 实时支付服务接口域名
             'authentication' => 'https://api-service.yunzhanghu.com/sandbox', // 用户信息验证接口域名
             'apiusersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // API 用户签约接口域名
