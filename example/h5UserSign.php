@@ -30,7 +30,7 @@ try {
 }
 // H5 签约
 
-// H5预申请签约接口
+// H5 预申请签约接口
 $request = new H5UserPresignRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
@@ -43,10 +43,10 @@ $response = $h5UserSignClient->h5UserPresign($request);
 var_dump(array('response' => $response->toArray()));
 
 
-// H5签约接口
+// H5 签约接口
 $request = new H5UserSignRequest(array(
 
-    'token' => '7db97222-2dfb-484b-b8ac-e39a69d2aba0',      // H5签约 token
+    'token' => '7db97222-2dfb-484b-b8ac-e39a69d2aba0',      // H5 签约 token
     'color' => '',                                          // H5页面主题颜色
     'url' => 'http://xxx',                                  // 回调 URL 地址
     'redirect_url' => 'http://localhost',                   // 跳转 URL
