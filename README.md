@@ -66,11 +66,12 @@ composer require yunzhanghuopen/sdk-php
 
 ### 3、示例功能列表      
 
-- [实时下单接口](example/payment.php )    
+### 3、示例功能列表      
+
+- [H5 签约](example/h5UserSign.php ) or [API 签约](example/apiUserSign.php )  
+- [实时下单接口](example/payment.php ) 
+- [订单异步回调](example/notify.php )     
 - [数据接口](example/dataService.php )    
-- [用户信息验证接口](example/verify.php )      
 - [发票接口](example/invoice.php )     
-- [个税扣缴明细接口](example/tax.php )       
-- [订单异步回调](example/notify.php )  
-- [H5 签约](example/h5UserSign.php ) 
-- [API 签约](example/apiUserSign.php )  
+- [个税扣缴明细表下载接口](example/tax.php )       
+- [用户信息验证接口](example/verify.php )
