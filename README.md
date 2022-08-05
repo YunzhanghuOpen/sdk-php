@@ -40,13 +40,13 @@ Openssl-> rsa -in private_key.pem -pubout -out pubkey.pem
 ![配置平台企业公钥信息](.doc/publickeyconfig.png)
 
 ## 安装 PHP SDK  
-###1、安装依赖
+### 1、安装依赖
 
 ```
 composer install
 ```
 
-###2、Composer 安装 SDK
+### 2、Composer 安装 SDK
 
 ```
 composer require yunzhanghuopen/sdk-php
