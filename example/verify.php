@@ -110,7 +110,6 @@ function getuploadfileinfo($file)
         fclose($fp);
         // 获取图片 BASE64
         $base64 = chunk_split(base64_encode($gambar));
-        // echo $base64;
         return  $base64;
     }
 }

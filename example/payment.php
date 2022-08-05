@@ -41,7 +41,7 @@ $request = new CreateBankpayOrderRequest(array(
     'id_card' => '110101012345678910',                 // 身份证号码（必填，报税时使用）
     'phone_no' => '18100000000',                       // ⼿机号
     'pay' => '0.1',                                    // 订单⾦额（参数类型是 string 类型，单位为元，支持两位小数，必填）
-    'pay_remark' => '测试订单',                          // 订单备注（选填，至多包含 20 个字符且不支持特殊字符，' " & | @% ( ) - : // + / < > ¥ \ ,）
+    'pay_remark' => '测试订单',                          // 订单备注（选填，至多包含 20 个字符且不支持特殊字符，' " & | @% ( ) - : # + / < > ¥ \ ,）
     'notify_url' => 'http://localhost/php-sdk-2/test/callback.php',  // 回调地址（选填，长度不超过 200 个字符）
     'project_id' => ''                                 // 项目ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
 ));
@@ -107,7 +107,6 @@ $request = new CreateWxpayOrderRequest(array(
     'project_id' => '001'                         // 项目 ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
 ));
 $response = $paymentClient->createWxpayOrder($request);
-// var_dump(array('response' => $response->toArray()));
 $respdata = array('response' => $response->toArray());
 if ($respdata['response']['code'] == '0000') {
     // 订单接收成功，支付结果未知，待异步通知

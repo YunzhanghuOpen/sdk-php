@@ -61,7 +61,7 @@ $request = new ListDailyOrderRequest(array(
     'offeset' => 0,                              // 偏移量，最小从 0 开始
     'length' => 20,                              // 每页最多返回条数，最大为 200
     'channel' => '支付宝',                        // 支付路径名，银行卡（默认）、支付宝、微信
-    'data_type' => 'encryption'                  // 如果为encryption，则对返回的data进行加密
+    'data_type' => 'encryption'                  // 如果为 encryption，则对返回的data进行加密
 ));
 $response = $dataServiceClient->listDailyOrder($request);
 var_dump(array('response' => $response->toArray()));
