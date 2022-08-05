@@ -162,7 +162,7 @@ class NotifyOrderRequest extends BaseRequest
     public $project_id;
 
     /**
-     * 主播 ID，该字段已废弃
+     * 新就业形态劳动者 ID，该字段已废弃
      * @var string
      */
     public $anchor_id;
