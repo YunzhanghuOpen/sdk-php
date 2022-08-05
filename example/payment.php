@@ -102,7 +102,7 @@ $request = new CreateWxpayOrderRequest(array(
     'pay' => '0.1',                               // 订单⾦额（参数类型是 string，单位为元，支持两位小数，必填）
     'pay_remark' => '测试订单',                    // 订单备注（选填，至多支持 32 个字符且不支持特殊字符，⼀个汉字占 2 个字符，不支持的特殊字符为 ' " & | @% ( ) - : # + / < > ¥ \ ,）
     'wx_app_id' => '',                            // 平台企业微信 AppID（选填，最⼤⻓度为 200，注：若平台企业在云账户绑定了多个 AppID，则此处需指定 AppID）
-    'notify_url' => 'http:xx',                 // 回调地址（选填，长度不超过 200 个字符）
+    'notify_url' => 'http://xxx',                 // 回调地址（选填，长度不超过 200 个字符）
     'wxpay_mode' => 'transfer',                   // 微信支付模式（必填，固定值：transfer）
     'project_id' => '001'                         // 项目 ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
 ));
