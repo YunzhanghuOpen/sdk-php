@@ -15,6 +15,9 @@ defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 
 abstract class BaseClient
 {
+    const SDK_NAME = "yunzhanghu-sdk-php";
+    const SDK_VERSION  = "1.0.0";
+
     const ENV_PROD = "yzh_env_prod";
     const ENV_SANDBOX = "yzh_env_sandbox";
 
@@ -88,6 +91,13 @@ abstract class BaseClient
         ));
 
         $response = curl_exec($curl);
+
+        if ($response == false) {
+            $errMsg = curl_error($curl);
+            curl_close($curl);
+            throw new HttpException("请求失败,response:" . $errMsg, 0);
+        }
+
         $curlInfo = curl_getinfo($curl);
         curl_close($curl);
 
@@ -144,10 +154,12 @@ abstract class BaseClient
             throw new ConfigException('该环境不支持该请求,环境为:' . $this::$service_name, ExceptionCode::CONFIG_ERROR_UNSUPPORT_URL_IN_CURRENT_ENV);
         }
 
+
         $header = array(
             'Content-Type: application/x-www-form-urlencoded',
             'dealer-id: ' . $this->config->app_dealer_id,
-            'request-id:' . MessString::rand(32)
+            'request-id: ' . MessString::rand(32),
+            'User-Agent: ' . $this->generateUserAgent()
         );
 
         $url = $baseUrl . $path;
@@ -160,6 +172,11 @@ abstract class BaseClient
         return ApiResponse::newFromResponse($response, $responseDataClass, $responseDecoder);
     }
 
+
+    private function generateUserAgent()
+    {
+        return self::SDK_NAME . "/" . self::SDK_VERSION . "/" . join(" ", array(php_uname('s'), php_uname('r'), php_uname('m')))  .  "/" . PHP_VERSION;
+    }
 
     private function getRequestData($request)
     {

@@ -7,8 +7,6 @@ use Yzh\Exception\ExceptionCode;
 
 class Config
 {
-    const DEFAULT_TIMEOUT = 1;
-
     public $app_dealer_id;
     public $app_broker_id;
     public $app_key;
@@ -64,9 +62,8 @@ class Config
 
         if (isset($params['timeout']) && intval($params['timeout']) > 0) {
             $config->timeout = intval($params['timeout']);
-        } else {
-            $config->timeout = self::DEFAULT_TIMEOUT;
         }
+
         if (isset($params['env']) && !empty($params['env'])) {
             $config->env = $params['env'];
         } else {

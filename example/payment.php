@@ -56,9 +56,10 @@ if ($respdata['response']['code'] == '0000') {
     // 已上传过该流水
     // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
     echo "订单已存在";
-} else
+} else {
     // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
     echo  $respdata['response']['message'];
+}
 
 // 支付宝实时接口
 $request = new CreateAlipayOrderRequest(array(
