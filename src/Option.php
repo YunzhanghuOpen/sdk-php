@@ -33,6 +33,10 @@ final class Option
 
     public function __construct($option = array())
     {
+
+        $this->timeout = self::DEFAULT_TIMEOUT_SECONDS;
+        $this->connect_timeout = self::DEFAULT_CONNECT_TIMEOUT_SECONDS;
+
         if (isset($option['timeout'])) {
             $this->setTimeout($option['timeout']);
         }
