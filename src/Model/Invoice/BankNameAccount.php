@@ -1,6 +1,6 @@
 <?php
 
-namespace Yzh\Invoice;
+namespace Yzh\Model\Invoice;
 
 use Yzh\Model\BaseModel;
 

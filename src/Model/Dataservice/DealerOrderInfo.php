@@ -1,6 +1,6 @@
 <?php
 
-namespace Yzh\Dataservice;
+namespace Yzh\Model\Dataservice;
 
 use Yzh\Model\BaseModel;
 
@@ -36,7 +36,7 @@ class DealerOrderInfo extends BaseModel
     public $ref;
 
     /**
-     * 批次 ID
+     * 批次ID
      * @var string
      */
     public $batch_id;
