@@ -13,7 +13,7 @@ use Yzh\Model\H5usersign\H5UserReleaseRequest;
 use Yzh\Model\H5usersign\H5UserReleaseResponse;
 
 /**
- * H5 签约接口
+ * H5签约接口
  * Class H5UserSignServiceClient
  */
 class H5UserSignServiceClient extends BaseClient

@@ -1,6 +1,6 @@
 <?php
 
-namespace Yzh\Dataservice;
+namespace Yzh\Model\Dataservice;
 
 use Yzh\Model\BaseModel;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Yzh\Payment;
+namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseModel;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Yzh\Tax;
+namespace Yzh\Model\Tax;
 
 use Yzh\Model\BaseModel;
 
