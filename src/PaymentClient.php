@@ -19,6 +19,10 @@ use Yzh\Model\Payment\GetEleReceiptFileRequest;
 use Yzh\Model\Payment\GetEleReceiptFileResponse;
 use Yzh\Model\Payment\CancelOrderRequest;
 use Yzh\Model\Payment\CancelOrderResponse;
+use Yzh\Model\Payment\CreateBatchOrderRequest;
+use Yzh\Model\Payment\CreateBatchOrderResponse;
+use Yzh\Model\Payment\ConfirmBatchOrderRequest;
+use Yzh\Model\Payment\ConfirmBatchOrderResponse;
 
 /**
  * 实时下单接口
@@ -148,5 +152,33 @@ class PaymentClient extends BaseClient
             throw new \Exception("Payment->cancelOrder request 必须是 Yzh\\Model\\Payment\\CancelOrderRequest 实例");
         }
         return $this->send('POST', '/api/payment/v1/order/fail', $request, "Yzh\\Model\\Payment\\CancelOrderResponse", $option);
+    }
+
+    /**
+     * 批次下单
+     * @param CreateBatchOrderRequest $request
+     * @param null $option
+     * @return CreateBatchOrderResponse
+     */
+    public function createBatchOrder($request, $option = null)
+    {
+        if (!$request instanceof CreateBatchOrderRequest) {
+            throw new \Exception("Payment->createBatchOrder request 必须是 Yzh\\Model\\Payment\\CreateBatchOrderRequest 实例");
+        }
+        return $this->send('POST', '/api/payment/v1/order-batch', $request, "Yzh\\Model\\Payment\\CreateBatchOrderResponse", $option);
+    }
+
+    /**
+     * 批次确认
+     * @param ConfirmBatchOrderRequest $request
+     * @param null $option
+     * @return ConfirmBatchOrderResponse
+     */
+    public function confirmBatchOrder($request, $option = null)
+    {
+        if (!$request instanceof ConfirmBatchOrderRequest) {
+            throw new \Exception("Payment->confirmBatchOrder request 必须是 Yzh\\Model\\Payment\\ConfirmBatchOrderRequest 实例");
+        }
+        return $this->send('POST', '/api/payment/v1/confirm-batch', $request, "Yzh\\Model\\Payment\\ConfirmBatchOrderResponse", $option);
     }
 }
