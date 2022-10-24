@@ -24,7 +24,7 @@ class BatchOrderInfo extends BaseModel
     public $real_name;
 
     /**
-     * 身份证号
+     * 身份证号码
      * @var string
      */
     public $id_card;
@@ -66,7 +66,7 @@ class BatchOrderInfo extends BaseModel
     public $pay_remark;
 
     /**
-     * 回掉地址
+     * 回调地址
      * @var string
      */
     public $notify_url;
