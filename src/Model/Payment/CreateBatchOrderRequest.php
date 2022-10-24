@@ -18,13 +18,13 @@ class CreateBatchOrderRequest extends BaseRequest
     public $batch_id;
 
     /**
-     * 平台企业ID
+     * 平台企业 ID
      * @var string
      */
     public $dealer_id;
 
     /**
-     * 综合服务主体ID
+     * 综合服务主体 ID
      * @var string
      */
     public $broker_id;
@@ -36,7 +36,7 @@ class CreateBatchOrderRequest extends BaseRequest
     public $channel;
 
     /**
-     * 平台企业的微信AppID
+     * 平台企业的微信 AppID
      * @var string
      */
     public $wx_app_id;

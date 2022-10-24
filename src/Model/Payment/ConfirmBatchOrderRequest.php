@@ -18,13 +18,13 @@ class ConfirmBatchOrderRequest extends BaseRequest
     public $batch_id;
 
     /**
-     * 平台企业ID
+     * 平台企业 ID
      * @var string
      */
     public $dealer_id;
 
     /**
-     * 综合服务主体ID
+     * 综合服务主体 ID
      * @var string
      */
     public $broker_id;

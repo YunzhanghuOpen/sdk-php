@@ -36,7 +36,7 @@ class BatchOrderInfo extends BaseModel
     public $card_no;
 
     /**
-     * 微信用户openid
+     * 微信用户 openid
      * @var string
      */
     public $openid;
