@@ -16,7 +16,7 @@ class Rsa
     private function __construct($privateKey = "", $publicKey = "")
     {
         if (!extension_loaded("openssl")) {
-            throw new \Exception("缺少 openssl 扩展");
+            throw new ConfigException("缺少 openssl 扩展", ExceptionCode::CONFIG_ERROR_LACK_PACKAGE);
         }
 
         $this->private_key = openssl_pkey_get_private($privateKey);

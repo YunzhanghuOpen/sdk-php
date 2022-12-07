@@ -9,11 +9,10 @@ use Yzh\Config;
 use Yzh\Utils\Rsa;
 use Yzh\Utils\Des;
 use Yzh\Utils\MessString;
-// use Guzzle\Http\Client as HttpClient;
 
 defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 
-abstract class BaseClient
+class BaseClient
 {
     const SDK_NAME = "yunzhanghu-sdk-php";
     const SDK_VERSION  = "1.0.0";
@@ -59,8 +58,13 @@ abstract class BaseClient
     private $des;
 
 
-    protected function __construct()
+    public function __construct($config)
     {
+        if (!$config instanceof Config) {
+            throw new ConfigException('config 参数必须是 Yzh\\Config 实例', ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        $this->config = $config;
+        $this->setEnv($config->env);
         $this->rsa = Rsa::getInstance($this->config->app_private_key, $this->config->yzh_public_key);
         $this->des = new Des($this->config->app_des3_key);
     }
@@ -69,7 +73,7 @@ abstract class BaseClient
     public function setEnv($envName)
     {
         if (!in_array($envName, array(self::ENV_PROD, self::ENV_SANDBOX), true)) {
-            throw new \Exception("请选择正确的服务环境");
+            throw new ConfigException("请选择正确的服务环境", ExceptionCode::CONFIG_ERROR_WRONG_ENV);
         }
         $this->env = $envName;
         return $this;
@@ -137,7 +141,7 @@ abstract class BaseClient
     protected function send($method, $path, $request, $responseDataClass, $option = null)
     {
         if (!is_null($option) && !$option instanceof Option) {
-            throw new \Exception("参数 option 必须为 Yzh\\Request\\Option 实例");
+            throw new ConfigException("参数 option 必须为 Yzh\\Request\\Option 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
 
         if (is_null($option)) {

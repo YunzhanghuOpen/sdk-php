@@ -2,6 +2,8 @@
 
 namespace Yzh;
 
+use Yzh\Exception\ConfigException;
+use Yzh\Exception\ExceptionCode;
 
 use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
 use Yzh\Model\Apiusersign\ApiUseSignContractResponse;
@@ -20,16 +22,6 @@ class ApiUserSignServiceClient extends BaseClient
 {
     protected static $service_name = 'apiusersignservice';
 
-    public function __construct($config)
-    {
-        if(!$config instanceof Config){
-            throw new \Exception('config 参数必须是 Yzh\\Config 实例');
-        }
-        $this->config = $config;
-        $this->setEnv($config->env);
-        parent::__construct();
-    }
-
     /**
      * 获取协议预览 URL
      * @param ApiUseSignContractRequest $request
@@ -39,7 +31,7 @@ class ApiUserSignServiceClient extends BaseClient
     public function apiUseSignContract($request, $option = null)
     {
         if (!$request instanceof ApiUseSignContractRequest) {
-            throw new \Exception("Apiusersign->apiUseSignContract request 必须是 Yzh\\Model\\Apiusersign\\ApiUseSignContractRequest 实例");
+            throw new ConfigException("Apiusersign->apiUseSignContract request 必须是 Yzh\\Model\\Apiusersign\\ApiUseSignContractRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/sign/v1/user/contract', $request, "Yzh\\Model\\Apiusersign\\ApiUseSignContractResponse", $option);
     }
@@ -53,7 +45,7 @@ class ApiUserSignServiceClient extends BaseClient
     public function apiUserSign($request, $option = null)
     {
         if (!$request instanceof ApiUserSignRequest) {
-            throw new \Exception("Apiusersign->apiUserSign request 必须是 Yzh\\Model\\Apiusersign\\ApiUserSignRequest 实例");
+            throw new ConfigException("Apiusersign->apiUserSign request 必须是 Yzh\\Model\\Apiusersign\\ApiUserSignRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/sign/v1/user/sign', $request, "Yzh\\Model\\Apiusersign\\ApiUserSignResponse", $option);
     }
@@ -67,7 +59,7 @@ class ApiUserSignServiceClient extends BaseClient
     public function getApiUserSignStatus($request, $option = null)
     {
         if (!$request instanceof GetApiUserSignStatusRequest) {
-            throw new \Exception("Apiusersign->getApiUserSignStatus request 必须是 Yzh\\Model\\Apiusersign\\GetApiUserSignStatusRequest 实例");
+            throw new ConfigException("Apiusersign->getApiUserSignStatus request 必须是 Yzh\\Model\\Apiusersign\\GetApiUserSignStatusRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/sign/v1/user/status', $request, "Yzh\\Model\\Apiusersign\\GetApiUserSignStatusResponse", $option);
     }
@@ -81,7 +73,7 @@ class ApiUserSignServiceClient extends BaseClient
     public function apiUserSignRelease($request, $option = null)
     {
         if (!$request instanceof ApiUserSignReleaseRequest) {
-            throw new \Exception("Apiusersign->apiUserSignRelease request 必须是 Yzh\\Model\\Apiusersign\\ApiUserSignReleaseRequest 实例");
+            throw new ConfigException("Apiusersign->apiUserSignRelease request 必须是 Yzh\\Model\\Apiusersign\\ApiUserSignReleaseRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/sign/v1/user/release', $request, "Yzh\\Model\\Apiusersign\\ApiUserSignReleaseResponse", $option);
     }
