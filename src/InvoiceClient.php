@@ -2,6 +2,8 @@
 
 namespace Yzh;
 
+use Yzh\Exception\ConfigException;
+use Yzh\Exception\ExceptionCode;
 
 use Yzh\Model\Invoice\GetInvoiceStatRequest;
 use Yzh\Model\Invoice\GetInvoiceStatResponse;
@@ -24,16 +26,6 @@ class InvoiceClient extends BaseClient
 {
     protected static $service_name = 'invoice';
 
-    public function __construct($config)
-    {
-        if(!$config instanceof Config){
-            throw new \Exception('config 参数必须是 Yzh\\Config 实例');
-        }
-        $this->config = $config;
-        $this->setEnv($config->env);
-        parent::__construct();
-    }
-
     /**
      * 查询平台企业已开具和待开具发票金额
      * @param GetInvoiceStatRequest $request
@@ -43,7 +35,7 @@ class InvoiceClient extends BaseClient
     public function getInvoiceStat($request, $option = null)
     {
         if (!$request instanceof GetInvoiceStatRequest) {
-            throw new \Exception("Invoice->getInvoiceStat request 必须是 Yzh\\Model\\Invoice\\GetInvoiceStatRequest 实例");
+            throw new ConfigException("Invoice->getInvoiceStat request 必须是 Yzh\\Model\\Invoice\\GetInvoiceStatRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/invoice-stat', $request, "Yzh\\Model\\Invoice\\GetInvoiceStatResponse", $option);
     }
@@ -57,7 +49,7 @@ class InvoiceClient extends BaseClient
     public function getInvoiceAmount($request, $option = null)
     {
         if (!$request instanceof GetInvoiceAmountRequest) {
-            throw new \Exception("Invoice->getInvoiceAmount request 必须是 Yzh\\Model\\Invoice\\GetInvoiceAmountRequest 实例");
+            throw new ConfigException("Invoice->getInvoiceAmount request 必须是 Yzh\\Model\\Invoice\\GetInvoiceAmountRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/invoice/v2/invoice-amount', $request, "Yzh\\Model\\Invoice\\GetInvoiceAmountResponse", $option);
     }
@@ -71,7 +63,7 @@ class InvoiceClient extends BaseClient
     public function applyInvoice($request, $option = null)
     {
         if (!$request instanceof ApplyInvoiceRequest) {
-            throw new \Exception("Invoice->applyInvoice request 必须是 Yzh\\Model\\Invoice\\ApplyInvoiceRequest 实例");
+            throw new ConfigException("Invoice->applyInvoice request 必须是 Yzh\\Model\\Invoice\\ApplyInvoiceRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/invoice/v2/apply', $request, "Yzh\\Model\\Invoice\\ApplyInvoiceResponse", $option);
     }
@@ -85,7 +77,7 @@ class InvoiceClient extends BaseClient
     public function getInvoiceStatus($request, $option = null)
     {
         if (!$request instanceof GetInvoiceStatusRequest) {
-            throw new \Exception("Invoice->getInvoiceStatus request 必须是 Yzh\\Model\\Invoice\\GetInvoiceStatusRequest 实例");
+            throw new ConfigException("Invoice->getInvoiceStatus request 必须是 Yzh\\Model\\Invoice\\GetInvoiceStatusRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/invoice/v2/invoice/invoice-status', $request, "Yzh\\Model\\Invoice\\GetInvoiceStatusResponse", $option);
     }
@@ -99,7 +91,7 @@ class InvoiceClient extends BaseClient
     public function getInvoiceFile($request, $option = null)
     {
         if (!$request instanceof GetInvoiceFileRequest) {
-            throw new \Exception("Invoice->getInvoiceFile request 必须是 Yzh\\Model\\Invoice\\GetInvoiceFileRequest 实例");
+            throw new ConfigException("Invoice->getInvoiceFile request 必须是 Yzh\\Model\\Invoice\\GetInvoiceFileRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/invoice/v2/invoice/invoice-pdf', $request, "Yzh\\Model\\Invoice\\GetInvoiceFileResponse", $option);
     }
@@ -113,7 +105,7 @@ class InvoiceClient extends BaseClient
     public function sendReminderEmail($request, $option = null)
     {
         if (!$request instanceof SendReminderEmailRequest) {
-            throw new \Exception("Invoice->sendReminderEmail request 必须是 Yzh\\Model\\Invoice\\SendReminderEmailRequest 实例");
+            throw new ConfigException("Invoice->sendReminderEmail request 必须是 Yzh\\Model\\Invoice\\SendReminderEmailRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/invoice/v2/invoice/reminder/email', $request, "Yzh\\Model\\Invoice\\SendReminderEmailResponse", $option);
     }

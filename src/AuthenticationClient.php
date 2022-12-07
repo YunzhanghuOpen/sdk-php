@@ -2,6 +2,8 @@
 
 namespace Yzh;
 
+use Yzh\Exception\ConfigException;
+use Yzh\Exception\ExceptionCode;
 
 use Yzh\Model\Authentication\BankCardFourAuthVerifyRequest;
 use Yzh\Model\Authentication\BankCardFourAuthVerifyResponse;
@@ -28,16 +30,6 @@ class AuthenticationClient extends BaseClient
 {
     protected static $service_name = 'authentication';
 
-    public function __construct($config)
-    {
-        if(!$config instanceof Config){
-            throw new \Exception('config 参数必须是 Yzh\\Config 实例');
-        }
-        $this->config = $config;
-        $this->setEnv($config->env);
-        parent::__construct();
-    }
-
     /**
      * 银行卡四要素鉴权请求（下发短信验证码）
      * @param BankCardFourAuthVerifyRequest $request
@@ -47,7 +39,7 @@ class AuthenticationClient extends BaseClient
     public function bankCardFourAuthVerify($request, $option = null)
     {
         if (!$request instanceof BankCardFourAuthVerifyRequest) {
-            throw new \Exception("Authentication->bankCardFourAuthVerify request 必须是 Yzh\\Model\\Authentication\\BankCardFourAuthVerifyRequest 实例");
+            throw new ConfigException("Authentication->bankCardFourAuthVerify request 必须是 Yzh\\Model\\Authentication\\BankCardFourAuthVerifyRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/authentication/verify-request', $request, "Yzh\\Model\\Authentication\\BankCardFourAuthVerifyResponse", $option);
     }
@@ -61,7 +53,7 @@ class AuthenticationClient extends BaseClient
     public function bankCardFourAuthConfirm($request, $option = null)
     {
         if (!$request instanceof BankCardFourAuthConfirmRequest) {
-            throw new \Exception("Authentication->bankCardFourAuthConfirm request 必须是 Yzh\\Model\\Authentication\\BankCardFourAuthConfirmRequest 实例");
+            throw new ConfigException("Authentication->bankCardFourAuthConfirm request 必须是 Yzh\\Model\\Authentication\\BankCardFourAuthConfirmRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/authentication/verify-confirm', $request, "Yzh\\Model\\Authentication\\BankCardFourAuthConfirmResponse", $option);
     }
@@ -75,7 +67,7 @@ class AuthenticationClient extends BaseClient
     public function bankCardFourVerify($request, $option = null)
     {
         if (!$request instanceof BankCardFourVerifyRequest) {
-            throw new \Exception("Authentication->bankCardFourVerify request 必须是 Yzh\\Model\\Authentication\\BankCardFourVerifyRequest 实例");
+            throw new ConfigException("Authentication->bankCardFourVerify request 必须是 Yzh\\Model\\Authentication\\BankCardFourVerifyRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/authentication/verify-bankcard-four-factor', $request, "Yzh\\Model\\Authentication\\BankCardFourVerifyResponse", $option);
     }
@@ -89,7 +81,7 @@ class AuthenticationClient extends BaseClient
     public function bankCardThreeVerify($request, $option = null)
     {
         if (!$request instanceof BankCardThreeVerifyRequest) {
-            throw new \Exception("Authentication->bankCardThreeVerify request 必须是 Yzh\\Model\\Authentication\\BankCardThreeVerifyRequest 实例");
+            throw new ConfigException("Authentication->bankCardThreeVerify request 必须是 Yzh\\Model\\Authentication\\BankCardThreeVerifyRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/authentication/verify-bankcard-three-factor', $request, "Yzh\\Model\\Authentication\\BankCardThreeVerifyResponse", $option);
     }
@@ -103,7 +95,7 @@ class AuthenticationClient extends BaseClient
     public function iDCardVerify($request, $option = null)
     {
         if (!$request instanceof IDCardVerifyRequest) {
-            throw new \Exception("Authentication->iDCardVerify request 必须是 Yzh\\Model\\Authentication\\IDCardVerifyRequest 实例");
+            throw new ConfigException("Authentication->iDCardVerify request 必须是 Yzh\\Model\\Authentication\\IDCardVerifyRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/authentication/verify-id', $request, "Yzh\\Model\\Authentication\\IDCardVerifyResponse", $option);
     }
@@ -117,7 +109,7 @@ class AuthenticationClient extends BaseClient
     public function userExemptedInfo($request, $option = null)
     {
         if (!$request instanceof UserExemptedInfoRequest) {
-            throw new \Exception("Authentication->userExemptedInfo request 必须是 Yzh\\Model\\Authentication\\UserExemptedInfoRequest 实例");
+            throw new ConfigException("Authentication->userExemptedInfo request 必须是 Yzh\\Model\\Authentication\\UserExemptedInfoRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/user/exempted/info', $request, "Yzh\\Model\\Authentication\\UserExemptedInfoResponse", $option);
     }
@@ -131,7 +123,7 @@ class AuthenticationClient extends BaseClient
     public function userWhiteCheck($request, $option = null)
     {
         if (!$request instanceof UserWhiteCheckRequest) {
-            throw new \Exception("Authentication->userWhiteCheck request 必须是 Yzh\\Model\\Authentication\\UserWhiteCheckRequest 实例");
+            throw new ConfigException("Authentication->userWhiteCheck request 必须是 Yzh\\Model\\Authentication\\UserWhiteCheckRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/user/white/check', $request, "Yzh\\Model\\Authentication\\UserWhiteCheckResponse", $option);
     }
@@ -145,7 +137,7 @@ class AuthenticationClient extends BaseClient
     public function getBankCardInfo($request, $option = null)
     {
         if (!$request instanceof GetBankCardInfoRequest) {
-            throw new \Exception("Authentication->getBankCardInfo request 必须是 Yzh\\Model\\Authentication\\GetBankCardInfoRequest 实例");
+            throw new ConfigException("Authentication->getBankCardInfo request 必须是 Yzh\\Model\\Authentication\\GetBankCardInfoRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/card', $request, "Yzh\\Model\\Authentication\\GetBankCardInfoResponse", $option);
     }

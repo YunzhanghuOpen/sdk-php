@@ -2,6 +2,8 @@
 
 namespace Yzh;
 
+use Yzh\Exception\ConfigException;
+use Yzh\Exception\ExceptionCode;
 
 use Yzh\Model\Payment\CreateBankpayOrderRequest;
 use Yzh\Model\Payment\CreateBankpayOrderResponse;
@@ -32,16 +34,6 @@ class PaymentClient extends BaseClient
 {
     protected static $service_name = 'payment';
 
-    public function __construct($config)
-    {
-        if(!$config instanceof Config){
-            throw new \Exception('config 参数必须是 Yzh\\Config 实例');
-        }
-        $this->config = $config;
-        $this->setEnv($config->env);
-        parent::__construct();
-    }
-
     /**
      * 银行卡实时下单
      * @param CreateBankpayOrderRequest $request
@@ -51,7 +43,7 @@ class PaymentClient extends BaseClient
     public function createBankpayOrder($request, $option = null)
     {
         if (!$request instanceof CreateBankpayOrderRequest) {
-            throw new \Exception("Payment->createBankpayOrder request 必须是 Yzh\\Model\\Payment\\CreateBankpayOrderRequest 实例");
+            throw new ConfigException("Payment->createBankpayOrder request 必须是 Yzh\\Model\\Payment\\CreateBankpayOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/order-bankpay', $request, "Yzh\\Model\\Payment\\CreateBankpayOrderResponse", $option);
     }
@@ -65,7 +57,7 @@ class PaymentClient extends BaseClient
     public function createAlipayOrder($request, $option = null)
     {
         if (!$request instanceof CreateAlipayOrderRequest) {
-            throw new \Exception("Payment->createAlipayOrder request 必须是 Yzh\\Model\\Payment\\CreateAlipayOrderRequest 实例");
+            throw new ConfigException("Payment->createAlipayOrder request 必须是 Yzh\\Model\\Payment\\CreateAlipayOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/order-alipay', $request, "Yzh\\Model\\Payment\\CreateAlipayOrderResponse", $option);
     }
@@ -79,7 +71,7 @@ class PaymentClient extends BaseClient
     public function createWxpayOrder($request, $option = null)
     {
         if (!$request instanceof CreateWxpayOrderRequest) {
-            throw new \Exception("Payment->createWxpayOrder request 必须是 Yzh\\Model\\Payment\\CreateWxpayOrderRequest 实例");
+            throw new ConfigException("Payment->createWxpayOrder request 必须是 Yzh\\Model\\Payment\\CreateWxpayOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/order-wxpay', $request, "Yzh\\Model\\Payment\\CreateWxpayOrderResponse", $option);
     }
@@ -93,7 +85,7 @@ class PaymentClient extends BaseClient
     public function getOrder($request, $option = null)
     {
         if (!$request instanceof GetOrderRequest) {
-            throw new \Exception("Payment->getOrder request 必须是 Yzh\\Model\\Payment\\GetOrderRequest 实例");
+            throw new ConfigException("Payment->getOrder request 必须是 Yzh\\Model\\Payment\\GetOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/query-order', $request, "Yzh\\Model\\Payment\\GetOrderResponse", $option);
     }
@@ -107,7 +99,7 @@ class PaymentClient extends BaseClient
     public function getDealerVARechargeAccount($request, $option = null)
     {
         if (!$request instanceof GetDealerVARechargeAccountRequest) {
-            throw new \Exception("Payment->getDealerVARechargeAccount request 必须是 Yzh\\Model\\Payment\\GetDealerVARechargeAccountRequest 实例");
+            throw new ConfigException("Payment->getDealerVARechargeAccount request 必须是 Yzh\\Model\\Payment\\GetDealerVARechargeAccountRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/va-account', $request, "Yzh\\Model\\Payment\\GetDealerVARechargeAccountResponse", $option);
     }
@@ -121,7 +113,7 @@ class PaymentClient extends BaseClient
     public function listAccount($request, $option = null)
     {
         if (!$request instanceof ListAccountRequest) {
-            throw new \Exception("Payment->listAccount request 必须是 Yzh\\Model\\Payment\\ListAccountRequest 实例");
+            throw new ConfigException("Payment->listAccount request 必须是 Yzh\\Model\\Payment\\ListAccountRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/query-accounts', $request, "Yzh\\Model\\Payment\\ListAccountResponse", $option);
     }
@@ -135,7 +127,7 @@ class PaymentClient extends BaseClient
     public function getEleReceiptFile($request, $option = null)
     {
         if (!$request instanceof GetEleReceiptFileRequest) {
-            throw new \Exception("Payment->getEleReceiptFile request 必须是 Yzh\\Model\\Payment\\GetEleReceiptFileRequest 实例");
+            throw new ConfigException("Payment->getEleReceiptFile request 必须是 Yzh\\Model\\Payment\\GetEleReceiptFileRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/receipt/file', $request, "Yzh\\Model\\Payment\\GetEleReceiptFileResponse", $option);
     }
@@ -149,7 +141,7 @@ class PaymentClient extends BaseClient
     public function cancelOrder($request, $option = null)
     {
         if (!$request instanceof CancelOrderRequest) {
-            throw new \Exception("Payment->cancelOrder request 必须是 Yzh\\Model\\Payment\\CancelOrderRequest 实例");
+            throw new ConfigException("Payment->cancelOrder request 必须是 Yzh\\Model\\Payment\\CancelOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/order/fail', $request, "Yzh\\Model\\Payment\\CancelOrderResponse", $option);
     }
@@ -163,7 +155,7 @@ class PaymentClient extends BaseClient
     public function createBatchOrder($request, $option = null)
     {
         if (!$request instanceof CreateBatchOrderRequest) {
-            throw new \Exception("Payment->createBatchOrder request 必须是 Yzh\\Model\\Payment\\CreateBatchOrderRequest 实例");
+            throw new ConfigException("Payment->createBatchOrder request 必须是 Yzh\\Model\\Payment\\CreateBatchOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/order-batch', $request, "Yzh\\Model\\Payment\\CreateBatchOrderResponse", $option);
     }
@@ -177,7 +169,7 @@ class PaymentClient extends BaseClient
     public function confirmBatchOrder($request, $option = null)
     {
         if (!$request instanceof ConfirmBatchOrderRequest) {
-            throw new \Exception("Payment->confirmBatchOrder request 必须是 Yzh\\Model\\Payment\\ConfirmBatchOrderRequest 实例");
+            throw new ConfigException("Payment->confirmBatchOrder request 必须是 Yzh\\Model\\Payment\\ConfirmBatchOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/confirm-batch', $request, "Yzh\\Model\\Payment\\ConfirmBatchOrderResponse", $option);
     }

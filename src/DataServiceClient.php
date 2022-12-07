@@ -2,6 +2,8 @@
 
 namespace Yzh;
 
+use Yzh\Exception\ConfigException;
+use Yzh\Exception\ExceptionCode;
 
 use Yzh\Model\Dataservice\ListDailyOrderRequest;
 use Yzh\Model\Dataservice\ListDailyOrderResponse;
@@ -26,16 +28,6 @@ class DataServiceClient extends BaseClient
 {
     protected static $service_name = 'dataservice';
 
-    public function __construct($config)
-    {
-        if(!$config instanceof Config){
-            throw new \Exception('config 参数必须是 Yzh\\Config 实例');
-        }
-        $this->config = $config;
-        $this->setEnv($config->env);
-        parent::__construct();
-    }
-
     /**
      * 查询日订单数据
      * @param ListDailyOrderRequest $request
@@ -45,7 +37,7 @@ class DataServiceClient extends BaseClient
     public function listDailyOrder($request, $option = null)
     {
         if (!$request instanceof ListDailyOrderRequest) {
-            throw new \Exception("Dataservice->listDailyOrder request 必须是 Yzh\\Model\\Dataservice\\ListDailyOrderRequest 实例");
+            throw new ConfigException("Dataservice->listDailyOrder request 必须是 Yzh\\Model\\Dataservice\\ListDailyOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v1/orders', $request, "Yzh\\Model\\Dataservice\\ListDailyOrderResponse", $option);
     }
@@ -59,7 +51,7 @@ class DataServiceClient extends BaseClient
     public function getDailyOrderFile($request, $option = null)
     {
         if (!$request instanceof GetDailyOrderFileRequest) {
-            throw new \Exception("Dataservice->getDailyOrderFile request 必须是 Yzh\\Model\\Dataservice\\GetDailyOrderFileRequest 实例");
+            throw new ConfigException("Dataservice->getDailyOrderFile request 必须是 Yzh\\Model\\Dataservice\\GetDailyOrderFileRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v1/order/downloadurl', $request, "Yzh\\Model\\Dataservice\\GetDailyOrderFileResponse", $option);
     }
@@ -73,7 +65,7 @@ class DataServiceClient extends BaseClient
     public function getDailyOrderFileV2($request, $option = null)
     {
         if (!$request instanceof GetDailyOrderFileV2Request) {
-            throw new \Exception("Dataservice->getDailyOrderFileV2 request 必须是 Yzh\\Model\\Dataservice\\GetDailyOrderFileV2Request 实例");
+            throw new ConfigException("Dataservice->getDailyOrderFileV2 request 必须是 Yzh\\Model\\Dataservice\\GetDailyOrderFileV2Request 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v1/order/day/url', $request, "Yzh\\Model\\Dataservice\\GetDailyOrderFileV2Response", $option);
     }
@@ -87,7 +79,7 @@ class DataServiceClient extends BaseClient
     public function listDailyBill($request, $option = null)
     {
         if (!$request instanceof ListDailyBillRequest) {
-            throw new \Exception("Dataservice->listDailyBill request 必须是 Yzh\\Model\\Dataservice\\ListDailyBillRequest 实例");
+            throw new ConfigException("Dataservice->listDailyBill request 必须是 Yzh\\Model\\Dataservice\\ListDailyBillRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v1/bills', $request, "Yzh\\Model\\Dataservice\\ListDailyBillResponse", $option);
     }
@@ -101,7 +93,7 @@ class DataServiceClient extends BaseClient
     public function getDailyBillFileV2($request, $option = null)
     {
         if (!$request instanceof GetDailyBillFileV2Request) {
-            throw new \Exception("Dataservice->getDailyBillFileV2 request 必须是 Yzh\\Model\\Dataservice\\GetDailyBillFileV2Request 实例");
+            throw new ConfigException("Dataservice->getDailyBillFileV2 request 必须是 Yzh\\Model\\Dataservice\\GetDailyBillFileV2Request 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v2/bill/downloadurl', $request, "Yzh\\Model\\Dataservice\\GetDailyBillFileV2Response", $option);
     }
@@ -115,7 +107,7 @@ class DataServiceClient extends BaseClient
     public function listDealerRechargeRecordV2($request, $option = null)
     {
         if (!$request instanceof ListDealerRechargeRecordV2Request) {
-            throw new \Exception("Dataservice->listDealerRechargeRecordV2 request 必须是 Yzh\\Model\\Dataservice\\ListDealerRechargeRecordV2Request 实例");
+            throw new ConfigException("Dataservice->listDealerRechargeRecordV2 request 必须是 Yzh\\Model\\Dataservice\\ListDealerRechargeRecordV2Request 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v2/recharge-record', $request, "Yzh\\Model\\Dataservice\\ListDealerRechargeRecordV2Response", $option);
     }
@@ -129,7 +121,7 @@ class DataServiceClient extends BaseClient
     public function listBalanceDailyStatement($request, $option = null)
     {
         if (!$request instanceof ListBalanceDailyStatementRequest) {
-            throw new \Exception("Dataservice->listBalanceDailyStatement request 必须是 Yzh\\Model\\Dataservice\\ListBalanceDailyStatementRequest 实例");
+            throw new ConfigException("Dataservice->listBalanceDailyStatement request 必须是 Yzh\\Model\\Dataservice\\ListBalanceDailyStatementRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v1/statements-daily', $request, "Yzh\\Model\\Dataservice\\ListBalanceDailyStatementResponse", $option);
     }

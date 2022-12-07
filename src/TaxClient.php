@@ -2,6 +2,8 @@
 
 namespace Yzh;
 
+use Yzh\Exception\ConfigException;
+use Yzh\Exception\ExceptionCode;
 
 use Yzh\Model\Tax\GetTaxFileRequest;
 use Yzh\Model\Tax\GetTaxFileResponse;
@@ -16,16 +18,6 @@ class TaxClient extends BaseClient
 {
     protected static $service_name = 'tax';
 
-    public function __construct($config)
-    {
-        if(!$config instanceof Config){
-            throw new \Exception('config 参数必须是 Yzh\\Config 实例');
-        }
-        $this->config = $config;
-        $this->setEnv($config->env);
-        parent::__construct();
-    }
-
     /**
      * 下载个税扣缴明细表
      * @param GetTaxFileRequest $request
@@ -35,7 +27,7 @@ class TaxClient extends BaseClient
     public function getTaxFile($request, $option = null)
     {
         if (!$request instanceof GetTaxFileRequest) {
-            throw new \Exception("Tax->getTaxFile request 必须是 Yzh\\Model\\Tax\\GetTaxFileRequest 实例");
+            throw new ConfigException("Tax->getTaxFile request 必须是 Yzh\\Model\\Tax\\GetTaxFileRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/tax/v1/taxfile/download', $request, "Yzh\\Model\\Tax\\GetTaxFileResponse", $option);
     }
@@ -49,7 +41,7 @@ class TaxClient extends BaseClient
     public function getUserCross($request, $option = null)
     {
         if (!$request instanceof GetUserCrossRequest) {
-            throw new \Exception("Tax->getUserCross request 必须是 Yzh\\Model\\Tax\\GetUserCrossRequest 实例");
+            throw new ConfigException("Tax->getUserCross request 必须是 Yzh\\Model\\Tax\\GetUserCrossRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/tax/v1/user/cross', $request, "Yzh\\Model\\Tax\\GetUserCrossResponse", $option);
     }
