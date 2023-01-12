@@ -10,11 +10,16 @@ class Config
     public $app_dealer_id;
     public $app_broker_id;
     public $app_key;
-    public $app_des3_key;
+    public $sign_type;
     public $app_private_key;
     public $yzh_public_key;
+    public $app_des3_key;
+    public $signType;
     public $timeout;
     public $env;
+
+    const SIGN_TYPE_RSA = 'rsa';
+    const SIGN_TYPE_HMAC = 'sha256';
 
     private function __construct()
     {
@@ -48,16 +53,28 @@ class Config
             throw new ConfigException("缺少 app_des3_key", ExceptionCode::CONFIG_ERROR_LOST_KEY);
         }
 
-        if (isset($params['app_private_key']) && !empty($params['app_private_key'])) {
-            $config->app_private_key = $params['app_private_key'];
+        if (isset($params['sign_type']) && !empty($params['sign_type'])) {
+            $config->sign_type = $params['sign_type'];
         } else {
-            throw new ConfigException("缺少 app_private_key", ExceptionCode::CONFIG_ERROR_LOST_KEY);
+            $config->sign_type = self::SIGN_TYPE_RSA; // 低版本默认是RSA签名, 这里兼容低版本SDK, 减少升级成本
         }
 
-        if (isset($params['yzh_public_key']) && !empty($params['yzh_public_key'])) {
-            $config->yzh_public_key = $params['yzh_public_key'];
-        } else {
-            throw new ConfigException("缺少 yzh_public_key", ExceptionCode::CONFIG_ERROR_LOST_KEY);
+        if (!in_array($config->sign_type, array(self::SIGN_TYPE_RSA, self::SIGN_TYPE_HMAC))) {
+            throw new ConfigException("缺少 app_private_key", ExceptionCode::CONFIG_ERROR_WRONG_SIGN_TYPE);
+        }
+
+        if ($config->sign_type == self::SIGN_TYPE_RSA) {
+            if (isset($params['app_private_key']) && !empty($params['app_private_key'])) {
+                $config->app_private_key = $params['app_private_key'];
+            } else {
+                throw new ConfigException("缺少 app_private_key", ExceptionCode::CONFIG_ERROR_LOST_KEY);
+            }
+
+            if (isset($params['yzh_public_key']) && !empty($params['yzh_public_key'])) {
+                $config->yzh_public_key = $params['yzh_public_key'];
+            } else {
+                throw new ConfigException("缺少 yzh_public_key", ExceptionCode::CONFIG_ERROR_LOST_KEY);
+            }
         }
 
         if (isset($params['timeout']) && intval($params['timeout']) > 0) {

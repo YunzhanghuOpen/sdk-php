@@ -9,6 +9,7 @@ use Yzh\Model\Payment\GetOrderRequest;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
 use Yzh\PaymentClient;
 
+// 批量支付
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
@@ -26,7 +27,7 @@ try {
 }
 
 
-//批次下单
+// 批次下单
 $request = new CreateBatchOrderRequest(array(
     'batch_id' => 'batch00415111',                     // 平台企业批次号
     'dealer_id' => $test_var['app_dealer_id'],         // 平台企业 ID

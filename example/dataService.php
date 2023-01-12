@@ -13,6 +13,7 @@ use Yzh\Model\DataService\GetDailyBillFileV2Request;
 use Yzh\Model\DataService\ListDealerRechargeRecordV2Request;
 use Yzh\Model\DataService\ListBalanceDailyStatementRequest;
 
+// 对账文件获取
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
@@ -28,7 +29,6 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-// 数据接口
 
 // 查询日订单文件
 $request = new GetDailyOrderFileRequest(array(

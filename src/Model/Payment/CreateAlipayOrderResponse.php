@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseResponse;
 
 /**
- * 支付宝实时下单返回
+ * 支付宝实时支付返回
  * Class CreateAlipayOrderResponse
  */
 class CreateAlipayOrderResponse extends BaseResponse

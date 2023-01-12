@@ -21,7 +21,7 @@ use Yzh\Model\Dataservice\ListBalanceDailyStatementRequest;
 use Yzh\Model\Dataservice\ListBalanceDailyStatementResponse;
 
 /**
- * 数据接口
+ * 对账文件获取
  * Class DataServiceClient
  */
 class DataServiceClient extends BaseClient
@@ -113,7 +113,7 @@ class DataServiceClient extends BaseClient
     }
 
     /**
-     * 获取余额日账单
+     * 查询余额日账单数据
      * @param ListBalanceDailyStatementRequest $request
      * @param null $option
      * @return ListBalanceDailyStatementResponse

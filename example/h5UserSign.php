@@ -11,6 +11,7 @@ use Yzh\Model\H5usersign\GetH5UserSignStatusRequest;
 use Yzh\Model\H5usersign\H5UserReleaseRequest;
 
 
+// H5 签约
 
 
 $config = Config::newFromArray(array(
@@ -28,9 +29,8 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-// H5 签约
 
-// H5 预申请签约接口
+// H5 预申请签约
 $request = new H5UserPresignRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
@@ -43,7 +43,7 @@ $response = $h5UserSignClient->h5UserPresign($request);
 var_dump(array('response' => $response->toArray()));
 
 
-// H5 签约接口
+// H5 签约
 $request = new H5UserSignRequest(array(
 
     'token' => '7db97222-2dfb-484b-b8ac-e39a69d2aba0',      // H5 签约 token

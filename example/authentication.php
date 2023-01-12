@@ -14,6 +14,8 @@ use Yzh\Model\Authentication\UserExemptedInfoRequest;
 use Yzh\Model\Authentication\UserWhiteCheckRequest;
 use Yzh\Model\Authentication\GetBankCardInfoRequest;
 
+// 用户信息认证
+
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
@@ -29,7 +31,6 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-// 用户信息认证
 
 // 身份实名认证
 $request = new IDCardVerifyRequest(array(
@@ -101,14 +102,13 @@ var_dump(array('response' => $response->toArray()));
 
 
 // 上传免验证用户名单信息
-// 图片转 BASE64
+// 图片转 Base64
 function getuploadfileinfo($file)
 {
-    // $file = $_REQUEST['user_images'];            // web 版使用
+    // $file = $_REQUEST['user_images'];            // WEB 版使用
     if ($fp = fopen($file, "rb", 0)) {
         $gambar = fread($fp, filesize($file));
         fclose($fp);
-        // 获取图片 BASE64
         $base64 = chunk_split(base64_encode($gambar));
         return  $base64;
     }
@@ -121,7 +121,7 @@ $request = new UserExemptedInfoRequest(array(
     'comment_apply' => '申请备注信息',              // 申请备注
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
-    'user_images' => [getuploadfileinfo("/Library/WebServer/Documents/test.png")],     // 证件照片（base64）
+    'user_images' => [getuploadfileinfo("/Library/WebServer/Documents/test.png")],     // 证件照片
     'country' => 'AND',                           // 国别（地区）代码
     'birthday' => '20010809',                     // 出生日期
     'gender' => '男',                             // 性别
@@ -131,7 +131,7 @@ $request = new UserExemptedInfoRequest(array(
 $response = $authenticationClient->userExemptedInfo($request);
 var_dump(array('response' => $response->toArray()));
 
-// 查看免验证名单是否存在
+// 查看免验证用户名单是否存在
 $request = new UserWhiteCheckRequest(array(
     'real_name' => '张一',                        // 姓名
     'id_card' => 'test123456',                   // 证件号码

@@ -5,7 +5,7 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseModel;
 
 /**
- * 账单信息详情
+ * 余额账单信息详情
  * Class StatementDetail
  */
 class StatementDetail extends BaseModel

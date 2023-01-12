@@ -3,33 +3,45 @@ define('TEST_PATH', dirname(__FILE__));
 include_once(TEST_PATH . '/../vendor/autoload.php');
 include_once(TEST_PATH . '/test_var.php');
 
-use Yzh\Utils\Rsa;
-use Yzh\Utils\Des;
 use Yzh\Config;
+use Yzh\Model\Notify\NotifyRequest;
+use Yzh\NotifyClient;
 
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
     'app_key' => $test_var['app_key'],
     'app_des3_key' => $test_var['app_des3_key'],
-    'app_private_key' => $test_var['app_private_key'],
-    'yzh_public_key' => $test_var['yzh_public_key'],
+    // 'app_private_key' => $test_var['app_private_key'], // hmac 方式不需要配置商户私钥
+    // 'yzh_public_key' => $test_var['yzh_public_key'], // hmac 方式不需要配置云账户公钥
+    'sign_type' => $test_var['sign_type'],
 ));
 
-$dataString = "data=" . $_REQUEST['data'] . "&mess=" . $_REQUEST['mess'] . "&timestamp=" . $_REQUEST['timestamp'] . "&key=" . $config->app_key;
+$data = "";
+$mess = "";
+$timestamp = "";
+$sign = "";
 
-$rsa = Rsa::getInstance($config->app_private_key, $config->yzh_public_key);
-$verifyResult = $rsa->verify($dataString, $_REQUEST['sign']);       // 验签
+$notifyReq = new NotifyRequest($data, $mess, $timestamp, $sign);
+
+try {
+    $notifyClient = new NotifyClient($config);
+    $notifyClient->setEnv(NotifyClient::ENV_PROD);
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
+
+$result = $notifyClient->verifyAndDescrype($notifyReq);
+
+
 // var_dump($verifyResult);      // 打印验签结果
-if ($verifyResult == true)     // 验签成功
+if ($result->getSignRes())     // 验签成功
 {
-    $des3 = new Des($config->app_des3_key);
-    $datainfo = $des3->decrypt($_REQUEST['data']);   // 对业务数据进行解密
+    $datainfo = $result->getData();
     // 根据回调数据中的 status 做一下订单状态的判断和业务逻辑处理
     // 若有用户钱包体系，则在下单同步返回成功时，将用户钱包进行相应金额的扣减冻结
     $tempData = json_decode($datainfo, true);
     $status = $tempData['data']['status'];
-
     switch ($status) {
         case "1":
             // 已支付（对于支付宝和微信支付是最终状态，对于银行卡大部分情况是终态，小概率会出现“退汇现象”，状态由“成功”变为“退汇”）

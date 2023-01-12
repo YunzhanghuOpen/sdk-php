@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
- * 银行卡实时下单请求
+ * 银行卡实时支付请求
  * Class CreateBankpayOrderRequest
  */
 class CreateBankpayOrderRequest extends BaseRequest

@@ -5,7 +5,7 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseResponse;
 
 /**
- * 查询可开票额度和开票信息返回
+ * 查询可开具发票额度和发票开具信息返回
  * Class GetInvoiceAmountResponse
  */
 class GetInvoiceAmountResponse extends BaseResponse

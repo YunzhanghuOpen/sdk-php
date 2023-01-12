@@ -78,6 +78,12 @@ class DealerOrderInfo extends BaseModel
     public $status;
 
     /**
+     * 订单状态码描述
+     * @var string
+     */
+    public $status_message;
+
+    /**
      * 订单详情
      * @var string
      */

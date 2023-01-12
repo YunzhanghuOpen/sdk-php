@@ -5,7 +5,7 @@ namespace Yzh\Model\H5usersign;
 use Yzh\Model\BaseResponse;
 
 /**
- * H5 预申请签约接口返回
+ * 预申请签约返回
  * Class H5UserPresignResponse
  */
 class H5UserPresignResponse extends BaseResponse
@@ -22,4 +22,10 @@ class H5UserPresignResponse extends BaseResponse
      * @var string
      */
     public $token;
+
+    /**
+     * 签约状态
+     * @var int32
+     */
+    public $status;
 }

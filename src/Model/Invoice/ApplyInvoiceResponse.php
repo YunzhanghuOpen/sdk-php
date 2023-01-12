@@ -5,7 +5,7 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseResponse;
 
 /**
- * 开票申请返回
+ * 发票开具申请返回
  * Class ApplyInvoiceResponse
  */
 class ApplyInvoiceResponse extends BaseResponse

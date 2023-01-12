@@ -5,7 +5,7 @@ namespace Yzh\Model\H5usersign;
 use Yzh\Model\BaseResponse;
 
 /**
- * 用户解约返回
+ * 用户解约（测试账号专用接口）返回
  * Class H5UserReleaseResponse
  */
 class H5UserReleaseResponse extends BaseResponse

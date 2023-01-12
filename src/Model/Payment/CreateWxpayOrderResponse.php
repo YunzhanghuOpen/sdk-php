@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseResponse;
 
 /**
- * 微信实时下单返回
+ * 微信实时支付返回
  * Class CreateWxpayOrderResponse
  */
 class CreateWxpayOrderResponse extends BaseResponse

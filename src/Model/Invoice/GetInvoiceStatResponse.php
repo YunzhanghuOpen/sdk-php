@@ -24,13 +24,19 @@ class GetInvoiceStatResponse extends BaseResponse
     public $broker_id;
 
     /**
-     * 已开具发票金额
+     * 已开发票金额
      * @var string
      */
     public $invoiced;
 
     /**
-     * 待开具发票金额
+     * 开票中发票金额
+     * @var string
+     */
+    public $invoicing;
+
+    /**
+     * 待开发票金额
      * @var string
      */
     public $not_invoiced;

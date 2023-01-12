@@ -5,7 +5,7 @@ namespace Yzh\Model\H5usersign;
 use Yzh\Model\BaseRequest;
 
 /**
- * H5 签约接口请求
+ * 申请签约请求
  * Class H5UserSignRequest
  */
 class H5UserSignRequest extends BaseRequest

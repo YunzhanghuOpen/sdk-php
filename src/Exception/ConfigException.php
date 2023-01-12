@@ -2,7 +2,7 @@
 
 namespace Yzh\Exception;
 
-class ConfigException extends \Exception
+class ConfigException extends BaseException
 {
     public function __construct($message = "", $code = 0)
     {

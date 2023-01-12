@@ -12,6 +12,7 @@ use Yzh\Model\Invoice\GetInvoiceStatusRequest;
 use Yzh\Model\Invoice\GetInvoiceFileRequest;
 use Yzh\Model\Invoice\SendReminderEmailRequest;
 
+// 发票开具
 
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
@@ -30,7 +31,6 @@ try {
 }
 
 
-// 发票
 // 查询平台企业已开具和待开具发票金额
 $request = new GetInvoiceStatRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],   // 平台企业 ID

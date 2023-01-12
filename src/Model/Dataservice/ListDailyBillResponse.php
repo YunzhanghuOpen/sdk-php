@@ -21,5 +21,5 @@ class ListDailyBillResponse extends BaseResponse
      * 条目信息
      * @var DealerBillInfo[]
      */
-    public $bills;
+    public $list;
 }

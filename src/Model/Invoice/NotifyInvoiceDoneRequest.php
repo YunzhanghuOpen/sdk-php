@@ -5,14 +5,14 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 开票完成通知
+ * 发票开具完成通知
  * Class NotifyInvoiceDoneRequest
  */
 class NotifyInvoiceDoneRequest extends BaseRequest
 {
 
     /**
-     * 发票申请编号
+     * 发票申请单 ID
      * @var string
      */
     public $application_id;
@@ -31,7 +31,7 @@ class NotifyInvoiceDoneRequest extends BaseRequest
 
     /**
      * 发票张数
-     * @var int64
+     * @var int32
      */
     public $count;
 

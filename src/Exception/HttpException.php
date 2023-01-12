@@ -2,6 +2,6 @@
 
 namespace Yzh\Exception;
 
-class HttpException extends \Exception
+class HttpException extends BaseException
 {
 }

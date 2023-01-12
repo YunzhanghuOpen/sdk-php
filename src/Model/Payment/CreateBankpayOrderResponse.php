@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseResponse;
 
 /**
- * 银行卡实时下单返回
+ * 银行卡实时支付返回
  * Class CreateBankpayOrderResponse
  */
 class CreateBankpayOrderResponse extends BaseResponse

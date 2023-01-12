@@ -19,7 +19,7 @@ class GetApiUserSignStatusResponse extends BaseResponse
 
     /**
      * 用户签约状态
-     * @var int32
+     * @var string
      */
     public $status;
 }

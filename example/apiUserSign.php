@@ -10,8 +10,7 @@ use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
 use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
 use Yzh\Model\Apiusersign\GetApiUserSignStatusRequest;
 
-
-
+// API 签约
 
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
@@ -28,7 +27,6 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-// API 签约
 
 // 获取协议预览 URL
 $request = new ApiUseSignContractRequest(array(

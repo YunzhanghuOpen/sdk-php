@@ -14,6 +14,7 @@ use Yzh\PaymentClient;
 use Yzh\Model\Payment\CreateAlipayOrderRequest;
 use Yzh\Model\Payment\GetOrderRequest;
 
+// 实时支付
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],

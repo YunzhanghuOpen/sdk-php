@@ -5,7 +5,7 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseResponse;
 
 /**
- * 查询开票申请状态返回
+ * 查询发票开具申请状态返回
  * Class GetInvoiceStatusResponse
  */
 class GetInvoiceStatusResponse extends BaseResponse
