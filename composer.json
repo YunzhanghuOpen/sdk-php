@@ -1,6 +1,6 @@
 {
     "name": "yunzhanghuopen/sdk-php",
-    "description": "sdk for yunzhanghu",
+    "description": "云账户综合服务平台官方 SDK for PHP，支持 PHP 5.4 及以上版本\nCopyright © 2013 - 2023 云账户技术（天津）有限公司\n云账户开放平台：https://open.yunzhanghu.com/",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -9,8 +9,8 @@
     },
     "authors": [
         {
-            "name": "guojunzhou",
-            "email": "junzhou.guo@yunzhanghu.com"
+            "name": "yunzhanghu",
+            "email": "techsupport@yunzhanghu.com"
         }
     ],
     "require": {

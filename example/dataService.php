@@ -91,7 +91,8 @@ var_dump(array('response' => $response->toArray()));
 
 // 查询余额日账单数据
 $request = new ListBalanceDailyStatementRequest(array(
-    'statement_date' => '2022-04-14',            // 查询日期
+    'statement_date' => '2023-01-12',            // 查询日期
 ));
+$request->setRequestID('testreq0001');
 $response = $dataServiceClient->listBalanceDailyStatement($request);
 var_dump(array('response' => $response->toArray()));

@@ -14,7 +14,6 @@ class Config
     public $app_private_key;
     public $yzh_public_key;
     public $app_des3_key;
-    public $signType;
     public $timeout;
     public $env;
 
@@ -56,7 +55,7 @@ class Config
         if (isset($params['sign_type']) && !empty($params['sign_type'])) {
             $config->sign_type = $params['sign_type'];
         } else {
-            $config->sign_type = self::SIGN_TYPE_RSA; // 低版本默认是RSA签名, 这里兼容低版本SDK, 减少升级成本
+            $config->sign_type = self::SIGN_TYPE_RSA; // 默认是 RSA 签名
         }
 
         if (!in_array($config->sign_type, array(self::SIGN_TYPE_RSA, self::SIGN_TYPE_HMAC))) {

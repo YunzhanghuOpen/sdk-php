@@ -9,7 +9,7 @@ use Yzh\BizlicXjjH5ServiceClient;
 use Yzh\Model\Bizlicxjjh5\H5EcoCityAicStatusRequest;
 use Yzh\Model\Bizlicxjjh5\H5GetStartUrlRequest;
 
-// 个体工商户注册新经济（H5）
+// 个体工商户注册（云账户新经济 H5）
 
 
 $config = Config::newFromArray(array(
@@ -32,7 +32,7 @@ try {
 $request = new H5GetStartUrlRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],      // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
-    'dealer_user_id' => 'test03',                    // 平台企业端的用户 ID，在平台企业系统唯一且不变
+    'dealer_user_id' => 'test03',                   // 平台企业端的用户 ID，在平台企业系统唯一且不变
     'client_type' => 1,                             // 客户端类型
     'notify_url' => 'http://localhost',             // 异步通知 URL
     'color' => '#007AFF',                           // H5 页面主体颜色
@@ -48,7 +48,7 @@ $request = new H5EcoCityAicStatusRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],      // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
     'open_id' => '',                                // 用户唯一标识
-    'dealer_user_id' => 'test03',                    // 平台企业端的用户 ID，在平台企业系统唯一且不变
+    'dealer_user_id' => 'test03',                   // 平台企业端的用户 ID，在平台企业系统唯一且不变
     'real_name' => '张三',                           // 姓名
     'id_card' => '120110199901112222',              // 身份证号码
 

@@ -36,7 +36,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 ### 3、配置密钥
 
-登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择"业务中心 > 业务管理 > 对接信息"，单击页面右上角的"编辑"，配置平台企业公钥。  
+登录【[云账户综合服务平台](https://service.yunzhanghu.com/)】，选择"业务中心 > 业务管理 > 对接信息"，单击页面右上角的"编辑"，配置平台企业公钥。  
 ![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/dujiexinxi-2.png?isAttachment=false&fileID=84e3cd1684a61c1e32eb0e7b7f43390cd053206b&signature=mqW8Zbk7h3gYXfzjR99pK%2B0pgVLcLly3VjBB2KsqDvQ%3D)
 
 ## 安装 PHP SDK  
@@ -59,7 +59,7 @@ composer require yunzhanghuopen/sdk-php
 
 - [用户信息验证](example/authentication.php )   
 - [H5 签约](example/h5UserSign.php ) or [API 签约](example/apiUserSign.php )  
-- [个体工商户注册新经济（H5）](example/bizlicXjjH5.php ) or [个体工商户注册新经济（H5+API）](example/bizlicXjjH5Api.php )  
+- [个体工商户注册（云账户新经济 H5）](example/bizlicXjjH5.php ) or [个体工商户注册（云账户新经济H5+API）](example/bizlicXjjH5Api.php )  
 - [实时支付](example/payment.php ) 
 - [异步通知](example/notify.php )     
 - [对账文件获取](example/dataService.php )    
@@ -94,7 +94,7 @@ composer require yunzhanghuopen/sdk-php
    }
    
    
-   //银行卡实时下单
+   // 银行卡实时下单
    $request = new CreateBankpayOrderRequest(array(
        'order_id' => 'bank12345678901111',                
        'dealer_id' => $test_var['app_dealer_id'],        

@@ -15,7 +15,7 @@ use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
 use Yzh\Model\Apiusersign\ApiUserSignReleaseResponse;
 
 /**
- * API签约
+ * API 签约
  * Class ApiUserSignServiceClient
  */
 class ApiUserSignServiceClient extends BaseClient

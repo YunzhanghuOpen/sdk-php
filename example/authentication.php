@@ -102,7 +102,7 @@ var_dump(array('response' => $response->toArray()));
 
 
 // 上传免验证用户名单信息
-// 图片转 Base64
+// 图片转 BASE64
 function getuploadfileinfo($file)
 {
     // $file = $_REQUEST['user_images'];            // WEB 版使用

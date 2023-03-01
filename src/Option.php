@@ -26,7 +26,7 @@ final class Option
 
 
     /**
-     * 自定义的header参数
+     * 自定义的 Header 参数
      * @var
      */
     protected $headers;
