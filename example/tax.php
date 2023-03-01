@@ -18,6 +18,8 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
+    'sign_type'=>$test_var['sign_type']
+
 ));
 
 try {
