@@ -108,6 +108,7 @@ composer require yunzhanghuopen/sdk-php
        'notify_url' => 'http://localhost/php-sdk-2/test/callback.php',   
        'project_id' => ''              
    ));
+  // $request->setRequestID("reqtest001");   // 自定义 request-id
    $response = $paymentClient->createBankpayOrder($request);
    var_dump(array('request'=>$request, 'response'=>$response));
    
