@@ -37,7 +37,7 @@ try {
 
 // 银行卡实时下单
 $request = new CreateBankpayOrderRequest(array(
-    'order_id' => 'bank202303011',                // 平台企业订单号，由平台企业保持唯⼀性 ，之多包含 64 个英⽂字符
+    'order_id' => 'bank202303011',                     // 平台企业订单号，由平台企业保持唯⼀性 ，至多支持 64 个英⽂字符
     'dealer_id' => $test_var['app_dealer_id'],         // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],         // 综合服务主体 ID
     'real_name' => '张一',                              // 银⾏开户姓名
@@ -45,7 +45,7 @@ $request = new CreateBankpayOrderRequest(array(
     'id_card' => '110101012345678910',                 // 身份证号码（必填，报税时使用）
     'phone_no' => '18100000000',                       // ⼿机号
     'pay' => '0.1',                                    // 订单⾦额（参数类型是 string 类型，单位为元，支持两位小数，必填）
-    'pay_remark' => '测试订单',                          // 订单备注（选填，至多包含 20 个字符且不支持特殊字符，' " & | @% ( ) - : # + / < > ¥ \ ,）
+    'pay_remark' => '测试订单',                          // 订单备注（选填，至多支持 20 个字符且不支持特殊字符，' " & | @% ( ) - : # + / < > ¥ \ ,）
     'notify_url' => 'http://localhost/php-sdk-2/test/callback.php',  // 回调地址（选填，长度不超过 200 个字符）
     'project_id' => ''                                 // 项目ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
 ));
@@ -69,7 +69,7 @@ if ($respdata['response']['code'] == '0000') {
 //
 // 支付宝实时接口
 $request = new CreateAlipayOrderRequest(array(
-    'order_id' => 'Ali12345678910',                // 平台企业订单号，由平台企业保持唯⼀性 ，至多包含 64 个英⽂字符
+    'order_id' => 'Ali12345678910',                // 平台企业订单号，由平台企业保持唯⼀性 ，至多支持 64 个英⽂字符
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
     'real_name' => '张一',                          // 姓名
