@@ -7,13 +7,13 @@ use Yzh\Utils\MessString;
 
 abstract class BaseRequest
 {
-    protected $requestID;
+    protected $_requestID;
 
 
     public function getRequestID()
     {
-        if (isset($this->requestID) && !empty($this->requestID)) {
-            return $this->requestID;
+        if (isset($this->_requestID) && !empty($this->_requestID)) {
+            return $this->_requestID;
         }
 
         return MessString::rand(32);
@@ -25,7 +25,7 @@ abstract class BaseRequest
      */
     public function setRequestID($requestID)
     {
-        $this->requestID = $requestID;
+        $this->_requestID = $requestID;
     }
 
 
@@ -33,8 +33,13 @@ abstract class BaseRequest
     {
         $requestData = array();
         foreach (array_keys(get_object_vars($this)) as $property) {
+            if ($property == '_requestID') {
+                continue;
+            }
+
             $requestData[$property] = $this->{$property};
         }
+
         return $requestData;
     }
 }
