@@ -57,7 +57,7 @@ class H5GetStartUrlRequest extends BaseRequest
      * H5 页面 Title
      * @var int32
      */
-    public $custom_title;
+    public $customer_title;
 
 
     public function __construct($params = array())

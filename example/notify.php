@@ -12,18 +12,17 @@ $config = Config::newFromArray(array(
     'app_broker_id' => $test_var['app_broker_id'],
     'app_key' => $test_var['app_key'],
     'app_des3_key' => $test_var['app_des3_key'],
-    // 'app_private_key' => $test_var['app_private_key'], // hmac 方式不需要配置商户私钥
-    // 'yzh_public_key' => $test_var['yzh_public_key'], // hmac 方式不需要配置云账户公钥
+    'app_private_key' => $test_var['app_private_key'],
+    'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type'],
 ));
 
-$data = "";
-$mess = "";
-$timestamp = "";
-$sign = "";
+$data = $_POST['data'];
+$mess = $_POST['mess'];
+$timestamp = $_POST['timestamp'];
+$sign = $_POST['sign'];
 
-$notifyReq = new NotifyRequest($data, $mess, $timestamp, $sign);
-
+$notifyReq = new NotifyRequest($data, $mess, $timestamp, $sign) ;
 try {
     $notifyClient = new NotifyClient($config);
     $notifyClient->setEnv(NotifyClient::ENV_PROD);
@@ -33,16 +32,20 @@ try {
 
 $result = $notifyClient->verifyAndDescrype($notifyReq);
 
-
-// var_dump($verifyResult);      // 打印验签结果
 if ($result->getSignRes())     // 验签成功
 {
     $datainfo = $result->getData();
-    // 根据回调数据中的 status 做一下订单状态的判断和业务逻辑处理
-    // 若有用户钱包体系，则在下单同步返回成功时，将用户钱包进行相应金额的扣减冻结
+    // TODO：根据返回的数据详情进行业务逻辑处理
+    // 以用户钱包自主提现后订单异步回调举例
     $tempData = json_decode($datainfo, true);
+    var_dump($tempData);
+    // 在下单同步返回成功时，将用户钱包进行相应金额的扣减冻结，根据异步回调数据中的 status 做订单状态的判断和进一步业务逻辑处理
     $status = $tempData['data']['status'];
     switch ($status) {
+        case "-1":
+            // 已无效（最终状态，批次下单接口响应成功后，若在调用批次确认接口前，在云账户综合服务平台进行批次撒销操作，撤销后该批次下订单的状态为“已无效”）
+            // TODO 根据业务订单状态，进行业务逻辑处理
+            break;
         case "1":
             // 已支付（对于支付宝和微信支付是最终状态，对于银行卡大部分情况是终态，小概率会出现“退汇现象”，状态由“成功”变为“退汇”）
             // TODO 更新业务订单状态,提示用户提现成功
@@ -65,4 +68,4 @@ if ($result->getSignRes())     // 验签成功
             break;
     }
 }
-echo "success";       // 回写success，终止本次回调
+echo "success";       // 回写 success，终止本次回调

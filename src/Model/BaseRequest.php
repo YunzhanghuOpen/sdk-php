@@ -20,8 +20,8 @@ abstract class BaseRequest
     }
 
     /**
-     * 自定义请求ID
-     * @param string $requestID 请求ID
+     * 自定义请求 ID
+     * @param string $requestID 请求 ID
      */
     public function setRequestID($requestID)
     {
