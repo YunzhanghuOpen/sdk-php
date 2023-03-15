@@ -95,7 +95,7 @@ class InvoiceClient extends BaseClient
         if (!$request instanceof GetInvoiceInformationRequest) {
             throw new ConfigException("Invoice->getInvoiceInformation request 必须是 Yzh\\Model\\Invoice\\GetInvoiceInformationRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
-        return $this->send('POST', '/api/invoice/v2/invoice-information', $request, "Yzh\\Model\\Invoice\\GetInvoiceInformationResponse", $option);
+        return $this->send('POST', '/api/invoice/v2/invoice-face-information', $request, "Yzh\\Model\\Invoice\\GetInvoiceInformationResponse", $option);
     }
 
     /**
