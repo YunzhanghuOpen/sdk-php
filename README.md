@@ -1,6 +1,6 @@
 # 云账户 SDK for PHP
 欢迎使用云账户 SDK for PHP。    
-云账户是一家专注为平台企业和新就业形态劳动者提供高质量灵活就业服务的新时代企业。云账户 SDK 对云账户综合服务平台API接口进行封装，让您不必担心过多参数请求，帮助您快速接入到云账户综合服务平台。云账户 SDK for PHP 为您提供签约、下单、回调、数据查询等功能，帮助您完成与云账户综合服务平台的接口对接及业务开发。           
+云账户是一家专注为平台企业和新就业形态劳动者提供高质量灵活就业服务的新时代企业。云账户 SDK 对云账户综合服务平台 API 接口进行封装，让您不必担心过多参数请求，帮助您快速接入到云账户综合服务平台。云账户 SDK for PHP 为您提供签约、支付、回调、数据查询等功能，帮助您完成与云账户综合服务平台的接口对接及业务开发。           
 如果您在使用过程中遇到任何问题，请在当前 GitHub 提交 Issues，或发送邮件至技术支持组 [techsupport@yunzhanghu.com](mailto:techsupport@yunzhanghu.com)。
 
 ## 环境要求
@@ -36,7 +36,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 ### 3、配置密钥
 
-登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择"业务中心 > 业务管理 > 对接信息"，单击页面右上角的"编辑"，配置平台企业公钥。  
+登录【[云账户综合服务平台](https://service.yunzhanghu.com/)】，选择"业务中心 > 业务管理 > 对接信息"，单击页面右上角的"编辑"，配置平台企业公钥。  
 ![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/dujiexinxi-2.png?isAttachment=false&fileID=84e3cd1684a61c1e32eb0e7b7f43390cd053206b&signature=mqW8Zbk7h3gYXfzjR99pK%2B0pgVLcLly3VjBB2KsqDvQ%3D)
 
 ## 安装 PHP SDK  
@@ -58,8 +58,8 @@ composer require yunzhanghuopen/sdk-php
 ### 示例功能列表
 
 - [用户信息验证](example/authentication.php )   
-- [H5 签约](example/h5UserSign.php ) or [API 签约](example/apiUserSign.php )  
-- [个体工商户注册新经济（H5）](example/bizlicXjjH5.php ) or [个体工商户注册新经济（H5+API）](example/bizlicXjjH5Api.php )  
+- [用户签约（H5 签约）](example/h5UserSign.php ) or [用户签约（API 签约）](example/apiUserSign.php )  
+- [个体工商户注册（云账户新经济 H5）](example/bizlicXjjH5.php ) or [个体工商户注册（云账户新经济H5+API）](example/bizlicXjjH5Api.php )  
 - [实时支付](example/payment.php ) 
 - [异步通知](example/notify.php )     
 - [对账文件获取](example/dataService.php )    
@@ -94,7 +94,7 @@ composer require yunzhanghuopen/sdk-php
    }
    
    
-   //银行卡实时下单
+   // 银行卡实时支付
    $request = new CreateBankpayOrderRequest(array(
        'order_id' => 'bank12345678901111',                
        'dealer_id' => $test_var['app_dealer_id'],        
@@ -108,6 +108,7 @@ composer require yunzhanghuopen/sdk-php
        'notify_url' => 'http://localhost/php-sdk-2/test/callback.php',   
        'project_id' => ''              
    ));
+  // $request->setRequestID("reqtest001");   // 自定义 request-id
    $response = $paymentClient->createBankpayOrder($request);
    var_dump(array('request'=>$request, 'response'=>$response));
    

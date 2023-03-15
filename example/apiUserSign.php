@@ -10,7 +10,7 @@ use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
 use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
 use Yzh\Model\Apiusersign\GetApiUserSignStatusRequest;
 
-// API 签约
+// 用户签约（API 签约）
 
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
@@ -19,6 +19,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
+    'sign_type'=>$test_var['sign_type']
 ));
 
 try {

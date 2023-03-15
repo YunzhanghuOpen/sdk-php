@@ -11,7 +11,7 @@ use Yzh\Model\H5usersign\GetH5UserSignStatusRequest;
 use Yzh\Model\H5usersign\H5UserReleaseRequest;
 
 
-// H5 签约
+// 用户签约（H5 签约）
 
 
 $config = Config::newFromArray(array(
@@ -21,6 +21,8 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
+    'sign_type'=>$test_var['sign_type']
+
 ));
 
 try {

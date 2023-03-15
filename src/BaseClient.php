@@ -41,12 +41,8 @@ class BaseClient
             'bizlicxjjh5apiservice' => 'https://api-aic.yunzhanghu.com',    // 个体工商户注册服务 (云账户新经济 H5+API）接口域名
             'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',       // 个体工商户注册服务（云账户新经济 H5）接口域名
             'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
-            'bizlicxjjh5apiservice' => 'https://api-aic.yunzhanghu.com',         // 个体工商户注册服务新经济 (H5+API)接口域名
-            'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',         // 个体工商户注册服务新经济（H5）接口域名
             'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
-            'dataservice' => 'https://api-service.yunzhanghu.com',    // 数据服务接口域名
-            'apiusersignservice' => 'https://api-service.yunzhanghu.com',    // API 签约接口域名
-            'h5usersignservice' => 'https://api-service.yunzhanghu.com',    // H5 签约接口域名
+
 
 
         ),
@@ -63,9 +59,6 @@ class BaseClient
     );
 
     protected $rsa;
-    /**
-     * @var \Yzh\Utils\HMAc
-     */
     protected $hmac;
     protected $des;
     protected $app_key;
@@ -230,7 +223,7 @@ class BaseClient
             'mess' => $mess,
             'timestamp' => $nowts,
             'sign' => $sign,
-            'sign_type' => 'rsa',
+            'sign_type' => $this->sign_type,
         );
     }
 }

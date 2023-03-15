@@ -23,6 +23,8 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
+    'sign_type'=>$test_var['sign_type']
+
 ));
 
 try {
@@ -102,7 +104,7 @@ var_dump(array('response' => $response->toArray()));
 
 
 // 上传免验证用户名单信息
-// 图片转 Base64
+// 图片转 BASE64
 function getuploadfileinfo($file)
 {
     // $file = $_REQUEST['user_images'];            // WEB 版使用
