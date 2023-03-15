@@ -11,7 +11,7 @@ use Yzh\Model\H5usersign\GetH5UserSignStatusRequest;
 use Yzh\Model\H5usersign\H5UserReleaseRequest;
 
 
-// H5 签约
+// 用户签约（H5 签约）
 
 
 $config = Config::newFromArray(array(
