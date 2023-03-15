@@ -11,6 +11,8 @@ use Yzh\Model\Invoice\ApplyInvoiceRequest;
 use Yzh\Model\Invoice\GetInvoiceStatusRequest;
 use Yzh\Model\Invoice\GetInvoiceFileRequest;
 use Yzh\Model\Invoice\SendReminderEmailRequest;
+use Yzh\Model\Invoice\GetInvoiceInformationRequest;
+
 
 // 发票开具
 
@@ -91,4 +93,13 @@ $request = new SendReminderEmailRequest(array(
     'application_id' => '',                      // 发票申请单 ID
 ));
 $response = $invoiceClient->sendReminderEmail($request);
+var_dump(array('response' => $response->toArray()));
+
+// 查询发票信息
+$request = new GetInvoiceInformationRequest(array(
+
+    'invoice_apply_id' => '',                     // 发票申请编号
+    'application_id' => '423721',                 // 发票申请单 ID
+));
+$response = $invoiceClient->getInvoiceInformation($request);
 var_dump(array('response' => $response->toArray()));
