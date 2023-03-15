@@ -10,7 +10,7 @@ use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
 use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
 use Yzh\Model\Apiusersign\GetApiUserSignStatusRequest;
 
-// API 签约
+// 用户签约（API 签约）
 
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
