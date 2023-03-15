@@ -58,7 +58,7 @@ composer require yunzhanghuopen/sdk-php
 ### 示例功能列表
 
 - [用户信息验证](example/authentication.php )   
-- [H5 签约](example/h5UserSign.php ) or [API 签约](example/apiUserSign.php )  
+- [用户签约（H5 签约）](example/h5UserSign.php ) or [用户签约（API 签约）](example/apiUserSign.php )  
 - [个体工商户注册（云账户新经济 H5）](example/bizlicXjjH5.php ) or [个体工商户注册（云账户新经济H5+API）](example/bizlicXjjH5Api.php )  
 - [实时支付](example/payment.php ) 
 - [异步通知](example/notify.php )     
