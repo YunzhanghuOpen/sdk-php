@@ -1,6 +1,6 @@
 # 云账户 SDK for PHP
 欢迎使用云账户 SDK for PHP。    
-云账户是一家专注为平台企业和新就业形态劳动者提供高质量灵活就业服务的新时代企业。云账户 SDK 对云账户综合服务平台 API 接口进行封装，让您不必担心过多参数请求，帮助您快速接入到云账户综合服务平台。云账户 SDK for PHP 为您提供签约、支付、回调、数据查询等功能，帮助您完成与云账户综合服务平台的接口对接及业务开发。           
+云账户是一家专注为平台企业和新就业形态劳动者提供高质量灵活就业服务的新时代企业。云账户 SDK 对云账户综合服务平台 API 接口进行封装，帮助您快速接入到云账户综合服务平台。云账户 SDK for PHP 为您提供签约、支付、回调、数据查询等功能，帮助您完成与云账户综合服务平台的接口对接及业务开发。           
 如果您在使用过程中遇到任何问题，请在当前 GitHub 提交 Issues，或发送邮件至技术支持组 [techsupport@yunzhanghu.com](mailto:techsupport@yunzhanghu.com)。
 
 ## 环境要求
@@ -32,7 +32,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 - 方式二：使用工具生成
 
-请联系云账户技术支持获取 RSA 密钥生成工具 > 登录【[云账户开放平台](https://open.yunzhanghu.com)】，选择“开发工具下载 > 开发助手 > 工具下载”，下载安装“云账户开放平台开发助手”
+登录【[云账户开放平台](https://open.yunzhanghu.com)】，选择“开发工具下载 > 开发助手 > 工具下载”，下载安装“云账户开放平台开发助手”。
 
 ### 3、配置密钥
 
@@ -108,7 +108,8 @@ composer require yunzhanghuopen/sdk-php
        'notify_url' => 'http://localhost/php-sdk-2/test/callback.php',   
        'project_id' => ''              
    ));
-  // $request->setRequestID("reqtest001");   // 自定义 request-id
+   // 可自定义 Header 中的 request-id，建议将 request-id 记录在日志中
+   // $request->setRequestID("reqtest001");   
    $response = $paymentClient->createBankpayOrder($request);
    var_dump(array('request'=>$request, 'response'=>$response));
    
