@@ -6,9 +6,9 @@ use Yzh\Model\BaseRequest;
 
 /**
  * 获取协议预览 URL 请求
- * Class ApiUseSignContractRequest
+ * Class ApiUserSignContractRequest
  */
-class ApiUseSignContractRequest extends BaseRequest
+class ApiUserSignContractRequest extends BaseRequest
 {
 
     /**

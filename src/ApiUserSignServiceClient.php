@@ -5,8 +5,8 @@ namespace Yzh;
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
 
-use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
-use Yzh\Model\Apiusersign\ApiUseSignContractResponse;
+use Yzh\Model\Apiusersign\ApiUserSignContractRequest;
+use Yzh\Model\Apiusersign\ApiUserSignContractResponse;
 use Yzh\Model\Apiusersign\ApiUserSignRequest;
 use Yzh\Model\Apiusersign\ApiUserSignResponse;
 use Yzh\Model\Apiusersign\GetApiUserSignStatusRequest;
@@ -15,7 +15,7 @@ use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
 use Yzh\Model\Apiusersign\ApiUserSignReleaseResponse;
 
 /**
- * API 签约
+ * API签约
  * Class ApiUserSignServiceClient
  */
 class ApiUserSignServiceClient extends BaseClient
@@ -24,16 +24,16 @@ class ApiUserSignServiceClient extends BaseClient
 
     /**
      * 获取协议预览 URL
-     * @param ApiUseSignContractRequest $request
+     * @param ApiUserSignContractRequest $request
      * @param null $option
-     * @return ApiUseSignContractResponse
+     * @return ApiUserSignContractResponse
      */
-    public function apiUseSignContract($request, $option = null)
+    public function apiUserSignContract($request, $option = null)
     {
-        if (!$request instanceof ApiUseSignContractRequest) {
-            throw new ConfigException("Apiusersign->apiUseSignContract request 必须是 Yzh\\Model\\Apiusersign\\ApiUseSignContractRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        if (!$request instanceof ApiUserSignContractRequest) {
+            throw new ConfigException("Apiusersign->apiUserSignContract request 必须是 Yzh\\Model\\Apiusersign\\ApiUserSignContractRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
-        return $this->send('GET', '/api/sign/v1/user/contract', $request, "Yzh\\Model\\Apiusersign\\ApiUseSignContractResponse", $option);
+        return $this->send('GET', '/api/sign/v1/user/contract', $request, "Yzh\\Model\\Apiusersign\\ApiUserSignContractResponse", $option);
     }
 
     /**

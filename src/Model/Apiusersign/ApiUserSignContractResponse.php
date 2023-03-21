@@ -6,9 +6,9 @@ use Yzh\Model\BaseResponse;
 
 /**
  * 获取协议预览 URL 返回
- * Class ApiUseSignContractResponse
+ * Class ApiUserSignContractResponse
  */
-class ApiUseSignContractResponse extends BaseResponse
+class ApiUserSignContractResponse extends BaseResponse
 {
 
     /**
