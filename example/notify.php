@@ -38,7 +38,7 @@ if ($result->getSignRes())     // 验签成功
     // TODO：根据返回的数据详情进行业务逻辑处理
     // 以用户钱包自主提现后订单异步回调举例
     $tempData = json_decode($datainfo, true);
-    var_dump($tempData);
+    // var_dump($tempData);
     // 在下单同步返回成功时，将用户钱包进行相应金额的扣减冻结，根据异步回调数据中的 status 做订单状态的判断和进一步业务逻辑处理
     $status = $tempData['data']['status'];
     switch ($status) {
