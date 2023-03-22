@@ -6,7 +6,7 @@ include_once(TEST_PATH . '/test_var.php');
 use Yzh\ApiUserSignServiceClient;
 use Yzh\Config;
 use Yzh\Model\Apiusersign\ApiUserSignRequest;
-use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
+use Yzh\Model\Apiusersign\ApiUserSignContractRequest;
 use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
 use Yzh\Model\Apiusersign\GetApiUserSignStatusRequest;
 
@@ -30,12 +30,12 @@ try {
 }
 
 // 获取协议预览 URL
-$request = new ApiUseSignContractRequest(array(
+$request = new ApiUserSignContractRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
 
 ));
-$response = $apiUserSignClient->apiUseSignContract($request);
+$response = $apiUserSignClient->apiUserSignContract($request);
 var_dump(array('response' => $response->toArray()));
 
 
