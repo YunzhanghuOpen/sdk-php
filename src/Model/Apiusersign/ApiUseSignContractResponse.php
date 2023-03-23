@@ -5,10 +5,10 @@ namespace Yzh\Model\Apiusersign;
 use Yzh\Model\BaseResponse;
 
 /**
- * 获取协议预览 URL 返回v2
- * Class ApiUserSignContractResponse
+ * 获取协议预览 URL 返回
+ * Class ApiUseSignContractResponse
  */
-class ApiUserSignContractResponse extends BaseResponse
+class ApiUseSignContractResponse extends BaseResponse
 {
 
     /**
