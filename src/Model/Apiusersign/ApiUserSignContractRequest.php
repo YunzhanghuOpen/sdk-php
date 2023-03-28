@@ -5,7 +5,7 @@ namespace Yzh\Model\Apiusersign;
 use Yzh\Model\BaseRequest;
 
 /**
- * 获取协议预览 URL 请求v2
+ * 获取协议预览 URL 请求 V2
  * Class ApiUserSignContractRequest
  */
 class ApiUserSignContractRequest extends BaseRequest

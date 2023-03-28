@@ -39,7 +39,7 @@ class ApiUserSignServiceClient extends BaseClient
     }
 
     /**
-     * 获取协议预览 URL v2
+     * 获取协议预览 URL V2
      * @param ApiUserSignContractRequest $request
      * @param null $option
      * @return ApiUserSignContractResponse
