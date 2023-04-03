@@ -10,124 +10,484 @@ use Yzh\Model\BaseModel;
  */
 class DealerOrderInfo extends BaseModel
 {
+  /**
+   * 综合服务主体 ID
+   * @var string
+   */
+  protected $broker_id;
+  /**
+   * 平台企业 ID
+   * @var string
+   */
+  protected $dealer_id;
+  /**
+   * 平台企业订单号
+   * @var string
+   */
+  protected $order_id;
+  /**
+   * 订单流水号
+   * @var string
+   */
+  protected $ref;
+  /**
+   * 批次ID
+   * @var string
+   */
+  protected $batch_id;
+  /**
+   * 姓名
+   * @var string
+   */
+  protected $real_name;
+  /**
+   * 收款账号
+   * @var string
+   */
+  protected $card_no;
+  /**
+   * 综合服务主体订单金额
+   * @var string
+   */
+  protected $broker_amount;
+  /**
+   * 综合服务主体加成服务费
+   * @var string
+   */
+  protected $broker_fee;
+  /**
+   * 支付路径流水号
+   * @var string
+   */
+  protected $bill;
+  /**
+   * 订单状态
+   * @var string
+   */
+  protected $status;
+  /**
+   * 订单状态码描述
+   * @var string
+   */
+  protected $status_message;
+  /**
+   * 订单详情
+   * @var string
+   */
+  protected $status_detail;
+  /**
+   * 订单详细状态码描述
+   * @var string
+   */
+  protected $status_detail_message;
+  /**
+   * 短周期授信账单号
+   * @var string
+   */
+  protected $statement_id;
+  /**
+   * 服务费账单号
+   * @var string
+   */
+  protected $fee_statement_id;
+  /**
+   * 余额账单号
+   * @var string
+   */
+  protected $bal_statement_id;
+  /**
+   * 支付路径
+   * @var string
+   */
+  protected $channel;
+  /**
+   * 创建时间
+   * @var string
+   */
+  protected $created_at;
+  /**
+   * 完成时间
+   * @var string
+   */
+  protected $finished_time;
+  
+  /**
+   * 综合服务主体 ID
+   *  @var string $broker_id
+   */
+  public function setBrokerId($broker_id)
+  {
+    $this->broker_id = $broker_id;
+  }
 
-    /**
-     * 综合服务主体 ID
-     * @var string
-     */
-    public $broker_id;
 
-    /**
-     * 平台企业 ID
-     * @var string
-     */
-    public $dealer_id;
+  /**
+   * 综合服务主体 ID
+   * @var string
+   */
+  public function getBrokerId()
+  {
+    return $this->broker_id;
+  }
+  
+  /**
+   * 平台企业 ID
+   *  @var string $dealer_id
+   */
+  public function setDealerId($dealer_id)
+  {
+    $this->dealer_id = $dealer_id;
+  }
 
-    /**
-     * 平台企业订单号
-     * @var string
-     */
-    public $order_id;
 
-    /**
-     * 订单流水号
-     * @var string
-     */
-    public $ref;
+  /**
+   * 平台企业 ID
+   * @var string
+   */
+  public function getDealerId()
+  {
+    return $this->dealer_id;
+  }
+  
+  /**
+   * 平台企业订单号
+   *  @var string $order_id
+   */
+  public function setOrderId($order_id)
+  {
+    $this->order_id = $order_id;
+  }
 
-    /**
-     * 批次ID
-     * @var string
-     */
-    public $batch_id;
 
-    /**
-     * 姓名
-     * @var string
-     */
-    public $real_name;
+  /**
+   * 平台企业订单号
+   * @var string
+   */
+  public function getOrderId()
+  {
+    return $this->order_id;
+  }
+  
+  /**
+   * 订单流水号
+   *  @var string $ref
+   */
+  public function setRef($ref)
+  {
+    $this->ref = $ref;
+  }
 
-    /**
-     * 收款账号
-     * @var string
-     */
-    public $card_no;
 
-    /**
-     * 综合服务主体订单金额
-     * @var string
-     */
-    public $broker_amount;
+  /**
+   * 订单流水号
+   * @var string
+   */
+  public function getRef()
+  {
+    return $this->ref;
+  }
+  
+  /**
+   * 批次ID
+   *  @var string $batch_id
+   */
+  public function setBatchId($batch_id)
+  {
+    $this->batch_id = $batch_id;
+  }
 
-    /**
-     * 综合服务主体加成服务费
-     * @var string
-     */
-    public $broker_fee;
 
-    /**
-     * 支付路径流水号
-     * @var string
-     */
-    public $bill;
+  /**
+   * 批次ID
+   * @var string
+   */
+  public function getBatchId()
+  {
+    return $this->batch_id;
+  }
+  
+  /**
+   * 姓名
+   *  @var string $real_name
+   */
+  public function setRealName($real_name)
+  {
+    $this->real_name = $real_name;
+  }
 
-    /**
-     * 订单状态
-     * @var string
-     */
-    public $status;
 
-    /**
-     * 订单状态码描述
-     * @var string
-     */
-    public $status_message;
+  /**
+   * 姓名
+   * @var string
+   */
+  public function getRealName()
+  {
+    return $this->real_name;
+  }
+  
+  /**
+   * 收款账号
+   *  @var string $card_no
+   */
+  public function setCardNo($card_no)
+  {
+    $this->card_no = $card_no;
+  }
 
-    /**
-     * 订单详情
-     * @var string
-     */
-    public $status_detail;
 
-    /**
-     * 订单详细状态码描述
-     * @var string
-     */
-    public $status_detail_message;
+  /**
+   * 收款账号
+   * @var string
+   */
+  public function getCardNo()
+  {
+    return $this->card_no;
+  }
+  
+  /**
+   * 综合服务主体订单金额
+   *  @var string $broker_amount
+   */
+  public function setBrokerAmount($broker_amount)
+  {
+    $this->broker_amount = $broker_amount;
+  }
 
-    /**
-     * 短周期授信账单号
-     * @var string
-     */
-    public $statement_id;
 
-    /**
-     * 服务费账单号
-     * @var string
-     */
-    public $fee_statement_id;
+  /**
+   * 综合服务主体订单金额
+   * @var string
+   */
+  public function getBrokerAmount()
+  {
+    return $this->broker_amount;
+  }
+  
+  /**
+   * 综合服务主体加成服务费
+   *  @var string $broker_fee
+   */
+  public function setBrokerFee($broker_fee)
+  {
+    $this->broker_fee = $broker_fee;
+  }
 
-    /**
-     * 余额账单号
-     * @var string
-     */
-    public $bal_statement_id;
 
-    /**
-     * 支付路径
-     * @var string
-     */
-    public $channel;
+  /**
+   * 综合服务主体加成服务费
+   * @var string
+   */
+  public function getBrokerFee()
+  {
+    return $this->broker_fee;
+  }
+  
+  /**
+   * 支付路径流水号
+   *  @var string $bill
+   */
+  public function setBill($bill)
+  {
+    $this->bill = $bill;
+  }
 
-    /**
-     * 创建时间
-     * @var string
-     */
-    public $created_at;
 
-    /**
-     * 完成时间
-     * @var string
-     */
-    public $finished_time;
+  /**
+   * 支付路径流水号
+   * @var string
+   */
+  public function getBill()
+  {
+    return $this->bill;
+  }
+  
+  /**
+   * 订单状态
+   *  @var string $status
+   */
+  public function setStatus($status)
+  {
+    $this->status = $status;
+  }
+
+
+  /**
+   * 订单状态
+   * @var string
+   */
+  public function getStatus()
+  {
+    return $this->status;
+  }
+  
+  /**
+   * 订单状态码描述
+   *  @var string $status_message
+   */
+  public function setStatusMessage($status_message)
+  {
+    $this->status_message = $status_message;
+  }
+
+
+  /**
+   * 订单状态码描述
+   * @var string
+   */
+  public function getStatusMessage()
+  {
+    return $this->status_message;
+  }
+  
+  /**
+   * 订单详情
+   *  @var string $status_detail
+   */
+  public function setStatusDetail($status_detail)
+  {
+    $this->status_detail = $status_detail;
+  }
+
+
+  /**
+   * 订单详情
+   * @var string
+   */
+  public function getStatusDetail()
+  {
+    return $this->status_detail;
+  }
+  
+  /**
+   * 订单详细状态码描述
+   *  @var string $status_detail_message
+   */
+  public function setStatusDetailMessage($status_detail_message)
+  {
+    $this->status_detail_message = $status_detail_message;
+  }
+
+
+  /**
+   * 订单详细状态码描述
+   * @var string
+   */
+  public function getStatusDetailMessage()
+  {
+    return $this->status_detail_message;
+  }
+  
+  /**
+   * 短周期授信账单号
+   *  @var string $statement_id
+   */
+  public function setStatementId($statement_id)
+  {
+    $this->statement_id = $statement_id;
+  }
+
+
+  /**
+   * 短周期授信账单号
+   * @var string
+   */
+  public function getStatementId()
+  {
+    return $this->statement_id;
+  }
+  
+  /**
+   * 服务费账单号
+   *  @var string $fee_statement_id
+   */
+  public function setFeeStatementId($fee_statement_id)
+  {
+    $this->fee_statement_id = $fee_statement_id;
+  }
+
+
+  /**
+   * 服务费账单号
+   * @var string
+   */
+  public function getFeeStatementId()
+  {
+    return $this->fee_statement_id;
+  }
+  
+  /**
+   * 余额账单号
+   *  @var string $bal_statement_id
+   */
+  public function setBalStatementId($bal_statement_id)
+  {
+    $this->bal_statement_id = $bal_statement_id;
+  }
+
+
+  /**
+   * 余额账单号
+   * @var string
+   */
+  public function getBalStatementId()
+  {
+    return $this->bal_statement_id;
+  }
+  
+  /**
+   * 支付路径
+   *  @var string $channel
+   */
+  public function setChannel($channel)
+  {
+    $this->channel = $channel;
+  }
+
+
+  /**
+   * 支付路径
+   * @var string
+   */
+  public function getChannel()
+  {
+    return $this->channel;
+  }
+  
+  /**
+   * 创建时间
+   *  @var string $created_at
+   */
+  public function setCreatedAt($created_at)
+  {
+    $this->created_at = $created_at;
+  }
+
+
+  /**
+   * 创建时间
+   * @var string
+   */
+  public function getCreatedAt()
+  {
+    return $this->created_at;
+  }
+  
+  /**
+   * 完成时间
+   *  @var string $finished_time
+   */
+  public function setFinishedTime($finished_time)
+  {
+    $this->finished_time = $finished_time;
+  }
+
+
+  /**
+   * 完成时间
+   * @var string
+   */
+  public function getFinishedTime()
+  {
+    return $this->finished_time;
+  }
 }

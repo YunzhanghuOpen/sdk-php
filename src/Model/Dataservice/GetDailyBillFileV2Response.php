@@ -3,17 +3,31 @@
 namespace Yzh\Model\Dataservice;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 查询日流水文件返回
  * Class GetDailyBillFileV2Response
  */
-class GetDailyBillFileV2Response extends BaseResponse
+class GetDailyBillFileV2Response extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  GetDailyBillFileV2ResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 下载地址
-     * @var string
-     */
-    public $bill_download_url;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return GetDailyBillFileV2ResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new GetDailyBillFileV2ResponseData($data);
+    return $this;
+  }
 }

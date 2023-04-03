@@ -5,28 +5,28 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 查询平台企业已开具和待开具发票金额请求
- * Class GetInvoiceStatRequest
- */
+    * 查询平台企业已开具和待开具发票金额请求
+    * Class GetInvoiceStatRequest
+    */
 class GetInvoiceStatRequest extends BaseRequest
 {
 
     /**
-     * 综合服务主体 ID
-     * @var string
-     */
+        * 综合服务主体 ID
+        * @var string
+        */
     public $broker_id;
 
     /**
-     * 平台企业 ID
-     * @var string
-     */
+        * 平台企业 ID
+        * @var string
+        */
     public $dealer_id;
 
     /**
-     * 查询年份
-     * @var int32
-     */
+        * 查询年份
+        * @var int32
+        */
     public $year;
 
 

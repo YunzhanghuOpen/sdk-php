@@ -3,23 +3,31 @@
 namespace Yzh\Model\Invoice;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 发票开具申请返回
  * Class ApplyInvoiceResponse
  */
-class ApplyInvoiceResponse extends BaseResponse
+class ApplyInvoiceResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  ApplyInvoiceResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 发票申请单 ID
-     * @var string
-     */
-    public $application_id;
-
-    /**
-     * 发票张数
-     * @var int64
-     */
-    public $count;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return ApplyInvoiceResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new ApplyInvoiceResponseData($data);
+    return $this;
+  }
 }

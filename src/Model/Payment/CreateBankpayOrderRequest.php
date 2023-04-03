@@ -5,76 +5,76 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
- * 银行卡实时支付请求
- * Class CreateBankpayOrderRequest
- */
+    * 银行卡实时支付请求
+    * Class CreateBankpayOrderRequest
+    */
 class CreateBankpayOrderRequest extends BaseRequest
 {
 
     /**
-     * 平台企业订单号
-     * @var string
-     */
+        * 平台企业订单号
+        * @var string
+        */
     public $order_id;
 
     /**
-     * 平台企业 ID
-     * @var string
-     */
+        * 平台企业 ID
+        * @var string
+        */
     public $dealer_id;
 
     /**
-     * 综合服务主体 ID
-     * @var string
-     */
+        * 综合服务主体 ID
+        * @var string
+        */
     public $broker_id;
 
     /**
-     * 姓名
-     * @var string
-     */
+        * 姓名
+        * @var string
+        */
     public $real_name;
 
     /**
-     * 银行卡号
-     * @var string
-     */
+        * 银行卡号
+        * @var string
+        */
     public $card_no;
 
     /**
-     * 身份证号码
-     * @var string
-     */
+        * 身份证号码
+        * @var string
+        */
     public $id_card;
 
     /**
-     * 手机号
-     * @var string
-     */
+        * 手机号
+        * @var string
+        */
     public $phone_no;
 
     /**
-     * 订单金额
-     * @var string
-     */
+        * 订单金额
+        * @var string
+        */
     public $pay;
 
     /**
-     * 订单备注
-     * @var string
-     */
+        * 订单备注
+        * @var string
+        */
     public $pay_remark;
 
     /**
-     * 回调地址
-     * @var string
-     */
+        * 回调地址
+        * @var string
+        */
     public $notify_url;
 
     /**
-     * 项目标识
-     * @var string
-     */
+        * 项目标识
+        * @var string
+        */
     public $project_id;
 
 

@@ -5,22 +5,22 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 平台企业预付业务服务费记录请求
- * Class ListDealerRechargeRecordV2Request
- */
+    * 平台企业预付业务服务费记录请求
+    * Class ListDealerRechargeRecordV2Request
+    */
 class ListDealerRechargeRecordV2Request extends BaseRequest
 {
 
     /**
-     * 开始时间，格式：yyyy-MM-dd
-     * @var string
-     */
+        * 开始时间，格式：yyyy-MM-dd
+        * @var string
+        */
     public $begin_at;
 
     /**
-     * 结束时间，格式：yyyy-MM-dd
-     * @var string
-     */
+        * 结束时间，格式：yyyy-MM-dd
+        * @var string
+        */
     public $end_at;
 
 

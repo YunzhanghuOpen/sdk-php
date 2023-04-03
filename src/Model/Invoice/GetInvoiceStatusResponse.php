@@ -3,95 +3,31 @@
 namespace Yzh\Model\Invoice;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 查询发票开具申请状态返回
  * Class GetInvoiceStatusResponse
  */
-class GetInvoiceStatusResponse extends BaseResponse
+class GetInvoiceStatusResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  GetInvoiceStatusResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 申请结果
-     * @var string
-     */
-    public $status;
-
-    /**
-     * 发票张数
-     * @var int64
-     */
-    public $count;
-
-    /**
-     * 价税合计
-     * @var string
-     */
-    public $price_tax_amount;
-
-    /**
-     * 不含税金额
-     * @var string
-     */
-    public $price_amount;
-
-    /**
-     * 税额
-     * @var string
-     */
-    public $tax_amount;
-
-    /**
-     * 发票类型
-     * @var string
-     */
-    public $invoice_type;
-
-    /**
-     * 购方名称
-     * @var string
-     */
-    public $customer_name;
-
-    /**
-     * 纳税人识别号
-     * @var string
-     */
-    public $customer_tax_num;
-
-    /**
-     * 购方地址、电话
-     * @var string
-     */
-    public $customer_address_tel;
-
-    /**
-     * 开户行及账号
-     * @var string
-     */
-    public $bank_name_account;
-
-    /**
-     * 货物或应税劳务、服务名称
-     * @var string
-     */
-    public $goods_services_name;
-
-    /**
-     * 发票备注
-     * @var string
-     */
-    public $remark;
-
-    /**
-     * 邮寄类型
-     * @var string
-     */
-    public $post_type;
-
-    /**
-     * 快递单号
-     * @var string[]
-     */
-    public $waybill_number;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return GetInvoiceStatusResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new GetInvoiceStatusResponseData($data);
+    return $this;
+  }
 }

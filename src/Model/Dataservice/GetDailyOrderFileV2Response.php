@@ -3,17 +3,31 @@
 namespace Yzh\Model\Dataservice;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 查询日订单文件（支付和退款订单）返回
  * Class GetDailyOrderFileV2Response
  */
-class GetDailyOrderFileV2Response extends BaseResponse
+class GetDailyOrderFileV2Response extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  GetDailyOrderFileV2ResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 下载地址
-     * @var string
-     */
-    public $url;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return GetDailyOrderFileV2ResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new GetDailyOrderFileV2ResponseData($data);
+    return $this;
+  }
 }

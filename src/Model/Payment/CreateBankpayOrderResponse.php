@@ -3,29 +3,31 @@
 namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 银行卡实时支付返回
  * Class CreateBankpayOrderResponse
  */
-class CreateBankpayOrderResponse extends BaseResponse
+class CreateBankpayOrderResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  CreateBankpayOrderResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     
-     * @var string
-     */
-    public $order_id;
-
-    /**
-     * 综合服务平台流水号
-     * @var string
-     */
-    public $ref;
-
-    /**
-     * 订单金额
-     * @var string
-     */
-    public $pay;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return CreateBankpayOrderResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new CreateBankpayOrderResponseData($data);
+    return $this;
+  }
 }

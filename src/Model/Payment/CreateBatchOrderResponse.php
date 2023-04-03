@@ -3,23 +3,31 @@
 namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 批量下单返回
  * Class CreateBatchOrderResponse
  */
-class CreateBatchOrderResponse extends BaseResponse
+class CreateBatchOrderResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  CreateBatchOrderResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 平台企业批次号
-     * @var string
-     */
-    public $batch_id;
-
-    /**
-     * 订单结果列表
-     * @var BatchOrderResult[]
-     */
-    public $result_list;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return CreateBatchOrderResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new CreateBatchOrderResponseData($data);
+    return $this;
+  }
 }

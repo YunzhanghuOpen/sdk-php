@@ -3,17 +3,31 @@
 namespace Yzh\Model\H5usersign;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 申请签约返回
  * Class H5UserSignResponse
  */
-class H5UserSignResponse extends BaseResponse
+class H5UserSignResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  H5UserSignResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * H5 签约页面 URL
-     * @var string
-     */
-    public $url;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return H5UserSignResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new H5UserSignResponseData($data);
+    return $this;
+  }
 }

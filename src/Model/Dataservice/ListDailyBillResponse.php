@@ -3,23 +3,31 @@
 namespace Yzh\Model\Dataservice;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 查询日流水数据返回
  * Class ListDailyBillResponse
  */
-class ListDailyBillResponse extends BaseResponse
+class ListDailyBillResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  ListDailyBillResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 总条数
-     * @var int32
-     */
-    public $total_num;
-
-    /**
-     * 条目信息
-     * @var DealerBillInfo[]
-     */
-    public $list;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return ListDailyBillResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new ListDailyBillResponseData($data);
+    return $this;
+  }
 }

@@ -10,6 +10,7 @@ use Yzh\Utils\Rsa;
 use Yzh\Utils\Des;
 use Yzh\Utils\Hmac;
 use Yzh\Utils\MessString;
+use Yzh\Model\BaseResponse;
 
 defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 
@@ -193,12 +194,44 @@ class BaseClient
 
         $url = $baseUrl . $path;
         if ($method == "GET") {
-            $response = $this->get($url, $requestData, $header, $option);
+            $body = $this->get($url, $requestData, $header, $option);
         } else {
-            $response = $this->post($url, $requestData, $header, $option);
+            $body = $this->post($url, $requestData, $header, $option);
         }
 
-        return ApiResponse::newFromResponse($response, $responseDataClass, $responseDecoder);
+        /**
+         * @var BaseResponse $resp
+         */
+        $resp = new $responseDataClass();
+        $respData = json_decode($body, true);
+        if (isset($respData['code'])) {
+            $resp->setCode($respData['code']);
+        }
+
+        if (isset($respData['message'])) {
+            $resp->setMessage($respData['message']);
+        }
+
+        $requestID = "";
+        if (isset($respData['request_id'])) {
+            $requestID = $respData['request_id'];
+        } elseif (isset($respData['requestID'])) {
+            $requestID = $respData['requestID'];
+        }
+        $resp->setRequestID($requestID);
+
+        if (!isset($respData['data']) || !class_exists($responseDataClass)) {
+            return $resp;
+        }
+
+        if (is_string($respData['data']) && !is_null($responseDecoder)) {
+            $data  = json_decode($responseDecoder->decrypt($respData['data']), true);
+        } else {
+            $data = $respData['data'];
+        }
+        $resp->setData($data);
+
+        return $resp;
     }
 
 

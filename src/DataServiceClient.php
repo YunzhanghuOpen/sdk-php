@@ -16,7 +16,7 @@ use Yzh\Model\Dataservice\ListDailyBillResponse;
 use Yzh\Model\Dataservice\GetDailyBillFileV2Request;
 use Yzh\Model\Dataservice\GetDailyBillFileV2Response;
 use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Request;
-use Yzh\Model\Dataservice\RechargeRecordInfo;
+use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Response;
 use Yzh\Model\Dataservice\ListBalanceDailyStatementRequest;
 use Yzh\Model\Dataservice\ListBalanceDailyStatementResponse;
 
@@ -102,7 +102,7 @@ class DataServiceClient extends BaseClient
      * 查询平台企业预付业务服务费记录
      * @param ListDealerRechargeRecordV2Request $request
      * @param null $option
-     * @return []RechargeRecordInfo
+     * @return ListDealerRechargeRecordV2Response
      */
     public function listDealerRechargeRecordV2($request, $option = null)
     {
