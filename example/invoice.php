@@ -23,7 +23,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 
 ));
 
@@ -42,7 +42,7 @@ $request = new GetInvoiceStatRequest(array(
     'year' => 2022                               // 年份
 ));
 $response = $invoiceClient->getInvoiceStat($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 查询可开票额度和开票信息
 $request = new GetInvoiceAmountRequest(array(
@@ -50,7 +50,7 @@ $request = new GetInvoiceAmountRequest(array(
     'broker_id' => $test_var['app_broker_id'],   // 综合服务主体 ID
 ));
 $response = $invoiceClient->getInvoiceAmount($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 申请开票
 $request = new ApplyInvoiceRequest(array(
@@ -64,7 +64,7 @@ $request = new ApplyInvoiceRequest(array(
     'remark' => '发票备注'                        // 发票备注（选填，每张发票备注栏相同）
 ));
 $response = $invoiceClient->applyInvoice($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 查询开票申请状态
@@ -74,7 +74,7 @@ $request = new GetInvoiceStatusRequest(array(
     'application_id' => '',                      // 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceStatus($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 下载 PDF 版发票
 $request = new GetInvoiceFileRequest(array(
@@ -83,7 +83,7 @@ $request = new GetInvoiceFileRequest(array(
     'application_id' => '',                      // 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceFile($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 发送发票扫描件压缩包下载链接邮件
@@ -93,7 +93,7 @@ $request = new SendReminderEmailRequest(array(
     'application_id' => '',                      // 发票申请单 ID
 ));
 $response = $invoiceClient->sendReminderEmail($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 查询发票信息
 $request = new GetInvoiceInformationRequest(array(
@@ -102,4 +102,4 @@ $request = new GetInvoiceInformationRequest(array(
     'application_id' => '423721',                 // 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceInformation($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

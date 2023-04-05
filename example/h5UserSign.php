@@ -21,7 +21,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 
 ));
 
@@ -42,7 +42,7 @@ $request = new H5UserPresignRequest(array(
 
 ));
 $response = $h5UserSignClient->h5UserPresign($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // H5 签约
@@ -55,7 +55,7 @@ $request = new H5UserSignRequest(array(
 
 ));
 $response = $h5UserSignClient->h5UserSign($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 获取用户签约状态
@@ -67,7 +67,7 @@ $request = new GetH5UserSignStatusRequest(array(
 
 ));
 $response = $h5UserSignClient->getH5UserSignStatus($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 用户解约（测试账号专用接口）
 $request = new H5UserReleaseRequest(array(
@@ -79,4 +79,4 @@ $request = new H5UserReleaseRequest(array(
 
 ));
 $response = $h5UserSignClient->h5UserRelease($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

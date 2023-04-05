@@ -18,7 +18,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 
 ));
 
@@ -36,7 +36,7 @@ $request = new GetTaxFileRequest(array(
     'year_month' => '2022-03'                    // 所属期
 ));
 $response = $taxClient->getTaxFile($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 解密得到文件解压缩明文密码
 // pwd 为下载接口响应参数中的文件解压缩密码，需使用平台企业私钥进行解密得到明文密码
@@ -55,4 +55,4 @@ $request = new GetUserCrossRequest(array(
     'id_card' => '110101012345678910',           // 身份证号码
 ));
 $response = $taxClient->getUserCross($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

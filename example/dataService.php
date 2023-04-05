@@ -21,7 +21,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 
 ));
 
@@ -37,14 +37,14 @@ $request = new GetDailyOrderFileRequest(array(
     'order_date' => '2022-04-24',                // 查询日期
 ));
 $response = $dataServiceClient->getDailyOrderFile($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 查询日流水文件
 $request = new GetDailyBillFileV2Request(array(
     'bill_date' => '2022-04-24',                // 查询日期
 ));
 $response = $dataServiceClient->getDailyBillFileV2($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 查询平台企业预付业务服务费记录
@@ -54,7 +54,7 @@ $request = new ListDealerRechargeRecordV2Request(array(
 
 ));
 $response = $dataServiceClient->listDealerRechargeRecordV2($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 查询日订单数据
@@ -66,7 +66,7 @@ $request = new ListDailyOrderRequest(array(
     'data_type' => 'encryption'                  // 如果为 encryption，则对返回的data进行加密
 ));
 $response = $dataServiceClient->listDailyOrder($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 
@@ -79,7 +79,7 @@ $request = new ListDailyBillRequest(array(
     'data_type' => 'encryption'                  // 如果为 encryption，则对返回的 data 进行加密
 ));
 $response = $dataServiceClient->listDailyBill($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 查询日订单文件（支付和退款）
@@ -87,7 +87,7 @@ $request = new GetDailyOrderFileV2Request(array(
     'order_date' => '2022-06-14',                // 查询日期
 ));
 $response = $dataServiceClient->getDailyOrderFileV2($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 
@@ -97,4 +97,4 @@ $request = new ListBalanceDailyStatementRequest(array(
 ));
 $request->setRequestID('testreq0001');
 $response = $dataServiceClient->listBalanceDailyStatement($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

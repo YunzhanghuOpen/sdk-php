@@ -19,7 +19,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 ));
 
 try {
@@ -36,7 +36,7 @@ $request = new ApiUserSignContractRequest(array(
 
 ));
 $response = $apiUserSignClient->apiUserSignContract($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 用户签约
@@ -48,7 +48,7 @@ $request = new ApiUserSignRequest(array(
     'card_type' => 'idcard',                      // 证件类型码
 ));
 $response = $apiUserSignClient->apiUserSign($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 获取用户签约状态
@@ -59,7 +59,7 @@ $request = new GetApiUserSignStatusRequest(array(
     'id_card' => '110101012345678910',            // 证件号
 ));
 $response = $apiUserSignClient->getApiUserSignStatus($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 用户解约（测试账号专用接口）
 $request = new ApiUserSignReleaseRequest(array(
@@ -71,4 +71,4 @@ $request = new ApiUserSignReleaseRequest(array(
 
 ));
 $response = $apiUserSignClient->apiUserSignRelease($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

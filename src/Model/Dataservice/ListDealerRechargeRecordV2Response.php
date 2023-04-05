@@ -13,7 +13,7 @@ class ListDealerRechargeRecordV2Response extends BaseResponse implements Respons
 {
   /**
    * 获取数据对象
-   * @return  ListDealerRechargeRecordV2ResponseData
+   * @return RechargeRecordInfo[]
    */
   public function getData()
   {
@@ -23,11 +23,14 @@ class ListDealerRechargeRecordV2Response extends BaseResponse implements Respons
   /**
    * 设置数据对象
    * @param  array $data
-   * @return ListDealerRechargeRecordV2ResponseData
+   * @return RechargeRecordInfo[]
    */
   public function setData($data)
   {
-    $this->data = new ListDealerRechargeRecordV2ResponseData($data);
+    $this->data = array();
+    foreach ($data as $item) {
+      array_push($this->data, new RechargeRecordInfo($item));
+    }
     return $this;
   }
 }

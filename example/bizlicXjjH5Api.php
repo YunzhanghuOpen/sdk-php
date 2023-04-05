@@ -19,7 +19,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 
 ));
 
@@ -45,7 +45,7 @@ $request = new H5PreCollectBizlicMsgRequest(array(
     'id_card_validity_end' => ''                    // 身份证有效期结束时间
 ));
 $response = $bizH5APIClient->h5PreCollectBizlicMsg($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 预启动
 $request = new H5APIGetStartUrlRequest(array(
@@ -60,7 +60,7 @@ $request = new H5APIGetStartUrlRequest(array(
 
 ));
 $response = $bizH5APIClient->h5APIGetStartUrl($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 查询个体工商户状态
 $request = new H5APIEcoCityAicStatusRequest(array(
@@ -73,4 +73,4 @@ $request = new H5APIEcoCityAicStatusRequest(array(
 
 ));
 $response = $bizH5APIClient->h5APIEcoCityAicStatus($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

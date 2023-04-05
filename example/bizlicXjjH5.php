@@ -19,7 +19,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 
 ));
 
@@ -43,7 +43,7 @@ $request = new H5GetStartUrlRequest(array(
 
 ));
 $response = $bizH5Client->h5GetStartUrl($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 查询个体工商户状态
 $request = new H5EcoCityAicStatusRequest(array(
@@ -56,4 +56,4 @@ $request = new H5EcoCityAicStatusRequest(array(
 
 ));
 $response = $bizH5Client->h5EcoCityAicStatus($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

@@ -23,7 +23,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 
 ));
 
@@ -40,7 +40,7 @@ $request = new IDCardVerifyRequest(array(
     'id_card' => '110101012345678910',        // 身份证号码
 ));
 $response = $authenticationClient->iDCardVerify($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 银行卡三要素验证
@@ -50,7 +50,7 @@ $request = new BankCardThreeVerifyRequest(array(
     'card_no' => '6214012345678910'              // 银行卡号
 ));
 $response = $authenticationClient->bankCardThreeVerify($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 
@@ -62,7 +62,7 @@ $request = new BankCardFourVerifyRequest(array(
     'mobile' => '18100000000'                     // 银行预留手机号
 ));
 $response = $authenticationClient->bankCardFourVerify($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 
@@ -74,7 +74,7 @@ $request = new BankCardFourAuthVerifyRequest(array(
     'mobile' => '18100000000'                     // 银行预留手机号
 ));
 $response = $authenticationClient->bankCardFourAuthVerify($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 
@@ -89,7 +89,7 @@ $request = new BankCardFourAuthConfirmRequest(array(
 
 ));
 $response = $authenticationClient->bankCardFourAuthConfirm($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 
@@ -100,7 +100,7 @@ $request = new GetBankCardInfoRequest(array(
 
 ));
 $response = $authenticationClient->getBankCardInfo($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 
 // 上传免验证用户名单信息
@@ -131,7 +131,7 @@ $request = new UserExemptedInfoRequest(array(
     'ref' => 'test1234567890'                    // 请求流水号，回调时会附带
 ));
 $response = $authenticationClient->userExemptedInfo($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);
 
 // 查看免验证用户名单是否存在
 $request = new UserWhiteCheckRequest(array(
@@ -139,4 +139,4 @@ $request = new UserWhiteCheckRequest(array(
     'id_card' => 'test123456',                   // 证件号码
 ));
 $response = $authenticationClient->userWhiteCheck($request);
-var_dump(array('response' => $response->toArray()));
+var_dump($response);

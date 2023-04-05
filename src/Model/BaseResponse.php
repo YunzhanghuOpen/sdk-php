@@ -57,7 +57,7 @@ abstract class BaseResponse
      * 是否成功
      * @return bool
      */
-    public function isSucceeded()
+    public function isSuccess()
     {
         return $this->code === self::CODE_SUCC;
     }

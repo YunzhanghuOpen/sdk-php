@@ -24,7 +24,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
-    'sign_type'=>$test_var['sign_type']
+    'sign_type' => $test_var['sign_type']
 ));
 
 try {
@@ -50,21 +50,18 @@ $request = new CreateBankpayOrderRequest(array(
     'project_id' => ''                                 // 项目ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
 ));
 $response = $paymentClient->createBankpayOrder($request);
-$respdata = array('response' => $response->toArray());
-var_dump($respdata);
-
-if ($respdata['response']['code'] == '0000') {
+if ($response->isSuccess()) {
     // 订单接收成功，支付结果未知，待异步通知
     // TODO 等待异步通知或订单查询接口获取订单状态
     echo "接单成功";
 } else
-    if ($respdata['response']['code']  == '2002') {
+    if ($response->getCode() == '2002') {
     // 已上传过该流水
     // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
     echo "订单已存在";
 } else {
     // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
-    echo  $respdata['response']['message'];
+    echo $response->getMessage();
 }
 //
 // 支付宝实时接口
@@ -83,19 +80,18 @@ $request = new CreateAlipayOrderRequest(array(
     'project_id' => ''                             // 项目ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
 ));
 $response = $paymentClient->createAlipayOrder($request);
-$respdata = array('response' => $response->toArray());
-if ($respdata['response']['code'] == '0000') {
+if ($response->isSuccess()) {
     // 订单接收成功，支付结果未知，待异步通知
     // TODO 等待异步通知或订单查询接口获取订单状态
     echo "接单成功";
 } else
-    if ($respdata['response']['code']  == '2002') {
+    if ($response->getCode() == '2002') {
     // 已上传过该流水
     // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
     echo "订单已存在";
 } else
     // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
-    echo  $respdata['response']['message'];
+    echo $response->getMessage();
 
 // 微信实时下单
 $request = new CreateWxpayOrderRequest(array(
@@ -114,19 +110,18 @@ $request = new CreateWxpayOrderRequest(array(
     'project_id' => '001'                         // 项目 ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
 ));
 $response = $paymentClient->createWxpayOrder($request);
-$respdata = array('response' => $response->toArray());
-if ($respdata['response']['code'] == '0000') {
+if ($response->isSuccess()) {
     // 订单接收成功，支付结果未知，待异步通知
     // TODO 等待异步通知或订单查询接口获取订单状态
     echo "接单成功";
 } else {
-    if ($respdata['response']['code']  == '2002') {
+    if ($response->getCode() == '2002') {
         // 已上传过该流水
         // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
         echo "订单已存在";
     } else {
         // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
-        echo  $respdata['response']['message'];
+        echo $response->getMessage();
     }
 }
 
@@ -138,18 +133,16 @@ $request = new GetOrderRequest(array(
     'data_type' => '',                            // 如果为 encryption，则对返回的 data 进行加密
 ));
 $response = $paymentClient->getOrder($request);
-$respdata = array('response' => $response->toArray());
-if ($respdata['response']['code'] == '0000') {
+if ($response->isSuccess()) {
     //  TODO :  code=0000,订单查询成功，根据订单状态 status 判断订单状态，做业务订单的处理
     echo "查询成功:";
-    var_dump($respdata['response']['data']);
-} else if ($respdata['response']['code']  == '2018') {
+} else if ($response->getCode() == '2018') {
     // 已上传过该流水
     // TODO :  code=2018,表示订单不存在，检查一下 channel 是否传递正确，若正确，则可以使用原 order_id 再次下单
     echo "订单不存在";
 } else {
     // TODO :  其他 code 应当做异常情况，订单状态当“未知”处理，可稍后重试直至获取到 code=0000 或 2018，或者是联系云账户进行人工查询
-    echo  $respdata['response']['message'];
+    echo $response->getMessage();
 }
 
 
@@ -158,7 +151,6 @@ $request = new listAccountRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
 ));
 $response = $paymentClient->listAccount($request);
-var_dump(array('response' => $response->toArray()));
 
 // 查询电子回单
 $request = new  GetEleReceiptFileRequest(array(
@@ -166,7 +158,6 @@ $request = new  GetEleReceiptFileRequest(array(
     'ref' => '',                                 // 平台订单号（与平台企业订单号不能同时为空）
 ));
 $response = $paymentClient->getEleReceiptFile($request);
-var_dump(array('response' => $response->toArray()));
 
 // 取消待支付订单
 $request = new CancelOrderRequest(array(
@@ -177,7 +168,6 @@ $request = new CancelOrderRequest(array(
     'data_type' => '',                             // 如果为 encryption，则对返回的 data 进行加密
 ));
 $response = $paymentClient->cancelOrder($request);
-var_dump(array('response' => $response->toArray()));
 
 // 查询平台企业汇款信息
 $request = new GetDealerVARechargeAccountRequest(array(
@@ -185,17 +175,16 @@ $request = new GetDealerVARechargeAccountRequest(array(
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
 ));
 $response = $paymentClient->getDealerVARechargeAccount($request);
-var_dump(array('response' => $response->toArray()));
 
 // 批次下单
 $request = new CreateBatchOrderRequest(array(
     'batch_id' => 'batch00415111',                     // 平台企业批次号
     'dealer_id' => $test_var['app_dealer_id'],         // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],         // 综合服务主体 ID
-    'channel'=> '支付宝',                               // 支付路径
+    'channel' => '支付宝',                               // 支付路径
     'total_pay' => '0.03',                             // 订单总金额
     'total_count' => '3',                              // 总笔数
-    'order_list'=> [                                   // 订单列表，最多 100 笔订单
+    'order_list' => [                                   // 订单列表，最多 100 笔订单
         [
             'order_id' => '001212',                     // 平台企业订单号
             'real_name' => '张一',                       // 姓名
@@ -226,8 +215,7 @@ $request = new CreateBatchOrderRequest(array(
     ]
 ));
 $response = $paymentClient->createBatchOrder($request);
-$respdata = array('response' => $response->toArray());
-var_dump($respdata);
+var_dump($response);
 
 // 批次确认
 $request = new ConfirmBatchOrderRequest(array(
@@ -237,5 +225,4 @@ $request = new ConfirmBatchOrderRequest(array(
     'channel' => '支付宝'                           // 银⾏卡，⽀付宝，微信（选填，不填默认为银⾏卡订单查询，注意 value 值为中文字符）
 ));
 $response = $paymentClient->confirmBatchOrder($request);
-var_dump(array('response' => $response->toArray()));
-
+var_dump($response);
