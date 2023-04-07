@@ -34,13 +34,13 @@ try {
     die($e->getMessage());
 }
 
-// 身份实名认证
+// 身份证实名认证
 $request = new IDCardVerifyRequest(array(
     'real_name' => '张一',                     // 姓名
     'id_card' => '110101012345678910',        // 身份证号码
 ));
 $response = $authenticationClient->iDCardVerify($request);
-var_dump($response);
+echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 
 
 // 银行卡三要素验证
@@ -50,8 +50,7 @@ $request = new BankCardThreeVerifyRequest(array(
     'card_no' => '6214012345678910'              // 银行卡号
 ));
 $response = $authenticationClient->bankCardThreeVerify($request);
-var_dump($response);
-
+echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 
 
 // 银行卡四要素验证
@@ -62,9 +61,7 @@ $request = new BankCardFourVerifyRequest(array(
     'mobile' => '18100000000'                     // 银行预留手机号
 ));
 $response = $authenticationClient->bankCardFourVerify($request);
-var_dump($response);
-
-
+echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 
 // 银行卡四要素鉴权请求（下发短信验证码）
 $request = new BankCardFourAuthVerifyRequest(array(
@@ -74,9 +71,12 @@ $request = new BankCardFourAuthVerifyRequest(array(
     'mobile' => '18100000000'                     // 银行预留手机号
 ));
 $response = $authenticationClient->bankCardFourAuthVerify($request);
-var_dump($response);
-
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 银行卡四要素确认鉴权（上传短信验证码）
 $request = new BankCardFourAuthConfirmRequest(array(
@@ -89,9 +89,7 @@ $request = new BankCardFourAuthConfirmRequest(array(
 
 ));
 $response = $authenticationClient->bankCardFourAuthConfirm($request);
-var_dump($response);
-
-
+echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 
 // 银行卡信息查询
 $request = new GetBankCardInfoRequest(array(
@@ -100,8 +98,12 @@ $request = new GetBankCardInfoRequest(array(
 
 ));
 $response = $authenticationClient->getBankCardInfo($request);
-var_dump($response);
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 上传免验证用户名单信息
 // 图片转 BASE64
@@ -120,7 +122,7 @@ $request = new UserExemptedInfoRequest(array(
     'real_name' => '张一',                         // 姓名
     'id_card' => 'passporttest123456',            // 证件号码
     'card_type' => 'passport',                    // 证件类型码
-    'comment_apply' => '申请备注信息',              // 申请备注
+    'comment_apply' => '备注信息',                  // 申请备注
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'user_images' => [getuploadfileinfo("/Library/WebServer/Documents/test.png")],     // 证件照片
@@ -128,10 +130,15 @@ $request = new UserExemptedInfoRequest(array(
     'birthday' => '20010809',                     // 出生日期
     'gender' => '男',                             // 性别
     'notify_url' => '回调地址',                    // 审核回调地址
-    'ref' => 'test1234567890'                    // 请求流水号，回调时会附带
+    'ref' => 'test12345678111'                    // 请求流水号，回调时会附带
 ));
 $response = $authenticationClient->userExemptedInfo($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 查看免验证用户名单是否存在
 $request = new UserWhiteCheckRequest(array(
@@ -139,4 +146,9 @@ $request = new UserWhiteCheckRequest(array(
     'id_card' => 'test123456',                   // 证件号码
 ));
 $response = $authenticationClient->userWhiteCheck($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}

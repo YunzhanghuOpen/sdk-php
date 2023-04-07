@@ -9,22 +9,21 @@ abstract class BaseResponse
     const CODE_SUCC = '0000';
 
     /**
-     * 业务状态吗
+     * 业务状态码
      */
     protected $code = "";
 
     /**
-     * 业务状态吗
+     * 业务状态描述信息
      */
     protected $message = "";
 
     /**
-     * 请求ID
+     * 请求 ID
      */
     protected $requestID = "";
 
     /**
-     * @var CreateAlipayOrderResponseData $data
      * 业务数据
      */
     protected $data = [];
@@ -36,7 +35,7 @@ abstract class BaseResponse
     protected $arr_data = [];
 
     /**
-     * 获取业务状态吗
+     * 获取业务状态码
      */
     public function getCode()
     {
@@ -44,7 +43,7 @@ abstract class BaseResponse
     }
 
     /**
-     * 设置业务状态吗
+     * 设置业务状态码
      * @return self
      */
     public function setCode($code)
@@ -63,7 +62,7 @@ abstract class BaseResponse
     }
 
     /**
-     * 获取业务状态吗
+     * 获取业务状态码描述信息
      */
     public function getMessage()
     {
@@ -71,7 +70,7 @@ abstract class BaseResponse
     }
 
     /**
-     * 设置业务状态吗
+     * 设置业务状态码描述信息
      * @return  self
      */
     public function setMessage($message)
@@ -81,7 +80,7 @@ abstract class BaseResponse
     }
 
     /**
-     * 获取请求ID
+     * 获取请求 ID
      */
     public function getRequestID()
     {
@@ -89,7 +88,7 @@ abstract class BaseResponse
     }
 
     /**
-     * 设置请求ID
+     * 设置请求 ID
      * @return  self
      */
     public function setRequestID($requestID)
@@ -113,6 +112,6 @@ abstract class BaseResponse
      */
     public function setData($data)
     {
-        throw new RunTimeException("子类必须自行实现setData方法");
+        throw new RunTimeException("子类必须自行实现 setData 方法");
     }
 }

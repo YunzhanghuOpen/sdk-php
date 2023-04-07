@@ -67,6 +67,6 @@ class NotifyClient extends BaseClient
             "&mess=", $request->getMess(),
             "&timestamp=", $request->getTimestamp(),
             "&key=", $this->app_key
-        ),);
+        ));
     }
 }

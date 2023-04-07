@@ -45,7 +45,12 @@ $request = new H5PreCollectBizlicMsgRequest(array(
     'id_card_validity_end' => ''                    // 身份证有效期结束时间
 ));
 $response = $bizH5APIClient->h5PreCollectBizlicMsg($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 预启动
 $request = new H5APIGetStartUrlRequest(array(
@@ -60,7 +65,12 @@ $request = new H5APIGetStartUrlRequest(array(
 
 ));
 $response = $bizH5APIClient->h5APIGetStartUrl($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 查询个体工商户状态
 $request = new H5APIEcoCityAicStatusRequest(array(
@@ -73,4 +83,9 @@ $request = new H5APIEcoCityAicStatusRequest(array(
 
 ));
 $response = $bizH5APIClient->h5APIEcoCityAicStatus($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}

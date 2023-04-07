@@ -42,7 +42,12 @@ $request = new GetInvoiceStatRequest(array(
     'year' => 2022                               // 年份
 ));
 $response = $invoiceClient->getInvoiceStat($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 查询可开票额度和开票信息
 $request = new GetInvoiceAmountRequest(array(
@@ -50,22 +55,31 @@ $request = new GetInvoiceAmountRequest(array(
     'broker_id' => $test_var['app_broker_id'],   // 综合服务主体 ID
 ));
 $response = $invoiceClient->getInvoiceAmount($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 申请开票
 $request = new ApplyInvoiceRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],   // 平台企业 ID
-    'broker_id' => $test_var['app_broker_id'],   // 综合服务主体 ID
-    'invoice_apply_id' => 'apply123456789',      // 发票申请编号
-    'amount' => '1.0',                           // 申请开票⾦额
-    'invoice_type' => '2',                       // 发票类型 1：专票 2：普票
-    'bank_name_account' => '',                   // 开户⾏及账号（选填，若不填写，则使⽤默认值）
+    'dealer_id' => $test_var['app_dealer_id'],      // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
+    'invoice_apply_id' => 'apply123456789',         // 发票申请编号
+    'amount' => '1.0',                              // 申请开票⾦额
+    'invoice_type' => '2',                          // 发票类型 1：专票 2：普票
+    'bank_name_account' => '',                      // 开户⾏及账号（选填，若不填写，则使⽤默认值）
     'goods_services_name' => '*测试分类*test测试内容', // 货物或应税劳务、服务名称 (选填，若不填写，则使⽤默认值)
-    'remark' => '发票备注'                        // 发票备注（选填，每张发票备注栏相同）
+    'remark' => '发票备注'                           // 发票备注（选填，每张发票备注栏相同）
 ));
 $response = $invoiceClient->applyInvoice($request);
-var_dump($response);
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 查询开票申请状态
 $request = new GetInvoiceStatusRequest(array(
@@ -74,7 +88,12 @@ $request = new GetInvoiceStatusRequest(array(
     'application_id' => '',                      // 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceStatus($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 下载 PDF 版发票
 $request = new GetInvoiceFileRequest(array(
@@ -83,8 +102,12 @@ $request = new GetInvoiceFileRequest(array(
     'application_id' => '',                      // 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceFile($request);
-var_dump($response);
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 发送发票扫描件压缩包下载链接邮件
 $request = new SendReminderEmailRequest(array(
@@ -93,7 +116,12 @@ $request = new SendReminderEmailRequest(array(
     'application_id' => '',                      // 发票申请单 ID
 ));
 $response = $invoiceClient->sendReminderEmail($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 查询发票信息
 $request = new GetInvoiceInformationRequest(array(
@@ -102,4 +130,9 @@ $request = new GetInvoiceInformationRequest(array(
     'application_id' => '423721',                 // 发票申请单 ID
 ));
 $response = $invoiceClient->getInvoiceInformation($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData()->getInformation();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}

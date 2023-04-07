@@ -36,8 +36,12 @@ $request = new ApiUserSignContractRequest(array(
 
 ));
 $response = $apiUserSignClient->apiUserSignContract($request);
-var_dump($response);
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 用户签约
 $request = new ApiUserSignRequest(array(
@@ -48,8 +52,12 @@ $request = new ApiUserSignRequest(array(
     'card_type' => 'idcard',                      // 证件类型码
 ));
 $response = $apiUserSignClient->apiUserSign($request);
-var_dump($response);
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 获取用户签约状态
 $request = new GetApiUserSignStatusRequest(array(
@@ -59,7 +67,12 @@ $request = new GetApiUserSignStatusRequest(array(
     'id_card' => '110101012345678910',            // 证件号
 ));
 $response = $apiUserSignClient->getApiUserSignStatus($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 用户解约（测试账号专用接口）
 $request = new ApiUserSignReleaseRequest(array(
@@ -71,4 +84,9 @@ $request = new ApiUserSignReleaseRequest(array(
 
 ));
 $response = $apiUserSignClient->apiUserSignRelease($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}

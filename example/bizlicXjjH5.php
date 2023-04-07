@@ -43,7 +43,12 @@ $request = new H5GetStartUrlRequest(array(
 
 ));
 $response = $bizH5Client->h5GetStartUrl($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 查询个体工商户状态
 $request = new H5EcoCityAicStatusRequest(array(
@@ -56,4 +61,9 @@ $request = new H5EcoCityAicStatusRequest(array(
 
 ));
 $response = $bizH5Client->h5EcoCityAicStatus($request);
-var_dump($response);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
