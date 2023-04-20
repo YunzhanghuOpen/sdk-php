@@ -135,7 +135,7 @@ $request = new UserExemptedInfoRequest(array(
 $response = $authenticationClient->userExemptedInfo($request);
 if ($response->isSuccess()) {
     $data = $response->getData();
-    var_dump($data);
+    var_dump($data->getOk());
 } else {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }

@@ -86,13 +86,13 @@ if ($response->isSuccess()) {
     echo "接单成功";
 } else
     if ($response->getCode() == '2002') {
-        // 已上传过该流水
-        // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
-        echo "订单已存在";
-    } else {
-        // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
-        echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
-    }
+    // 已上传过该流水
+    // TODO 幂等性校验，订单号已存在，具体订单结果需等待异步通知，或主动调用订单查询接口获取
+    echo "订单已存在";
+} else {
+    // TODO 根据返回的 message 处理订单请求，切记若需重试请求，请使用原订单号重试
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 微信实时支付
 $request = new CreateWxpayOrderRequest(array(
@@ -135,7 +135,7 @@ $request = new GetOrderRequest(array(
 $response = $paymentClient->getOrder($request);
 if ($response->isSuccess()) {
     //  TODO :  code=0000,订单查询成功，根据订单状态 status 判断订单状态，做业务订单的处理
-    echo "订单状态：".$response->getData()->getStatusMessage();
+    echo "订单状态：" . $response->getData()->getStatusMessage();
 } else if ($response->getCode() == '2018') {
     // 已上传过该流水
     // TODO :  code=2018,表示订单不存在，检查一下 channel 是否传递正确，若正确，则可以使用原 order_id 再次下单
@@ -165,7 +165,8 @@ $request = new  GetEleReceiptFileRequest(array(
 $response = $paymentClient->getEleReceiptFile($request);
 if ($response->isSuccess()) {
     $data = $response->getData();
-    var_dump($data);
+    // 打印回单下载地址
+    var_dump($data->getUrl());
 } else {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }

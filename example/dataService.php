@@ -39,7 +39,7 @@ $request = new GetDailyOrderFileRequest(array(
 $response = $dataServiceClient->getDailyOrderFile($request);
 if ($response->isSuccess()) {
     $data = $response->getData();
-    var_dump($data);
+    var_dump($data->getOrderDownloadUrl());
 } else {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
@@ -51,7 +51,7 @@ $request = new GetDailyBillFileV2Request(array(
 $response = $dataServiceClient->getDailyBillFileV2($request);
 if ($response->isSuccess()) {
     $data = $response->getData();
-    print_r($data);
+    var_dump($data->getBillDownloadUrl());
 } else {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
@@ -64,8 +64,8 @@ $request = new ListDealerRechargeRecordV2Request(array(
 ));
 $response = $dataServiceClient->listDealerRechargeRecordV2($request);
 if ($response->isSuccess()) {
-    $data=$response->getData();
-    foreach ($data as $k=>$v) {
+    $data = $response->getData();
+    foreach ($data as $k => $v) {
         $v->getRechargeId();
     }
 } else {
@@ -84,8 +84,8 @@ $response = $dataServiceClient->listDailyOrder($request);
 if ($response->isSuccess()) {
     $totalNum = $response->getData()->getTotalNum();  // 总条数
     $listData = $response->getData()->getList();      // 条目明细
-    foreach ($listData as $k=>$v){
-       $v->getOrderId();
+    foreach ($listData as $k => $v) {
+        $v->getOrderId();
     }
 } else {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
@@ -103,7 +103,7 @@ $request = new ListDailyBillRequest(array(
 $response = $dataServiceClient->listDailyBill($request);
 if ($response->isSuccess()) {
     $data = $response->getData();
-    print_r($data);
+    var_dump($data);
 } else {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
@@ -115,7 +115,7 @@ $request = new GetDailyOrderFileV2Request(array(
 $response = $dataServiceClient->getDailyOrderFileV2($request);
 if ($response->isSuccess()) {
     $data = $response->getData();
-    print_r($data);
+    var_dump($data->getUrl());
 } else {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
@@ -127,7 +127,7 @@ $request = new ListBalanceDailyStatementRequest(array(
 $response = $dataServiceClient->listBalanceDailyStatement($request);
 if ($response->isSuccess()) {
     $data = $response->getData()->getList();
-    foreach ($data as $k=>$v) {
+    foreach ($data as $k => $v) {
         $v->getStatementId();
     }
 } else {
