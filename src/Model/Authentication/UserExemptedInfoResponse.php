@@ -3,17 +3,31 @@
 namespace Yzh\Model\Authentication;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 上传免验证用户名单信息返回
  * Class UserExemptedInfoResponse
  */
-class UserExemptedInfoResponse extends BaseResponse
+class UserExemptedInfoResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  UserExemptedInfoResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 是否上传成功
-     * @var string
-     */
-    public $ok;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return UserExemptedInfoResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new UserExemptedInfoResponseData($data);
+    return $this;
+  }
 }

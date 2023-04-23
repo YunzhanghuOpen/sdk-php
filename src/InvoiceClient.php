@@ -13,13 +13,15 @@ use Yzh\Model\Invoice\ApplyInvoiceRequest;
 use Yzh\Model\Invoice\ApplyInvoiceResponse;
 use Yzh\Model\Invoice\GetInvoiceStatusRequest;
 use Yzh\Model\Invoice\GetInvoiceStatusResponse;
+use Yzh\Model\Invoice\GetInvoiceInformationRequest;
+use Yzh\Model\Invoice\GetInvoiceInformationResponse;
 use Yzh\Model\Invoice\GetInvoiceFileRequest;
 use Yzh\Model\Invoice\GetInvoiceFileResponse;
 use Yzh\Model\Invoice\SendReminderEmailRequest;
 use Yzh\Model\Invoice\SendReminderEmailResponse;
 
 /**
- * Invoice 发票接口
+ * 发票开具
  * Class InvoiceClient
  */
 class InvoiceClient extends BaseClient
@@ -41,7 +43,7 @@ class InvoiceClient extends BaseClient
     }
 
     /**
-     * 查询可开票额度和开票信息
+     * 查询可开具发票额度和发票开具信息
      * @param GetInvoiceAmountRequest $request
      * @param null $option
      * @return GetInvoiceAmountResponse
@@ -55,7 +57,7 @@ class InvoiceClient extends BaseClient
     }
 
     /**
-     * 开票申请
+     * 发票开具申请
      * @param ApplyInvoiceRequest $request
      * @param null $option
      * @return ApplyInvoiceResponse
@@ -69,7 +71,7 @@ class InvoiceClient extends BaseClient
     }
 
     /**
-     * 查询开票申请状态
+     * 查询发票开具申请状态
      * @param GetInvoiceStatusRequest $request
      * @param null $option
      * @return GetInvoiceStatusResponse
@@ -80,6 +82,20 @@ class InvoiceClient extends BaseClient
             throw new ConfigException("Invoice->getInvoiceStatus request 必须是 Yzh\\Model\\Invoice\\GetInvoiceStatusRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/invoice/v2/invoice/invoice-status', $request, "Yzh\\Model\\Invoice\\GetInvoiceStatusResponse", $option);
+    }
+
+    /**
+     * 查询发票信息
+     * @param GetInvoiceInformationRequest $request
+     * @param null $option
+     * @return GetInvoiceInformationResponse
+     */
+    public function getInvoiceInformation($request, $option = null)
+    {
+        if (!$request instanceof GetInvoiceInformationRequest) {
+            throw new ConfigException("Invoice->getInvoiceInformation request 必须是 Yzh\\Model\\Invoice\\GetInvoiceInformationRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('POST', '/api/invoice/v2/invoice-face-information', $request, "Yzh\\Model\\Invoice\\GetInvoiceInformationResponse", $option);
     }
 
     /**

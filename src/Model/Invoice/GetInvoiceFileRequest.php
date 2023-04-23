@@ -5,22 +5,22 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 下载 PDF 版发票请求
- * Class GetInvoiceFileRequest
- */
+    * 下载 PDF 版发票请求
+    * Class GetInvoiceFileRequest
+    */
 class GetInvoiceFileRequest extends BaseRequest
 {
 
     /**
-     * 发票申请编号
-     * @var string
-     */
+        * 发票申请编号
+        * @var string
+        */
     public $invoice_apply_id;
 
     /**
-     * 发票申请单 ID
-     * @var string
-     */
+        * 发票申请单 ID
+        * @var string
+        */
     public $application_id;
 
 

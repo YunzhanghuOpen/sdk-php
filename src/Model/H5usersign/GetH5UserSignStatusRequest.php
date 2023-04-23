@@ -5,34 +5,34 @@ namespace Yzh\Model\H5usersign;
 use Yzh\Model\BaseRequest;
 
 /**
- * 获取用户签约状态请求
- * Class GetH5UserSignStatusRequest
- */
+    * 获取用户签约状态请求
+    * Class GetH5UserSignStatusRequest
+    */
 class GetH5UserSignStatusRequest extends BaseRequest
 {
 
     /**
-     * 平台企业 ID
-     * @var string
-     */
+        * 平台企业 ID
+        * @var string
+        */
     public $dealer_id;
 
     /**
-     * 综合服务主体 ID
-     * @var string
-     */
+        * 综合服务主体 ID
+        * @var string
+        */
     public $broker_id;
 
     /**
-     * 姓名
-     * @var string
-     */
+        * 姓名
+        * @var string
+        */
     public $real_name;
 
     /**
-     * 证件号码
-     * @var string
-     */
+        * 证件号码
+        * @var string
+        */
     public $id_card;
 
 

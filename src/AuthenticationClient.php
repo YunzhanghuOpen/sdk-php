@@ -23,7 +23,7 @@ use Yzh\Model\Authentication\GetBankCardInfoRequest;
 use Yzh\Model\Authentication\GetBankCardInfoResponse;
 
 /**
- * 用户信息验证接口
+ * 用户信息验证
  * Class AuthenticationClient
  */
 class AuthenticationClient extends BaseClient
@@ -45,7 +45,7 @@ class AuthenticationClient extends BaseClient
     }
 
     /**
-     * 银行卡四要素确认鉴权（上传短信验证码）
+     * 银行卡四要素确认请求（上传短信验证码）
      * @param BankCardFourAuthConfirmRequest $request
      * @param null $option
      * @return BankCardFourAuthConfirmResponse

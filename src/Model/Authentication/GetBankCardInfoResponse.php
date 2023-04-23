@@ -3,35 +3,31 @@
 namespace Yzh\Model\Authentication;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 银行卡信息查询返回
  * Class GetBankCardInfoResponse
  */
-class GetBankCardInfoResponse extends BaseResponse
+class GetBankCardInfoResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  GetBankCardInfoResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 银行代码
-     * @var string
-     */
-    public $bank_code;
-
-    /**
-     * 银行名称
-     * @var string
-     */
-    public $bank_name;
-
-    /**
-     * 卡类型
-     * @var string
-     */
-    public $card_type;
-
-    /**
-     * 云账户是否支持向该银行支付
-     * @var bool
-     */
-    public $is_support;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return GetBankCardInfoResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new GetBankCardInfoResponseData($data);
+    return $this;
+  }
 }

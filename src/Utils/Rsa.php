@@ -104,7 +104,8 @@ class Rsa
 
     /**
      * 验证数据签名
-     * @param $data, $sign
+     * @param string $data 
+     * @param string $sign
      * @return bool
      */
     public function verify($data, $sign)

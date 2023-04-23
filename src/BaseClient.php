@@ -8,7 +8,9 @@ use Yzh\Exception\HttpException;
 use Yzh\Config;
 use Yzh\Utils\Rsa;
 use Yzh\Utils\Des;
+use Yzh\Utils\Hmac;
 use Yzh\Utils\MessString;
+use Yzh\Model\BaseResponse;
 
 defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 
@@ -19,6 +21,7 @@ class BaseClient
 
     const ENV_PROD = "yzh_env_prod";
     const ENV_SANDBOX = "yzh_env_sandbox";
+
 
     protected $env;
     /**
@@ -33,20 +36,22 @@ class BaseClient
             'tax' => 'https://api-service.yunzhanghu.com',
             'authentication' => 'https://api-service.yunzhanghu.com',
             'invoice' => 'https://api-service.yunzhanghu.com',
-            'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
-            'aic' => 'https://api-aic.yunzhanghu.com',         // 个体工商户注册服务接口域名
-            'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
-            'dataservice' => 'https://api-service.yunzhanghu.com',    // 数据服务接口域名
-            'apiusersignservice' => 'https://api-service.yunzhanghu.com',    // API 用户签约接口域名
+            'dataservice' => 'https://api-service.yunzhanghu.com',          // 数据服务接口域名
+            'apiusersignservice' => 'https://api-service.yunzhanghu.com',   // API 用户签约接口域名
             'h5usersignservice' => 'https://api-service.yunzhanghu.com',    // H5 用户签约接口域名
+            'bizlicxjjh5apiservice' => 'https://api-aic.yunzhanghu.com',    // 个体工商户注册服务 (云账户新经济 H5+API）接口域名
+            'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',       // 个体工商户注册服务（云账户新经济 H5）接口域名
+            'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
+            'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
+
 
 
         ),
         self::ENV_SANDBOX => array( // 沙箱环境
             'payment' => 'https://api-service.yunzhanghu.com/sandbox',   // 实时支付服务接口域名
             'authentication' => 'https://api-service.yunzhanghu.com/sandbox', // 用户信息验证接口域名
-            'apiusersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // API 用户签约接口域名
-            'h5usersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // H5 用户签约接口域名
+            'apiusersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // API 签约接口域名
+            'h5usersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // H5 签约接口域名
             'ins' => '',       // 保险服务接口域名
             'aic' => '',       // 个体工商户注册服务接口域名
             'task' => '',      // 任务库服务接口域名
@@ -54,8 +59,11 @@ class BaseClient
         ),
     );
 
-    private $rsa;
-    private $des;
+    protected $rsa;
+    protected $hmac;
+    protected $des;
+    protected $app_key;
+    protected $sign_type;
 
 
     public function __construct($config)
@@ -65,7 +73,18 @@ class BaseClient
         }
         $this->config = $config;
         $this->setEnv($config->env);
-        $this->rsa = Rsa::getInstance($this->config->app_private_key, $this->config->yzh_public_key);
+
+        if ($this->config->sign_type == Config::SIGN_TYPE_RSA) {
+            $this->rsa = Rsa::getInstance($this->config->app_private_key, $this->config->yzh_public_key);
+            $this->sign_type = Config::SIGN_TYPE_RSA;
+        } else if ($this->config->sign_type == Config::SIGN_TYPE_HMAC) {
+            $this->hmac = Hmac::getInstance($this->config->app_key);
+            $this->sign_type = Config::SIGN_TYPE_HMAC;
+        } else {
+            throw new ConfigException("签名方式配置错误", ExceptionCode::CONFIG_ERROR_WRONG_SIGN_TYPE);
+        }
+
+        $this->app_key = $this->config->app_key;
         $this->des = new Des($this->config->app_des3_key);
     }
 
@@ -129,6 +148,13 @@ class BaseClient
             CURLOPT_HTTPHEADER => $header,
         ));
         $response = curl_exec($curl);
+
+        if ($response == false) {
+            $errMsg = curl_error($curl);
+            curl_close($curl);
+            throw new HttpException("请求失败,response:" . $errMsg, 0);
+        }
+
         $curlInfo = curl_getinfo($curl);
         curl_close($curl);
 
@@ -162,18 +188,50 @@ class BaseClient
         $header = array(
             'Content-Type: application/x-www-form-urlencoded',
             'dealer-id: ' . $this->config->app_dealer_id,
-            'request-id: ' . MessString::rand(32),
+            'request-id: ' . $request->getRequestId(),
             'User-Agent: ' . $this->generateUserAgent()
         );
 
         $url = $baseUrl . $path;
         if ($method == "GET") {
-            $response = $this->get($url, $requestData, $header, $option);
+            $body = $this->get($url, $requestData, $header, $option);
         } else {
-            $response = $this->post($url, $requestData, $header, $option);
+            $body = $this->post($url, $requestData, $header, $option);
         }
 
-        return ApiResponse::newFromResponse($response, $responseDataClass, $responseDecoder);
+        /**
+         * @var BaseResponse $resp
+         */
+        $resp = new $responseDataClass();
+        $respData = json_decode($body, true);
+        if (isset($respData['code'])) {
+            $resp->setCode($respData['code']);
+        }
+
+        if (isset($respData['message'])) {
+            $resp->setMessage($respData['message']);
+        }
+
+        $requestID = "";
+        if (isset($respData['request_id'])) {
+            $requestID = $respData['request_id'];
+        } elseif (isset($respData['requestID'])) {
+            $requestID = $respData['requestID'];
+        }
+        $resp->setRequestID($requestID);
+
+        if (!isset($respData['data']) || !class_exists($responseDataClass)) {
+            return $resp;
+        }
+
+        if (is_string($respData['data']) && !is_null($responseDecoder)) {
+            $data  = json_decode($responseDecoder->decrypt($respData['data']), true);
+        } else {
+            $data = $respData['data'];
+        }
+        $resp->setData($data);
+
+        return $resp;
     }
 
 
@@ -187,13 +245,18 @@ class BaseClient
         $encryptedBody = $this->des->encrypt(json_encode($request->getRequestData(), JSON_UNESCAPED_UNICODE));
         $mess = MessString::rand(16);
         $nowts = time();
-        $sign = $this->rsa->sign(sprintf("data=%s&mess=%s&timestamp=%d&key=%s", $encryptedBody, $mess, $nowts, $this->config->app_key));
+        if ($this->sign_type == Config::SIGN_TYPE_RSA) {
+            $sign = $this->rsa->sign(sprintf("data=%s&mess=%s&timestamp=%d&key=%s", $encryptedBody, $mess, $nowts, $this->config->app_key));
+        } else {
+            $sign = $this->hmac->sign(sprintf("data=%s&mess=%s&timestamp=%d&key=%s", $encryptedBody, $mess, $nowts, $this->config->app_key));
+        }
+
         return array(
             'data' => $encryptedBody,
             'mess' => $mess,
             'timestamp' => $nowts,
             'sign' => $sign,
-            'sign_type' => 'rsa',
+            'sign_type' => $this->sign_type,
         );
     }
 }

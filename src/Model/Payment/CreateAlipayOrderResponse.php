@@ -3,29 +3,31 @@
 namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
- * 支付宝实时下单返回
+ * 支付宝实时支付返回
  * Class CreateAlipayOrderResponse
  */
-class CreateAlipayOrderResponse extends BaseResponse
+class CreateAlipayOrderResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  CreateAlipayOrderResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 平台企业订单号
-     * @var string
-     */
-    public $order_id;
-
-    /**
-     * 综合服务平台流水号
-     * @var string
-     */
-    public $ref;
-
-    /**
-     * 订单金额
-     * @var string
-     */
-    public $pay;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return CreateAlipayOrderResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new CreateAlipayOrderResponseData($data);
+    return $this;
+  }
 }

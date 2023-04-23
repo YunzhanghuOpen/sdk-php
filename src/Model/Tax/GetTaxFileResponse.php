@@ -3,17 +3,31 @@
 namespace Yzh\Model\Tax;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
- * 下载个税扣缴明细表返回
+ * 下载个人所得税扣缴明细表返回
  * Class GetTaxFileResponse
  */
-class GetTaxFileResponse extends BaseResponse
+class GetTaxFileResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  GetTaxFileResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 文件详情
-     * @var FileInfo[]
-     */
-    public $file_info;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return GetTaxFileResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new GetTaxFileResponseData($data);
+    return $this;
+  }
 }

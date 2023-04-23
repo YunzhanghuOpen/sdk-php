@@ -15,7 +15,7 @@ use Yzh\Model\H5usersign\H5UserReleaseRequest;
 use Yzh\Model\H5usersign\H5UserReleaseResponse;
 
 /**
- * H5签约接口
+ * H5 签约
  * Class H5UserSignServiceClient
  */
 class H5UserSignServiceClient extends BaseClient
@@ -23,7 +23,7 @@ class H5UserSignServiceClient extends BaseClient
     protected static $service_name = 'h5usersignservice';
 
     /**
-     * H5 预申请签约接口
+     * 预申请签约
      * @param H5UserPresignRequest $request
      * @param null $option
      * @return H5UserPresignResponse
@@ -37,7 +37,7 @@ class H5UserSignServiceClient extends BaseClient
     }
 
     /**
-     * H5 签约接口
+     * 申请签约
      * @param H5UserSignRequest $request
      * @param null $option
      * @return H5UserSignResponse
@@ -51,7 +51,7 @@ class H5UserSignServiceClient extends BaseClient
     }
 
     /**
-     * H5 获取用户签约状态
+     * 获取用户签约状态
      * @param GetH5UserSignStatusRequest $request
      * @param null $option
      * @return GetH5UserSignStatusResponse
@@ -65,7 +65,7 @@ class H5UserSignServiceClient extends BaseClient
     }
 
     /**
-     * H5 对接测试解约接口
+     * 用户解约（测试账号专用接口）
      * @param H5UserReleaseRequest $request
      * @param null $option
      * @return H5UserReleaseResponse

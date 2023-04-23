@@ -11,7 +11,7 @@ use Yzh\Model\Tax\GetUserCrossRequest;
 use Yzh\Model\Tax\GetUserCrossResponse;
 
 /**
- * 个税服务
+ * 个人所得税扣缴明细表
  * Class TaxClient
  */
 class TaxClient extends BaseClient
@@ -19,7 +19,7 @@ class TaxClient extends BaseClient
     protected static $service_name = 'tax';
 
     /**
-     * 下载个税扣缴明细表
+     * 下载个人所得税扣缴明细表
      * @param GetTaxFileRequest $request
      * @param null $option
      * @return GetTaxFileResponse
@@ -33,7 +33,7 @@ class TaxClient extends BaseClient
     }
 
     /**
-     * GetUserCross 查询纳税人是否为跨集团用户
+     * 查询纳税人是否为跨集团用户
      * @param GetUserCrossRequest $request
      * @param null $option
      * @return GetUserCrossResponse

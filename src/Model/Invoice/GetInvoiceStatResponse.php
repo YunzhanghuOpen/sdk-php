@@ -3,35 +3,31 @@
 namespace Yzh\Model\Invoice;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
  * 查询平台企业已开具和待开具发票金额返回
  * Class GetInvoiceStatResponse
  */
-class GetInvoiceStatResponse extends BaseResponse
+class GetInvoiceStatResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  GetInvoiceStatResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 平台企业 ID
-     * @var string
-     */
-    public $dealer_id;
-
-    /**
-     * 综合服务主体 ID
-     * @var string
-     */
-    public $broker_id;
-
-    /**
-     * 已开具发票金额
-     * @var string
-     */
-    public $invoiced;
-
-    /**
-     * 待开具发票金额
-     * @var string
-     */
-    public $not_invoiced;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return GetInvoiceStatResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new GetInvoiceStatResponseData($data);
+    return $this;
+  }
 }

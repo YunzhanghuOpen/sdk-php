@@ -5,16 +5,16 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 查询余额日账单数据请求
- * Class ListBalanceDailyStatementRequest
- */
+    * 查询余额日账单数据请求
+    * Class ListBalanceDailyStatementRequest
+    */
 class ListBalanceDailyStatementRequest extends BaseRequest
 {
 
     /**
-     * 账单查询日期 格式：yyyy-MM-dd
-     * @var string
-     */
+        * 账单查询日期 格式：yyyy-MM-dd
+        * @var string
+        */
     public $statement_date;
 
 

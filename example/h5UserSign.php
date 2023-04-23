@@ -11,6 +11,7 @@ use Yzh\Model\H5usersign\GetH5UserSignStatusRequest;
 use Yzh\Model\H5usersign\H5UserReleaseRequest;
 
 
+// 用户签约（H5 签约）
 
 
 $config = Config::newFromArray(array(
@@ -20,6 +21,8 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
+    'sign_type' => $test_var['sign_type']
+
 ));
 
 try {
@@ -28,9 +31,8 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-// H5 签约
 
-// H5 预申请签约接口
+// H5 预申请签约
 $request = new H5UserPresignRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
@@ -40,10 +42,14 @@ $request = new H5UserPresignRequest(array(
 
 ));
 $response = $h5UserSignClient->h5UserPresign($request);
-var_dump(array('response' => $response->toArray()));
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
-
-// H5 签约接口
+// H5 签约
 $request = new H5UserSignRequest(array(
 
     'token' => '7db97222-2dfb-484b-b8ac-e39a69d2aba0',      // H5 签约 token
@@ -53,8 +59,12 @@ $request = new H5UserSignRequest(array(
 
 ));
 $response = $h5UserSignClient->h5UserSign($request);
-var_dump(array('response' => $response->toArray()));
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 获取用户签约状态
 $request = new GetH5UserSignStatusRequest(array(
@@ -65,7 +75,12 @@ $request = new GetH5UserSignStatusRequest(array(
 
 ));
 $response = $h5UserSignClient->getH5UserSignStatus($request);
-var_dump(array('response' => $response->toArray()));
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 用户解约（测试账号专用接口）
 $request = new H5UserReleaseRequest(array(
@@ -77,4 +92,9 @@ $request = new H5UserReleaseRequest(array(
 
 ));
 $response = $h5UserSignClient->h5UserRelease($request);
-var_dump(array('response' => $response->toArray()));
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}

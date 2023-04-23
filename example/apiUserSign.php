@@ -6,12 +6,11 @@ include_once(TEST_PATH . '/test_var.php');
 use Yzh\ApiUserSignServiceClient;
 use Yzh\Config;
 use Yzh\Model\Apiusersign\ApiUserSignRequest;
-use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
+use Yzh\Model\Apiusersign\ApiUserSignContractRequest;
 use Yzh\Model\Apiusersign\ApiUserSignReleaseRequest;
 use Yzh\Model\Apiusersign\GetApiUserSignStatusRequest;
 
-
-
+// 用户签约（API 签约）
 
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
@@ -20,6 +19,7 @@ $config = Config::newFromArray(array(
     'app_des3_key' => $test_var['app_des3_key'],
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
+    'sign_type' => $test_var['sign_type']
 ));
 
 try {
@@ -28,17 +28,20 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-// API 签约
 
 // 获取协议预览 URL
-$request = new ApiUseSignContractRequest(array(
+$request = new ApiUserSignContractRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
 
 ));
-$response = $apiUserSignClient->apiUseSignContract($request);
-var_dump(array('response' => $response->toArray()));
-
+$response = $apiUserSignClient->apiUserSignContract($request);
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 用户签约
 $request = new ApiUserSignRequest(array(
@@ -49,8 +52,12 @@ $request = new ApiUserSignRequest(array(
     'card_type' => 'idcard',                      // 证件类型码
 ));
 $response = $apiUserSignClient->apiUserSign($request);
-var_dump(array('response' => $response->toArray()));
-
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 获取用户签约状态
 $request = new GetApiUserSignStatusRequest(array(
@@ -60,7 +67,12 @@ $request = new GetApiUserSignStatusRequest(array(
     'id_card' => '110101012345678910',            // 证件号
 ));
 $response = $apiUserSignClient->getApiUserSignStatus($request);
-var_dump(array('response' => $response->toArray()));
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 用户解约（测试账号专用接口）
 $request = new ApiUserSignReleaseRequest(array(
@@ -72,4 +84,9 @@ $request = new ApiUserSignReleaseRequest(array(
 
 ));
 $response = $apiUserSignClient->apiUserSignRelease($request);
-var_dump(array('response' => $response->toArray()));
+if ($response->isSuccess()) {
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}

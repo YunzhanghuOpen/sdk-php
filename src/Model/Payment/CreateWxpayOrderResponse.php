@@ -3,29 +3,31 @@
 namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseResponse;
+use Yzh\Model\ResponseInterface;
 
 /**
- * 微信实时下单返回
+ * 微信实时支付返回
  * Class CreateWxpayOrderResponse
  */
-class CreateWxpayOrderResponse extends BaseResponse
+class CreateWxpayOrderResponse extends BaseResponse implements ResponseInterface
 {
+  /**
+   * 获取数据对象
+   * @return  CreateWxpayOrderResponseData
+   */
+  public function getData()
+  {
+    return $this->data;
+  }
 
-    /**
-     * 平台企业订单号
-     * @var string
-     */
-    public $order_id;
-
-    /**
-     * 综合服务平台流水号，唯一
-     * @var string
-     */
-    public $ref;
-
-    /**
-     * 订单金额
-     * @var string
-     */
-    public $pay;
+  /**
+   * 设置数据对象
+   * @param  array $data
+   * @return CreateWxpayOrderResponseData
+   */
+  public function setData($data)
+  {
+    $this->data = new CreateWxpayOrderResponseData($data);
+    return $this;
+  }
 }

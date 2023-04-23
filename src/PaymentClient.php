@@ -27,7 +27,7 @@ use Yzh\Model\Payment\ConfirmBatchOrderRequest;
 use Yzh\Model\Payment\ConfirmBatchOrderResponse;
 
 /**
- * 实时下单接口
+ * 实时支付
  * Class PaymentClient
  */
 class PaymentClient extends BaseClient
@@ -35,7 +35,7 @@ class PaymentClient extends BaseClient
     protected static $service_name = 'payment';
 
     /**
-     * 银行卡实时下单
+     * 银行卡实时支付
      * @param CreateBankpayOrderRequest $request
      * @param null $option
      * @return CreateBankpayOrderResponse
@@ -49,7 +49,7 @@ class PaymentClient extends BaseClient
     }
 
     /**
-     * 支付宝实时下单
+     * 支付宝实时支付
      * @param CreateAlipayOrderRequest $request
      * @param null $option
      * @return CreateAlipayOrderResponse
@@ -63,7 +63,7 @@ class PaymentClient extends BaseClient
     }
 
     /**
-     * 微信实时下单
+     * 微信实时支付
      * @param CreateWxpayOrderRequest $request
      * @param null $option
      * @return CreateWxpayOrderResponse
