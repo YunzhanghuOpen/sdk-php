@@ -14,6 +14,8 @@ final class ExceptionCode
     const PRIVATE_KEY_ENCRYPT_FAIL = 20003;
     const PRIVATE_KEY_DECRYPT_FAIL = 2004;
     const PUBLIC_KEY_DECRYPT_FAIL = 20005;
+    const DES_KEY_ENCRYPT_FAIL = 2006;
+    const DES_KEY_DECRYPT_FAIL = 2007;
 
 
     private static $error_message_map = array(

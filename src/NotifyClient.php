@@ -2,6 +2,7 @@
 
 namespace Yzh;
 
+use Yzh\Exception\RunTimeException;
 use Yzh\Model\Notify\NotifyRequest;
 use Yzh\Model\Notify\NotifyResponse;
 
@@ -11,6 +12,7 @@ class NotifyClient extends BaseClient
      * 异步回调验签和解密
      * @param NotifyRequest $request
      * @return NotifyResponse
+     * @throws RunTimeException
      */
     public function verifyAndDescrype($request)
     {

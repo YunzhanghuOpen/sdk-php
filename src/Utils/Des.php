@@ -2,6 +2,9 @@
 
 namespace Yzh\Utils;
 
+use Yzh\Exception\RunTimeException;
+use Yzh\Exception\ExceptionCode;
+
 class Des
 {
     private $des3_key; // 密钥向量
@@ -23,6 +26,7 @@ class Des
      * 加密
      * @param $value
      * @return string
+     * @throws RunTimeException
      */
     public function encrypt($value)
     {
@@ -33,7 +37,11 @@ class Des
         $iv  = substr($this->des3_key, 0, 8);
         $ret = openssl_encrypt($value, 'DES-EDE3-CBC', $this->des3_key, 0, $iv);
         if (false === $ret) {
-            return openssl_error_string();
+            $errMsg = "DES encrypt err";
+            while ($errStr = openssl_error_string()) {
+                $errMsg = $errStr;
+            }
+            throw new RunTimeException($errMsg, ExceptionCode::DES_KEY_ENCRYPT_FAIL);
         }
         return $ret;
     }
@@ -42,6 +50,7 @@ class Des
      * 解密
      * @param $value
      * @return bool|false|string
+     * @throws RunTimeException
      */
     public function decrypt($value)
     {
@@ -52,7 +61,11 @@ class Des
         $iv  = substr($this->des3_key, 0, 8);
         $ret = openssl_decrypt($value, 'DES-EDE3-CBC', $this->des3_key, 0, $iv);
         if (false === $ret) {
-            return openssl_error_string();
+            $errMsg = "DES decrypt err";
+            while ($errStr = openssl_error_string()) {
+                $errMsg = $errStr;
+            }
+            throw new RunTimeException($errMsg, ExceptionCode::DES_KEY_DECRYPT_FAIL);
         }
 
         return $ret;
