@@ -17,15 +17,14 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type'],
 ));
 
-$data = $_POST['data'];
-$mess = $_POST['mess'];
-$timestamp = $_POST['timestamp'];
-$sign = $_POST['sign'];
+$data = 'xV1hcjgs2fIqYclmkeuHZk94htWnxTvPiFDh9xioSC6yUwZN+YB1zknOpgnxibr7tcGUOIVCIKrZBDCDB4XF6oFhFJ+NasjCKvUxDQLHeF1TXCwHoLTihNxd60268vG7A77HEh9A7Zlaktv3+nN2V9/0BPW8T3GtvAdi8BhTISmYdSP0dbYcMgy26HsAcoXJgCi3moNCspUUl/jAKA7eRhZofuZLfzcGwMC8Ie4oTQAxkLx1JBc8TSW5AGndgTbxZRaqIxwKZeW90YyBbCmcl+2Mb/N0NIV193s/+oPsg4ebemqX3QKNIo45Nsee+0HKi8bpl0ejKbpG6CH6Zkk7WxgDbpQ0GfxwmmMiq6ZY5lJNRdVFRF8ZOPyVPlyYP3EtC8mFM44BNYvhfnBP+nOaTXkcfcE/uo69JxIzsilbPU4Q0UjEbGfi0ADJ93sQhzpdVKhpVcGyhUK043x6jgleuTFw81/hQXXtSyw0aN6fse/E3zvoenfqy/luHEFuHpkGc1jydL7wEXFdoPia9d9NfGkJR6Kus6t5YV+5+AFDU6tCvzzoGqwQdjm59ojeTQOZHFWOJX8i35EfCL5dbv3w7ojCpKau55UcrnYWTqfUXInOwQeBbJ6OoFTQ82LXEILSjGc/kLQl49ldIUC0TetqaCF47cTyQbZn+5z6WoLkxj9xy1p6srZTGIkiPKkiyGJtw6t0Fv8GgECQn/Uc3omSN4XSd97hewZ9KWEWdbeI8GluCJo33O3FiJIHHh90qXSQGLQNjr5WDsR2kDuIXyrQG72x0pXU8c8VqOTVkBV06e59upAKuR+OVXNl3HuCOuVyMGNGCNcPtKpNvfjBQ+E83W3sjObZ32Kdttpchysd8sGDablYrQnSipt8KOyUd++llHlSVR16SqGR006E04SsMXK2x//YCr5MCemgkA+19Bao3o0JVJ7iLuQly3hspaZMQ62nKdFwx0kKlk9vJsjgwo4moNt0Uw1W';
+$mess = '1011052928';
+$timestamp = '1685608647';
+$sign = 'T11oVdxVmkB6KcuuiRE2XO01gDLnVbGVQTQ1ZiJFCFVQSFa5XBwShSnFDTCtA56tFKrik8FqVoeQaBGJj6srPgmylWctvZb9ki0D3vPKa59ELJP2WOQo9nibi2uVYpVHU2nXpSoPH03WWjKa+yOFubt4MBEkqqhqAkM0GHjOOQg=';
 
 $notifyReq = new NotifyRequest($data, $mess, $timestamp, $sign) ;
 try {
     $notifyClient = new NotifyClient($config);
-    $notifyClient->setEnv(NotifyClient::ENV_PROD);
 } catch (\Exception $e) {
     die($e->getMessage());
 }
@@ -68,4 +67,4 @@ if ($result->getSignRes())     // 验签成功
             break;
     }
 }
-echo "success";       // 回写 success，终止本次回调
+//echo "success";       // 回写 success，终止本次回调
