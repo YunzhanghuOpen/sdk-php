@@ -15,7 +15,8 @@ class NotifyClient extends BaseClient
      * @throws RunTimeException
      * @deprecated
      */
-    public function verifyAndDescrype($request) {
+    public function verifyAndDescrype($request)
+    {
         return $this->_verifyAndDecrypt($request);
     }
 
@@ -25,7 +26,8 @@ class NotifyClient extends BaseClient
      * @return NotifyResponse
      * @throws RunTimeException
      */
-    public function verifyAndDecrypt($request) {
+    public function verifyAndDecrypt($request)
+    {
         return $this->_verifyAndDecrypt($request);
     }
 
