@@ -23,12 +23,8 @@ $config = Config::newFromArray(array(
 
 ));
 
-try {
-    $bizH5APIClient = new  \Yzh\BizlicXjjH5APIServiceClient($config);
-    $bizH5APIClient->setEnv(BizlicXjjH5APIServiceClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$bizH5APIClient = new  \Yzh\BizlicXjjH5APIServiceClient($config);
+$bizH5APIClient->setEnv(BizlicXjjH5APIServiceClient::ENV_PROD);
 
 // 工商实名信息录入
 $request = new H5PreCollectBizlicMsgRequest(array(

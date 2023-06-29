@@ -25,12 +25,8 @@ $config = Config::newFromArray(array(
 
 ));
 
-try {
-    $dataServiceClient = new \Yzh\DataServiceClient($config);
-    $dataServiceClient->setEnv(DataServiceClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$dataServiceClient = new \Yzh\DataServiceClient($config);
+$dataServiceClient->setEnv(DataServiceClient::ENV_PROD);
 
 // 查询日订单文件
 $request = new GetDailyOrderFileRequest(array(

@@ -27,13 +27,8 @@ $config = Config::newFromArray(array(
 
 ));
 
-try {
-    $invoiceClient = new InvoiceClient($config);
-    $invoiceClient->setEnv(InvoiceClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
-
+$invoiceClient = new InvoiceClient($config);
+$invoiceClient->setEnv(InvoiceClient::ENV_PROD);
 
 // 查询平台企业已开具和待开具发票金额
 $request = new GetInvoiceStatRequest(array(

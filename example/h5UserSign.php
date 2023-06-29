@@ -25,12 +25,9 @@ $config = Config::newFromArray(array(
 
 ));
 
-try {
-    $h5UserSignClient = new  H5UserSignServiceClient($config);
-    $h5UserSignClient->setEnv(H5UserSignServiceClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+
+$h5UserSignClient = new  H5UserSignServiceClient($config);
+$h5UserSignClient->setEnv(H5UserSignServiceClient::ENV_PROD);
 
 // H5 预申请签约
 $request = new H5UserPresignRequest(array(

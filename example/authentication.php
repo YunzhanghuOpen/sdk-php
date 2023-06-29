@@ -27,12 +27,8 @@ $config = Config::newFromArray(array(
 
 ));
 
-try {
-    $authenticationClient = new AuthenticationClient($config);
-    $authenticationClient->setEnv(AuthenticationClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$authenticationClient = new AuthenticationClient($config);
+$authenticationClient->setEnv(AuthenticationClient::ENV_PROD);
 
 // 身份证实名认证
 $request = new IDCardVerifyRequest(array(

@@ -22,12 +22,8 @@ $config = Config::newFromArray(array(
 
 ));
 
-try {
-    $taxClient = new TaxClient($config);
-    $taxClient->setEnv(TaxClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$taxClient = new TaxClient($config);
+$taxClient->setEnv(TaxClient::ENV_PROD);
 
 // 下载个人所得税扣缴明细表
 $request = new GetTaxFileRequest(array(

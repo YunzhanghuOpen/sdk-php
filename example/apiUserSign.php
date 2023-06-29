@@ -22,12 +22,8 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-try {
-    $apiUserSignClient = new ApiUserSignServiceClient($config);
-    $apiUserSignClient->setEnv(ApiUserSignServiceClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$apiUserSignClient = new ApiUserSignServiceClient($config);
+$apiUserSignClient->setEnv(ApiUserSignServiceClient::ENV_PROD);
 
 // 获取协议预览 URL
 $request = new ApiUserSignContractRequest(array(
