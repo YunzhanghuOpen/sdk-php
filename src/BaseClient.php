@@ -81,7 +81,7 @@ class BaseClient
             $this->hmac = Hmac::getInstance($this->config->app_key);
             $this->sign_type = Config::SIGN_TYPE_HMAC;
         } else {
-            throw new ConfigException("签名方式配置错误", ExceptionCode::CONFIG_ERROR_WRONG_SIGN_TYPE);
+            throw new ConfigException("签名算法配置错误", ExceptionCode::CONFIG_ERROR_WRONG_SIGN_TYPE);
         }
 
         $this->app_key = $this->config->app_key;

@@ -9,10 +9,9 @@ $test_var = array(
     'app_key' => '0gyU3F***k516ES',
     // 平台企业 3DES Key，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
     'app_des3_key' => 'Isg2W***zx6iP',
-    // 签名方式，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取，默认为 RSA 签名
-    // RSA 签名：rsa | HMAC 签名：sha256
+    // 签名算法，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取
+    // 签名算法为 RSA，参数固定为：rsa
     'sign_type' =>'rsa',
-    // 若使用 RSA 签名，则需配置平台企业私钥及云账户公钥，若使用 HMAC 签名，则忽略以下配置
     // 平台企业私钥，自行生成 RSA 公私钥，私钥请妥善保存，谨防泄露。平台企业公钥请登录云账户综合服务平台配置，选择“业务中心 > 业务管理 > 对接信息”，单击页面右上角的“编辑”，完成平台企业公钥配置
     'app_private_key' => '-----BEGIN PRIVATE KEY-----
 MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDACZcSLLFF8KX2
