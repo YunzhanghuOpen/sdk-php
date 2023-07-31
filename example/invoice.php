@@ -24,11 +24,9 @@ $config = Config::newFromArray(array(
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type']
-
 ));
 
 $invoiceClient = new InvoiceClient($config);
-$invoiceClient->setEnv(InvoiceClient::ENV_PROD);
 
 // 查询平台企业已开具和待开具发票金额
 $request = new GetInvoiceStatRequest(array(

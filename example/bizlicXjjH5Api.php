@@ -20,11 +20,9 @@ $config = Config::newFromArray(array(
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type']
-
 ));
 
 $bizH5APIClient = new  \Yzh\BizlicXjjH5APIServiceClient($config);
-$bizH5APIClient->setEnv(BizlicXjjH5APIServiceClient::ENV_PROD);
 
 // 工商实名信息录入
 $request = new H5PreCollectBizlicMsgRequest(array(

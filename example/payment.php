@@ -25,11 +25,10 @@ $config = Config::newFromArray(array(
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type']
-    'env' => BaseClient::ENV_PROD; // 沙箱环境：ENV_SANDBOX
 ));
 
 $paymentClient = new PaymentClient($config);
-//$paymentClient->setEnv(PaymentClient::ENV_PROD);
+// $paymentClient->setEnv(PaymentClient::ENV_SANDBOX);// 沙箱环境
 
 // 银行卡实时支付
 $request = new CreateBankpayOrderRequest(array(

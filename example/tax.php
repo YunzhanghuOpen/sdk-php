@@ -19,11 +19,9 @@ $config = Config::newFromArray(array(
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type']
-
 ));
 
 $taxClient = new TaxClient($config);
-$taxClient->setEnv(TaxClient::ENV_PROD);
 
 // 下载个人所得税扣缴明细表
 $request = new GetTaxFileRequest(array(

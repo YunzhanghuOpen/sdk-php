@@ -23,7 +23,7 @@ $config = Config::newFromArray(array(
 ));
 
 $apiUserSignClient = new ApiUserSignServiceClient($config);
-$apiUserSignClient->setEnv(ApiUserSignServiceClient::ENV_PROD);
+// $apiUserSignClient->setEnv(ApiUserSignServiceClient::ENV_SANDBOX);// 沙箱环境
 
 // 获取协议预览 URL
 $request = new ApiUserSignContractRequest(array(
