@@ -42,7 +42,7 @@ if ($response->isSuccess()) {
 $pwd = "KbCfTWmqR+HpRGVISFBkmu/ZWtWTOcVs6Gl5/mJVtMjVr7V5e8RlD3gbtsS4gdy7pUWptN8zIwmCl4OkPTg8/oIY/I1BotzFSPCuxp6Gy5j/ZPd+pK6ODONpHmP9dL0KJr+QHhFmA9G9XLOxoSwlZ2hAvzkkRWFUdfP/TXvNNzynTj7/wMrBjoJCkfMY43e74gocyyFEVm34/icSF4UutdWW4df1sS6wA+mcbgamu1vbdBKXY3yViJXDWJTmgShpy0QUVSoLVtuPDVBCcLRsrvpujVqLLCn5PKtPJCtZdMpe0MxxFpI4RRyqKsc9t00gPAVMOz6pFROWwcskp940tA==";
 $rsa = $rsa = Rsa::getInstance($config->app_private_key);
 // ①使用 BASE64 算法对数据解码，得到密文。
-// ②使用 RSA 算法用平台企业私钥对密文进行解密，得到文件解压缩明文密码。
+// ②使用 RSA 加解密算法用平台企业私钥对密文进行解密，得到文件解压缩明文密码。
 $password = $rsa->privateKeyDecrypt(base64_decode($pwd));
 echo "解压缩明文密码:" . $password;
 
