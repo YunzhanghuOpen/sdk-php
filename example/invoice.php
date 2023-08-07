@@ -26,7 +26,11 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-$invoiceClient = new InvoiceClient($config);
+try {
+    $invoiceClient = new InvoiceClient($config);
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 // 查询平台企业已开具和待开具发票金额
 $request = new GetInvoiceStatRequest(array(

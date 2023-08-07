@@ -21,7 +21,11 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-$taxClient = new TaxClient($config);
+try {
+    $taxClient = new TaxClient($config);
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 // 下载个人所得税扣缴明细表
 $request = new GetTaxFileRequest(array(

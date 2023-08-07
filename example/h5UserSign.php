@@ -24,9 +24,12 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-
-$h5UserSignClient = new  H5UserSignServiceClient($config);
-// $h5UserSignClient->setEnv(H5UserSignServiceClient::ENV_SANDBOX);// 沙箱环境
+try {
+    $h5UserSignClient = new H5UserSignServiceClient($config);
+    // $h5UserSignClient->setEnv(H5UserSignServiceClient::ENV_SANDBOX);// 沙箱环境
+} catch (\Exception $e) {
+    die($e->getMessage());
+} 
 
 // H5 预申请签约
 $request = new H5UserPresignRequest(array(

@@ -27,8 +27,12 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-$paymentClient = new PaymentClient($config);
-// $paymentClient->setEnv(PaymentClient::ENV_SANDBOX);// 沙箱环境
+try {
+    $paymentClient = new PaymentClient($config);
+    // $paymentClient->setEnv(PaymentClient::ENV_SANDBOX);// 沙箱环境
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 // 银行卡实时支付
 $request = new CreateBankpayOrderRequest(array(

@@ -24,7 +24,11 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-$dataServiceClient = new \Yzh\DataServiceClient($config);
+try {
+    $dataServiceClient = new DataServiceClient($config);
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 // 查询日订单文件
 $request = new GetDailyOrderFileRequest(array(
