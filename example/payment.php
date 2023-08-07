@@ -27,13 +27,8 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-try {
-    $paymentClient = new PaymentClient($config);
-    $paymentClient->setEnv(PaymentClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
-
+$paymentClient = new PaymentClient($config);
+// $paymentClient->setEnv(PaymentClient::ENV_SANDBOX);// 沙箱环境
 
 // 银行卡实时支付
 $request = new CreateBankpayOrderRequest(array(
@@ -177,6 +172,7 @@ $request = new CancelOrderRequest(array(
     'order_id' => '',                              // 平台企业订单号，由平台企业保持唯⼀性
     'ref' => '65154237254744',                     // 平台订单号（与平台企业订单号不能同时为空）
     'channel' => '支付宝',                          // 银⾏卡，⽀付宝，微信（选填，不填默认为银⾏卡订单查询，注意 value 值为中文字符）
+    'data_type' => '',                             // 如果为 encryption，则对返回的 data 进行加密
 ));
 $response = $paymentClient->cancelOrder($request);
 if ($response->isSuccess()) {

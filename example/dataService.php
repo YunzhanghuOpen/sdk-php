@@ -22,15 +22,9 @@ $config = Config::newFromArray(array(
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type']
-
 ));
 
-try {
-    $dataServiceClient = new \Yzh\DataServiceClient($config);
-    $dataServiceClient->setEnv(DataServiceClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$dataServiceClient = new \Yzh\DataServiceClient($config);
 
 // 查询日订单文件
 $request = new GetDailyOrderFileRequest(array(

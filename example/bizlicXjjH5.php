@@ -20,15 +20,9 @@ $config = Config::newFromArray(array(
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type']
-
 ));
 
-try {
-    $bizH5Client = new  BizlicXjjH5ServiceClient($config);
-    $bizH5Client->setEnv(BizlicXjjH5ServiceClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$bizH5Client = new  BizlicXjjH5ServiceClient($config);
 
 // 预启动
 $request = new H5GetStartUrlRequest(array(

@@ -25,7 +25,7 @@ $sign = $_POST['sign'];
 $notifyClient = new NotifyClient ($config);
 $notifyReq = new NotifyRequest ($data, $mess, $timestamp, $sign) ;
 try {
-    $result = $notifyClient->verifyAndDescrype($notifyReq);
+    $result = $notifyClient->verifyAndDecrypt($notifyReq);
     if($result)
         var_dump($result);
 }

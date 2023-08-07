@@ -13,8 +13,31 @@ class NotifyClient extends BaseClient
      * @param NotifyRequest $request
      * @return NotifyResponse
      * @throws RunTimeException
+     * @deprecated
      */
     public function verifyAndDescrype($request)
+    {
+        return $this->_verifyAndDecrypt($request);
+    }
+
+    /**
+     * 异步回调验签和解密
+     * @param NotifyRequest $request
+     * @return NotifyResponse
+     * @throws RunTimeException
+     */
+    public function verifyAndDecrypt($request)
+    {
+        return $this->_verifyAndDecrypt($request);
+    }
+
+    /**
+     * 异步回调验签和解密
+     * @param NotifyRequest $request
+     * @return NotifyResponse
+     * @throws RunTimeException
+     */
+    private function _verifyAndDecrypt($request)
     {
         $response = new NotifyResponse();
 

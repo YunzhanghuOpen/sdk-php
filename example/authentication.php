@@ -24,15 +24,10 @@ $config = Config::newFromArray(array(
     'app_private_key' => $test_var['app_private_key'],
     'yzh_public_key' => $test_var['yzh_public_key'],
     'sign_type' => $test_var['sign_type']
-
 ));
 
-try {
-    $authenticationClient = new AuthenticationClient($config);
-    $authenticationClient->setEnv(AuthenticationClient::ENV_PROD);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+$authenticationClient = new AuthenticationClient($config);
+// $authenticationClient->setEnv(AuthenticationClient::ENV_SANDBOX);// 沙箱环境
 
 // 身份证实名认证
 $request = new IDCardVerifyRequest(array(
