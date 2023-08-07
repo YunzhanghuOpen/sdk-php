@@ -22,7 +22,11 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-$bizH5APIClient = new  \Yzh\BizlicXjjH5APIServiceClient($config);
+try {
+    $bizH5APIClient = new BizlicXjjH5APIServiceClient($config);
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 // 工商实名信息录入
 $request = new H5PreCollectBizlicMsgRequest(array(

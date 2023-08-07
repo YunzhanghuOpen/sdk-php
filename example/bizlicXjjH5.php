@@ -22,7 +22,11 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-$bizH5Client = new  BizlicXjjH5ServiceClient($config);
+try {
+    $bizH5Client = new  BizlicXjjH5ServiceClient($config);
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 // 预启动
 $request = new H5GetStartUrlRequest(array(

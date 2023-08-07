@@ -26,8 +26,12 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type']
 ));
 
-$authenticationClient = new AuthenticationClient($config);
-// $authenticationClient->setEnv(AuthenticationClient::ENV_SANDBOX);// 沙箱环境
+try {
+    $authenticationClient = new AuthenticationClient($config);
+    // $authenticationClient->setEnv(AuthenticationClient::ENV_SANDBOX);// 沙箱环境
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 // 身份证实名认证
 $request = new IDCardVerifyRequest(array(
