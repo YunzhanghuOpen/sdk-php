@@ -9,7 +9,6 @@ abstract class BaseRequest
 {
     protected $_requestID;
 
-
     public function getRequestID()
     {
         if (isset($this->_requestID) && !empty($this->_requestID)) {

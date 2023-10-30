@@ -16,7 +16,6 @@ class Hmac
         $this->app_key = $appKey;
     }
 
-
     private function __clone()
     {
         return false;

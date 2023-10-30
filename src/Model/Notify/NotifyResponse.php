@@ -1,6 +1,6 @@
 <?php
 
-namespace YZH\Model\Notify;
+namespace Yzh\Model\Notify;
 
 class NotifyResponse
 {

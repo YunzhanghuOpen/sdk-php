@@ -76,7 +76,6 @@ class NotifyClient extends BaseClient
         return $this->rsa->verify($this->getPain($request), $request->getSign());
     }
 
-
     public function verifyHmac($request)
     {
         return $this->hmac->verify($this->getPain($request), $request->getSign());

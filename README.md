@@ -58,8 +58,13 @@ composer require yunzhanghuopen/sdk-php
 ### 示例功能列表
 
 - [用户信息验证](example/authentication.php )   
-- [用户签约（H5 签约）](example/h5UserSign.php ) or [用户签约（API 签约）](example/apiUserSign.php )  
-- [个体工商户注册（云账户新经济 H5）](example/bizlicXjjH5.php ) or [个体工商户注册（云账户新经济H5+API）](example/bizlicXjjH5Api.php )  
+- 用户签约 
+   - [H5 签约](example/h5UserSign.php )
+   - [API 签约](example/apiUserSign.php )
+   - [签约信息上传](example/uploadUserSign.php )
+- 个体工商户注册 
+   - [云账户新经济 H5](example/bizlicXjjH5.php) 
+   - [云账户新经济H5+API](example/bizlicXjjH5Api.php ) 
 - [实时支付](example/payment.php ) 
 - [异步通知](example/notify.php )     
 - [对账文件获取](example/dataService.php )    
@@ -93,22 +98,26 @@ composer require yunzhanghuopen/sdk-php
        die($e->getMessage());
    }
    
-   
    // 银行卡实时支付
    $request = new CreateBankpayOrderRequest(array(
        'order_id' => 'bank12345678901111',                
        'dealer_id' => $test_var['app_dealer_id'],        
        'broker_id' => $test_var['app_broker_id'],        
        'real_name' => '张一',                             
-       'card_no' => '6214012345678910',                   
-       'id_card' => '110101012345678910',               
-       'phone_no' => '18100000000',                       
+       'card_no' => '8888888888888888888',                   
+       'id_card' => '110121202202222222',               
+       'phone_no' => '188****8888',                       
        'pay' => '0.1',                                    
        'pay_remark' => '测试订单',                           
-       'notify_url' => 'http://localhost/php-sdk-2/test/callback.php',   
+       'notify_url' => 'https://www.example.com',   
        'project_id' => ''              
    ));
-   // 可自定义 Header 中的 request-id，建议将 request-id 记录在日志中
+
+   /*
+    * request-id：请求 ID，请求的唯一标识
+    * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+    * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+    */
    // $request->setRequestID("reqtest001");   
    $response = $paymentClient->createBankpayOrder($request);
    var_dump(array('request'=>$request, 'response'=>$response));

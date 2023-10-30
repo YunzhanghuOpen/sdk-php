@@ -13,9 +13,7 @@ use Yzh\Model\Invoice\GetInvoiceFileRequest;
 use Yzh\Model\Invoice\SendReminderEmailRequest;
 use Yzh\Model\Invoice\GetInvoiceInformationRequest;
 
-
 // 发票开具
-
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
@@ -38,11 +36,20 @@ $request = new GetInvoiceStatRequest(array(
     'broker_id' => $test_var['app_broker_id'],   // 综合服务主体 ID
     'year' => 2022                               // 年份
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $invoiceClient->getInvoiceStat($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
@@ -51,11 +58,20 @@ $request = new GetInvoiceAmountRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],   // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],   // 综合服务主体 ID
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $invoiceClient->getInvoiceAmount($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
@@ -70,66 +86,107 @@ $request = new ApplyInvoiceRequest(array(
     'goods_services_name' => '*测试分类*test测试内容', // 货物或应税劳务、服务名称 (选填，若不填写，则使⽤默认值)
     'remark' => '发票备注'                           // 发票备注（选填，每张发票备注栏相同）
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $invoiceClient->applyInvoice($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
 // 查询开票申请状态
 $request = new GetInvoiceStatusRequest(array(
-
     'invoice_apply_id' => 'apply123456789',      // 发票申请编号
-    'application_id' => '',                      // 发票申请单 ID
+    'application_id' => 'a123b1110',             // 发票申请单 ID
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $invoiceClient->getInvoiceStatus($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
 // 下载 PDF 版发票
 $request = new GetInvoiceFileRequest(array(
-
     'invoice_apply_id' => 'apply123456789',      // 发票申请编号
-    'application_id' => '',                      // 发票申请单 ID
+    'application_id' => 'a123b1110',             // 发票申请单 ID
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $invoiceClient->getInvoiceFile($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
 // 发送发票扫描件压缩包下载链接邮件
 $request = new SendReminderEmailRequest(array(
-
     'invoice_apply_id' => 'apply123456789',      // 发票申请编号
-    'application_id' => '',                      // 发票申请单 ID
+    'application_id' => 'a123b1110',             // 发票申请单 ID
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $invoiceClient->sendReminderEmail($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
 // 查询发票信息
 $request = new GetInvoiceInformationRequest(array(
-
-    'invoice_apply_id' => '',                     // 发票申请编号
-    'application_id' => '423721',                 // 发票申请单 ID
+    'invoice_apply_id' => 'apply123456789',       // 发票申请编号
+    'application_id' => 'a123b1110',              // 发票申请单 ID
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $invoiceClient->getInvoiceInformation($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData()->getInformation();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
