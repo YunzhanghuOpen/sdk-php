@@ -25,6 +25,8 @@ use Yzh\Model\Payment\CreateBatchOrderRequest;
 use Yzh\Model\Payment\CreateBatchOrderResponse;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
 use Yzh\Model\Payment\ConfirmBatchOrderResponse;
+use Yzh\Model\Payment\CancelBatchOrderRequest;
+use Yzh\Model\Payment\CancelBatchOrderResponse;
 
 /**
  * 实时支付
@@ -172,5 +174,19 @@ class PaymentClient extends BaseClient
             throw new ConfigException("Payment->confirmBatchOrder request 必须是 Yzh\\Model\\Payment\\ConfirmBatchOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/confirm-batch', $request, "Yzh\\Model\\Payment\\ConfirmBatchOrderResponse", $option);
+    }
+
+    /**
+     * 批次撤销
+     * @param CancelBatchOrderRequest $request
+     * @param null $option
+     * @return CancelBatchOrderResponse
+     */
+    public function cancelBatchOrder($request, $option = null)
+    {
+        if (!$request instanceof CancelBatchOrderRequest) {
+            throw new ConfigException("Payment->cancelBatchOrder request 必须是 Yzh\\Model\\Payment\\CancelBatchOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('POST', '/api/payment/v1/cancel-batch', $request, "Yzh\\Model\\Payment\\CancelBatchOrderResponse", $option);
     }
 }

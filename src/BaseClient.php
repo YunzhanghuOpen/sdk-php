@@ -17,7 +17,7 @@ defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 class BaseClient
 {
     const SDK_NAME = "yunzhanghu-sdk-php";
-    const SDK_VERSION  = "2.0.2";
+    const SDK_VERSION  = "2.0.3";
 
     const ENV_PROD = "yzh_env_prod";
     const ENV_SANDBOX = "yzh_env_sandbox";
@@ -36,15 +36,14 @@ class BaseClient
             'tax' => 'https://api-service.yunzhanghu.com',
             'authentication' => 'https://api-service.yunzhanghu.com',
             'invoice' => 'https://api-service.yunzhanghu.com',
-            'dataservice' => 'https://api-service.yunzhanghu.com',          // 数据服务接口域名
-            'apiusersignservice' => 'https://api-service.yunzhanghu.com',   // API 用户签约接口域名
-            'h5usersignservice' => 'https://api-service.yunzhanghu.com',    // H5 用户签约接口域名
-            'bizlicxjjh5apiservice' => 'https://api-aic.yunzhanghu.com',    // 个体工商户注册服务 (云账户新经济 H5+API）接口域名
-            'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',       // 个体工商户注册服务（云账户新经济 H5）接口域名
+            'dataservice' => 'https://api-service.yunzhanghu.com',           // 数据服务接口域名
+            'apiusersignservice' => 'https://api-service.yunzhanghu.com',    // API 用户签约接口域名
+            'h5usersignservice' => 'https://api-service.yunzhanghu.com',     // H5 用户签约接口域名
+            'uploadusersignservice' => 'https://api-service.yunzhanghu.com', // 用户签约信息上传接口域名
+            'bizlicxjjh5apiservice' => 'https://api-aic.yunzhanghu.com',     // 个体工商户注册服务 (云账户新经济 H5+API）接口域名
+            'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',        // 个体工商户注册服务（云账户新经济 H5）接口域名
             'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
             'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
-
-
 
         ),
         self::ENV_SANDBOX => array( // 沙箱环境
@@ -64,7 +63,6 @@ class BaseClient
     protected $des;
     protected $app_key;
     protected $sign_type;
-
 
     public function __construct($config)
     {
@@ -88,7 +86,6 @@ class BaseClient
         $this->des = new Des($this->config->app_des3_key);
     }
 
-
     public function setEnv($envName)
     {
         if (!in_array($envName, array(self::ENV_PROD, self::ENV_SANDBOX), true)) {
@@ -97,7 +94,6 @@ class BaseClient
         $this->env = $envName;
         return $this;
     }
-
 
     protected function get($url, $data, $header, $option)
     {
@@ -234,10 +230,9 @@ class BaseClient
         return $resp;
     }
 
-
     private function generateUserAgent()
     {
-        return self::SDK_NAME . "/" . self::SDK_VERSION . "/" . join(" ", array(php_uname('s'), php_uname('r'), php_uname('m')))  .  "/" . PHP_VERSION;
+        return self::SDK_NAME . "/" . self::SDK_VERSION . "/" . PHP_VERSION;
     }
 
     private function getRequestData($request)

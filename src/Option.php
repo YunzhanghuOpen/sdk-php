@@ -6,10 +6,8 @@ final class Option
 {
     const DEFAULT_CONNECT_TIMEOUT_SECONDS = 2;
     const MAX_CONNECT_TIMEOUT_SECONDS = 5;
-
-    const DEFAULT_TIMEOUT_SECONDS = 8;
+    const DEFAULT_TIMEOUT_SECONDS = 30;
     const MAX_TIMEOUT_SECONDS = 30;
-
 
     /**
      * 请求超时的秒数。使用 0 无限期的等待(默认行为)。
@@ -22,8 +20,6 @@ final class Option
      * @var
      */
     protected $connect_timeout;
-
-
 
     /**
      * 自定义的 Header 参数
@@ -53,8 +49,8 @@ final class Option
      */
     public function setTimeout($timeout = 0)
     {
-        if (floatval($timeout) <= self::MAX_TIMEOUT_SECONDS) {
-            $this->timeout = floatval($timeout);
+        if (intval($timeout) <= self::MAX_TIMEOUT_SECONDS) {
+            $this->timeout = intval($timeout);
         }
         return $this;
     }
@@ -74,8 +70,8 @@ final class Option
      */
     public function setConnectTimeout($connectTimeout = 0)
     {
-        if (floatval($connectTimeout) <= self::MAX_CONNECT_TIMEOUT_SECONDS) {
-            $this->connect_timeout = floatval($connectTimeout);
+        if (intval($connectTimeout) <= self::MAX_CONNECT_TIMEOUT_SECONDS) {
+            $this->connect_timeout = intval($connectTimeout);
         }
         return $this;
     }

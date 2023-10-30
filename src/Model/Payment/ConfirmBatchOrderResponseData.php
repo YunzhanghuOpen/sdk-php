@@ -6,7 +6,7 @@ use Yzh\Model\BaseModel;
 use Yzh\Model\ResponseDataInterface;
 
 /**
- * 批次确认响应
+ * 批次确认返回
  * Class ConfirmBatchOrderResponseData
  */
 class ConfirmBatchOrderResponseData extends BaseModel implements ResponseDataInterface

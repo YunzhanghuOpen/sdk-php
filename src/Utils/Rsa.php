@@ -59,7 +59,6 @@ class Rsa
         return $encrypted;
     }
 
-
     /**
      * 私钥解密
      * @param $encrypted

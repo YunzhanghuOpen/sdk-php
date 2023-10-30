@@ -10,10 +10,7 @@ use Yzh\Model\H5usersign\H5UserSignRequest;
 use Yzh\Model\H5usersign\GetH5UserSignStatusRequest;
 use Yzh\Model\H5usersign\H5UserReleaseRequest;
 
-
 // 用户签约（H5 签约）
-
-
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
@@ -36,32 +33,47 @@ $request = new H5UserPresignRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
     'real_name' => '张三',                          // 姓名
-    'id_card' => '110101012345678910',             // 证件号
+    'id_card' => '110121202202222222',             // 证件号
     'certificate_type' => 0,                       // 证件类型
-
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $h5UserSignClient->h5UserPresign($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
 // H5 签约
 $request = new H5UserSignRequest(array(
-
     'token' => '7db97222-2dfb-484b-b8ac-e39a69d2aba0',      // H5 签约 token
-    'color' => '',                                          // H5页面主题颜色
-    'url' => 'http://xxx',                                  // 回调 URL 地址
-    'redirect_url' => 'http://localhost',                   // 跳转 URL
-
+    'color' => '#8171ff',                                   // H5页面主题颜色
+    'url' => 'https://www.example.com',                     // 回调 URL 地址
+    'redirect_url' => 'https://www.example.com',            // 跳转 URL
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $h5UserSignClient->h5UserSign($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
@@ -70,14 +82,22 @@ $request = new GetH5UserSignStatusRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
     'real_name' => '张三',                          // 姓名
-    'id_card' => '110101012345678910',             // 证件号
-
+    'id_card' => '110121202202222222',             // 证件号
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $h5UserSignClient->getH5UserSignStatus($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
@@ -86,14 +106,22 @@ $request = new H5UserReleaseRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
-    'id_card' => '110101012345678910',            // 证件号
+    'id_card' => '110121202202222222',            // 证件号
     'certificate_type' => 0,                      // 证件类型码
-
 ));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ */
+$request->setRequestID("requestIdExample123456789");
 $response = $h5UserSignClient->h5UserRelease($request);
 if ($response->isSuccess()) {
+    // 操作成功
     $data = $response->getData();
     var_dump($data);
 } else {
+    // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }

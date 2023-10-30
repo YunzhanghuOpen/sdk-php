@@ -3,12 +3,12 @@ define('TEST_PATH', dirname(__FILE__));
 include_once(TEST_PATH . '/../vendor/autoload.php');
 include_once(TEST_PATH . '/test_var.php');
 
+use Yzh\UploadUserSignServiceClient;
 use Yzh\Config;
-use Yzh\BizlicXjjH5ServiceClient;
-use Yzh\Model\Bizlicxjjh5\H5EcoCityAicStatusRequest;
-use Yzh\Model\Bizlicxjjh5\H5GetStartUrlRequest;
+use Yzh\Model\Uploadusersign\UploadUserSignRequest;
+use Yzh\Model\Uploadusersign\GetUploadUserSignStatusRequest;
 
-// 个体工商户注册（云账户新经济 H5）
+// 用户签约（签约信息上传）
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
@@ -20,21 +20,20 @@ $config = Config::newFromArray(array(
 ));
 
 try {
-    $bizH5Client = new  BizlicXjjH5ServiceClient($config);
+    $uploadUserSignClient = new UploadUserSignServiceClient($config);
 } catch (\Exception $e) {
     die($e->getMessage());
 }
 
-// 预启动
-$request = new H5GetStartUrlRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],      // 平台企业 ID
-    'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
-    'dealer_user_id' => 'test03',                   // 平台企业端的用户 ID，在平台企业系统唯一且不变
-    'client_type' => 1,                             // 客户端类型
-    'notify_url' => 'https://www.example.com',      // 异步通知 URL
-    'color' => '#007AFF',                           // H5 页面主体颜色
-    'return_url' => 'https://www.example.com',      // 跳转 URL
-    'customer_title' => 1                           // H5 页面 Title
+// 用户签约信息上传
+$request = new UploadUserSignRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
+    'real_name' => '张三',                         // 姓名
+    'id_card' => '110121202202222222',            // 证件号码
+    'phone' => '188****8888',                     // 手机号
+    'is_abroad'=> false,                          // 是否是海外用户
+    'notify_url' => 'https://www.example.com'      // 签约回调地址
 ));
 
 /*
@@ -43,7 +42,7 @@ $request = new H5GetStartUrlRequest(array(
  * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
  */
 $request->setRequestID("requestIdExample123456789");
-$response = $bizH5Client->h5GetStartUrl($request);
+$response = $uploadUserSignClient->uploadUserSign($request);
 if ($response->isSuccess()) {
     // 操作成功
     $data = $response->getData();
@@ -53,14 +52,12 @@ if ($response->isSuccess()) {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
-// 查询个体工商户状态
-$request = new H5EcoCityAicStatusRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],      // 平台企业 ID
-    'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
-    'open_id' => '',                                // 用户唯一标识
-    'dealer_user_id' => 'test03',                   // 平台企业端的用户 ID，在平台企业系统唯一且不变
-    'real_name' => '张三',                           // 姓名
-    'id_card' => '110121202202222222',              // 身份证号码
+// 获取用户签约状态
+$request = new GetUploadUserSignStatusRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
+    'real_name' => '张三',                         // 姓名
+    'id_card' => '110121202202222222',            // 证件号码
 ));
 
 /*
@@ -69,7 +66,7 @@ $request = new H5EcoCityAicStatusRequest(array(
  * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
  */
 $request->setRequestID("requestIdExample123456789");
-$response = $bizH5Client->h5EcoCityAicStatus($request);
+$response = $uploadUserSignClient->getUploadUserSignStatus($request);
 if ($response->isSuccess()) {
     // 操作成功
     $data = $response->getData();
