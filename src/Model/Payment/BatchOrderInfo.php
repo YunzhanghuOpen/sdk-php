@@ -5,7 +5,7 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseModel;
 
 /**
- * 批量下单订单信息
+ * 批次下单订单信息
  * Class BatchOrderInfo
  */
 class BatchOrderInfo extends BaseModel

@@ -50,7 +50,7 @@ $request = new BankCardThreeVerifyRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $authenticationClient->bankCardThreeVerify($request);
@@ -68,7 +68,7 @@ $request = new BankCardFourVerifyRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $authenticationClient->bankCardFourVerify($request);
@@ -85,7 +85,7 @@ $request = new BankCardFourAuthVerifyRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $authenticationClient->bankCardFourAuthVerify($request);
@@ -111,7 +111,7 @@ $request = new BankCardFourAuthConfirmRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $authenticationClient->bankCardFourAuthConfirm($request);
@@ -126,7 +126,7 @@ $request = new GetBankCardInfoRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $authenticationClient->getBankCardInfo($request);
@@ -168,7 +168,7 @@ $request = new UserExemptedInfoRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $authenticationClient->userExemptedInfo($request);
@@ -190,7 +190,7 @@ $request = new UserWhiteCheckRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $authenticationClient->userWhiteCheck($request);

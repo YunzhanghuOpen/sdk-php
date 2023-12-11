@@ -16,6 +16,7 @@ use Yzh\Model\Payment\GetOrderRequest;
 use Yzh\Model\Payment\CreateBatchOrderRequest;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
 use Yzh\Model\Payment\CancelBatchOrderRequest;
+use Yzh\Model\Payment\QueryBatchOrderRequest;
 
 // 实时支付
 $config = Config::newFromArray(array(
@@ -53,7 +54,7 @@ $request = new CreateBankpayOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->createBankpayOrder($request);
@@ -88,7 +89,7 @@ $request = new CreateAlipayOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->createAlipayOrder($request);
@@ -124,7 +125,7 @@ $request = new CreateWxpayOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->createWxpayOrder($request);
@@ -151,7 +152,7 @@ $request = new GetOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->getOrder($request);
@@ -174,7 +175,7 @@ $request = new listAccountRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->listAccount($request);
@@ -196,7 +197,7 @@ $request = new  GetEleReceiptFileRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->getEleReceiptFile($request);
@@ -222,7 +223,7 @@ $request = new CancelOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->cancelOrder($request);
@@ -244,7 +245,7 @@ $request = new GetDealerVARechargeAccountRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->getDealerVARechargeAccount($request);
@@ -299,7 +300,7 @@ $request = new CreateBatchOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->createBatchOrder($request);
@@ -323,11 +324,33 @@ $request = new ConfirmBatchOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->confirmBatchOrder($request);
 echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+
+// 查询批次订单信息
+$request = new QueryBatchOrderRequest(array(
+    'batch_id' => 'batch0040701',                  // 平台企业批次号
+    'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $paymentClient->queryBatchOrder($request);
+if ($response->isSuccess()) {
+    // 操作成功
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    // 失败返回
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
 
 // 批次撤销
 $request = new CancelBatchOrderRequest(array(
@@ -339,7 +362,7 @@ $request = new CancelBatchOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->cancelBatchOrder($request);
