@@ -38,7 +38,7 @@ $request = new GetDailyOrderFileRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $dataServiceClient->getDailyOrderFile($request);
@@ -59,7 +59,7 @@ $request = new GetDailyBillFileV2Request(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $dataServiceClient->getDailyBillFileV2($request);
@@ -81,7 +81,7 @@ $request = new ListDealerRechargeRecordV2Request(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $dataServiceClient->listDealerRechargeRecordV2($request);
@@ -108,7 +108,7 @@ $request = new ListDailyOrderRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $dataServiceClient->listDailyOrder($request);
@@ -136,7 +136,7 @@ $request = new ListDailyBillRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $dataServiceClient->listDailyBill($request);
@@ -157,7 +157,7 @@ $request = new GetDailyOrderFileV2Request(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $dataServiceClient->getDailyOrderFileV2($request);
@@ -178,7 +178,7 @@ $request = new ListBalanceDailyStatementRequest(array(
 /*
  * request-id：请求 ID，请求的唯一标识
  * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
- * 如平台企业未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $dataServiceClient->listBalanceDailyStatement($request);
