@@ -16,6 +16,7 @@ class Config
     public $app_des3_key;
     public $timeout;
     public $env;
+    public $service_name;
 
     const SIGN_TYPE_RSA = 'rsa';
     const SIGN_TYPE_HMAC = 'sha256';
@@ -84,6 +85,10 @@ class Config
             $config->env = $params['env'];
         } else {
             $config->env = BaseClient::ENV_PROD;
+        }
+
+        if (isset($params["service_name"]) && !empty($params["service_name"])) {
+            $config->service_name = $params["service_name"];
         }
 
         return $config;
