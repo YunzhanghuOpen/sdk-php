@@ -60,7 +60,7 @@ $request = new H5EcoCityAicStatusRequest(array(
     'open_id' => '',                                // 用户唯一标识
     'dealer_user_id' => 'test03',                   // 平台企业端的用户 ID，在平台企业系统唯一且不变
     'real_name' => '张三',                           // 姓名
-    'id_card' => '110121202202222222',              // 身份证号码
+    'id_card' => '11010519491231002X',              // 身份证号码
 ));
 
 /*

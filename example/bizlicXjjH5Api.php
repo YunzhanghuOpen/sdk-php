@@ -33,7 +33,7 @@ $request = new H5PreCollectBizlicMsgRequest(array(
     'dealer_user_id' => 'zyqtest01',                // 平台企业端的用户 ID，在平台企业系统唯一且不变
     'phone_no' => '188****8888',                    // 手机号
     'real_name' => '张三',                           // 姓名
-    'id_card' => '110121202202222222',              // 身份证号码
+    'id_card' => '11010519491231002X',              // 身份证号码
     'id_card_address' => '省级行政区名称区县级行政区名称具体住宿地址', // 身份证住址
     'id_card_agency' => '区县公安局名称',              // 身份证签发机关
     'id_card_nation' => '20',                       // 身份证民族，需要传编码
@@ -93,7 +93,7 @@ $request = new H5APIEcoCityAicStatusRequest(array(
     'open_id' => '',                                // 用户唯一标识
     'dealer_user_id' => 'zyqtest01',                   // 平台企业端的用户 ID，在平台企业系统唯一且不变
     'real_name' => '张三',                           // 姓名
-    'id_card' => '110121202202222222',              // 身份证号码
+    'id_card' => '11010519491231002X',              // 身份证号码
 ));
 
 /*
