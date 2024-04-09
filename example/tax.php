@@ -68,7 +68,7 @@ $request = new GetUserCrossRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],   // 平台企业 ID
     'ent_id' => 'accumulus_tj',                  // 平台企业签约主体，accumulus_tj：天津，accumulus_gs：甘肃
     'year' => '2022',                            // 年份
-    'id_card' => '110121202202222222',           // 身份证号码
+    'id_card' => '11010519491231002X',           // 身份证号码
 ));
 
 /*

@@ -30,10 +30,10 @@ $request = new UploadUserSignRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
-    'id_card' => '110121202202222222',            // 证件号码
+    'id_card' => '11010519491231002X',            // 证件号码
     'phone' => '188****8888',                     // 手机号
     'is_abroad'=> false,                          // 是否是海外用户
-    'notify_url' => 'https://www.example.com'      // 签约回调地址
+    'notify_url' => 'https://www.example.com'     // 签约回调地址
 ));
 
 /*
@@ -57,7 +57,7 @@ $request = new GetUploadUserSignStatusRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
-    'id_card' => '110121202202222222',            // 证件号码
+    'id_card' => '11010519491231002X',            // 证件号码
 ));
 
 /*

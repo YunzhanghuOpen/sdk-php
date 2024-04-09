@@ -33,7 +33,7 @@ $request = new H5UserPresignRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
     'real_name' => '张三',                          // 姓名
-    'id_card' => '110121202202222222',             // 证件号
+    'id_card' => '11010519491231002X',             // 证件号
     'certificate_type' => 0,                       // 证件类型
 ));
 
@@ -82,7 +82,7 @@ $request = new GetH5UserSignStatusRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
     'real_name' => '张三',                          // 姓名
-    'id_card' => '110121202202222222',             // 证件号
+    'id_card' => '11010519491231002X',             // 证件号
 ));
 
 /*
@@ -106,7 +106,7 @@ $request = new H5UserReleaseRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
-    'id_card' => '110121202202222222',            // 证件号
+    'id_card' => '11010519491231002X',            // 证件号
     'certificate_type' => 0,                      // 证件类型码
 ));
 

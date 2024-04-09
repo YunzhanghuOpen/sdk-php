@@ -34,17 +34,17 @@ try {
 
 // 身份证实名认证
 $request = new IDCardVerifyRequest(array(
-    'real_name' => '张一',                     // 姓名
-    'id_card' => '110121202202222222'         // 身份证号码
+    'real_name' => '张三',                     // 姓名
+    'id_card' => '11010519491231002X'         // 身份证号码
 ));
 $response = $authenticationClient->iDCardVerify($request);
 echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 
 // 银行卡三要素验证
 $request = new BankCardThreeVerifyRequest(array(
-    'real_name' => '张一',                        // 姓名
-    'id_card' => '110121202202222222',           // 身份证号码
-    'card_no' => '8888888888888888888'           // 银行卡号
+    'real_name' => '张三',                        // 姓名
+    'id_card' => '11010519491231002X',           // 身份证号码
+    'card_no' => '6228888888888888888'           // 银行卡号
 ));
 
 /*
@@ -59,9 +59,9 @@ echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' 
 
 // 银行卡四要素验证
 $request = new BankCardFourVerifyRequest(array(
-    'real_name' => '张一',                         // 姓名
-    'id_card' => '110121202202222222',            // 身份证号码
-    'card_no' => '8888888888888888888',           // 银行卡号
+    'real_name' => '张三',                         // 姓名
+    'id_card' => '11010519491231002X',            // 身份证号码
+    'card_no' => '6228888888888888888',           // 银行卡号
     'mobile' => '188****8888'                     // 银行预留手机号
 ));
 
@@ -76,9 +76,9 @@ echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' 
 
 // 银行卡四要素鉴权请求（下发短信验证码）
 $request = new BankCardFourAuthVerifyRequest(array(
-    'real_name' => '张一',                         // 姓名
-    'id_card' => '110121202202222222',            // 身份证号码
-    'card_no' => '8888888888888888888',           // 银行卡号
+    'real_name' => '张三',                         // 姓名
+    'id_card' => '11010519491231002X',            // 身份证号码
+    'card_no' => '6228888888888888888',           // 银行卡号
     'mobile' => '188****8888'                     // 银行预留手机号
 ));
 
@@ -100,9 +100,9 @@ if ($response->isSuccess()) {
 
 // 银行卡四要素确认鉴权（上传短信验证码）
 $request = new BankCardFourAuthConfirmRequest(array(
-    'real_name' => '张一',                         // 姓名
-    'id_card' => '110121202202222222',            // 身份证号码
-    'card_no' => '8888888888888888888',           // 银行卡号
+    'real_name' => '张三',                         // 姓名
+    'id_card' => '11010519491231002X',            // 身份证号码
+    'card_no' => '6228888888888888888',           // 银行卡号
     'mobile' => '188****8888',                    // 银行预留手机号
     'ref' => 'MTY1MDM0OTIwMi4zOC4xOA',            // 鉴权请求接口响应的交易凭证
     'captcha' => '123456'                         // 短信验证码
@@ -120,7 +120,7 @@ echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' 
 // 银行卡信息查询
 $request = new GetBankCardInfoRequest(array(
     'bank_name' => '招商银行',                  // 银行名称
-    'card_no' => '8888888888888888888',        // 银行卡号
+    'card_no' => '6228888888888888888',        // 银行卡号
 ));
 
 /*
@@ -151,7 +151,7 @@ function getuploadfileinfo($file)
 }
 
 $request = new UserExemptedInfoRequest(array(
-    'real_name' => '张一',                         // 姓名
+    'real_name' => '张三',                         // 姓名
     'id_card' => 'passporttest123456',            // 证件号码
     'card_type' => 'passport',                    // 证件类型码
     'comment_apply' => '备注信息',                 // 申请备注
@@ -183,7 +183,7 @@ if ($response->isSuccess()) {
 
 // 查看免验证用户名单是否存在
 $request = new UserWhiteCheckRequest(array(
-    'real_name' => '张一',                        // 姓名
+    'real_name' => '张三',                        // 姓名
     'id_card' => 'passporttest123456',           // 证件号码
 ));
 

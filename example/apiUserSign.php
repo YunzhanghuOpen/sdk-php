@@ -55,7 +55,7 @@ $request = new ApiUserSignRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
-    'id_card' => '110121202202222222',            // 证件号
+    'id_card' => '11010519491231002X',            // 证件号
     'card_type' => 'idcard',                      // 证件类型码
 ));
 
@@ -80,7 +80,7 @@ $request = new GetApiUserSignStatusRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
-    'id_card' => '110121202202222222',            // 证件号
+    'id_card' => '11010519491231002X',            // 证件号
 ));
 
 /*
@@ -104,7 +104,7 @@ $request = new ApiUserSignReleaseRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
-    'id_card' => '110121202202222222',            // 证件号
+    'id_card' => '11010519491231002X',            // 证件号
     'card_type' => 'idcard',                      // 证件类型码
 ));
 
