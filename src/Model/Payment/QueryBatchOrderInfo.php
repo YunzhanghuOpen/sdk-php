@@ -71,6 +71,11 @@ class QueryBatchOrderInfo extends BaseModel
      */
     protected $status_detail_message;
     /**
+     * 订单状态补充信息
+     * @var string
+     */
+    protected $supplemental_detail_message;
+    /**
      * 综合服务主体支付金额
      * @var string
      */
@@ -362,6 +367,25 @@ class QueryBatchOrderInfo extends BaseModel
     public function getStatusDetailMessage()
     {
         return $this->status_detail_message;
+    }
+
+    /**
+     * 订单状态补充信息
+     * @var string $supplemental_detail_message
+     */
+    public function setSupplementalDetailMessage($supplemental_detail_message)
+    {
+        $this->supplemental_detail_message = $supplemental_detail_message;
+    }
+
+
+    /**
+     * 订单状态补充信息
+     * @return string
+     */
+    public function getSupplementalDetailMessage()
+    {
+        return $this->supplemental_detail_message;
     }
 
     /**
