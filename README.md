@@ -64,7 +64,9 @@ composer require yunzhanghuopen/sdk-php
    - [签约信息上传](example/uploadUserSign.php )
 - 个体工商户注册 
    - [云账户新经济 H5](example/bizlicXjjH5.php) 
-   - [云账户新经济H5+API](example/bizlicXjjH5Api.php ) 
+   - [云账户新经济 H5+API](example/bizlicXjjH5Api.php) 
+   - [云账户共享大额 H5](example/bizlicGxV2H5.php) 
+   - [云账户共享大额 H5+API](example/bizlicGxV2H5Api.php) 
 - [实时支付](example/payment.php ) 
 - [异步通知](example/notify.php )     
 - [对账文件获取](example/dataService.php )    

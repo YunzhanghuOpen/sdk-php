@@ -40,6 +40,8 @@ class BaseClient
             'apiusersignservice' => 'https://api-service.yunzhanghu.com',    // API 用户签约接口域名
             'h5usersignservice' => 'https://api-service.yunzhanghu.com',     // H5 用户签约接口域名
             'uploadusersignservice' => 'https://api-service.yunzhanghu.com', // 用户签约信息上传接口域名
+            'bizlicgxv2h5apiservice' => 'https://api-aic.yunzhanghu.com',    // 个体工商户注册服务（共享大额 H5+API）接口域名
+            'bizlicgxv2h5service' => 'https://api-aic.yunzhanghu.com',       // 个体工商户注册服务（共享大额 H5）接口域名
             'bizlicxjjh5apiservice' => 'https://api-aic.yunzhanghu.com',     // 个体工商户注册服务 (云账户新经济 H5+API）接口域名
             'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',        // 个体工商户注册服务（云账户新经济 H5）接口域名
             'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
