@@ -155,7 +155,6 @@ class NotifyOrderData extends BaseModel
         $this->order_id = $order_id;
     }
 
-
     /**
      * 平台企业订单号
      * @return string
@@ -173,7 +172,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->pay = $pay;
     }
-
 
     /**
      * 订单金额
@@ -193,7 +191,6 @@ class NotifyOrderData extends BaseModel
         $this->broker_id = $broker_id;
     }
 
-
     /**
      * 综合服务主体 ID
      * @return string
@@ -211,7 +208,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->dealer_id = $dealer_id;
     }
-
 
     /**
      * 平台企业 ID
@@ -231,7 +227,6 @@ class NotifyOrderData extends BaseModel
         $this->real_name = $real_name;
     }
 
-
     /**
      * 姓名
      * @return string
@@ -249,7 +244,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->card_no = $card_no;
     }
-
 
     /**
      * 收款人账号
@@ -269,7 +263,6 @@ class NotifyOrderData extends BaseModel
         $this->id_card = $id_card;
     }
 
-
     /**
      * 身份证号码
      * @return string
@@ -287,7 +280,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->phone_no = $phone_no;
     }
-
 
     /**
      * 手机号
@@ -307,7 +299,6 @@ class NotifyOrderData extends BaseModel
         $this->status = $status;
     }
 
-
     /**
      * 订单状态码
      * @return string
@@ -325,7 +316,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->status_detail = $status_detail;
     }
-
 
     /**
      * 订单详细状态码
@@ -345,7 +335,6 @@ class NotifyOrderData extends BaseModel
         $this->status_message = $status_message;
     }
 
-
     /**
      * 订单状态码描述
      * @return string
@@ -363,7 +352,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->status_detail_message = $status_detail_message;
     }
-
 
     /**
      * 订单详细状态码描述
@@ -383,7 +371,6 @@ class NotifyOrderData extends BaseModel
         $this->supplemental_detail_message = $supplemental_detail_message;
     }
 
-
     /**
      * 订单状态补充信息
      * @return string
@@ -401,7 +388,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->broker_amount = $broker_amount;
     }
-
 
     /**
      * 综合服务主体支付金额
@@ -421,7 +407,6 @@ class NotifyOrderData extends BaseModel
         $this->ref = $ref;
     }
 
-
     /**
      * 综合服务平台流水号
      * @return string
@@ -439,7 +424,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->broker_bank_bill = $broker_bank_bill;
     }
-
 
     /**
      * 支付交易流水号
@@ -459,7 +443,6 @@ class NotifyOrderData extends BaseModel
         $this->withdraw_platform = $withdraw_platform;
     }
 
-
     /**
      * 支付路径
      * @return string
@@ -477,7 +460,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->created_at = $created_at;
     }
-
 
     /**
      * 订单接收时间，精确到秒
@@ -497,7 +479,6 @@ class NotifyOrderData extends BaseModel
         $this->finished_time = $finished_time;
     }
 
-
     /**
      * 订单完成时间，精确到秒
      * @return string
@@ -515,7 +496,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->broker_fee = $broker_fee;
     }
-
 
     /**
      * 综合服务主体加成服务费
@@ -535,7 +515,6 @@ class NotifyOrderData extends BaseModel
         $this->broker_real_fee = $broker_real_fee;
     }
 
-
     /**
      * 余额账户支出加成服务费
      * @return string
@@ -553,7 +532,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->broker_deduct_fee = $broker_deduct_fee;
     }
-
 
     /**
      * 抵扣账户支出加成服务费
@@ -573,7 +551,6 @@ class NotifyOrderData extends BaseModel
         $this->pay_remark = $pay_remark;
     }
 
-
     /**
      * 订单备注
      * @return string
@@ -591,7 +568,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->user_fee = $user_fee;
     }
-
 
     /**
      * 用户加成服务费
@@ -611,7 +587,6 @@ class NotifyOrderData extends BaseModel
         $this->bank_name = $bank_name;
     }
 
-
     /**
      * 银行名称
      * @return string
@@ -630,7 +605,6 @@ class NotifyOrderData extends BaseModel
         $this->project_id = $project_id;
     }
 
-
     /**
      * 项目标识
      * @return string
@@ -648,7 +622,6 @@ class NotifyOrderData extends BaseModel
     {
         $this->user_id = $user_id;
     }
-
 
     /**
      * 平台企业用户 ID

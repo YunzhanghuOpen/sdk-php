@@ -56,7 +56,6 @@ class GetUploadUserSignStatusResponseData extends BaseModel implements ResponseD
         $this->dealer_id = $dealer_id;
     }
 
-
     /**
      * 平台企业 ID
      * @return string
@@ -74,7 +73,6 @@ class GetUploadUserSignStatusResponseData extends BaseModel implements ResponseD
     {
         $this->broker_id = $broker_id;
     }
-
 
     /**
      * 综合服务主体 ID
@@ -94,7 +92,6 @@ class GetUploadUserSignStatusResponseData extends BaseModel implements ResponseD
         $this->real_name = $real_name;
     }
 
-
     /**
      * 姓名
      * @return string
@@ -112,7 +109,6 @@ class GetUploadUserSignStatusResponseData extends BaseModel implements ResponseD
     {
         $this->id_card = $id_card;
     }
-
 
     /**
      * 证件号码
@@ -132,7 +128,6 @@ class GetUploadUserSignStatusResponseData extends BaseModel implements ResponseD
         $this->status = $status;
     }
 
-
     /**
      * 签约状态
      * @return int32
@@ -151,7 +146,6 @@ class GetUploadUserSignStatusResponseData extends BaseModel implements ResponseD
         $this->created_at = $created_at;
     }
 
-
     /**
      * 创建时间
      * @return int64
@@ -169,7 +163,6 @@ class GetUploadUserSignStatusResponseData extends BaseModel implements ResponseD
     {
         $this->updated_at = $updated_at;
     }
-
 
     /**
      * 更新时间

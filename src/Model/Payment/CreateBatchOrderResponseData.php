@@ -11,54 +11,53 @@ use Yzh\Model\ResponseDataInterface;
  */
 class CreateBatchOrderResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 平台企业批次号
-   * @var string
-   */
-  protected $batch_id;
-  /**
-   * 订单结果列表
-   * @var BatchOrderResult[]
-   */
-  protected $result_list;
+    /**
+     * 平台企业批次号
+     * @var string
+     */
+    protected $batch_id;
+    /**
+     * 订单结果列表
+     * @var BatchOrderResult[]
+     */
+    protected $result_list;
 
-  /**
-   * 平台企业批次号
-   *  @var string $batch_id
-   */
-  public function setBatchId($batch_id)
-  {
-    $this->batch_id = $batch_id;
-  }
+    /**
+     * 平台企业批次号
+     * @var string $batch_id
+     */
+    public function setBatchId($batch_id)
+    {
+        $this->batch_id = $batch_id;
+    }
 
+    /**
+     * 平台企业批次号
+     * @return string
+     */
+    public function getBatchId()
+    {
+        return $this->batch_id;
+    }
 
-  /**
-   * 平台企业批次号
-   * @var string
-   */
-  public function getBatchId()
-  {
-    return $this->batch_id;
-  }
+    /**
+     * 订单结果列表
+     * @var array $items
+     */
+    public function setResultList($items)
+    {
+        $this->result_list = array();
+        foreach ($items as $k => $v) {
+            array_push($this->result_list, new BatchOrderResult($v));
+        }
+    }
 
-  /**
-   * @var array $items
-   */
-  public function setResultList($items)
-  {
-      $this->result_list = array();
-      foreach ($items as $k => $v) {
-          array_push($this->result_list, new BatchOrderResult($v));
-      }
-  }
-
-
-  /**
-   * 订单结果列表
-   * @var BatchOrderResult[]
-   */
-  public function getResultList()
-  {
-    return $this->result_list;
-  }
+    /**
+     * 订单结果列表
+     * @return BatchOrderResult[]
+     */
+    public function getResultList()
+    {
+        return $this->result_list;
+    }
 }

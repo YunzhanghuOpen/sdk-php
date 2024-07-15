@@ -11,28 +11,24 @@ use Yzh\Model\ResponseDataInterface;
  */
 class CancelOrderResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   
-   * @var string
-   */
-  protected $ok;
+    /**
+     * @var string
+     */
+    protected $ok;
 
-  /**
-  
-   *  @var string $ok
-   */
-  public function setOk($ok)
-  {
-    $this->ok = $ok;
-  }
+    /**
+     * @var string $ok
+     */
+    public function setOk($ok)
+    {
+        $this->ok = $ok;
+    }
 
-
-  /**
-  
-   * @var string
-   */
-  public function getOk()
-  {
-    return $this->ok;
-  }
+    /**
+     * @return string
+     */
+    public function getOk()
+    {
+        return $this->ok;
+    }
 }

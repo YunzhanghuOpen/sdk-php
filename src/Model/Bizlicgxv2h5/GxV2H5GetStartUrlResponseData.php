@@ -26,7 +26,6 @@ class GxV2H5GetStartUrlResponseData extends BaseModel implements ResponseDataInt
         $this->h5_url = $h5_url;
     }
 
-
     /**
      * 跳转 URL
      * @return string

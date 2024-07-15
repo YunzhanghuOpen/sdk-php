@@ -67,7 +67,6 @@ class Des
             }
             throw new RunTimeException($errMsg, ExceptionCode::DES_KEY_DECRYPT_FAIL);
         }
-
         return $ret;
     }
 

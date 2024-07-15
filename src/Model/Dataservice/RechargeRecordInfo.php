@@ -65,7 +65,6 @@ class RechargeRecordInfo extends BaseModel
         $this->dealer_id = $dealer_id;
     }
 
-
     /**
      * 平台企业 ID
      * @return string
@@ -83,7 +82,6 @@ class RechargeRecordInfo extends BaseModel
     {
         $this->broker_id = $broker_id;
     }
-
 
     /**
      * 综合服务主体 ID
@@ -103,7 +101,6 @@ class RechargeRecordInfo extends BaseModel
         $this->recharge_id = $recharge_id;
     }
 
-
     /**
      * 预付业务服务费记录 ID
      * @return int64
@@ -121,7 +118,6 @@ class RechargeRecordInfo extends BaseModel
     {
         $this->amount = $amount;
     }
-
 
     /**
      * 预付业务服务费
@@ -141,7 +137,6 @@ class RechargeRecordInfo extends BaseModel
         $this->actual_amount = $actual_amount;
     }
 
-
     /**
      * 实际到账金额
      * @return float64
@@ -159,7 +154,6 @@ class RechargeRecordInfo extends BaseModel
     {
         $this->created_at = $created_at;
     }
-
 
     /**
      * 创建时间
@@ -179,7 +173,6 @@ class RechargeRecordInfo extends BaseModel
         $this->recharge_channel = $recharge_channel;
     }
 
-
     /**
      * 资金用途
      * @return string
@@ -198,7 +191,6 @@ class RechargeRecordInfo extends BaseModel
         $this->remark = $remark;
     }
 
-
     /**
      * 预付业务服务费备注
      * @return string
@@ -216,7 +208,6 @@ class RechargeRecordInfo extends BaseModel
     {
         $this->recharge_account_no = $recharge_account_no;
     }
-
 
     /**
      * 平台企业付款银行账号

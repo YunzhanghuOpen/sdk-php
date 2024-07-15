@@ -5,60 +5,51 @@ namespace Yzh\Model\Bizlicxjjh5;
 use Yzh\Model\BaseRequest;
 
 /**
-    * 预启动请求
-    * Class H5GetStartUrlRequest
-    */
+ * 预启动请求
+ * Class H5GetStartUrlRequest
+ */
 class H5GetStartUrlRequest extends BaseRequest
 {
-
     /**
-        * 平台企业 ID
-        * @var string
-        */
+     * 平台企业 ID
+     * @var string
+     */
     public $dealer_id;
-
     /**
-        * 综合服务主体 ID
-        * @var string
-        */
+     * 综合服务主体 ID
+     * @var string
+     */
     public $broker_id;
-
     /**
-        * 平台企业端的用户 ID
-        * @var string
-        */
+     * 平台企业端的用户 ID
+     * @var string
+     */
     public $dealer_user_id;
-
     /**
-        * 客户端类型
-        * @var int32
-        */
+     * 客户端类型
+     * @var int32
+     */
     public $client_type;
-
     /**
-        * 异步通知 URL
-        * @var string
-        */
+     * 异步通知 URL
+     * @var string
+     */
     public $notify_url;
-
     /**
-        * H5 页面主题颜色
-        * @var string
-        */
+     * H5 页面主题颜色
+     * @var string
+     */
     public $color;
-
     /**
-        * 跳转 URL
-        * @var string
-        */
+     * 跳转 URL
+     * @var string
+     */
     public $return_url;
-
     /**
-        * H5 页面 Title
-        * @var int32
-        */
+     * H5 页面 Title
+     * @var int32
+     */
     public $customer_title;
-
 
     public function __construct($params = array())
     {

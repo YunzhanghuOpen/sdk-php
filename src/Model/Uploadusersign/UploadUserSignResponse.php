@@ -13,7 +13,7 @@ class UploadUserSignResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return  UploadUserSignResponseData
+     * @return UploadUserSignResponseData
      */
     public function getData()
     {

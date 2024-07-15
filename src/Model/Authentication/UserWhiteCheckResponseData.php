@@ -11,28 +11,24 @@ use Yzh\Model\ResponseDataInterface;
  */
 class UserWhiteCheckResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   
-   * @var bool
-   */
-  protected $ok;
+    /**
+     * @var bool
+     */
+    protected $ok;
 
-  /**
-  
-   *  @var bool $ok
-   */
-  public function setOk($ok)
-  {
-    $this->ok = $ok;
-  }
+    /**
+     * @var bool $ok
+     */
+    public function setOk($ok)
+    {
+        $this->ok = $ok;
+    }
 
-
-  /**
-  
-   * @var bool
-   */
-  public function getOk()
-  {
-    return $this->ok;
-  }
+    /**
+     * @return bool
+     */
+    public function getOk()
+    {
+        return $this->ok;
+    }
 }

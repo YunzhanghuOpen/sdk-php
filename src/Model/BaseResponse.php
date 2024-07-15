@@ -12,28 +12,24 @@ abstract class BaseResponse
      * 业务状态码
      */
     protected $code = "";
-
     /**
      * 业务状态描述信息
      */
     protected $message = "";
-
     /**
      * 请求 ID
      */
     protected $requestID = "";
-
     /**
      * 业务数据
      */
     protected $data = [];
-
     /**
      * @var array
      * 原始数据
      */
     protected $arr_data = [];
-
+    
     /**
      * 获取业务状态码
      */

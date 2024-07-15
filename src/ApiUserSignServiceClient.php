@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Apiusersign\ApiUseSignContractRequest;
 use Yzh\Model\Apiusersign\ApiUseSignContractResponse;
 use Yzh\Model\Apiusersign\ApiUserSignContractRequest;

@@ -11,28 +11,27 @@ use Yzh\Model\ResponseDataInterface;
  */
 class H5UserSignResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * H5 签约页面 URL
-   * @var string
-   */
-  protected $url;
+    /**
+     * H5 签约页面 URL
+     * @var string
+     */
+    protected $url;
 
-  /**
-   * H5 签约页面 URL
-   *  @var string $url
-   */
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
+    /**
+     * H5 签约页面 URL
+     * @var string $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
 
-
-  /**
-   * H5 签约页面 URL
-   * @var string
-   */
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    /**
+     * H5 签约页面 URL
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
 }

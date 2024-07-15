@@ -2,7 +2,6 @@
 
 namespace Yzh\Model;
 
-
 use Yzh\Utils\MessString;
 
 abstract class BaseRequest
@@ -14,7 +13,6 @@ abstract class BaseRequest
         if (isset($this->_requestID) && !empty($this->_requestID)) {
             return $this->_requestID;
         }
-
         return MessString::rand(32);
     }
 
@@ -27,7 +25,6 @@ abstract class BaseRequest
         $this->_requestID = $requestID;
     }
 
-
     public function getRequestData()
     {
         $requestData = array();
@@ -38,7 +35,6 @@ abstract class BaseRequest
 
             $requestData[$property] = $this->{$property};
         }
-
         return $requestData;
     }
 }

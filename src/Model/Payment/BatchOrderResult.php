@@ -45,7 +45,6 @@ class BatchOrderResult extends BaseModel
         $this->order_id = $order_id;
     }
 
-
     /**
      * 平台企业订单号
      * @return string
@@ -63,7 +62,6 @@ class BatchOrderResult extends BaseModel
     {
         $this->ref = $ref;
     }
-
 
     /**
      * 综合服务平台流水号
@@ -83,7 +81,6 @@ class BatchOrderResult extends BaseModel
         $this->pay = $pay;
     }
 
-
     /**
      * 订单金额
      * @return string
@@ -101,7 +98,6 @@ class BatchOrderResult extends BaseModel
     {
         $this->status = $status;
     }
-
 
     /**
      * 下单状态
@@ -123,7 +119,6 @@ class BatchOrderResult extends BaseModel
             array_push($this->error_reasons, new BatchOrderErrorReasons($v));
         }
     }
-
 
     /**
      * 下单失败原因

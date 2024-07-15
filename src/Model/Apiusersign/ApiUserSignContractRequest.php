@@ -5,24 +5,21 @@ namespace Yzh\Model\Apiusersign;
 use Yzh\Model\BaseRequest;
 
 /**
-    * 获取协议预览 URL 请求 V2
-    * Class ApiUserSignContractRequest
-    */
+ * 获取协议预览 URL 请求 V2
+ * Class ApiUserSignContractRequest
+ */
 class ApiUserSignContractRequest extends BaseRequest
 {
-
     /**
-        * 平台企业 ID
-        * @var string
-        */
+     * 平台企业 ID
+     * @var string
+     */
     public $dealer_id;
-
     /**
-        * 综合服务主体 ID
-        * @var string
-        */
+     * 综合服务主体 ID
+     * @var string
+     */
     public $broker_id;
-
 
     public function __construct($params = array())
     {

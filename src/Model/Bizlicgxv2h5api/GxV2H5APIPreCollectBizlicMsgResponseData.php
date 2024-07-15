@@ -26,7 +26,6 @@ class GxV2H5APIPreCollectBizlicMsgResponseData extends BaseModel implements Resp
         $this->dealer_user_id = $dealer_user_id;
     }
 
-
     /**
      * 平台企业端的用户 ID
      * @return string

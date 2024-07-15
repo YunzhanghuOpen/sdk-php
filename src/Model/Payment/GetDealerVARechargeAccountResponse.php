@@ -11,23 +11,23 @@ use Yzh\Model\ResponseInterface;
  */
 class GetDealerVARechargeAccountResponse extends BaseResponse implements ResponseInterface
 {
-  /**
-   * 获取数据对象
-   * @return  GetDealerVARechargeAccountResponseData
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
+    /**
+     * 获取数据对象
+     * @return GetDealerVARechargeAccountResponseData
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
 
-  /**
-   * 设置数据对象
-   * @param  array $data
-   * @return GetDealerVARechargeAccountResponseData
-   */
-  public function setData($data)
-  {
-    $this->data = new GetDealerVARechargeAccountResponseData($data);
-    return $this;
-  }
+    /**
+     * 设置数据对象
+     * @param array $data
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->data = new GetDealerVARechargeAccountResponseData($data);
+        return $this;
+    }
 }

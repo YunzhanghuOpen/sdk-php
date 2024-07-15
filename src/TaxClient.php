@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Tax\GetTaxFileRequest;
 use Yzh\Model\Tax\GetTaxFileResponse;
 use Yzh\Model\Tax\GetUserCrossRequest;

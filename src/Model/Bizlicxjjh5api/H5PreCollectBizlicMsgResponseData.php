@@ -11,28 +11,27 @@ use Yzh\Model\ResponseDataInterface;
  */
 class H5PreCollectBizlicMsgResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 平台企业端的用户 ID
-   * @var string
-   */
-  protected $dealer_user_id;
+    /**
+     * 平台企业端的用户 ID
+     * @var string
+     */
+    protected $dealer_user_id;
 
-  /**
-   * 平台企业端的用户 ID
-   *  @var string $dealer_user_id
-   */
-  public function setDealerUserId($dealer_user_id)
-  {
-    $this->dealer_user_id = $dealer_user_id;
-  }
+    /**
+     * 平台企业端的用户 ID
+     * @var string $dealer_user_id
+     */
+    public function setDealerUserId($dealer_user_id)
+    {
+        $this->dealer_user_id = $dealer_user_id;
+    }
 
-
-  /**
-   * 平台企业端的用户 ID
-   * @var string
-   */
-  public function getDealerUserId()
-  {
-    return $this->dealer_user_id;
-  }
+    /**
+     * 平台企业端的用户 ID
+     * @return string
+     */
+    public function getDealerUserId()
+    {
+        return $this->dealer_user_id;
+    }
 }

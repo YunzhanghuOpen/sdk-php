@@ -26,7 +26,6 @@ class Hmac
         if (!self::$instance instanceof Hmac) {
             self::$instance = new Hmac($appKey);
         }
-
         return self::$instance;
     }
 

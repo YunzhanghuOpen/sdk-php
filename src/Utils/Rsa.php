@@ -8,7 +8,6 @@ use Yzh\Exception\ExceptionCode;
 class Rsa
 {
     private static $instance;
-
     private $private_key;
     private $public_key;
     private $mode = "SHA256";
@@ -40,7 +39,6 @@ class Rsa
         if (!self::$instance instanceof Rsa) {
             self::$instance = new Rsa($privateKey, $publicKey);
         }
-
         return self::$instance;
     }
 
@@ -55,7 +53,6 @@ class Rsa
         if (!openssl_private_encrypt($value, $encrypted, $this->private_key)) {
             throw new ConfigException("openssl 加密失败", ExceptionCode::PRIVATE_KEY_ENCRYPT_FAIL);
         }
-
         return $encrypted;
     }
 
@@ -70,7 +67,6 @@ class Rsa
         if (!openssl_private_decrypt($encrypted, $decrypted, $this->private_key)) {
             throw new ConfigException("openssl 解密失败", ExceptionCode::PRIVATE_KEY_DECRYPT_FAIL);
         }
-
         return $decrypted;
     }
 
@@ -85,10 +81,8 @@ class Rsa
         if (!openssl_public_decrypt($encrypted, $decrypted, $this->public_key)) {
             throw new ConfigException("openssl 解密失败", ExceptionCode::PUBLIC_KEY_DECRYPT_FAIL);
         }
-
         return $decrypted;
     }
-
 
     /**
      * 获取数据签名

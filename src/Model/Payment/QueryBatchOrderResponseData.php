@@ -71,7 +71,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
         $this->broker_id = $broker_id;
     }
 
-
     /**
      * 综合服务主体 ID
      * @return string
@@ -89,7 +88,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
     {
         $this->dealer_id = $dealer_id;
     }
-
 
     /**
      * 平台企业 ID
@@ -109,7 +107,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
         $this->batch_id = $batch_id;
     }
 
-
     /**
      * 平台企业批次号
      * @return string
@@ -127,7 +124,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
     {
         $this->total_count = $total_count;
     }
-
 
     /**
      * 总笔数
@@ -147,7 +143,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
         $this->total_pay = $total_pay;
     }
 
-
     /**
      * 订单总金额
      * @return string
@@ -165,7 +160,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
     {
         $this->channel = $channel;
     }
-
 
     /**
      * 支付路径
@@ -185,7 +179,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
         $this->batch_status = $batch_status;
     }
 
-
     /**
      * 批次状态码
      * @return string
@@ -204,7 +197,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
         $this->batch_status_message = $batch_status_message;
     }
 
-
     /**
      * 批次状态码描述
      * @return string
@@ -222,7 +214,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
     {
         $this->batch_received_time = $batch_received_time;
     }
-
 
     /**
      * 批次接收时间
@@ -244,7 +235,6 @@ class QueryBatchOrderResponseData extends BaseModel implements ResponseDataInter
             array_push($this->order_list, new QueryBatchOrderInfo($v));
         }
     }
-
 
     /**
      * 批次订单列表

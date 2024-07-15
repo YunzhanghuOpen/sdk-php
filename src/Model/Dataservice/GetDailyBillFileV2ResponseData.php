@@ -11,28 +11,27 @@ use Yzh\Model\ResponseDataInterface;
  */
 class GetDailyBillFileV2ResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 下载地址
-   * @var string
-   */
-  protected $bill_download_url;
+    /**
+     * 下载地址
+     * @var string
+     */
+    protected $bill_download_url;
 
-  /**
-   * 下载地址
-   *  @var string $bill_download_url
-   */
-  public function setBillDownloadUrl($bill_download_url)
-  {
-    $this->bill_download_url = $bill_download_url;
-  }
+    /**
+     * 下载地址
+     * @var string $bill_download_url
+     */
+    public function setBillDownloadUrl($bill_download_url)
+    {
+        $this->bill_download_url = $bill_download_url;
+    }
 
-
-  /**
-   * 下载地址
-   * @var string
-   */
-  public function getBillDownloadUrl()
-  {
-    return $this->bill_download_url;
-  }
+    /**
+     * 下载地址
+     * @return string
+     */
+    public function getBillDownloadUrl()
+    {
+        return $this->bill_download_url;
+    }
 }

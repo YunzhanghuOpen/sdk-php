@@ -7,11 +7,8 @@ use Yzh\Model\BaseRequest;
 class NotifyRequest extends BaseRequest
 {
     private $data;
-
     private $mess;
-
     private $timestamp;
-
     private $sign;
 
     public function __construct($data, $mess, $timestamp, $sign)
@@ -51,7 +48,6 @@ class NotifyRequest extends BaseRequest
     {
         $this->timestamp = $timestamp;
     }
-
 
     public function getSign()
     {

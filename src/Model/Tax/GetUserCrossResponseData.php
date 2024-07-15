@@ -11,28 +11,27 @@ use Yzh\Model\ResponseDataInterface;
  */
 class GetUserCrossResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 跨集团标识
-   * @var bool
-   */
-  protected $is_cross;
+    /**
+     * 跨集团标识
+     * @var bool
+     */
+    protected $is_cross;
 
-  /**
-   * 跨集团标识
-   *  @var bool $is_cross
-   */
-  public function setIsCross($is_cross)
-  {
-    $this->is_cross = $is_cross;
-  }
+    /**
+     * 跨集团标识
+     * @var bool $is_cross
+     */
+    public function setIsCross($is_cross)
+    {
+        $this->is_cross = $is_cross;
+    }
 
-
-  /**
-   * 跨集团标识
-   * @var bool
-   */
-  public function getIsCross()
-  {
-    return $this->is_cross;
-  }
+    /**
+     * 跨集团标识
+     * @return bool
+     */
+    public function getIsCross()
+    {
+        return $this->is_cross;
+    }
 }

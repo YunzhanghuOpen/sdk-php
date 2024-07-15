@@ -11,30 +11,29 @@ use Yzh\Model\ResponseDataInterface;
  */
 class GetTaxFileResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 文件详情
-   * @var FileInfo[]
-   */
-  protected $file_info;
+    /**
+     * 文件详情
+     * @var FileInfo[]
+     */
+    protected $file_info;
 
-  /**
-   * @var array $items
-   */
-  public function setFileInfo($items)
-  {
-      $this->file_info = array();
-      foreach ($items as $k => $v) {
-          array_push($this->file_info, new FileInfo($v));
-      }
-  }
+    /**
+     * @var array $items
+     */
+    public function setFileInfo($items)
+    {
+        $this->file_info = array();
+        foreach ($items as $k => $v) {
+            array_push($this->file_info, new FileInfo($v));
+        }
+    }
 
-
-  /**
-   * 文件详情
-   * @var FileInfo[]
-   */
-  public function getFileInfo()
-  {
-    return $this->file_info;
-  }
+    /**
+     * 文件详情
+     * @return FileInfo[]
+     */
+    public function getFileInfo()
+    {
+        return $this->file_info;
+    }
 }

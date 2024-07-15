@@ -11,28 +11,27 @@ use Yzh\Model\ResponseDataInterface;
  */
 class UserExemptedInfoResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 是否上传成功
-   * @var string
-   */
-  protected $ok;
+    /**
+     * 是否上传成功
+     * @var string
+     */
+    protected $ok;
 
-  /**
-   * 是否上传成功
-   *  @var string $ok
-   */
-  public function setOk($ok)
-  {
-    $this->ok = $ok;
-  }
+    /**
+     * 是否上传成功
+     * @var string $ok
+     */
+    public function setOk($ok)
+    {
+        $this->ok = $ok;
+    }
 
-
-  /**
-   * 是否上传成功
-   * @var string
-   */
-  public function getOk()
-  {
-    return $this->ok;
-  }
+    /**
+     * 是否上传成功
+     * @return string
+     */
+    public function getOk()
+    {
+        return $this->ok;
+    }
 }

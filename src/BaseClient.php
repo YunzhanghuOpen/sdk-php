@@ -17,11 +17,9 @@ defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 class BaseClient
 {
     const SDK_NAME = "yunzhanghu-sdk-php";
-    const SDK_VERSION  = "2.0.8";
-
+    const SDK_VERSION  = "2.0.9";
     const ENV_PROD = "yzh_env_prod";
     const ENV_SANDBOX = "yzh_env_sandbox";
-
 
     protected $env;
     /**
@@ -182,7 +180,6 @@ class BaseClient
             throw new ConfigException('该环境不支持该请求,环境为:' . $this::$service_name, ExceptionCode::CONFIG_ERROR_UNSUPPORT_URL_IN_CURRENT_ENV);
         }
 
-
         $header = array(
             'Content-Type: application/x-www-form-urlencoded',
             'dealer-id: ' . $this->config->app_dealer_id,
@@ -228,7 +225,6 @@ class BaseClient
             $data = $respData['data'];
         }
         $resp->setData($data);
-
         return $resp;
     }
 
@@ -247,7 +243,6 @@ class BaseClient
         } else {
             $sign = $this->hmac->sign(sprintf("data=%s&mess=%s&timestamp=%d&key=%s", $encryptedBody, $mess, $nowts, $this->config->app_key));
         }
-
         return array(
             'data' => $encryptedBody,
             'mess' => $mess,

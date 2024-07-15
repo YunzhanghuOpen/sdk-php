@@ -11,23 +11,23 @@ use Yzh\Model\ResponseInterface;
  */
 class GetDailyOrderFileV2Response extends BaseResponse implements ResponseInterface
 {
-  /**
-   * 获取数据对象
-   * @return  GetDailyOrderFileV2ResponseData
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
+    /**
+     * 获取数据对象
+     * @return GetDailyOrderFileV2ResponseData
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
 
-  /**
-   * 设置数据对象
-   * @param  array $data
-   * @return GetDailyOrderFileV2ResponseData
-   */
-  public function setData($data)
-  {
-    $this->data = new GetDailyOrderFileV2ResponseData($data);
-    return $this;
-  }
+    /**
+     * 设置数据对象
+     * @param array $data
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->data = new GetDailyOrderFileV2ResponseData($data);
+        return $this;
+    }
 }

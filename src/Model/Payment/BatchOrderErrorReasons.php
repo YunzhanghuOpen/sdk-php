@@ -30,7 +30,6 @@ class BatchOrderErrorReasons extends BaseModel
         $this->error_code = $error_code;
     }
 
-
     /**
      * 不允许下单原因码
      * @return string
@@ -48,7 +47,6 @@ class BatchOrderErrorReasons extends BaseModel
     {
         $this->error_message = $error_message;
     }
-
 
     /**
      * 不允许下单原因描述

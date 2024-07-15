@@ -11,23 +11,23 @@ use Yzh\Model\ResponseInterface;
  */
 class CreateWxpayOrderResponse extends BaseResponse implements ResponseInterface
 {
-  /**
-   * 获取数据对象
-   * @return  CreateWxpayOrderResponseData
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
+    /**
+     * 获取数据对象
+     * @return CreateWxpayOrderResponseData
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
 
-  /**
-   * 设置数据对象
-   * @param  array $data
-   * @return CreateWxpayOrderResponseData
-   */
-  public function setData($data)
-  {
-    $this->data = new CreateWxpayOrderResponseData($data);
-    return $this;
-  }
+    /**
+     * 设置数据对象
+     * @param array $data
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->data = new CreateWxpayOrderResponseData($data);
+        return $this;
+    }
 }

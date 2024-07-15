@@ -11,26 +11,26 @@ use Yzh\Model\ResponseInterface;
  */
 class ListDealerRechargeRecordV2Response extends BaseResponse implements ResponseInterface
 {
-  /**
-   * 获取数据对象
-   * @return RechargeRecordInfo[]
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
-
-  /**
-   * 设置数据对象
-   * @param  array $data
-   * @return RechargeRecordInfo[]
-   */
-  public function setData($data)
-  {
-    $this->data = array();
-    foreach ($data as $item) {
-      array_push($this->data, new RechargeRecordInfo($item));
+    /**
+     * 获取数据对象
+     * @return RechargeRecordInfo[]
+     */
+    public function getData()
+    {
+        return $this->data;
     }
-    return $this;
-  }
+
+    /**
+     * 设置数据对象
+     * @param array $data
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->data = array();
+        foreach ($data as $item) {
+            array_push($this->data, new RechargeRecordInfo($item));
+        }
+        return $this;
+    }
 }

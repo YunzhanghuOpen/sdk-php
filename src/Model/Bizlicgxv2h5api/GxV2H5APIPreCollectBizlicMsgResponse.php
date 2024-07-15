@@ -13,7 +13,7 @@ class GxV2H5APIPreCollectBizlicMsgResponse extends BaseResponse implements Respo
 {
     /**
      * 获取数据对象
-     * @return  GxV2H5APIPreCollectBizlicMsgResponseData
+     * @return GxV2H5APIPreCollectBizlicMsgResponseData
      */
     public function getData()
     {

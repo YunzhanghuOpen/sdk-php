@@ -10,5 +10,4 @@ use Yzh\Model\ResponseDataInterface;
  */
 class CustomResponseData extends BaseModel implements ResponseDataInterface
 {
-
 }
