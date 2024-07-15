@@ -5,18 +5,16 @@ namespace Yzh\Model\Dataservice;
 use Yzh\Model\BaseRequest;
 
 /**
-    * 查询日流水文件请求
-    * Class GetDailyBillFileV2Request
-    */
+ * 查询日流水文件请求
+ * Class GetDailyBillFileV2Request
+ */
 class GetDailyBillFileV2Request extends BaseRequest
 {
-
     /**
-        * 所需获取的日流水日期，格式：yyyy-MM-dd
-        * @var string
-        */
+     * 所需获取的日流水日期，格式：yyyy-MM-dd
+     * @var string
+     */
     public $bill_date;
-
 
     public function __construct($params = array())
     {

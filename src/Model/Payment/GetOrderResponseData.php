@@ -176,7 +176,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->order_id = $order_id;
     }
 
-
     /**
      * 平台企业订单号
      * @return string
@@ -194,7 +193,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->pay = $pay;
     }
-
 
     /**
      * 订单金额
@@ -214,7 +212,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->broker_id = $broker_id;
     }
 
-
     /**
      * 综合服务主体 ID
      * @return string
@@ -232,7 +229,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->dealer_id = $dealer_id;
     }
-
 
     /**
      * 平台企业 ID
@@ -252,7 +248,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->real_name = $real_name;
     }
 
-
     /**
      * 姓名
      * @return string
@@ -270,7 +265,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->card_no = $card_no;
     }
-
 
     /**
      * 收款人账号
@@ -290,7 +284,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->id_card = $id_card;
     }
 
-
     /**
      * 身份证号码
      * @return string
@@ -308,7 +301,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->phone_no = $phone_no;
     }
-
 
     /**
      * 手机号
@@ -328,7 +320,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->status = $status;
     }
 
-
     /**
      * 订单状态码
      * @return string
@@ -346,7 +337,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->status_detail = $status_detail;
     }
-
 
     /**
      * 订单详细状态码
@@ -366,7 +356,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->status_message = $status_message;
     }
 
-
     /**
      * 订单状态码描述
      * @return string
@@ -384,7 +373,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->status_detail_message = $status_detail_message;
     }
-
 
     /**
      * 订单详细状态码描述
@@ -404,7 +392,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->supplemental_detail_message = $supplemental_detail_message;
     }
 
-
     /**
      * 订单状态补充信息
      * @return string
@@ -422,7 +409,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->broker_amount = $broker_amount;
     }
-
 
     /**
      * 综合服务主体支付金额
@@ -442,7 +428,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->ref = $ref;
     }
 
-
     /**
      * 综合服务平台流水号
      * @return string
@@ -460,7 +445,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->broker_bank_bill = $broker_bank_bill;
     }
-
 
     /**
      * 支付交易流水号
@@ -480,7 +464,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->withdraw_platform = $withdraw_platform;
     }
 
-
     /**
      * 支付路径
      * @return string
@@ -498,7 +481,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->created_at = $created_at;
     }
-
 
     /**
      * 订单接收时间，精确到秒
@@ -518,7 +500,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->finished_time = $finished_time;
     }
 
-
     /**
      * 订单完成时间，精确到秒
      * @return string
@@ -536,7 +517,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->broker_fee = $broker_fee;
     }
-
 
     /**
      * 综合服务主体加成服务费
@@ -556,7 +536,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->broker_real_fee = $broker_real_fee;
     }
 
-
     /**
      * 余额账户支出加成服务费
      * @return string
@@ -574,7 +553,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->broker_deduct_fee = $broker_deduct_fee;
     }
-
 
     /**
      * 抵扣账户支出加成服务费
@@ -594,7 +572,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->pay_remark = $pay_remark;
     }
 
-
     /**
      * 订单备注
      * @return string
@@ -612,7 +589,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->user_fee = $user_fee;
     }
-
 
     /**
      * 用户加成服务费
@@ -632,7 +608,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->bank_name = $bank_name;
     }
 
-
     /**
      * 银行名称
      * @return string
@@ -650,7 +625,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->project_id = $project_id;
     }
-
 
     /**
      * 项目标识
@@ -670,7 +644,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->anchor_id = $anchor_id;
     }
 
-
     /**
      * 新就业形态劳动者 ID，该字段已废弃
      * @return string
@@ -688,7 +661,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->notes = $notes;
     }
-
 
     /**
      * 描述信息，该字段已废弃
@@ -708,7 +680,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->sys_amount = $sys_amount;
     }
 
-
     /**
      * 系统支付金额，该字段已废弃
      * @return string
@@ -727,7 +698,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
         $this->tax = $tax;
     }
 
-
     /**
      * 税费，该字段已废弃
      * @return string
@@ -745,7 +715,6 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     {
         $this->sys_fee = $sys_fee;
     }
-
 
     /**
      * 系统支付费用，该字段已废弃

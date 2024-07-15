@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Authentication\BankCardFourAuthVerifyRequest;
 use Yzh\Model\Authentication\BankCardFourAuthVerifyResponse;
 use Yzh\Model\Authentication\BankCardFourAuthConfirmRequest;

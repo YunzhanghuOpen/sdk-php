@@ -10,37 +10,31 @@ use Yzh\Model\BaseRequest;
  */
 class NotifyUploadUserSignRequest extends BaseRequest
 {
-
     /**
      * 平台企业 ID
      * @var string
      */
     public $dealer_id;
-
     /**
      * 综合服务主体 ID
      * @var string
      */
     public $broker_id;
-
     /**
      * 姓名
      * @var string
      */
     public $real_name;
-
     /**
      * 证件号码
      * @var string
      */
     public $id_card;
-
     /**
      * 手机号
      * @var string
      */
     public $phone;
-
 
     public function __construct($params = array())
     {

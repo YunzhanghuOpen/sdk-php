@@ -10,19 +10,16 @@ use Yzh\Model\BaseRequest;
  */
 class QueryBatchOrderRequest extends BaseRequest
 {
-
     /**
      * 平台企业批次号
      * @var string
      */
     public $batch_id;
-
     /**
      * 平台企业 ID
      * @var string
      */
     public $dealer_id;
-
 
     public function __construct($params = array())
     {

@@ -36,7 +36,6 @@ class CreateBankpayOrderResponseData extends BaseModel implements ResponseDataIn
         $this->order_id = $order_id;
     }
 
-
     /**
      * 平台企业订单号
      * @return string
@@ -55,7 +54,6 @@ class CreateBankpayOrderResponseData extends BaseModel implements ResponseDataIn
         $this->ref = $ref;
     }
 
-
     /**
      * 综合服务平台流水号
      * @return string
@@ -73,7 +71,6 @@ class CreateBankpayOrderResponseData extends BaseModel implements ResponseDataIn
     {
         $this->pay = $pay;
     }
-
 
     /**
      * 订单金额

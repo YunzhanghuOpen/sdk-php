@@ -66,7 +66,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
         $this->status = $status;
     }
 
-
     /**
      * 用户注册状态
      * @return int32
@@ -84,7 +83,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
     {
         $this->status_message = $status_message;
     }
-
 
     /**
      * 注册状态描述
@@ -104,7 +102,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
         $this->status_detail = $status_detail;
     }
 
-
     /**
      * 注册详情状态码
      * @return int32
@@ -122,7 +119,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
     {
         $this->status_detail_message = $status_detail_message;
     }
-
 
     /**
      * 注册详情状态码描述
@@ -142,7 +138,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
         $this->applyed_at = $applyed_at;
     }
 
-
     /**
      * 注册发起时间
      * @return string
@@ -160,7 +155,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
     {
         $this->registed_at = $registed_at;
     }
-
 
     /**
      * 注册完成时间
@@ -180,7 +174,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
         $this->uscc = $uscc;
     }
 
-
     /**
      * 统一社会信用代码
      * @return string
@@ -199,7 +192,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
         $this->id_card = $id_card;
     }
 
-
     /**
      * 身份证号码
      * @return string
@@ -217,7 +209,6 @@ class GxV2H5GetAicStatusResponseData extends BaseModel implements ResponseDataIn
     {
         $this->real_name = $real_name;
     }
-
 
     /**
      * 姓名

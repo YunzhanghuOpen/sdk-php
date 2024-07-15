@@ -13,7 +13,7 @@ class CancelBatchOrderResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return  CancelBatchOrderResponseData
+     * @return CancelBatchOrderResponseData
      */
     public function getData()
     {

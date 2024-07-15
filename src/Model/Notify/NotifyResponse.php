@@ -8,12 +8,10 @@ class NotifyResponse
      * @var boolean 签名校验结果
      */
     private $signRes;
-
     /**
      * @var boolean 解密结果
      */
     private $descryptRes;
-
     /**
      * @var string 原始数据
      */
@@ -48,7 +46,6 @@ class NotifyResponse
     {
         $this->data = $data;
     }
-
 
     public function __toString()
     {

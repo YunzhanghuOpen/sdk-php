@@ -5,24 +5,21 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseRequest;
 
 /**
-    * 身份证实名验证请求
-    * Class IDCardVerifyRequest
-    */
+ * 身份证实名验证请求
+ * Class IDCardVerifyRequest
+ */
 class IDCardVerifyRequest extends BaseRequest
 {
-
     /**
-        * 身份证号码
-        * @var string
-        */
+     * 身份证号码
+     * @var string
+     */
     public $id_card;
-
     /**
-        * 姓名
-        * @var string
-        */
+     * 姓名
+     * @var string
+     */
     public $real_name;
-
 
     public function __construct($params = array())
     {

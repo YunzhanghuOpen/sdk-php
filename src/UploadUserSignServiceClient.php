@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Uploadusersign\UploadUserSignRequest;
 use Yzh\Model\Uploadusersign\UploadUserSignResponse;
 use Yzh\Model\Uploadusersign\GetUploadUserSignStatusRequest;

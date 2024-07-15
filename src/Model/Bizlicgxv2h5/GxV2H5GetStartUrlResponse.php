@@ -13,7 +13,7 @@ class GxV2H5GetStartUrlResponse extends BaseResponse implements ResponseInterfac
 {
     /**
      * 获取数据对象
-     * @return  GxV2H5GetStartUrlResponseData
+     * @return GxV2H5GetStartUrlResponseData
      */
     public function getData()
     {

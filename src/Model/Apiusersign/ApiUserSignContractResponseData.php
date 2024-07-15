@@ -11,52 +11,50 @@ use Yzh\Model\ResponseDataInterface;
  */
 class ApiUserSignContractResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 预览跳转 URL
-   * @var string
-   */
-  protected $url;
-  /**
-   * 协议名称
-   * @var string
-   */
-  protected $title;
+    /**
+     * 预览跳转 URL
+     * @var string
+     */
+    protected $url;
+    /**
+     * 协议名称
+     * @var string
+     */
+    protected $title;
 
-  /**
-   * 预览跳转 URL
-   *  @var string $url
-   */
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
+    /**
+     * 预览跳转 URL
+     * @var string $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
 
+    /**
+     * 预览跳转 URL
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
 
-  /**
-   * 预览跳转 URL
-   * @var string
-   */
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    /**
+     * 协议名称
+     * @var string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
-  /**
-   * 协议名称
-   *  @var string $title
-   */
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-
-
-  /**
-   * 协议名称
-   * @var string
-   */
-  public function getTitle()
-  {
-    return $this->title;
-  }
+    /**
+     * 协议名称
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 }

@@ -11,30 +11,29 @@ use Yzh\Model\ResponseDataInterface;
  */
 class ListBalanceDailyStatementResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 条目信息
-   * @var StatementDetail[]
-   */
-  protected $list;
+    /**
+     * 条目信息
+     * @var StatementDetail[]
+     */
+    protected $list;
 
-  /**
-   * @var array $items
-   */
-  public function setList($items)
-  {
-      $this->list = array();
-      foreach ($items as $k => $v) {
-          array_push($this->list, new StatementDetail($v));
-      }
-  }
+    /**
+     * @var array $items
+     */
+    public function setList($items)
+    {
+        $this->list = array();
+        foreach ($items as $k => $v) {
+            array_push($this->list, new StatementDetail($v));
+        }
+    }
 
-
-  /**
-   * 条目信息
-   * @var StatementDetail[]
-   */
-  public function getList()
-  {
-    return $this->list;
-  }
+    /**
+     * 条目信息
+     * @return StatementDetail[]
+     */
+    public function getList()
+    {
+        return $this->list;
+    }
 }

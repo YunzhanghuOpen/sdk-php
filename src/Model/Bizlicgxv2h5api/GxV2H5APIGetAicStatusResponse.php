@@ -13,7 +13,7 @@ class GxV2H5APIGetAicStatusResponse extends BaseResponse implements ResponseInte
 {
     /**
      * 获取数据对象
-     * @return  GxV2H5APIGetAicStatusResponseData
+     * @return GxV2H5APIGetAicStatusResponseData
      */
     public function getData()
     {

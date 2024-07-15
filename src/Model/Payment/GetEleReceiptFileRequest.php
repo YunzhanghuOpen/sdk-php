@@ -5,24 +5,21 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
-    * 查询电子回单请求
-    * Class GetEleReceiptFileRequest
-    */
+ * 查询电子回单请求
+ * Class GetEleReceiptFileRequest
+ */
 class GetEleReceiptFileRequest extends BaseRequest
 {
-
     /**
-        * 平台企业订单号
-        * @var string
-        */
+     * 平台企业订单号
+     * @var string
+     */
     public $order_id;
-
     /**
-        * 综合服务平台流水号
-        * @var string
-        */
+     * 综合服务平台流水号
+     * @var string
+     */
     public $ref;
-
 
     public function __construct($params = array())
     {

@@ -11,30 +11,30 @@ use Yzh\Model\ResponseDataInterface;
  */
 class GetInvoiceInformationResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 发票信息
-   * @var InformationDataInfo[]
-   */
-  protected $information;
+    /**
+     * 发票信息
+     * @var InformationDataInfo[]
+     */
+    protected $information;
 
-  /**
-   * @var array $items
-   */
-  public function setInformation($items)
-  {
-      $this->information = array();
-      foreach ($items as $k => $v) {
-          array_push($this->information, new InformationDataInfo($v));
-      }
-  }
+    /**
+     * 发票信息
+     * @var array $items
+     */
+    public function setInformation($items)
+    {
+        $this->information = array();
+        foreach ($items as $k => $v) {
+            array_push($this->information, new InformationDataInfo($v));
+        }
+    }
 
-
-  /**
-   * 发票信息
-   * @var InformationDataInfo[]
-   */
-  public function getInformation()
-  {
-    return $this->information;
-  }
+    /**
+     * 发票信息
+     * @return InformationDataInfo[]
+     */
+    public function getInformation()
+    {
+        return $this->information;
+    }
 }

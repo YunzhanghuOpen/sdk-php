@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Bizlicxjjh5api\H5PreCollectBizlicMsgRequest;
 use Yzh\Model\Bizlicxjjh5api\H5PreCollectBizlicMsgResponse;
 use Yzh\Model\Bizlicxjjh5api\H5APIGetStartUrlRequest;

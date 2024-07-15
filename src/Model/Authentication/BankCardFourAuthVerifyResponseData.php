@@ -11,28 +11,27 @@ use Yzh\Model\ResponseDataInterface;
  */
 class BankCardFourAuthVerifyResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 交易凭证
-   * @var string
-   */
-  protected $ref;
+    /**
+     * 交易凭证
+     * @var string
+     */
+    protected $ref;
 
-  /**
-   * 交易凭证
-   *  @var string $ref
-   */
-  public function setRef($ref)
-  {
-    $this->ref = $ref;
-  }
+    /**
+     * 交易凭证
+     * @var string $ref
+     */
+    public function setRef($ref)
+    {
+        $this->ref = $ref;
+    }
 
-
-  /**
-   * 交易凭证
-   * @var string
-   */
-  public function getRef()
-  {
-    return $this->ref;
-  }
+    /**
+     * 交易凭证
+     * @return string
+     */
+    public function getRef()
+    {
+        return $this->ref;
+    }
 }

@@ -13,7 +13,7 @@ class QueryBatchOrderResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return  QueryBatchOrderResponseData
+     * @return QueryBatchOrderResponseData
      */
     public function getData()
     {

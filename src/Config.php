@@ -90,7 +90,6 @@ class Config
         if (isset($params["service_name"]) && !empty($params["service_name"])) {
             $config->service_name = $params["service_name"];
         }
-
         return $config;
     }
 }

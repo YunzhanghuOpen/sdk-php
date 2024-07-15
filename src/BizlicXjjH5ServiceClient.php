@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Bizlicxjjh5\H5GetStartUrlRequest;
 use Yzh\Model\Bizlicxjjh5\H5GetStartUrlResponse;
 use Yzh\Model\Bizlicxjjh5\H5EcoCityAicStatusRequest;

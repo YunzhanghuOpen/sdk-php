@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\H5usersign\H5UserPresignRequest;
 use Yzh\Model\H5usersign\H5UserPresignResponse;
 use Yzh\Model\H5usersign\H5UserSignRequest;

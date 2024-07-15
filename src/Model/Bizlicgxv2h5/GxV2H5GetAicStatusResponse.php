@@ -13,7 +13,7 @@ class GxV2H5GetAicStatusResponse extends BaseResponse implements ResponseInterfa
 {
     /**
      * 获取数据对象
-     * @return  GxV2H5GetAicStatusResponseData
+     * @return GxV2H5GetAicStatusResponseData
      */
     public function getData()
     {

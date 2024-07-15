@@ -125,7 +125,6 @@ class DealerOrderInfo extends BaseModel
         $this->broker_id = $broker_id;
     }
 
-
     /**
      * 综合服务主体 ID
      * @return string
@@ -143,7 +142,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->dealer_id = $dealer_id;
     }
-
 
     /**
      * 平台企业 ID
@@ -163,7 +161,6 @@ class DealerOrderInfo extends BaseModel
         $this->order_id = $order_id;
     }
 
-
     /**
      * 平台企业订单号
      * @return string
@@ -181,7 +178,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->ref = $ref;
     }
-
 
     /**
      * 订单流水号
@@ -201,7 +197,6 @@ class DealerOrderInfo extends BaseModel
         $this->batch_id = $batch_id;
     }
 
-
     /**
      * 批次ID
      * @return string
@@ -219,7 +214,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->real_name = $real_name;
     }
-
 
     /**
      * 姓名
@@ -239,7 +233,6 @@ class DealerOrderInfo extends BaseModel
         $this->card_no = $card_no;
     }
 
-
     /**
      * 收款账号
      * @return string
@@ -257,7 +250,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->broker_amount = $broker_amount;
     }
-
 
     /**
      * 综合服务主体订单金额
@@ -277,7 +269,6 @@ class DealerOrderInfo extends BaseModel
         $this->broker_fee = $broker_fee;
     }
 
-
     /**
      * 综合服务主体加成服务费
      * @return string
@@ -295,7 +286,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->bill = $bill;
     }
-
 
     /**
      * 支付路径流水号
@@ -315,7 +305,6 @@ class DealerOrderInfo extends BaseModel
         $this->status = $status;
     }
 
-
     /**
      * 订单状态
      * @return string
@@ -333,7 +322,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->status_message = $status_message;
     }
-
 
     /**
      * 订单状态码描述
@@ -353,7 +341,6 @@ class DealerOrderInfo extends BaseModel
         $this->status_detail = $status_detail;
     }
 
-
     /**
      * 订单详情
      * @return string
@@ -371,7 +358,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->status_detail_message = $status_detail_message;
     }
-
 
     /**
      * 订单详细状态码描述
@@ -391,7 +377,6 @@ class DealerOrderInfo extends BaseModel
         $this->supplemental_detail_message = $supplemental_detail_message;
     }
 
-
     /**
      * 订单状态补充信息
      * @return string
@@ -409,7 +394,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->statement_id = $statement_id;
     }
-
 
     /**
      * 短周期授信账单号
@@ -429,7 +413,6 @@ class DealerOrderInfo extends BaseModel
         $this->fee_statement_id = $fee_statement_id;
     }
 
-
     /**
      * 服务费账单号
      * @return string
@@ -447,7 +430,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->bal_statement_id = $bal_statement_id;
     }
-
 
     /**
      * 余额账单号
@@ -467,7 +449,6 @@ class DealerOrderInfo extends BaseModel
         $this->channel = $channel;
     }
 
-
     /**
      * 支付路径
      * @return string
@@ -486,7 +467,6 @@ class DealerOrderInfo extends BaseModel
         $this->created_at = $created_at;
     }
 
-
     /**
      * 创建时间
      * @return string
@@ -504,7 +484,6 @@ class DealerOrderInfo extends BaseModel
     {
         $this->finished_time = $finished_time;
     }
-
 
     /**
      * 完成时间

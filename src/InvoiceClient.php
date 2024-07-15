@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Invoice\GetInvoiceStatRequest;
 use Yzh\Model\Invoice\GetInvoiceStatResponse;
 use Yzh\Model\Invoice\GetInvoiceAmountRequest;

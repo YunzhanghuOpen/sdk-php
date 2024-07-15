@@ -13,7 +13,7 @@ class GxV2H5APIGetStartUrlResponse extends BaseResponse implements ResponseInter
 {
     /**
      * 获取数据对象
-     * @return  GxV2H5APIGetStartUrlResponseData
+     * @return GxV2H5APIGetStartUrlResponseData
      */
     public function getData()
     {

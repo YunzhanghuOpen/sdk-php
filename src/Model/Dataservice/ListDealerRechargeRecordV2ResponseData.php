@@ -11,30 +11,29 @@ use Yzh\Model\ResponseDataInterface;
  */
 class ListDealerRechargeRecordV2ResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 预付业务服务费记录
-   * @var RechargeRecordInfo[]
-   */
-  protected $data;
+    /**
+     * 预付业务服务费记录
+     * @var RechargeRecordInfo[]
+     */
+    protected $data;
 
-  /**
-   * @var array $items
-   */
-  public function setData($items)
-  {
-      $this->data = array();
-      foreach ($items as $k => $v) {
-          array_push($this->data, new RechargeRecordInfo($v));
-      }
-  }
+    /**
+     * @var array $items
+     */
+    public function setData($items)
+    {
+        $this->data = array();
+        foreach ($items as $k => $v) {
+            array_push($this->data, new RechargeRecordInfo($v));
+        }
+    }
 
-
-  /**
-   * 预付业务服务费记录
-   * @var RechargeRecordInfo[]
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
+    /**
+     * 预付业务服务费记录
+     * @return RechargeRecordInfo[]
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
 }

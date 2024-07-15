@@ -5,24 +5,21 @@ namespace Yzh\Model\Payment;
 use Yzh\Model\BaseRequest;
 
 /**
-    * 查询平台企业汇款信息请求
-    * Class GetDealerVARechargeAccountRequest
-    */
+ * 查询平台企业汇款信息请求
+ * Class GetDealerVARechargeAccountRequest
+ */
 class GetDealerVARechargeAccountRequest extends BaseRequest
 {
-
     /**
-        * 综合服务主体 ID
-        * @var string
-        */
+     * 综合服务主体 ID
+     * @var string
+     */
     public $broker_id;
-
     /**
-        * 平台企业 ID
-        * @var string
-        */
+     * 平台企业 ID
+     * @var string
+     */
     public $dealer_id;
-
 
     public function __construct($params = array())
     {

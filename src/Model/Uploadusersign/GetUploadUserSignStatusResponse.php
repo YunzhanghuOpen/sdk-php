@@ -13,7 +13,7 @@ class GetUploadUserSignStatusResponse extends BaseResponse implements ResponseIn
 {
     /**
      * 获取数据对象
-     * @return  GetUploadUserSignStatusResponseData
+     * @return GetUploadUserSignStatusResponseData
      */
     public function getData()
     {

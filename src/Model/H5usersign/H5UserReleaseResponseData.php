@@ -11,28 +11,27 @@ use Yzh\Model\ResponseDataInterface;
  */
 class H5UserReleaseResponseData extends BaseModel implements ResponseDataInterface
 {
-  /**
-   * 是否解约成功
-   * @var string
-   */
-  protected $status;
+    /**
+     * 是否解约成功
+     * @var string
+     */
+    protected $status;
 
-  /**
-   * 是否解约成功
-   *  @var string $status
-   */
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
+    /**
+     * 是否解约成功
+     * @var string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
 
-
-  /**
-   * 是否解约成功
-   * @var string
-   */
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    /**
+     * 是否解约成功
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }

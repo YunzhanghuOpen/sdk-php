@@ -26,7 +26,6 @@ class RelationCreateMsgResponseData extends BaseModel implements ResponseDataInt
         $this->status = $status;
     }
 
-
     /**
      * 上传状态
      * @return string

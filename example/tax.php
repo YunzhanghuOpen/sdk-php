@@ -54,7 +54,7 @@ if ($response->isSuccess()) {
  * pwd 为下载接口响应参数中的文件解压缩密码，需使用平台企业私钥进行解密得到明文密码
  */
 $pwd = "KbCfTWmqR+HpRGVISFBkmu/Z********************sc9t00gPAVMOz6pFROWwcskp940tA==";
-$rsa = $rsa = Rsa::getInstance($config->app_private_key);
+$rsa = Rsa::getInstance($test_var['app_private_key'],$test_var['yzh_public_key']);
 
 /*
  * ①使用 BASE64 算法对数据解码，得到密文。

@@ -11,23 +11,23 @@ use Yzh\Model\ResponseInterface;
  */
 class GetApiUserSignStatusResponse extends BaseResponse implements ResponseInterface
 {
-  /**
-   * 获取数据对象
-   * @return  GetApiUserSignStatusResponseData
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
+    /**
+     * 获取数据对象
+     * @return GetApiUserSignStatusResponseData
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
 
-  /**
-   * 设置数据对象
-   * @param  array $data
-   * @return GetApiUserSignStatusResponseData
-   */
-  public function setData($data)
-  {
-    $this->data = new GetApiUserSignStatusResponseData($data);
-    return $this;
-  }
+    /**
+     * 设置数据对象
+     * @param array $data
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->data = new GetApiUserSignStatusResponseData($data);
+        return $this;
+    }
 }

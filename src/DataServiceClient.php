@@ -4,7 +4,6 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
-
 use Yzh\Model\Dataservice\ListDailyOrderRequest;
 use Yzh\Model\Dataservice\ListDailyOrderResponse;
 use Yzh\Model\Dataservice\GetDailyOrderFileRequest;

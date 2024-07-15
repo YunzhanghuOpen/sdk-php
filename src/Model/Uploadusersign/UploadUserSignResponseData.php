@@ -26,7 +26,6 @@ class UploadUserSignResponseData extends BaseModel implements ResponseDataInterf
         $this->status = $status;
     }
 
-
     /**
      * 上传状态
      * @return string

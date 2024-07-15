@@ -38,55 +38,46 @@ class CreateBankpayOrderRequest extends CustomRequest
      * @var string
      */
     public $order_id;
-
     /**
      * 平台企业 ID
      * @var string
      */
     public $dealer_id;
-
     /**
      * 综合服务主体 ID
      * @var string
      */
     public $broker_id;
-
     /**
      * 姓名
      * @var string
      */
     public $real_name;
-
     /**
      * 银行卡号
      * @var string
      */
     public $card_no;
-
     /**
      * 身份证号码
      * @var string
      */
     public $id_card;
-
     /**
      * 手机号
      * @var string
      */
     public $phone_no;
-
     /**
      * 订单金额
      * @var string
      */
     public $pay;
-
     /**
      * 订单备注
      * @var string
      */
     public $pay_remark;
-
     /**
      * 回调地址
      * @var string
@@ -104,13 +95,11 @@ class CreateBankpayOrderResponseData extends CustomResponseData
      * @var string
      */
     protected $order_id;
-
     /**
      * 综合服务平台流水号
      * @var string
      */
     protected $ref;
-
     /**
      * 订单金额
      * @var string
