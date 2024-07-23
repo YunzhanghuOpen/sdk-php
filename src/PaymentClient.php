@@ -20,6 +20,8 @@ use Yzh\Model\Payment\GetEleReceiptFileRequest;
 use Yzh\Model\Payment\GetEleReceiptFileResponse;
 use Yzh\Model\Payment\CancelOrderRequest;
 use Yzh\Model\Payment\CancelOrderResponse;
+use Yzh\Model\Payment\RetryOrderRequest;
+use Yzh\Model\Payment\RetryOrderResponse;
 use Yzh\Model\Payment\CreateBatchOrderRequest;
 use Yzh\Model\Payment\CreateBatchOrderResponse;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
@@ -147,6 +149,20 @@ class PaymentClient extends BaseClient
             throw new ConfigException("Payment->cancelOrder request 必须是 Yzh\\Model\\Payment\\CancelOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/order/fail', $request, "Yzh\\Model\\Payment\\CancelOrderResponse", $option);
+    }
+
+    /**
+     * 重试挂起状态订单
+     * @param RetryOrderRequest $request
+     * @param null $option
+     * @return RetryOrderResponse
+     */
+    public function retryOrder($request, $option = null)
+    {
+        if (!$request instanceof RetryOrderRequest) {
+            throw new ConfigException("Payment->retryOrder request 必须是 Yzh\\Model\\Payment\\RetryOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('POST', '/api/payment/v1/order/retry', $request, "Yzh\\Model\\Payment\\RetryOrderResponse", $option);
     }
 
     /**
