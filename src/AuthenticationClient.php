@@ -100,7 +100,7 @@ class AuthenticationClient extends BaseClient
     }
 
     /**
-     * 上传免验证用户名单信息
+     * 上传非居民身份证验证名单信息
      * @param UserExemptedInfoRequest $request
      * @param null $option
      * @return UserExemptedInfoResponse
@@ -114,7 +114,7 @@ class AuthenticationClient extends BaseClient
     }
 
     /**
-     * 查看免验证用户名单是否存在
+     * 查看用户是否在非居民身份证验证名单中
      * @param UserWhiteCheckRequest $request
      * @param null $option
      * @return UserWhiteCheckResponse
