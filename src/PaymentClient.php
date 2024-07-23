@@ -28,6 +28,8 @@ use Yzh\Model\Payment\CancelBatchOrderRequest;
 use Yzh\Model\Payment\CancelBatchOrderResponse;
 use Yzh\Model\Payment\QueryBatchOrderRequest;
 use Yzh\Model\Payment\QueryBatchOrderResponse;
+use Yzh\Model\Payment\RiskCheckAmountRequest;
+use Yzh\Model\Payment\RiskCheckAmountResponse;
 
 /**
  * 实时支付
@@ -203,5 +205,19 @@ class PaymentClient extends BaseClient
             throw new ConfigException("Payment->cancelBatchOrder request 必须是 Yzh\\Model\\Payment\\CancelBatchOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/cancel-batch', $request, "Yzh\\Model\\Payment\\CancelBatchOrderResponse", $option);
+    }
+
+    /**
+     * 用户结算金额校验
+     * @param RiskCheckAmountRequest $request
+     * @param null $option
+     * @return RiskCheckAmountResponse
+     */
+    public function riskCheckAmount($request, $option = null)
+    {
+        if (!$request instanceof RiskCheckAmountRequest) {
+            throw new ConfigException("Payment->riskCheckAmount request 必须是 Yzh\\Model\\Payment\\RiskCheckAmountRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('POST', '/api/payment/v1/risk-check/amount', $request, "Yzh\\Model\\Payment\\RiskCheckAmountResponse", $option);
     }
 }

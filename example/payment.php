@@ -17,6 +17,7 @@ use Yzh\Model\Payment\CreateBatchOrderRequest;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
 use Yzh\Model\Payment\CancelBatchOrderRequest;
 use Yzh\Model\Payment\QueryBatchOrderRequest;
+use Yzh\Model\Payment\RiskCheckAmountRequest;
 
 // 实时支付
 $config = Config::newFromArray(array(
@@ -249,6 +250,30 @@ $request = new GetDealerVARechargeAccountRequest(array(
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->getDealerVARechargeAccount($request);
+if ($response->isSuccess()) {
+    // 操作成功
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    // 失败返回
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
+
+// 用户结算金额校验
+$request = new RiskCheckAmountRequest(array(
+    'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
+    'real_name' => '张三',                         // 姓名
+    'id_card' => '11010519491231002X',            // 身份证号码
+    'amount' => '1000.00',                        // 校验金额
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $paymentClient->riskCheckAmount($request);
 if ($response->isSuccess()) {
     // 操作成功
     $data = $response->getData();
