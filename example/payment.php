@@ -1,5 +1,4 @@
 <?php
-
 define('TEST_PATH', dirname(__FILE__));
 include_once(TEST_PATH . '/../vendor/autoload.php');
 include_once(TEST_PATH . '/test_var.php');
