@@ -7,13 +7,13 @@ use Yzh\Model\ResponseInterface;
 
 /**
  * 用户结算金额校验返回
- * Class RiskCheckAmountResponse
+ * Class CheckUserAmountResponse
  */
-class RiskCheckAmountResponse extends BaseResponse implements ResponseInterface
+class CheckUserAmountResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return RiskCheckAmountResponseData
+     * @return CheckUserAmountResponseData
      */
     public function getData()
     {
@@ -27,7 +27,7 @@ class RiskCheckAmountResponse extends BaseResponse implements ResponseInterface
      */
     public function setData($data)
     {
-        $this->data = new RiskCheckAmountResponseData($data);
+        $this->data = new CheckUserAmountResponseData($data);
         return $this;
     }
 }

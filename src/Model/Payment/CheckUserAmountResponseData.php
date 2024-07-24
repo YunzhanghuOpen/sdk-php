@@ -7,9 +7,9 @@ use Yzh\Model\ResponseDataInterface;
 
 /**
  * 用户结算金额校验返回
- * Class RiskCheckAmountResponseData
+ * Class CheckUserAmountResponseData
  */
-class RiskCheckAmountResponseData extends BaseModel implements ResponseDataInterface
+class CheckUserAmountResponseData extends BaseModel implements ResponseDataInterface
 {
     /**
      * 是否超过月限额

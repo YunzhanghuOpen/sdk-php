@@ -1,4 +1,5 @@
 <?php
+
 define('TEST_PATH', dirname(__FILE__));
 include_once(TEST_PATH . '/../vendor/autoload.php');
 include_once(TEST_PATH . '/test_var.php');
@@ -17,7 +18,7 @@ use Yzh\Model\Payment\CreateBatchOrderRequest;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
 use Yzh\Model\Payment\CancelBatchOrderRequest;
 use Yzh\Model\Payment\QueryBatchOrderRequest;
-use Yzh\Model\Payment\RiskCheckAmountRequest;
+use Yzh\Model\Payment\CheckUserAmountRequest;
 
 // 实时支付
 $config = Config::newFromArray(array(
@@ -260,7 +261,7 @@ if ($response->isSuccess()) {
 }
 
 // 用户结算金额校验
-$request = new RiskCheckAmountRequest(array(
+$request = new CheckUserAmountRequest(array(
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
     'id_card' => '11010519491231002X',            // 身份证号码
@@ -273,7 +274,7 @@ $request = new RiskCheckAmountRequest(array(
  * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
-$response = $paymentClient->riskCheckAmount($request);
+$response = $paymentClient->checkUserAmount($request);
 if ($response->isSuccess()) {
     // 操作成功
     $data = $response->getData();

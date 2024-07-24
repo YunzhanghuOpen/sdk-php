@@ -6,9 +6,9 @@ use Yzh\Model\BaseRequest;
 
 /**
  * 用户结算金额校验请求
- * Class RiskCheckAmountRequest
+ * Class CheckUserAmountRequest
  */
-class RiskCheckAmountRequest extends BaseRequest
+class CheckUserAmountRequest extends BaseRequest
 {
     /**
      * 综合服务主体 ID
