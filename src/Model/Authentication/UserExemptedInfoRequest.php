@@ -5,7 +5,7 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseRequest;
 
 /**
- * 上传免验证用户名单信息请求
+ * 上传非居民身份证验证名单信息请求
  * Class UserExemptedInfoRequest
  */
 class UserExemptedInfoRequest extends BaseRequest

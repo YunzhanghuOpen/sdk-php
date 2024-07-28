@@ -6,7 +6,7 @@ use Yzh\Model\BaseModel;
 use Yzh\Model\ResponseDataInterface;
 
 /**
- * 下载个人所得税扣缴明细表返回
+ * 下载个人所得税申报明细表返回
  * Class GetTaxFileResponseData
  */
 class GetTaxFileResponseData extends BaseModel implements ResponseDataInterface

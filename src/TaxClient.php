@@ -10,7 +10,7 @@ use Yzh\Model\Tax\GetUserCrossRequest;
 use Yzh\Model\Tax\GetUserCrossResponse;
 
 /**
- * 个人所得税扣缴明细表
+ * 个人所得税申报明细表
  * Class TaxClient
  */
 class TaxClient extends BaseClient
@@ -18,7 +18,7 @@ class TaxClient extends BaseClient
     protected static $service_name = 'tax';
 
     /**
-     * 下载个人所得税扣缴明细表
+     * 下载个人所得税申报明细表
      * @param GetTaxFileRequest $request
      * @param null $option
      * @return GetTaxFileResponse

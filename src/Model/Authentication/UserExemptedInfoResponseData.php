@@ -6,7 +6,7 @@ use Yzh\Model\BaseModel;
 use Yzh\Model\ResponseDataInterface;
 
 /**
- * 上传免验证用户名单信息返回
+ * 上传非居民身份证验证名单信息返回
  * Class UserExemptedInfoResponseData
  */
 class UserExemptedInfoResponseData extends BaseModel implements ResponseDataInterface
