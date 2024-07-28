@@ -32,7 +32,6 @@ $request = new UploadUserSignRequest(array(
     'real_name' => '张三',                         // 姓名
     'id_card' => '11010519491231002X',            // 证件号码
     'phone' => '188****8888',                     // 手机号
-    'is_abroad'=> false,                          // 是否是海外用户
     'notify_url' => 'https://www.example.com'     // 签约回调地址
 ));
 
