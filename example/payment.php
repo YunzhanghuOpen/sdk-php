@@ -289,7 +289,7 @@ $request = new CheckUserAmountRequest(array(
     'broker_id' => $test_var['app_broker_id'],    // 综合服务主体 ID
     'real_name' => '张三',                         // 姓名
     'id_card' => '11010519491231002X',            // 身份证号码
-    'amount' => '1000.00',                        // 校验金额
+    'amount' => '10000.00',                       // 校验金额
 ));
 
 /*
