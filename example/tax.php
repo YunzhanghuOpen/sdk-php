@@ -9,7 +9,7 @@ use Yzh\Model\Tax\GetTaxFileRequest;
 use Yzh\Model\Tax\GetUserCrossRequest;
 use Yzh\Utils\Rsa;
 
-// 个人所得税扣缴明细表
+// 个人所得税申报明细表
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
     'app_broker_id' => $test_var['app_broker_id'],
@@ -26,7 +26,7 @@ try {
     die($e->getMessage());
 }
 
-// 下载个人所得税扣缴明细表
+// 下载个人所得税申报明细表
 $request = new GetTaxFileRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],   // 平台企业 ID
     'ent_id' => 'accumulus_tj',                  // 平台企业签约主体，accumulus_tj：天津，accumulus_sh：上海，accumulus_gs：甘肃

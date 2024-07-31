@@ -1,24 +1,24 @@
 <?php
 
-namespace Yzh\Model\Authentication;
+namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseModel;
 use Yzh\Model\ResponseDataInterface;
 
 /**
- * 上传非居民身份证验证名单信息返回
- * Class UserExemptedInfoResponseData
+ * 重试挂起状态订单返回
+ * Class RetryOrderResponseData
  */
-class UserExemptedInfoResponseData extends BaseModel implements ResponseDataInterface
+class RetryOrderResponseData extends BaseModel implements ResponseDataInterface
 {
     /**
-     * 是否上传成功
+     * 请求标识
      * @var string
      */
     protected $ok;
 
     /**
-     * 是否上传成功
+     * 请求标识
      * @var string $ok
      */
     public function setOk($ok)
@@ -27,7 +27,7 @@ class UserExemptedInfoResponseData extends BaseModel implements ResponseDataInte
     }
 
     /**
-     * 是否上传成功
+     * 请求标识
      * @return string
      */
     public function getOk()

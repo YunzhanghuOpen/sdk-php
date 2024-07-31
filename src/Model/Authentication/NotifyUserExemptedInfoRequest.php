@@ -5,7 +5,7 @@ namespace Yzh\Model\Authentication;
 use Yzh\Model\BaseRequest;
 
 /**
- * 上传免验证用户名单信息审核结果通知
+ * 非居民身份证验证名单审核结果回调通知
  * Class NotifyUserExemptedInfoRequest
  */
 class NotifyUserExemptedInfoRequest extends BaseRequest

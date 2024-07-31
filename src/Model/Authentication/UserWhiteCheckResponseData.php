@@ -6,7 +6,7 @@ use Yzh\Model\BaseModel;
 use Yzh\Model\ResponseDataInterface;
 
 /**
- * 查看免验证用户名单是否存在返回
+ * 查看用户是否在非居民身份证验证名单中返回
  * Class UserWhiteCheckResponseData
  */
 class UserWhiteCheckResponseData extends BaseModel implements ResponseDataInterface

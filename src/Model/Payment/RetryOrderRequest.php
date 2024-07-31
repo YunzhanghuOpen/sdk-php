@@ -1,14 +1,14 @@
 <?php
 
-namespace Yzh\Model\Tax;
+namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseRequest;
 
 /**
- * 下载个人所得税申报明细表请求
- * Class GetTaxFileRequest
+ * 重试挂起状态订单请求
+ * Class RetryOrderRequest
  */
-class GetTaxFileRequest extends BaseRequest
+class RetryOrderRequest extends BaseRequest
 {
     /**
      * 平台企业 ID
@@ -16,15 +16,20 @@ class GetTaxFileRequest extends BaseRequest
      */
     public $dealer_id;
     /**
-     * 平台企业签约主体
+     * 平台企业订单号
      * @var string
      */
-    public $ent_id;
+    public $order_id;
     /**
-     * 所属期
+     * 综合服务平台流水号
      * @var string
      */
-    public $year_month;
+    public $ref;
+    /**
+     * 支付路径名
+     * @var string
+     */
+    public $channel;
 
     public function __construct($params = array())
     {

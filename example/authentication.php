@@ -150,6 +150,7 @@ function getuploadfileinfo($file)
     }
 }
 
+// 上传非居民身份证验证名单信息
 $request = new UserExemptedInfoRequest(array(
     'real_name' => '张三',                         // 姓名
     'id_card' => 'passporttest123456',            // 证件号码
@@ -181,7 +182,7 @@ if ($response->isSuccess()) {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
-// 查看免验证用户名单是否存在
+// 查看用户是否在非居民身份证验证名单中
 $request = new UserWhiteCheckRequest(array(
     'real_name' => '张三',                        // 姓名
     'id_card' => 'passporttest123456',           // 证件号码
