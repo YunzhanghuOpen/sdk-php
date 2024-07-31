@@ -1,19 +1,19 @@
 <?php
 
-namespace Yzh\Model\Authentication;
+namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseResponse;
 use Yzh\Model\ResponseInterface;
 
 /**
- * 上传非居民身份证验证名单信息返回
- * Class UserExemptedInfoResponse
+ * 重试挂起状态订单返回
+ * Class RetryOrderResponse
  */
-class UserExemptedInfoResponse extends BaseResponse implements ResponseInterface
+class RetryOrderResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return UserExemptedInfoResponseData
+     * @return RetryOrderResponseData
      */
     public function getData()
     {
@@ -27,7 +27,7 @@ class UserExemptedInfoResponse extends BaseResponse implements ResponseInterface
      */
     public function setData($data)
     {
-        $this->data = new UserExemptedInfoResponseData($data);
+        $this->data = new RetryOrderResponseData($data);
         return $this;
     }
 }

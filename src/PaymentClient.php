@@ -20,6 +20,8 @@ use Yzh\Model\Payment\GetEleReceiptFileRequest;
 use Yzh\Model\Payment\GetEleReceiptFileResponse;
 use Yzh\Model\Payment\CancelOrderRequest;
 use Yzh\Model\Payment\CancelOrderResponse;
+use Yzh\Model\Payment\RetryOrderRequest;
+use Yzh\Model\Payment\RetryOrderResponse;
 use Yzh\Model\Payment\CreateBatchOrderRequest;
 use Yzh\Model\Payment\CreateBatchOrderResponse;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
@@ -28,6 +30,8 @@ use Yzh\Model\Payment\CancelBatchOrderRequest;
 use Yzh\Model\Payment\CancelBatchOrderResponse;
 use Yzh\Model\Payment\QueryBatchOrderRequest;
 use Yzh\Model\Payment\QueryBatchOrderResponse;
+use Yzh\Model\Payment\CheckUserAmountRequest;
+use Yzh\Model\Payment\CheckUserAmountResponse;
 
 /**
  * 实时支付
@@ -150,6 +154,20 @@ class PaymentClient extends BaseClient
     }
 
     /**
+     * 重试挂起状态订单
+     * @param RetryOrderRequest $request
+     * @param null $option
+     * @return RetryOrderResponse
+     */
+    public function retryOrder($request, $option = null)
+    {
+        if (!$request instanceof RetryOrderRequest) {
+            throw new ConfigException("Payment->retryOrder request 必须是 Yzh\\Model\\Payment\\RetryOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('POST', '/api/payment/v1/order/retry', $request, "Yzh\\Model\\Payment\\RetryOrderResponse", $option);
+    }
+
+    /**
      * 批次下单
      * @param CreateBatchOrderRequest $request
      * @param null $option
@@ -203,5 +221,19 @@ class PaymentClient extends BaseClient
             throw new ConfigException("Payment->cancelBatchOrder request 必须是 Yzh\\Model\\Payment\\CancelBatchOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/cancel-batch', $request, "Yzh\\Model\\Payment\\CancelBatchOrderResponse", $option);
+    }
+
+    /**
+     * 用户结算金额校验
+     * @param CheckUserAmountRequest $request
+     * @param null $option
+     * @return CheckUserAmountResponse
+     */
+    public function checkUserAmount($request, $option = null)
+    {
+        if (!$request instanceof CheckUserAmountRequest) {
+            throw new ConfigException("Payment->checkUserAmount request 必须是 Yzh\\Model\\Payment\\CheckUserAmountRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('POST', '/api/payment/v1/risk-check/amount', $request, "Yzh\\Model\\Payment\\CheckUserAmountResponse", $option);
     }
 }

@@ -1,25 +1,35 @@
 <?php
 
-namespace Yzh\Model\Authentication;
+namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseRequest;
 
 /**
- * 查看用户是否在非居民身份证验证名单中请求
- * Class UserWhiteCheckRequest
+ * 用户结算金额校验请求
+ * Class CheckUserAmountRequest
  */
-class UserWhiteCheckRequest extends BaseRequest
+class CheckUserAmountRequest extends BaseRequest
 {
     /**
-     * 证件号码
+     * 综合服务主体 ID
      * @var string
      */
-    public $id_card;
+    public $broker_id;
     /**
      * 姓名
      * @var string
      */
     public $real_name;
+    /**
+     * 身份证号码
+     * @var string
+     */
+    public $id_card;
+    /**
+     * 校验金额
+     * @var string
+     */
+    public $amount;
 
     public function __construct($params = array())
     {
