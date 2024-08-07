@@ -4,4 +4,4 @@ include:                                # include包含模板配置
     file: "/sdk-test.gitlab-ci.yml"
 
 
-image: docker.yunzhanghu.net/base/php8-sdk-unittest:v1.0.2
+image: docker.yunzhanghu.net/base/php8-sdk-unittest:v1.0.3
