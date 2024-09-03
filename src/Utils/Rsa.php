@@ -7,12 +7,11 @@ use Yzh\Exception\ExceptionCode;
 
 class Rsa
 {
-    private static $instance;
     private $private_key;
     private $public_key;
     private $mode = "SHA256";
 
-    private function __construct($privateKey = "", $publicKey = "")
+    public function __construct($privateKey = "", $publicKey = "")
     {
         if (!extension_loaded("openssl")) {
             throw new ConfigException("缺少 openssl 扩展", ExceptionCode::CONFIG_ERROR_LACK_PACKAGE);
@@ -27,19 +26,6 @@ class Rsa
         if (!$this->public_key) {
             throw new ConfigException("公钥解析失败", ExceptionCode::CONFIG_ERROR_RSA_KEY_INVALID);
         }
-    }
-
-    private function __clone()
-    {
-        return false;
-    }
-
-    public static function getInstance($privateKey = "", $publicKey = "")
-    {
-        if (!self::$instance instanceof Rsa) {
-            self::$instance = new Rsa($privateKey, $publicKey);
-        }
-        return self::$instance;
     }
 
     /**
