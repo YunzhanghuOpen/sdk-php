@@ -4,7 +4,6 @@ namespace Yzh\Utils;
 
 class Hmac
 {
-    private static $instance;
     protected $mode = "sha256";
     protected $app_key;
 
@@ -14,19 +13,6 @@ class Hmac
     public function __construct($appKey)
     {
         $this->app_key = $appKey;
-    }
-
-    private function __clone()
-    {
-        return false;
-    }
-
-    public static function getInstance($appKey)
-    {
-        if (!self::$instance instanceof Hmac) {
-            self::$instance = new Hmac($appKey);
-        }
-        return self::$instance;
     }
 
     /**

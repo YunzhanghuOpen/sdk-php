@@ -17,7 +17,7 @@ defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 class BaseClient
 {
     const SDK_NAME = "yunzhanghu-sdk-php";
-    const SDK_VERSION  = "2.0.10";
+    const SDK_VERSION  = "2.0.11";
     const ENV_PROD = "yzh_env_prod";
     const ENV_SANDBOX = "yzh_env_sandbox";
 
@@ -73,10 +73,10 @@ class BaseClient
         $this->setEnv($config->env);
 
         if ($this->config->sign_type == Config::SIGN_TYPE_RSA) {
-            $this->rsa = Rsa::getInstance($this->config->app_private_key, $this->config->yzh_public_key);
+            $this->rsa = new Rsa($this->config->app_private_key, $this->config->yzh_public_key);
             $this->sign_type = Config::SIGN_TYPE_RSA;
         } else if ($this->config->sign_type == Config::SIGN_TYPE_HMAC) {
-            $this->hmac = Hmac::getInstance($this->config->app_key);
+            $this->hmac = new Hmac($this->config->app_key);
             $this->sign_type = Config::SIGN_TYPE_HMAC;
         } else {
             throw new ConfigException("签名方式配置错误", ExceptionCode::CONFIG_ERROR_WRONG_SIGN_TYPE);
