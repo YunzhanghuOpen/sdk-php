@@ -6,12 +6,12 @@ include_once(TEST_PATH . '/test_var.php');
 use Yzh\Config;
 use Yzh\DataServiceClient;
 use Yzh\Model\Dataservice\GetDailyOrderFileRequest;
-use Yzh\Model\DataService\ListDailyOrderRequest;
-use Yzh\Model\DataService\GetDailyOrderFileV2Request;
-use Yzh\Model\DataService\ListDailyBillRequest;
-use Yzh\Model\DataService\GetDailyBillFileV2Request;
-use Yzh\Model\DataService\ListDealerRechargeRecordV2Request;
-use Yzh\Model\DataService\ListBalanceDailyStatementRequest;
+use Yzh\Model\Dataservice\ListDailyOrderRequest;
+use Yzh\Model\Dataservice\GetDailyOrderFileV2Request;
+use Yzh\Model\Dataservice\ListDailyBillRequest;
+use Yzh\Model\Dataservice\GetDailyBillFileV2Request;
+use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Request;
+use Yzh\Model\Dataservice\ListBalanceDailyStatementRequest;
 
 // 对账文件获取
 $config = Config::newFromArray(array(
