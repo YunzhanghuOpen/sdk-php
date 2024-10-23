@@ -50,6 +50,11 @@ class InformationDataInfo extends BaseModel
      * @var string
      */
     protected $invoiced_date;
+    /**
+     * 发票状态
+     * @var string
+     */
+    protected $status;
 
     /**
      * 货物或应税劳务、服务名称
@@ -193,5 +198,23 @@ class InformationDataInfo extends BaseModel
     public function getInvoicedDate()
     {
         return $this->invoiced_date;
+    }
+
+    /**
+     * 发票状态
+     * @var string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * 发票状态
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }
