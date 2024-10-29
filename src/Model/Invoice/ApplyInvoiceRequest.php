@@ -52,7 +52,7 @@ class ApplyInvoiceRequest extends BaseRequest
     public $remark;
     /**
      * 发票接收邮箱
-     * @var string
+     * @var string[]
      */
     public $receive_emails;
     /**
