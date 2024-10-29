@@ -81,7 +81,7 @@ $request = new ApplyInvoiceRequest(array(
     'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
     'invoice_apply_id' => 'apply123456789',         // 发票申请编号
     'amount' => '1.0',                              // 申请开票⾦额
-    'invoice_type' => '2',                          // 发票类型 1：专票 2：普票
+    'invoice_type' => '2',                          // 发票类型 1：增值税专用发票 2：增值税普通发票
     'bank_name_account' => '',                      // 开户⾏及账号（选填，若不填写，则使⽤默认值）
     'goods_services_name' => '*测试分类*test测试内容', // 货物或应税劳务、服务名称 (选填，若不填写，则使⽤默认值)
     'remark' => '发票备注'                           // 发票备注（选填，每张发票备注栏相同）
@@ -147,7 +147,7 @@ if ($response->isSuccess()) {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
-// 发送发票扫描件压缩包下载链接邮件
+// 发送发票开具成功通知邮件
 $request = new SendReminderEmailRequest(array(
     'invoice_apply_id' => 'apply123456789',      // 发票申请编号
     'application_id' => 'a123b1110',             // 发票申请单 ID
