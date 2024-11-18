@@ -4,8 +4,12 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
+
+
 use Yzh\Model\Dataservice\ListDailyOrderRequest;
 use Yzh\Model\Dataservice\ListDailyOrderResponse;
+use Yzh\Model\Dataservice\ListDailyOrderV2Request;
+use Yzh\Model\Dataservice\ListDailyOrderV2Response;
 use Yzh\Model\Dataservice\GetDailyOrderFileRequest;
 use Yzh\Model\Dataservice\GetDailyOrderFileResponse;
 use Yzh\Model\Dataservice\GetDailyOrderFileV2Request;
@@ -39,6 +43,20 @@ class DataServiceClient extends BaseClient
             throw new ConfigException("Dataservice->listDailyOrder request 必须是 Yzh\\Model\\Dataservice\\ListDailyOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v1/orders', $request, "Yzh\\Model\\Dataservice\\ListDailyOrderResponse", $option);
+    }
+
+    /**
+     * 查询日订单数据（支付和退款订单）
+     * @param ListDailyOrderV2Request $request
+     * @param null $option
+     * @return ListDailyOrderV2Response
+     */
+    public function listDailyOrderV2($request, $option = null)
+    {
+        if (!$request instanceof ListDailyOrderV2Request) {
+            throw new ConfigException("Dataservice->listDailyOrderV2 request 必须是 Yzh\\Model\\Dataservice\\ListDailyOrderV2Request 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/dataservice/v2/orders', $request, "Yzh\\Model\\Dataservice\\ListDailyOrderV2Response", $option);
     }
 
     /**

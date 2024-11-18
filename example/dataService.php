@@ -12,6 +12,7 @@ use Yzh\Model\Dataservice\ListDailyBillRequest;
 use Yzh\Model\Dataservice\GetDailyBillFileV2Request;
 use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Request;
 use Yzh\Model\Dataservice\ListBalanceDailyStatementRequest;
+use Yzh\Model\Dataservice\ListDailyOrderV2Request;
 
 // 对账文件获取
 $config = Config::newFromArray(array(
@@ -116,6 +117,35 @@ if ($response->isSuccess()) {
     // 操作成功
     $totalNum = $response->getData()->getTotalNum();  // 总条数
     $listData = $response->getData()->getList();      // 条目明细
+    foreach ($listData as $k => $v) {
+        $v->getOrderId();
+    }
+} else {
+    // 失败返回
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
+
+// 查询日订单数据（支付和退款订单）
+$request = new ListDailyOrderV2Request(array(
+    'order_date' => '2024-09-05',
+    'offeset' => 0,
+    'length' => 100,
+    'channel' => 'alipay',
+    'data_type' => 'encryption'
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $dataServiceClient->listDailyOrderV2($request);
+if ($response->isSuccess()) {
+    // 操作成功
+    $totalNum = $response->getData()->getTotalNum();
+    $listData = $response->getData()->getList();
+    var_dump($listData);
     foreach ($listData as $k => $v) {
         $v->getOrderId();
     }
