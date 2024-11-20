@@ -131,7 +131,7 @@ $request = new ListDailyOrderV2Request(array(
     'offeset' => 0,
     'length' => 100,
     'channel' => 'alipay',
-    'data_type' => 'encryption'
+    'data_type' => ''
 ));
 
 /*

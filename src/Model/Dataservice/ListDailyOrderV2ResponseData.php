@@ -12,18 +12,18 @@ use Yzh\Model\ResponseDataInterface;
 class ListDailyOrderV2ResponseData extends BaseModel implements ResponseDataInterface
 {
     /**
-     * 总数目
+     * 总条数
      * @var int32
      */
     protected $total_num;
     /**
-     * 条目信息
+     * 条目明细
      * @var DealerOrderInfoV2[]
      */
     protected $list;
 
     /**
-     * 总数目
+     * 总条数
      * @var int32 $total_num
      */
     public function setTotalNum($total_num)
@@ -32,7 +32,7 @@ class ListDailyOrderV2ResponseData extends BaseModel implements ResponseDataInte
     }
 
     /**
-     * 总数目
+     * 总条数
      * @return int32
      */
     public function getTotalNum()
@@ -52,7 +52,7 @@ class ListDailyOrderV2ResponseData extends BaseModel implements ResponseDataInte
     }
 
     /**
-     * 条目信息
+     * 条目明细
      * @return DealerOrderInfoV2[]
      */
     public function getList()
