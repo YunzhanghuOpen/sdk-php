@@ -50,6 +50,16 @@ class ApplyInvoiceRequest extends BaseRequest
      * @var string
      */
     public $remark;
+    /**
+     * 发票接收邮箱
+     * @var string[]
+     */
+    public $receive_emails;
+    /**
+     * 发票介质
+     * @var string
+     */
+    public $invoice_media;
 
     public function __construct($params = array())
     {
