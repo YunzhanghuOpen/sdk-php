@@ -5,7 +5,7 @@ namespace Yzh\Model\Invoice;
 use Yzh\Model\BaseRequest;
 
 /**
- * 发送发票扫描件压缩包下载链接邮件请求
+ * 发送发票开具成功通知邮件请求
  * Class SendReminderEmailRequest
  */
 class SendReminderEmailRequest extends BaseRequest
