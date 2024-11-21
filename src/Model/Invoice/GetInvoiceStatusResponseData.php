@@ -81,6 +81,16 @@ class GetInvoiceStatusResponseData extends BaseModel implements ResponseDataInte
      * @var string[]
      */
     protected $waybill_number;
+    /**
+     * 驳回原因
+     * @var string
+     */
+    protected $reject_reason;
+    /**
+     * 发票介质
+     * @var string
+     */
+    protected $invoice_media;
 
     /**
      * 申请结果
@@ -332,5 +342,41 @@ class GetInvoiceStatusResponseData extends BaseModel implements ResponseDataInte
     public function getWaybillNumber()
     {
         return $this->waybill_number;
+    }
+
+    /**
+     * 驳回原因
+     * @var string $reject_reason
+     */
+    public function setRejectReason($reject_reason)
+    {
+        $this->reject_reason = $reject_reason;
+    }
+
+    /**
+     * 驳回原因
+     * @return string
+     */
+    public function getRejectReason()
+    {
+        return $this->reject_reason;
+    }
+
+    /**
+     * 发票介质
+     * @var string $invoice_media
+     */
+    public function setInvoiceMedia($invoice_media)
+    {
+        $this->invoice_media = $invoice_media;
+    }
+
+    /**
+     * 发票介质
+     * @return string
+     */
+    public function getInvoiceMedia()
+    {
+        return $this->invoice_media;
     }
 }
