@@ -95,6 +95,11 @@ class NotifyInvoiceDoneRequest extends BaseRequest
      * @var string
      */
     public $reject_reason;
+    /**
+     * 发票介质
+     * @var string
+     */
+    public $invoice_media;
 
     public function __construct($params = array())
     {

@@ -112,7 +112,7 @@ class InvoiceClient extends BaseClient
     }
 
     /**
-     * 发送发票扫描件压缩包下载链接邮件
+     * 发送发票开具成功通知邮件
      * @param SendReminderEmailRequest $request
      * @param null $option
      * @return SendReminderEmailResponse
