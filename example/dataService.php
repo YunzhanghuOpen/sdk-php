@@ -127,11 +127,11 @@ if ($response->isSuccess()) {
 
 // 查询日订单数据（支付和退款订单）
 $request = new ListDailyOrderV2Request(array(
-    'order_date' => '2024-09-05',
-    'offeset' => 0,
-    'length' => 100,
-    'channel' => 'alipay',
-    'data_type' => ''
+    'order_date' => '2024-09-05',      // 订单查询日期，yyyy-MM-dd 格式
+    'offeset' => 0,                    // 偏移量，最小从 0 开始
+    'length' => 100,                   // 每页最多返回条数，最多为 200 条
+    'channel' => 'alipay',             // 支付路径名，bankpay：银行卡 alipay：支付宝 wxpay：微信
+    'data_type' => ''                  // 当且仅当参数值为 encryption 时，对返回的 data 进行加密
 ));
 
 /*
