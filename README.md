@@ -37,7 +37,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 ### 3、配置密钥
 
 登录【[云账户综合服务平台](https://service.yunzhanghu.com/)】，选择"业务中心 > 业务管理 > 对接信息"，单击页面右上角的"编辑"，配置平台企业公钥。  
-![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/duijiexinxi-4.png?isAttachment=false&fileID=6f4c1927c490566e68cfb608cc951c2dbb14132d&signature=KVHB%2B6cIkAkHxSKNpBsrKy%2FQU%2FRFDnE4G6dDvw%2BROHU%3D)
+![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/2025-02-11-dealerpublickey.png?isAttachment=false&fileID=6359c3b70c1a93aad5d230c76095a8baa61f4627&signature=pDmxtJYTn9Rghn1POO3XAWHXo1wIBenFXAu9ABEyGbk%3D)
 
 ## 安装 PHP SDK  
 ### 1、安装依赖
@@ -65,8 +65,6 @@ composer require yunzhanghuopen/sdk-php
 - 个体工商户注册 
    - [云账户新经济 H5](example/bizlicXjjH5.php) 
    - [云账户新经济 H5+API](example/bizlicXjjH5Api.php) 
-   - [云账户共享大额 H5](example/bizlicGxV2H5.php) 
-   - [云账户共享大额 H5+API](example/bizlicGxV2H5Api.php) 
 - [实时支付](example/payment.php ) 
 - [异步通知](example/notify.php )     
 - [对账文件获取](example/dataService.php )    
