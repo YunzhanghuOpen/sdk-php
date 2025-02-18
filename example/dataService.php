@@ -227,12 +227,12 @@ if ($response->isSuccess()) {
 
 // 查询日订单汇总数据
 $request = new ListDailyOrderSummaryRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],
-    'broker_id' => $test_var['app_broker_id'],
-    'channel' => '支付宝',
-    'begin_at' => '2025-02-01',
-    'end_at' => '2025-02-07',
-    'filter_type' => 'apply'
+    'dealer_id' => $test_var['app_dealer_id'],            // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],            // 综合服务主体 ID
+    'channel' => '支付宝',                                 // 支付路径，银⾏卡，⽀付宝，微信
+    'begin_at' => '2025-02-01',                           // 订单查询开始日期，格式：yyyy-MM-dd
+    'end_at' => '2025-02-07',                             // 订单查询结束日期，格式：yyyy-MM-dd
+    'filter_type' => 'apply'                              // 筛选类型，apply：按订单创建时间汇总，complete：按订单完成时间汇总
 ));
 
 /*
@@ -253,11 +253,11 @@ if ($response->isSuccess()) {
 
 // 查询月订单汇总数据
 $request = new ListMonthlyOrderSummaryRequest(array(
-    'dealer_id' => $test_var['app_dealer_id'],
-    'broker_id' => $test_var['app_broker_id'],
-    'channel' => '银行卡',
-    'month' => '2025-01',
-    'filter_type' => 'apply'
+    'dealer_id' => $test_var['app_dealer_id'],      // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
+    'channel' => '银行卡',                           // 支付路径，银⾏卡，⽀付宝，微信
+    'month' => '2025-01',                           // 汇总月份，格式：yyyy-MM
+    'filter_type' => 'apply'                        // 筛选类型，apply：按订单创建时间汇总，complete：按订单完成时间汇总
 ));
 
 /*
