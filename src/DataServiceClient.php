@@ -22,6 +22,10 @@ use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Request;
 use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Response;
 use Yzh\Model\Dataservice\ListBalanceDailyStatementRequest;
 use Yzh\Model\Dataservice\ListBalanceDailyStatementResponse;
+use Yzh\Model\Dataservice\ListDailyOrderSummaryRequest;
+use Yzh\Model\Dataservice\ListDailyOrderSummaryResponse;
+use Yzh\Model\Dataservice\ListMonthlyOrderSummaryRequest;
+use Yzh\Model\Dataservice\ListMonthlyOrderSummaryResponse;
 
 /**
  * 对账文件获取
@@ -141,5 +145,33 @@ class DataServiceClient extends BaseClient
             throw new ConfigException("Dataservice->listBalanceDailyStatement request 必须是 Yzh\\Model\\Dataservice\\ListBalanceDailyStatementRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/dataservice/v1/statements-daily', $request, "Yzh\\Model\\Dataservice\\ListBalanceDailyStatementResponse", $option);
+    }
+
+    /**
+     * 查询日订单汇总数据
+     * @param ListDailyOrderSummaryRequest $request
+     * @param null $option
+     * @return ListDailyOrderSummaryResponse
+     */
+    public function listDailyOrderSummary($request, $option = null)
+    {
+        if (!$request instanceof ListDailyOrderSummaryRequest) {
+            throw new ConfigException("Dataservice->listDailyOrderSummary request 必须是 Yzh\\Model\\Dataservice\\ListDailyOrderSummaryRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/dataservice/v2/order/daily-summary', $request, "Yzh\\Model\\Dataservice\\ListDailyOrderSummaryResponse", $option);
+    }
+
+    /**
+     * 查询月订单汇总数据
+     * @param ListMonthlyOrderSummaryRequest $request
+     * @param null $option
+     * @return ListMonthlyOrderSummaryResponse
+     */
+    public function listMonthlyOrderSummary($request, $option = null)
+    {
+        if (!$request instanceof ListMonthlyOrderSummaryRequest) {
+            throw new ConfigException("Dataservice->listMonthlyOrderSummary request 必须是 Yzh\\Model\\Dataservice\\ListMonthlyOrderSummaryRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/dataservice/v2/order/monthly-summary', $request, "Yzh\\Model\\Dataservice\\ListMonthlyOrderSummaryResponse", $option);
     }
 }
