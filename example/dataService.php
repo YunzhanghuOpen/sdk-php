@@ -12,6 +12,9 @@ use Yzh\Model\Dataservice\ListDailyBillRequest;
 use Yzh\Model\Dataservice\GetDailyBillFileV2Request;
 use Yzh\Model\Dataservice\ListDealerRechargeRecordV2Request;
 use Yzh\Model\Dataservice\ListBalanceDailyStatementRequest;
+use Yzh\Model\Dataservice\ListDailyOrderV2Request;
+use Yzh\Model\Dataservice\ListDailyOrderSummaryRequest;
+use Yzh\Model\Dataservice\ListMonthlyOrderSummaryRequest;
 
 // 对账文件获取
 $config = Config::newFromArray(array(
@@ -124,6 +127,35 @@ if ($response->isSuccess()) {
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
 
+// 查询日订单数据（支付和退款订单）
+$request = new ListDailyOrderV2Request(array(
+    'order_date' => '2024-09-05',      // 订单查询日期，yyyy-MM-dd 格式
+    'offeset' => 0,                    // 偏移量，最小从 0 开始
+    'length' => 100,                   // 每页最多返回条数，最多为 200 条
+    'channel' => 'alipay',             // 支付路径名，bankpay：银行卡 alipay：支付宝 wxpay：微信
+    'data_type' => ''                  // 当且仅当参数值为 encryption 时，对返回的 data 进行加密
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $dataServiceClient->listDailyOrderV2($request);
+if ($response->isSuccess()) {
+    // 操作成功
+    $totalNum = $response->getData()->getTotalNum();
+    $listData = $response->getData()->getList();
+    var_dump($listData);
+    foreach ($listData as $k => $v) {
+        $v->getOrderId();
+    }
+} else {
+    // 失败返回
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
+
 // 查询日流水数据
 $request = new ListDailyBillRequest(array(
     'bill_date' => '2022-06-13',                 // 查询日期
@@ -188,6 +220,58 @@ if ($response->isSuccess()) {
     foreach ($data as $k => $v) {
         $v->getStatementId();
     }
+} else {
+    // 失败返回
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
+
+// 查询日订单汇总数据
+$request = new ListDailyOrderSummaryRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],            // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],            // 综合服务主体 ID
+    'channel' => '支付宝',                                 // 支付路径，银⾏卡，⽀付宝，微信
+    'begin_at' => '2025-02-01',                           // 订单查询开始日期，格式：yyyy-MM-dd
+    'end_at' => '2025-02-07',                             // 订单查询结束日期，格式：yyyy-MM-dd
+    'filter_type' => 'apply'                              // 筛选类型，apply：按订单创建时间汇总，complete：按订单完成时间汇总
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $dataServiceClient->listDailyOrderSummary($request);
+if ($response->isSuccess()) {
+    // 操作成功
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    // 失败返回
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}
+
+// 查询月订单汇总数据
+$request = new ListMonthlyOrderSummaryRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],      // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],      // 综合服务主体 ID
+    'channel' => '银行卡',                           // 支付路径，银⾏卡，⽀付宝，微信
+    'month' => '2025-01',                           // 汇总月份，格式：yyyy-MM
+    'filter_type' => 'apply'                        // 筛选类型，apply：按订单创建时间汇总，complete：按订单完成时间汇总
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $dataServiceClient->listMonthlyOrderSummary($request);
+if ($response->isSuccess()) {
+    // 操作成功
+    $data = $response->getData();
+    var_dump($data);
+    
 } else {
     // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
