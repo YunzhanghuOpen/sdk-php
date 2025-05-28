@@ -70,6 +70,11 @@ class UserExemptedInfoRequest extends BaseRequest
      * @var string
      */
     public $ref;
+    /**
+     * 证件照片 URL 地址
+     * @var string[]
+     */
+    public $image_urls;
 
     public function __construct($params = array())
     {
