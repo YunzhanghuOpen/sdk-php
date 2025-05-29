@@ -170,7 +170,7 @@ if ($response->isSuccess()) {
 }
 
 // 查询平台企业余额
-$request = new listAccountRequest(array(
+$request = new ListAccountRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],    // 平台企业 ID
 ));
 
@@ -323,6 +323,7 @@ $request = new CreateBatchOrderRequest(array(
             'card_no' => '188****8888',                 // 收款账号
             'id_card' => '440524188001010014',          // 身份证号码
             'pay' => '0.01',                            // 订单金额
+            'phone_no' => '188****8888',                // ⼿机号
             'pay_remark' => '测试订单1',                  // 订单备注
             'notify_url' => 'https://www.example.com'   // 回调地址
         ],
@@ -332,6 +333,7 @@ $request = new CreateBatchOrderRequest(array(
             'card_no' => '188****8888',
             'id_card' => '11010519491231002X',
             'pay' => '0.01',
+            'phone_no' => '188****8888',
             'pay_remark' => '测试订单2',
             'notify_url' => 'https://www.example.com'
         ]
