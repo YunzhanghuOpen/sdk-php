@@ -21,12 +21,12 @@ class MonthlyOrderSummary extends BaseModel
      */
     protected $pay;
     /**
-     * 应收综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @var string
      */
     protected $broker_fee;
     /**
-     * 应收余额账户支出加成服务费
+     * 应收余额账户支出加成服务费金额
      * @var string
      */
     protected $broker_real_fee;
@@ -36,17 +36,17 @@ class MonthlyOrderSummary extends BaseModel
      */
     protected $broker_rebate_fee;
     /**
-     * 应收用户加成服务费
+     * 应收用户加成服务费金额
      * @var string
      */
     protected $user_fee;
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @var string
      */
     protected $received_broker_fee;
     /**
-     * 实收余额账户支出加成服务费
+     * 实收余额账户支出加成服务费金额
      * @var string
      */
     protected $received_broker_real_fee;
@@ -56,7 +56,7 @@ class MonthlyOrderSummary extends BaseModel
      */
     protected $received_broker_deduct_fee;
     /**
-     * 实收用户加成服务费
+     * 实收用户加成服务费金额
      * @var string
      */
     protected $received_user_fee;
@@ -98,7 +98,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 应收综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @var string $broker_fee
      */
     public function setBrokerFee($broker_fee)
@@ -107,7 +107,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 应收综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @return string
      */
     public function getBrokerFee()
@@ -116,7 +116,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 应收余额账户支出加成服务费
+     * 应收余额账户支出加成服务费金额
      * @var string $broker_real_fee
      */
     public function setBrokerRealFee($broker_real_fee)
@@ -125,7 +125,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 应收余额账户支出加成服务费
+     * 应收余额账户支出加成服务费金额
      * @return string
      */
     public function getBrokerRealFee()
@@ -152,7 +152,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 应收用户加成服务费
+     * 应收用户加成服务费金额
      * @var string $user_fee
      */
     public function setUserFee($user_fee)
@@ -161,7 +161,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 应收用户加成服务费
+     * 应收用户加成服务费金额
      * @return string
      */
     public function getUserFee()
@@ -170,7 +170,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @var string $received_broker_fee
      */
     public function setReceivedBrokerFee($received_broker_fee)
@@ -179,7 +179,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @return string
      */
     public function getReceivedBrokerFee()
@@ -188,7 +188,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 实收余额账户支出加成服务费
+     * 实收余额账户支出加成服务费金额
      * @var string $received_broker_real_fee
      */
     public function setReceivedBrokerRealFee($received_broker_real_fee)
@@ -197,7 +197,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 实收余额账户支出加成服务费
+     * 实收余额账户支出加成服务费金额
      * @return string
      */
     public function getReceivedBrokerRealFee()
@@ -224,7 +224,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 实收用户加成服务费
+     * 实收用户加成服务费金额
      * @var string $received_user_fee
      */
     public function setReceivedUserFee($received_user_fee)
@@ -233,7 +233,7 @@ class MonthlyOrderSummary extends BaseModel
     }
 
     /**
-     * 实收用户加成服务费
+     * 实收用户加成服务费金额
      * @return string
      */
     public function getReceivedUserFee()

@@ -51,12 +51,12 @@ class DealerOrderInfo extends BaseModel
      */
     protected $broker_amount;
     /**
-     * 应收综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @var string
      */
     protected $broker_fee;
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @var string
      */
     protected $received_broker_fee;
@@ -266,7 +266,7 @@ class DealerOrderInfo extends BaseModel
     }
 
     /**
-     * 应收综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @var string $broker_fee
      */
     public function setBrokerFee($broker_fee)
@@ -275,7 +275,7 @@ class DealerOrderInfo extends BaseModel
     }
 
     /**
-     * 应收综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @return string
      */
     public function getBrokerFee()
@@ -284,7 +284,7 @@ class DealerOrderInfo extends BaseModel
     }
 
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @var string $received_broker_fee
      */
     public function setReceivedBrokerFee($received_broker_fee)
@@ -293,7 +293,7 @@ class DealerOrderInfo extends BaseModel
     }
 
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @return string
      */
     public function getReceivedBrokerFee()

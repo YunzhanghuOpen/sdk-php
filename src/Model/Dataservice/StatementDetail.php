@@ -61,7 +61,7 @@ class StatementDetail extends BaseModel
      */
     protected $reex_amount;
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @var string
      */
     protected $fee_amount;
@@ -277,7 +277,7 @@ class StatementDetail extends BaseModel
     }
 
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @var string $fee_amount
      */
     public function setFeeAmount($fee_amount)
@@ -286,7 +286,7 @@ class StatementDetail extends BaseModel
     }
 
     /**
-     * 实收综合服务主体加成服务费
+     * 实收综合服务主体加成服务费金额
      * @return string
      */
     public function getFeeAmount()
