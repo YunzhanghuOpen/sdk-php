@@ -61,12 +61,12 @@ class StatementDetail extends BaseModel
      */
     protected $reex_amount;
     /**
-     * 加成服务费金额
+     * 实收综合服务主体加成服务费
      * @var string
      */
     protected $fee_amount;
     /**
-     * 加成服务费抵扣金额
+     * 实收加成服务费抵扣金额
      * @var string
      */
     protected $deduct_rebate_fee_amount;
@@ -277,7 +277,7 @@ class StatementDetail extends BaseModel
     }
 
     /**
-     * 加成服务费金额
+     * 实收综合服务主体加成服务费
      * @var string $fee_amount
      */
     public function setFeeAmount($fee_amount)
@@ -286,7 +286,7 @@ class StatementDetail extends BaseModel
     }
 
     /**
-     * 加成服务费金额
+     * 实收综合服务主体加成服务费
      * @return string
      */
     public function getFeeAmount()
@@ -295,7 +295,7 @@ class StatementDetail extends BaseModel
     }
 
     /**
-     * 加成服务费抵扣金额
+     * 实收加成服务费抵扣金额
      * @var string $deduct_rebate_fee_amount
      */
     public function setDeductRebateFeeAmount($deduct_rebate_fee_amount)
@@ -304,7 +304,7 @@ class StatementDetail extends BaseModel
     }
 
     /**
-     * 加成服务费抵扣金额
+     * 实收加成服务费抵扣金额
      * @return string
      */
     public function getDeductRebateFeeAmount()
