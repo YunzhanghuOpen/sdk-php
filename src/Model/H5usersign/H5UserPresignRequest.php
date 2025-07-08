@@ -35,6 +35,11 @@ class H5UserPresignRequest extends BaseRequest
      * @var int32
      */
     public $certificate_type;
+    /**
+     * 是否收集手机号码 0：不收集（默认） 1：收集手机号码
+     * @var int32
+     */
+    public $collect_phone_no;
 
     public function __construct($params = array())
     {
