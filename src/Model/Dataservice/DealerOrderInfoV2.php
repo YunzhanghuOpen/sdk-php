@@ -56,10 +56,15 @@ class DealerOrderInfoV2 extends BaseModel
      */
     protected $broker_amount;
     /**
-     * 综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @var string
      */
     protected $broker_fee;
+    /**
+     * 实收综合服务主体加成服务费金额
+     * @var string
+     */
+    protected $received_broker_fee;
     /**
      * 支付路径流水号
      * @var string
@@ -294,7 +299,7 @@ class DealerOrderInfoV2 extends BaseModel
     }
 
     /**
-     * 综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @var string $broker_fee
      */
     public function setBrokerFee($broker_fee)
@@ -303,12 +308,30 @@ class DealerOrderInfoV2 extends BaseModel
     }
 
     /**
-     * 综合服务主体加成服务费
+     * 应收综合服务主体加成服务费金额
      * @return string
      */
     public function getBrokerFee()
     {
         return $this->broker_fee;
+    }
+
+    /**
+     * 实收综合服务主体加成服务费金额
+     * @var string $received_broker_fee
+     */
+    public function setReceivedBrokerFee($received_broker_fee)
+    {
+        $this->received_broker_fee = $received_broker_fee;
+    }
+
+    /**
+     * 实收综合服务主体加成服务费金额
+     * @return string
+     */
+    public function getReceivedBrokerFee()
+    {
+        return $this->received_broker_fee;
     }
 
     /**
