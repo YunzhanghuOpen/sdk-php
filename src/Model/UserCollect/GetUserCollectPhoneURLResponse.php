@@ -7,13 +7,13 @@ use Yzh\Model\ResponseInterface;
 
 /**
  * 获取收集手机号码页面返回
- * Class GetUserCollectPhoneURLResponse
+ * Class GetUserCollectPhoneUrlResponse
  */
-class GetUserCollectPhoneURLResponse extends BaseResponse implements ResponseInterface
+class GetUserCollectPhoneUrlResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return GetUserCollectPhoneURLResponseData
+     * @return GetUserCollectPhoneUrlResponseData
      */
     public function getData()
     {
@@ -27,7 +27,7 @@ class GetUserCollectPhoneURLResponse extends BaseResponse implements ResponseInt
      */
     public function setData($data)
     {
-        $this->data = new GetUserCollectPhoneURLResponseData($data);
+        $this->data = new GetUserCollectPhoneUrlResponseData($data);
         return $this;
     }
 }

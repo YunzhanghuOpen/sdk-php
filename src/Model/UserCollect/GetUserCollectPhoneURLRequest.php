@@ -6,9 +6,9 @@ use Yzh\Model\BaseRequest;
 
 /**
  * 获取收集手机号码页面请求
- * Class GetUserCollectPhoneURLRequest
+ * Class GetUserCollectPhoneUrlRequest
  */
-class GetUserCollectPhoneURLRequest extends BaseRequest
+class GetUserCollectPhoneUrlRequest extends BaseRequest
 {
     /**
      * 手机号码收集 Token

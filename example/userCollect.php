@@ -6,7 +6,7 @@ include_once(TEST_PATH . '/test_var.php');
 use Yzh\UserCollectServiceClient;
 use Yzh\Config;
 use Yzh\src\Model\UserCollect\GetUserCollectPhoneStatusRequest;
-use Yzh\src\Model\UserCollect\GetUserCollectPhoneURLRequest;
+use Yzh\src\Model\UserCollect\GetUserCollectPhoneUrlRequest;
 
 
 // 用户信息收集
@@ -53,7 +53,7 @@ if ($response->isSuccess()) {
 }
 
 // 获取收集手机号码页面
-$request = new GetUserCollectPhoneURLRequest(array(
+$request = new GetUserCollectPhoneUrlRequest(array(
     'token' => 'testToken',        // 手机号码收集 Token
     'color' => 'app_broker_id',    // 主题颜色
     'url' => '张三',                // 回调地址
@@ -66,7 +66,7 @@ $request = new GetUserCollectPhoneURLRequest(array(
  * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
-$response = $userCollectServiceClient->getUserCollectPhoneURL($request);
+$response = $userCollectServiceClient->getUserCollectPhoneUrl($request);
 if ($response->isSuccess()) {
     // 操作成功
     $data = $response->getData();

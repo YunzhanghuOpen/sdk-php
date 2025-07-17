@@ -8,8 +8,8 @@ use Yzh\Exception\ExceptionCode;
 
 use Yzh\Model\UserCollect\GetUserCollectPhoneStatusRequest;
 use Yzh\Model\UserCollect\GetUserCollectPhoneStatusResponse;
-use Yzh\Model\UserCollect\GetUserCollectPhoneURLRequest;
-use Yzh\Model\UserCollect\GetUserCollectPhoneURLResponse;
+use Yzh\Model\UserCollect\GetUserCollectPhoneUrlRequest;
+use Yzh\Model\UserCollect\GetUserCollectPhoneUrlResponse;
 
 /**
  * 用户信息收集
@@ -35,15 +35,15 @@ class UserCollectServiceClient extends BaseClient
 
     /**
      * 获取收集手机号码页面
-     * @param GetUserCollectPhoneURLRequest $request
+     * @param GetUserCollectPhoneUrlRequest $request
      * @param null $option
-     * @return GetUserCollectPhoneURLResponse
+     * @return GetUserCollectPhoneUrlResponse
      */
-    public function getUserCollectPhoneURL($request, $option = null)
+    public function getUserCollectPhoneUrl($request, $option = null)
     {
-        if (!$request instanceof GetUserCollectPhoneURLRequest) {
-            throw new ConfigException("UserCollect->getUserCollectPhoneURL request 必须是 Yzh\\Model\\UserCollect\\GetUserCollectPhoneURLRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        if (!$request instanceof GetUserCollectPhoneUrlRequest) {
+            throw new ConfigException("UserCollect->getUserCollectPhoneUrl request 必须是 Yzh\\Model\\UserCollect\\GetUserCollectPhoneUrlRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
-        return $this->send('GET', '/api/user/v1/collect/phone/url', $request, "Yzh\\Model\\UserCollect\\GetUserCollectPhoneURLResponse", $option);
+        return $this->send('GET', '/api/user/v1/collect/phone/url', $request, "Yzh\\Model\\UserCollect\\GetUserCollectPhoneUrlResponse", $option);
     }
 }

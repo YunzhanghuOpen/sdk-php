@@ -7,9 +7,9 @@ use Yzh\Model\ResponseDataInterface;
 
 /**
  * 获取收集手机号码页面返回
- * Class GetUserCollectPhoneURLResponseData
+ * Class GetUserCollectPhoneUrlResponseData
  */
-class GetUserCollectPhoneURLResponseData extends BaseModel implements ResponseDataInterface
+class GetUserCollectPhoneUrlResponseData extends BaseModel implements ResponseDataInterface
 {
     /**
      * 收集手机号码页面 URL
