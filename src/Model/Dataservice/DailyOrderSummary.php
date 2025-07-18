@@ -21,25 +21,45 @@ class DailyOrderSummary extends BaseModel
      */
     protected $pay;
     /**
-     * 加成服务费金额
+     * 应收综合服务主体加成服务费金额
      * @var string
      */
     protected $broker_fee;
     /**
-     * 加成服务费实收金额
+     * 应收余额账户支出加成服务费金额
      * @var string
      */
     protected $broker_real_fee;
     /**
-     * 已抵扣加成服务费金额
+     * 应收加成服务费抵扣金额
      * @var string
      */
     protected $broker_rebate_fee;
     /**
-     * 用户加成服务费金额
+     * 应收用户加成服务费金额
      * @var string
      */
     protected $user_fee;
+    /**
+     * 实收综合服务主体加成服务费金额
+     * @var string
+     */
+    protected $received_broker_fee;
+    /**
+     * 实收余额账户支出加成服务费金额
+     * @var string
+     */
+    protected $received_broker_real_fee;
+    /**
+     * 实收加成服务费抵扣金额
+     * @var string
+     */
+    protected $received_broker_deduct_fee;
+    /**
+     * 实收用户加成服务费金额
+     * @var string
+     */
+    protected $received_user_fee;
 
     /**
      * 订单数量
@@ -78,7 +98,7 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 加成服务费金额
+     * 应收综合服务主体加成服务费金额
      * @var string $broker_fee
      */
     public function setBrokerFee($broker_fee)
@@ -87,7 +107,7 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 加成服务费金额
+     * 应收综合服务主体加成服务费金额
      * @return string
      */
     public function getBrokerFee()
@@ -96,7 +116,7 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 加成服务费实收金额
+     * 应收余额账户支出加成服务费金额
      * @var string $broker_real_fee
      */
     public function setBrokerRealFee($broker_real_fee)
@@ -105,7 +125,7 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 加成服务费实收金额
+     * 应收余额账户支出加成服务费金额
      * @return string
      */
     public function getBrokerRealFee()
@@ -114,7 +134,7 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 已抵扣加成服务费金额
+     * 应收加成服务费抵扣金额
      * @var string $broker_rebate_fee
      */
     public function setBrokerRebateFee($broker_rebate_fee)
@@ -123,7 +143,7 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 已抵扣加成服务费金额
+     * 应收加成服务费抵扣金额
      * @return string
      */
     public function getBrokerRebateFee()
@@ -132,7 +152,7 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 用户加成服务费金额
+     * 应收用户加成服务费金额
      * @var string $user_fee
      */
     public function setUserFee($user_fee)
@@ -141,11 +161,83 @@ class DailyOrderSummary extends BaseModel
     }
 
     /**
-     * 用户加成服务费金额
+     * 应收用户加成服务费金额
      * @return string
      */
     public function getUserFee()
     {
         return $this->user_fee;
+    }
+
+    /**
+     * 实收综合服务主体加成服务费金额
+     * @var string $received_broker_fee
+     */
+    public function setReceivedBrokerFee($received_broker_fee)
+    {
+        $this->received_broker_fee = $received_broker_fee;
+    }
+
+    /**
+     * 实收综合服务主体加成服务费金额
+     * @return string
+     */
+    public function getReceivedBrokerFee()
+    {
+        return $this->received_broker_fee;
+    }
+
+    /**
+     * 实收余额账户支出加成服务费金额
+     * @var string $received_broker_real_fee
+     */
+    public function setReceivedBrokerRealFee($received_broker_real_fee)
+    {
+        $this->received_broker_real_fee = $received_broker_real_fee;
+    }
+
+    /**
+     * 实收余额账户支出加成服务费金额
+     * @return string
+     */
+    public function getReceivedBrokerRealFee()
+    {
+        return $this->received_broker_real_fee;
+    }
+
+    /**
+     * 实收加成服务费抵扣金额
+     * @var string $received_broker_deduct_fee
+     */
+    public function setReceivedBrokerDeductFee($received_broker_deduct_fee)
+    {
+        $this->received_broker_deduct_fee = $received_broker_deduct_fee;
+    }
+
+    /**
+     * 实收加成服务费抵扣金额
+     * @return string
+     */
+    public function getReceivedBrokerDeductFee()
+    {
+        return $this->received_broker_deduct_fee;
+    }
+
+    /**
+     * 实收用户加成服务费金额
+     * @var string $received_user_fee
+     */
+    public function setReceivedUserFee($received_user_fee)
+    {
+        $this->received_user_fee = $received_user_fee;
+    }
+
+    /**
+     * 实收用户加成服务费金额
+     * @return string
+     */
+    public function getReceivedUserFee()
+    {
+        return $this->received_user_fee;
     }
 }
