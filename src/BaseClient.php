@@ -44,6 +44,7 @@ class BaseClient
             'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',        // 个体工商户注册服务（云账户新经济 H5）接口域名
             'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
             'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
+            'usercollectservice' => 'https://api-user.yunzhanghu.com', // 用户信息收集接口域名
 
         ),
         self::ENV_SANDBOX => array( // 沙箱环境

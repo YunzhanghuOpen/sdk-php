@@ -17,7 +17,7 @@ class NotifyUserCollectPhoneRequest extends BaseRequest
     public $dealer_user_id;
     /**
      * 手机号码绑定状态
-     * @var string
+     * @var int32
      */
     public $status;
 

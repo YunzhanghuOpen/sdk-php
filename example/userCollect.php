@@ -5,9 +5,8 @@ include_once(TEST_PATH . '/test_var.php');
 
 use Yzh\UserCollectServiceClient;
 use Yzh\Config;
-use Yzh\src\Model\UserCollect\GetUserCollectPhoneStatusRequest;
-use Yzh\src\Model\UserCollect\GetUserCollectPhoneUrlRequest;
-
+use Yzh\Model\UserCollect\GetUserCollectPhoneStatusRequest;
+use Yzh\Model\UserCollect\GetUserCollectPhoneUrlRequest;
 
 // 用户信息收集
 $config = Config::newFromArray(array(
@@ -55,8 +54,8 @@ if ($response->isSuccess()) {
 // 获取收集手机号码页面
 $request = new GetUserCollectPhoneUrlRequest(array(
     'token' => 'testToken',        // 手机号码收集 Token
-    'color' => 'app_broker_id',    // 主题颜色
-    'url' => '张三',                // 回调地址
+    'color' => '',                 // 主题颜色
+    'url' => 'https://www.example.com',     // 回调地址
     'redirect_url' => '',          // 跳转 URL
 ));
 

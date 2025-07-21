@@ -18,7 +18,7 @@ class GetUserCollectPhoneStatusResponseData extends BaseModel implements Respons
     protected $token;
     /**
      * 绑定状态
-     * @var string
+     * @var int32
      */
     protected $status;
 
@@ -42,7 +42,7 @@ class GetUserCollectPhoneStatusResponseData extends BaseModel implements Respons
 
     /**
      * 绑定状态
-     * @var string $status
+     * @var int32 $status
      */
     public function setStatus($status)
     {
@@ -51,7 +51,7 @@ class GetUserCollectPhoneStatusResponseData extends BaseModel implements Respons
 
     /**
      * 绑定状态
-     * @return string
+     * @return int32
      */
     public function getStatus()
     {
