@@ -6,10 +6,10 @@ use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
 
 
-use Yzh\Model\UserCollect\GetUserCollectPhoneStatusRequest;
-use Yzh\Model\UserCollect\GetUserCollectPhoneStatusResponse;
-use Yzh\Model\UserCollect\GetUserCollectPhoneUrlRequest;
-use Yzh\Model\UserCollect\GetUserCollectPhoneUrlResponse;
+use Yzh\Model\Usercollect1\GetUserCollectPhoneStatusRequest;
+use Yzh\Model\Usercollect1\GetUserCollectPhoneStatusResponse;
+use Yzh\Model\Usercollect1\GetUserCollectPhoneUrlRequest;
+use Yzh\Model\Usercollect1\GetUserCollectPhoneUrlResponse;
 
 /**
  * 用户信息收集
