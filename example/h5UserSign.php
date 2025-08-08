@@ -35,6 +35,7 @@ $request = new H5UserPresignRequest(array(
     'real_name' => '张三',                          // 姓名
     'id_card' => '11010519491231002X',             // 证件号
     'certificate_type' => 0,                       // 证件类型
+    'collect_phone_no' => 0,                       // 是否收集手机号码 0：不收集（默认） 1：收集手机号码
 ));
 
 /*

@@ -1,14 +1,14 @@
 <?php
 
-namespace Yzh\Model\H5usersign;
+namespace Yzh\Model\UserCollect;
 
 use Yzh\Model\BaseRequest;
 
 /**
- * 预申请签约请求
- * Class H5UserPresignRequest
+ * 查询手机号码绑定状态请求
+ * Class GetUserCollectPhoneStatusRequest
  */
-class H5UserPresignRequest extends BaseRequest
+class GetUserCollectPhoneStatusRequest extends BaseRequest
 {
     /**
      * 平台企业 ID
@@ -21,6 +21,11 @@ class H5UserPresignRequest extends BaseRequest
      */
     public $broker_id;
     /**
+     * 平台企业用户 ID
+     * @var string
+     */
+    public $dealer_user_id;
+    /**
      * 姓名
      * @var string
      */
@@ -31,15 +36,10 @@ class H5UserPresignRequest extends BaseRequest
      */
     public $id_card;
     /**
-     * 证件类型 0：身份证 2：港澳居民来往内地通行证 3：护照 5：台湾居民来往大陆通行证 9：港澳居民居住证 10：台湾居民居住证 11：外国人永久居留身份证 12：外国人工作许可证
+     * 证件类型编码
      * @var int32
      */
     public $certificate_type;
-    /**
-     * 是否收集手机号码 0：不收集（默认） 1：收集手机号码
-     * @var int32
-     */
-    public $collect_phone_no;
 
     public function __construct($params = array())
     {

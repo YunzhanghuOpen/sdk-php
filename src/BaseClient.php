@@ -17,7 +17,7 @@ defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 class BaseClient
 {
     const SDK_NAME = "yunzhanghu-sdk-php";
-    const SDK_VERSION  = "2.0.17";
+    const SDK_VERSION  = "2.0.18";
     const ENV_PROD = "yzh_env_prod";
     const ENV_SANDBOX = "yzh_env_sandbox";
 
@@ -44,6 +44,7 @@ class BaseClient
             'bizlicxjjh5service' => 'https://api-aic.yunzhanghu.com',        // 个体工商户注册服务（云账户新经济 H5）接口域名
             'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
             'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
+            'usercollectservice' => 'https://api-user.yunzhanghu.com', // 用户信息收集接口域名
 
         ),
         self::ENV_SANDBOX => array( // 沙箱环境
