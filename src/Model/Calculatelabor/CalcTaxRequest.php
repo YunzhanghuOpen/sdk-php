@@ -1,6 +1,6 @@
 <?php
 
-namespace Yzh\Model\Caculatorlabor;
+namespace Yzh\Model\Calculatelabor;
 
 use Yzh\Model\BaseRequest;
 

@@ -3,11 +3,11 @@ define('TEST_PATH', dirname(__FILE__));
 include_once(TEST_PATH . '/../vendor/autoload.php');
 include_once(TEST_PATH . '/test_var.php');
 
-use Yzh\CaculatorLaborServiceClient;
+use Yzh\CalculateLaborServiceClient;
 use Yzh\Config;
-use Yzh\Model\Caculatorlabor\LaborCaculatorRequest;
-use Yzh\Model\Caculatorlabor\MonthSettlement;
-use Yzh\Model\Caculatorlabor\CalcTaxRequest;
+use Yzh\Model\Calculatelabor\LaborCaculatorRequest;
+use Yzh\Model\Calculatelabor\MonthSettlement;
+use Yzh\Model\Calculatelabor\CalcTaxRequest;
 
 // 连续劳务税费试算
 $config = Config::newFromArray(array(
@@ -21,8 +21,8 @@ $config = Config::newFromArray(array(
 ));
 
 try {
-    $caculatorLaborServiceClient = new CaculatorLaborServiceClient($config);
-    $caculatorLaborServiceClient->setEnv(CaculatorLaborServiceClient::ENV_SANDBOX);// 沙箱环境
+    $calculateLaborServiceClient = new CalculateLaborServiceClient($config);
+    $calculateLaborServiceClient->setEnv(CalculateLaborServiceClient::ENV_SANDBOX);// 沙箱环境
 } catch (\Exception $e) {
     die($e->getMessage());
 }
@@ -58,7 +58,7 @@ var_dump($request);
  * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
-$response = $caculatorLaborServiceClient->laborCaculator($request);
+$response = $calculateLaborServiceClient->laborCaculator($request);
 if ($response->isSuccess()) {
     // 操作成功
     $data = $response->getData();
@@ -83,7 +83,7 @@ $request = new CalcTaxRequest(array(
  * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
  */
 $request->setRequestID("requestIdExample123456789");
-$response = $caculatorLaborServiceClient->calcTax($request);
+$response = $calculateLaborServiceClient->calcTax($request);
 if ($response->isSuccess()) {
     // 操作成功
     $data = $response->getData();

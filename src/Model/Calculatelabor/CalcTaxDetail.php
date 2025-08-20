@@ -1,14 +1,14 @@
 <?php
 
-namespace Yzh\Model\Caculatorlabor;
+namespace Yzh\Model\Calculatelabor;
 
 use Yzh\Model\BaseModel;
 
 /**
- * 缴税明细
- * Class TaxDetail
+ * 税费明细
+ * Class CalcTaxDetail
  */
-class TaxDetail extends BaseModel
+class CalcTaxDetail extends BaseModel
 {
     /**
      * 应纳个税
