@@ -19,6 +19,7 @@ use Yzh\Model\Payment\CancelBatchOrderRequest;
 use Yzh\Model\Payment\QueryBatchOrderRequest;
 use Yzh\Model\Payment\RetryOrderRequest;
 use Yzh\Model\Payment\CheckUserAmountRequest;
+use Yzh\Model\Payment\GetOrderLxlwRequest;
 
 // 实时支付
 $config = Config::newFromArray(array(
@@ -410,3 +411,26 @@ $request = new CancelBatchOrderRequest(array(
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->cancelBatchOrder($request);
 echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+
+// 查询劳务模式单笔订单信息
+$request = new GetOrderLxlwRequest(array(
+    'order_id' =>  '180490818101749',               // 平台企业订单号，由平台企业保持唯⼀性
+    'channel' =>   '银行卡',                         // 支付路径名，银⾏卡，⽀付宝，微信（选填，不填默认为银⾏卡订单查询，注意 value 值为中文字符）
+    'data_type' => '',                            // 如果为 encryption，则对返回的 data 进行加密
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $paymentClient->getOrderLxlw($request);
+if ($response->isSuccess()) {
+    // 操作成功
+    $data = $response->getData();
+    var_dump($data);
+} else {
+    // 失败返回
+    echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+}

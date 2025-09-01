@@ -32,6 +32,8 @@ use Yzh\Model\Payment\QueryBatchOrderRequest;
 use Yzh\Model\Payment\QueryBatchOrderResponse;
 use Yzh\Model\Payment\CheckUserAmountRequest;
 use Yzh\Model\Payment\CheckUserAmountResponse;
+use Yzh\Model\Payment\GetOrderLxlwRequest;
+use Yzh\Model\Payment\GetOrderLxlwResponse;
 
 /**
  * 实时支付
@@ -235,5 +237,19 @@ class PaymentClient extends BaseClient
             throw new ConfigException("Payment->checkUserAmount request 必须是 Yzh\\Model\\Payment\\CheckUserAmountRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/risk-check/amount', $request, "Yzh\\Model\\Payment\\CheckUserAmountResponse", $option);
+    }
+
+    /**
+     * 查询劳务模式单笔订单信息
+     * @param GetOrderLxlwRequest $request
+     * @param null $option
+     * @return GetOrderLxlwResponse
+     */
+    public function getOrderLxlw($request, $option = null)
+    {
+        if (!$request instanceof GetOrderLxlwRequest) {
+            throw new ConfigException("Payment->getOrderLxlw request 必须是 Yzh\\Model\\Payment\\GetOrderLxlwRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/payment/v1/query-order', $request, "Yzh\\Model\\Payment\\GetOrderLxlwResponse", $option);
     }
 }

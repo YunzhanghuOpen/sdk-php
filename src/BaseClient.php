@@ -17,7 +17,7 @@ defined("JSON_UNESCAPED_UNICODE") or define("JSON_UNESCAPED_UNICODE", 256);
 class BaseClient
 {
     const SDK_NAME = "yunzhanghu-sdk-php";
-    const SDK_VERSION  = "2.0.18";
+    const SDK_VERSION  = "2.0.19";
     const ENV_PROD = "yzh_env_prod";
     const ENV_SANDBOX = "yzh_env_sandbox";
 
@@ -45,6 +45,7 @@ class BaseClient
             'ins' => 'https://api-ins.yunzhanghu.com',         // 保险服务接口域名
             'task' => 'https://api-task.yunzhanghu.com',       // 任务库服务接口域名
             'usercollectservice' => 'https://api-user.yunzhanghu.com', // 用户信息收集接口域名
+            'calculatelaborservice' => 'https://api-service.yunzhanghu.com', // 连续劳务税费试算接口域名
 
         ),
         self::ENV_SANDBOX => array( // 沙箱环境
@@ -52,6 +53,7 @@ class BaseClient
             'authentication' => 'https://api-service.yunzhanghu.com/sandbox', // 用户信息验证接口域名
             'apiusersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // API 签约接口域名
             'h5usersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // H5 签约接口域名
+            'calculatelaborservice' => 'https://api-service.yunzhanghu.com/sandbox',   // 连续劳务税费试算接口域名
             'ins' => '',       // 保险服务接口域名
             'aic' => '',       // 个体工商户注册服务接口域名
             'task' => '',      // 任务库服务接口域名
