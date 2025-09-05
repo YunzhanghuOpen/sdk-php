@@ -2,9 +2,9 @@
 
 namespace Yzh;
 
-use Yzh\Exception\ConfigException;
-use Yzh\Exception\ExceptionCode;
 use Yzh\Utils\Rsa;
+use Yzh\Utils\Hmac;
+use Yzh\Utils\MessString;
 
 /**
  * 专属客服链接
