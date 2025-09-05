@@ -4,8 +4,7 @@ include_once(TEST_PATH . '/../vendor/autoload.php');
 include_once(TEST_PATH . '/test_var.php');
 
 use Yzh\Config;
-use Yzh\Model\Notify\NotifyRequest;
-use Yzh\NotifyClient;
+use Yzh\CustomerLinkClient;
 
 $config = Config::newFromArray(array(
     'app_dealer_id' => $test_var['app_dealer_id'],
@@ -17,10 +16,10 @@ $config = Config::newFromArray(array(
     'sign_type' => $test_var['sign_type'],
 ));
 
-$customerLinkServiceClient = new CustomerLinkServiceClient ($config);
+$customerLinkClient = new CustomerLinkClient($config);
 
 try {
-    $result = $customerLinkServiceClient->getCustomerLink('11111','https://sign-h5.yunzhanghu.com/pages/customer-link/EBSFceSJ');
+    $result = $customerLinkClient->getCustomerLink('https://www.example.com', 'testmemberid');
     if($result)
         var_dump($result);
 }
@@ -28,5 +27,3 @@ catch(\Exception $e){
     var_dump($e->getMessage ()) ;
     exit ();
 }
-
-//  echo "success";       // 回写 success，终止本次回调
