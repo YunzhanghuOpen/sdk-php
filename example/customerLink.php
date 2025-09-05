@@ -18,15 +18,9 @@ $config = Config::newFromArray(array(
 ));
 
 $customerLinkServiceClient = new CustomerLinkServiceClient ($config);
-$request = new GetUserCollectPhoneUrlRequest(array(
-    'baseurl' => 'https://sign-h5.yunzhanghu.com/pages/customer-link/EBSFceSJ',
-    'memberID' => '11111',
-    'mess' => $_POST['mess'],
-    'timestamp' => $_POST['timestamp'],
-));
 
 try {
-    $result = $customerLinkServiceClient->getCustomerLink($request);
+    $result = $customerLinkServiceClient->getCustomerLink('11111','https://sign-h5.yunzhanghu.com/pages/customer-link/EBSFceSJ');
     if($result)
         var_dump($result);
 }
