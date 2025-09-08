@@ -21,8 +21,8 @@ class CustomerLinkClient extends BaseClient
 
             $mess = MessString::rand(16);
             $timestamp = time();
-            $signature="";
-            $encodesign="";
+            $signature = "";
+            $encodesign = "";
             // 签名
             $signdata = "data=member_id=".$member_id."&mess=".$mess."&timestamp=".$timestamp."&key=".$this->config->app_key;
 
@@ -32,9 +32,9 @@ class CustomerLinkClient extends BaseClient
                 $signature = $this->hmac->sign($signdata);
             }
 
-            $encodesign=urlencode($signature);
+            $encodesign = urlencode($signature);
 
-            $url=$base_url."?sign_type=".$this->config->sign_type."&sign=".$encodesign."&member_id=".$member_id."&mess=".$mess."&timestamp=".$timestamp;
-            return  $url;
+            $url = $base_url."?sign_type=".$this->config->sign_type."&sign=".$encodesign."&member_id=".$member_id."&mess=".$mess."&timestamp=".$timestamp;
+            return $url;
         }
     }
