@@ -55,7 +55,7 @@ class BaseClient
             'h5usersignservice' => 'https://api-service.yunzhanghu.com/sandbox',   // H5 签约接口域名
             'calculatelaborservice' => 'https://api-service.yunzhanghu.com/sandbox',   // 连续劳务税费试算接口域名
             'ins' => '',       // 保险服务接口域名
-            'aic' => '',       // 个体工商户注册服务接口域名
+            'aic' => 'https://api-aic.yunzhanghu.com/sandbox',       // 个体工商户注册服务接口域名
             'task' => '',      // 任务库服务接口域名
             'dataservice' => '', // 数据服务接口域名
         ),
