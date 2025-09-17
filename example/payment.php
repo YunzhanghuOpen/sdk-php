@@ -52,9 +52,9 @@ $request = new CreateBankpayOrderRequest(array(
     'pay_remark' => '测试订单',                         // 订单备注（选填，至多支持 20 个字符且不支持特殊字符，' " & | @% ( ) - : # + / < > ¥ \ ,）
     'notify_url' => 'https://www.example.com',         // 回调地址（选填，长度不超过 200 个字符）
     'project_id' => '',                                 // 项目ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
-    'dealer_platform_name' => '',                       // 互联网平台名称
-    'dealer_user_nickname' => '',                       // 用户名称/昵称
-    'dealer_user_id' => ''                             // 用户唯一标识码
+    'dealer_platform_name' => '互联网平台名称test',                       // 互联网平台名称
+    'dealer_user_nickname' => 'usernickname',                       // 用户名称/昵称
+    'dealer_user_id' => 'userId1234567890'                             // 用户唯一标识码
 ));
 
 /*
@@ -90,9 +90,9 @@ $request = new CreateAlipayOrderRequest(array(
     'check_name' => 'Check',                       // 校验⽀付宝账户姓名（固定值 Check）
     'notify_url' => 'https://www.example.com',     // 回调地址（选填，长度不超过 200 个字符）
     'project_id' => '',                             // 项目ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
-    'dealer_platform_name' => '',                       // 互联网平台名称
-    'dealer_user_nickname' => '',                       // 用户名称/昵称
-    'dealer_user_id' => ''                             // 用户唯一标识码
+    'dealer_platform_name' => '互联网平台名称test',                       // 互联网平台名称
+    'dealer_user_nickname' => 'usernickname',                       // 用户名称/昵称
+    'dealer_user_id' => 'userId1234567890'                             // 用户唯一标识码
 ));
 
 /*
@@ -129,9 +129,9 @@ $request = new CreateWxpayOrderRequest(array(
     'notify_url' => 'https://www.example.com',    // 回调地址（选填，长度不超过 200 个字符）
     'wxpay_mode' => 'transfer',                   // 微信支付模式（必填，固定值：transfer）
     'project_id' => '',                            // 项目 ID，该字段由云账户分配，当接口指定项目时，会将订单关联指定项目
-    'dealer_platform_name' => '',                       // 互联网平台名称
-    'dealer_user_nickname' => '',                       // 用户名称/昵称
-    'dealer_user_id' => ''                             // 用户唯一标识码
+    'dealer_platform_name' => '互联网平台名称test',                       // 互联网平台名称
+    'dealer_user_nickname' => 'usernickname',                       // 用户名称/昵称
+    'dealer_user_id' => 'userId1234567890'                             // 用户唯一标识码
 ));
 
 /*
@@ -336,9 +336,9 @@ $request = new CreateBatchOrderRequest(array(
             'phone_no' => '188****8888',                // ⼿机号
             'pay_remark' => '测试订单1',                  // 订单备注
             'notify_url' => 'https://www.example.com',   // 回调地址
-            'dealer_platform_name' => '',                       // 互联网平台名称
-            'dealer_user_nickname' => '',                       // 用户名称/昵称
-            'dealer_user_id' => ''                             // 用户唯一标识码
+            'dealer_platform_name' => '互联网平台名称test',                       // 互联网平台名称
+            'dealer_user_nickname' => 'usernickname',                       // 用户名称/昵称
+            'dealer_user_id' => 'userId1234567890'                             // 用户唯一标识码
         ],
         [
             'order_id' => '0034321',
@@ -349,9 +349,9 @@ $request = new CreateBatchOrderRequest(array(
             'phone_no' => '188****8888',
             'pay_remark' => '测试订单2',
             'notify_url' => 'https://www.example.com',
-            'dealer_platform_name' => '',                       
-            'dealer_user_nickname' => '',                       
-            'dealer_user_id' => ''                            
+            'dealer_platform_name' => '互联网平台名称test',                       
+            'dealer_user_nickname' => 'usernickname',                       
+            'dealer_user_id' => 'userId1234567890'                            
         ]
     ]
 ));
