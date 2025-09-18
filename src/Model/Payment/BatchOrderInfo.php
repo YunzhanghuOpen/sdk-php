@@ -41,7 +41,7 @@ class BatchOrderInfo extends BaseModel
      */
     protected $phone_no;
     /**
-     * 项目标识
+     * 业务线标识
      * @var string
      */
     protected $project_id;
@@ -60,6 +60,21 @@ class BatchOrderInfo extends BaseModel
      * @var string
      */
     protected $notify_url;
+    /**
+     * 互联网平台名称
+     * @var string
+     */
+    protected $dealer_platform_name;
+    /**
+     * 用户名称/昵称
+     * @var string
+     */
+    protected $dealer_user_nickname;
+    /**
+     * 用户唯一标识码
+     * @var string
+     */
+    protected $dealer_user_id;
 
     /**
      * 平台企业订单号
@@ -170,7 +185,7 @@ class BatchOrderInfo extends BaseModel
     }
 
     /**
-     * 项目标识
+     * 业务线标识
      * @var string $project_id
      */
     public function setProjectId($project_id)
@@ -179,7 +194,7 @@ class BatchOrderInfo extends BaseModel
     }
 
     /**
-     * 项目标识
+     * 业务线标识
      * @return string
      */
     public function getProjectId()
@@ -239,5 +254,59 @@ class BatchOrderInfo extends BaseModel
     public function getNotifyUrl()
     {
         return $this->notify_url;
+    }
+
+    /**
+     * 互联网平台名称
+     * @var string $dealer_platform_name
+     */
+    public function setDealerPlatformName($dealer_platform_name)
+    {
+        $this->dealer_platform_name = $dealer_platform_name;
+    }
+
+    /**
+     * 互联网平台名称
+     * @return string
+     */
+    public function getDealerPlatformName()
+    {
+        return $this->dealer_platform_name;
+    }
+
+    /**
+     * 用户名称/昵称
+     * @var string $dealer_user_nickname
+     */
+    public function setDealerUserNickname($dealer_user_nickname)
+    {
+        $this->dealer_user_nickname = $dealer_user_nickname;
+    }
+
+    /**
+     * 用户名称/昵称
+     * @return string
+     */
+    public function getDealerUserNickname()
+    {
+        return $this->dealer_user_nickname;
+    }
+
+    /**
+     * 用户唯一标识码
+     * @var string $dealer_user_id
+     */
+    public function setDealerUserId($dealer_user_id)
+    {
+        $this->dealer_user_id = $dealer_user_id;
+    }
+
+    /**
+     * 用户唯一标识码
+     * @return string
+     */
+    public function getDealerUserId()
+    {
+        return $this->dealer_user_id;
     }
 }
