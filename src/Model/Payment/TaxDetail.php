@@ -1,14 +1,14 @@
 <?php
 
-namespace Yzh\Model\Calculatelabor;
+namespace Yzh\Model\Payment;
 
 use Yzh\Model\BaseModel;
 
 /**
- * 税费明细
- * Class CalcTaxDetail
+ * 缴税明细
+ * Class TaxDetail
  */
-class CalcTaxDetail extends BaseModel
+class TaxDetail extends BaseModel
 {
     /**
      * 预扣个税
@@ -26,6 +26,21 @@ class CalcTaxDetail extends BaseModel
      */
     protected $additional_tax;
     /**
+     * 实缴个税
+     * @var string
+     */
+    protected $received_personal_tax;
+    /**
+     * 实缴增值税
+     * @var string
+     */
+    protected $received_value_added_tax;
+    /**
+     * 实缴附加税费
+     * @var string
+     */
+    protected $received_additional_tax;
+    /**
      * 用户预扣个税
      * @var string
      */
@@ -35,11 +50,6 @@ class CalcTaxDetail extends BaseModel
      * @var string
      */
     protected $dealer_personal_tax;
-    /**
-     * 云账户预扣个税
-     * @var string
-     */
-    protected $broker_personal_tax;
     /**
      * 用户预扣增值税
      * @var string
@@ -51,11 +61,6 @@ class CalcTaxDetail extends BaseModel
      */
     protected $dealer_value_added_tax;
     /**
-     * 云账户预扣增值税
-     * @var string
-     */
-    protected $broker_value_added_tax;
-    /**
      * 用户预扣附加税费
      * @var string
      */
@@ -66,20 +71,35 @@ class CalcTaxDetail extends BaseModel
      */
     protected $dealer_additional_tax;
     /**
-     * 云账户预扣附加税费
+     * 用户实缴个税
      * @var string
      */
-    protected $broker_additional_tax;
+    protected $user_received_personal_tax;
     /**
-     * 预扣个税税率
+     * 平台企业实缴个税
      * @var string
      */
-    protected $personal_tax_rate;
+    protected $dealer_received_personal_tax;
     /**
-     * 预扣个税速算扣除数
+     * 用户实缴增值税
      * @var string
      */
-    protected $deduct_tax;
+    protected $user_received_value_added_tax;
+    /**
+     * 平台企业实缴增值税
+     * @var string
+     */
+    protected $dealer_received_value_added_tax;
+    /**
+     * 用户实缴附加税费
+     * @var string
+     */
+    protected $user_received_additional_tax;
+    /**
+     * 平台企业实缴附加税费
+     * @var string
+     */
+    protected $dealer_received_additional_tax;
 
     /**
      * 预扣个税
@@ -136,6 +156,60 @@ class CalcTaxDetail extends BaseModel
     }
 
     /**
+     * 实缴个税
+     * @var string $received_personal_tax
+     */
+    public function setReceivedPersonalTax($received_personal_tax)
+    {
+        $this->received_personal_tax = $received_personal_tax;
+    }
+
+    /**
+     * 实缴个税
+     * @return string
+     */
+    public function getReceivedPersonalTax()
+    {
+        return $this->received_personal_tax;
+    }
+
+    /**
+     * 实缴增值税
+     * @var string $received_value_added_tax
+     */
+    public function setReceivedValueAddedTax($received_value_added_tax)
+    {
+        $this->received_value_added_tax = $received_value_added_tax;
+    }
+
+    /**
+     * 实缴增值税
+     * @return string
+     */
+    public function getReceivedValueAddedTax()
+    {
+        return $this->received_value_added_tax;
+    }
+
+    /**
+     * 实缴附加税费
+     * @var string $received_additional_tax
+     */
+    public function setReceivedAdditionalTax($received_additional_tax)
+    {
+        $this->received_additional_tax = $received_additional_tax;
+    }
+
+    /**
+     * 实缴附加税费
+     * @return string
+     */
+    public function getReceivedAdditionalTax()
+    {
+        return $this->received_additional_tax;
+    }
+
+    /**
      * 用户预扣个税
      * @var string $user_personal_tax
      */
@@ -169,24 +243,6 @@ class CalcTaxDetail extends BaseModel
     public function getDealerPersonalTax()
     {
         return $this->dealer_personal_tax;
-    }
-
-    /**
-     * 云账户预扣个税
-     * @var string $broker_personal_tax
-     */
-    public function setBrokerPersonalTax($broker_personal_tax)
-    {
-        $this->broker_personal_tax = $broker_personal_tax;
-    }
-
-    /**
-     * 云账户预扣个税
-     * @return string
-     */
-    public function getBrokerPersonalTax()
-    {
-        return $this->broker_personal_tax;
     }
 
     /**
@@ -226,24 +282,6 @@ class CalcTaxDetail extends BaseModel
     }
 
     /**
-     * 云账户预扣增值税
-     * @var string $broker_value_added_tax
-     */
-    public function setBrokerValueAddedTax($broker_value_added_tax)
-    {
-        $this->broker_value_added_tax = $broker_value_added_tax;
-    }
-
-    /**
-     * 云账户预扣增值税
-     * @return string
-     */
-    public function getBrokerValueAddedTax()
-    {
-        return $this->broker_value_added_tax;
-    }
-
-    /**
      * 用户预扣附加税费
      * @var string $user_additional_tax
      */
@@ -280,56 +318,110 @@ class CalcTaxDetail extends BaseModel
     }
 
     /**
-     * 云账户预扣附加税费
-     * @var string $broker_additional_tax
+     * 用户实缴个税
+     * @var string $user_received_personal_tax
      */
-    public function setBrokerAdditionalTax($broker_additional_tax)
+    public function setUserReceivedPersonalTax($user_received_personal_tax)
     {
-        $this->broker_additional_tax = $broker_additional_tax;
+        $this->user_received_personal_tax = $user_received_personal_tax;
     }
 
     /**
-     * 云账户预扣附加税费
+     * 用户实缴个税
      * @return string
      */
-    public function getBrokerAdditionalTax()
+    public function getUserReceivedPersonalTax()
     {
-        return $this->broker_additional_tax;
+        return $this->user_received_personal_tax;
     }
 
     /**
-     * 预扣个税税率
-     * @var string $personal_tax_rate
+     * 平台企业实缴个税
+     * @var string $dealer_received_personal_tax
      */
-    public function setPersonalTaxRate($personal_tax_rate)
+    public function setDealerReceivedPersonalTax($dealer_received_personal_tax)
     {
-        $this->personal_tax_rate = $personal_tax_rate;
+        $this->dealer_received_personal_tax = $dealer_received_personal_tax;
     }
 
     /**
-     * 预扣个税税率
+     * 平台企业实缴个税
      * @return string
      */
-    public function getPersonalTaxRate()
+    public function getDealerReceivedPersonalTax()
     {
-        return $this->personal_tax_rate;
+        return $this->dealer_received_personal_tax;
     }
 
     /**
-     * 预扣个税速算扣除数
-     * @var string $deduct_tax
+     * 用户实缴增值税
+     * @var string $user_received_value_added_tax
      */
-    public function setDeductTax($deduct_tax)
+    public function setUserReceivedValueAddedTax($user_received_value_added_tax)
     {
-        $this->deduct_tax = $deduct_tax;
+        $this->user_received_value_added_tax = $user_received_value_added_tax;
     }
 
     /**
-     * 预扣个税速算扣除数
+     * 用户实缴增值税
      * @return string
      */
-    public function getDeductTax()
+    public function getUserReceivedValueAddedTax()
     {
-        return $this->deduct_tax;
+        return $this->user_received_value_added_tax;
+    }
+
+    /**
+     * 平台企业实缴增值税
+     * @var string $dealer_received_value_added_tax
+     */
+    public function setDealerReceivedValueAddedTax($dealer_received_value_added_tax)
+    {
+        $this->dealer_received_value_added_tax = $dealer_received_value_added_tax;
+    }
+
+    /**
+     * 平台企业实缴增值税
+     * @return string
+     */
+    public function getDealerReceivedValueAddedTax()
+    {
+        return $this->dealer_received_value_added_tax;
+    }
+
+    /**
+     * 用户实缴附加税费
+     * @var string $user_received_additional_tax
+     */
+    public function setUserReceivedAdditionalTax($user_received_additional_tax)
+    {
+        $this->user_received_additional_tax = $user_received_additional_tax;
+    }
+
+    /**
+     * 用户实缴附加税费
+     * @return string
+     */
+    public function getUserReceivedAdditionalTax()
+    {
+        return $this->user_received_additional_tax;
+    }
+
+    /**
+     * 平台企业实缴附加税费
+     * @var string $dealer_received_additional_tax
+     */
+    public function setDealerReceivedAdditionalTax($dealer_received_additional_tax)
+    {
+        $this->dealer_received_additional_tax = $dealer_received_additional_tax;
+    }
+
+    /**
+     * 平台企业实缴附加税费
+     * @return string
+     */
+    public function getDealerReceivedAdditionalTax()
+    {
+        return $this->dealer_received_additional_tax;
     }
 }

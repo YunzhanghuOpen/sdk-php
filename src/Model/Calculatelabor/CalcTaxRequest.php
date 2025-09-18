@@ -31,10 +31,15 @@ class CalcTaxRequest extends BaseRequest
      */
     public $id_card;
     /**
-     * 订单金额
+     * 测算金额
      * @var string
      */
     public $pay;
+    /**
+     * 测算类型
+     * @var string
+     */
+    public $tax_type;
 
     public function __construct($params = array())
     {

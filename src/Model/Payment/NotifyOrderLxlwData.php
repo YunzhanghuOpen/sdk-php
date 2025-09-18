@@ -170,6 +170,31 @@ class NotifyOrderLxlwData extends BaseModel
      * @var TaxDetail
      */
     protected $tax_detail;
+    /**
+     * 互联网平台名称
+     * @var string
+     */
+    protected $dealer_platform_name;
+    /**
+     * 用户名称/昵称
+     * @var string
+     */
+    protected $dealer_user_nickname;
+    /**
+     * 用户唯一标识码
+     * @var string
+     */
+    protected $dealer_user_id;
+    /**
+     * 预扣税费总额
+     * @var string
+     */
+    protected $tax;
+    /**
+     * 实缴税费总额
+     * @var string
+     */
+    protected $received_tax_amount;
 
     /**
      * 平台企业订单号
@@ -745,5 +770,95 @@ class NotifyOrderLxlwData extends BaseModel
     public function getTaxDetail()
     {
         return $this->tax_detail;
+    }
+
+    /**
+     * 互联网平台名称
+     * @var string $dealer_platform_name
+     */
+    public function setDealerPlatformName($dealer_platform_name)
+    {
+        $this->dealer_platform_name = $dealer_platform_name;
+    }
+
+    /**
+     * 互联网平台名称
+     * @return string
+     */
+    public function getDealerPlatformName()
+    {
+        return $this->dealer_platform_name;
+    }
+
+    /**
+     * 用户名称/昵称
+     * @var string $dealer_user_nickname
+     */
+    public function setDealerUserNickname($dealer_user_nickname)
+    {
+        $this->dealer_user_nickname = $dealer_user_nickname;
+    }
+
+    /**
+     * 用户名称/昵称
+     * @return string
+     */
+    public function getDealerUserNickname()
+    {
+        return $this->dealer_user_nickname;
+    }
+
+    /**
+     * 用户唯一标识码
+     * @var string $dealer_user_id
+     */
+    public function setDealerUserId($dealer_user_id)
+    {
+        $this->dealer_user_id = $dealer_user_id;
+    }
+
+    /**
+     * 用户唯一标识码
+     * @return string
+     */
+    public function getDealerUserId()
+    {
+        return $this->dealer_user_id;
+    }
+
+    /**
+     * 预扣税费总额
+     * @var string $tax
+     */
+    public function setTax($tax)
+    {
+        $this->tax = $tax;
+    }
+
+    /**
+     * 预扣税费总额
+     * @return string
+     */
+    public function getTax()
+    {
+        return $this->tax;
+    }
+
+    /**
+     * 实缴税费总额
+     * @var string $received_tax_amount
+     */
+    public function setReceivedTaxAmount($received_tax_amount)
+    {
+        $this->received_tax_amount = $received_tax_amount;
+    }
+
+    /**
+     * 实缴税费总额
+     * @return string
+     */
+    public function getReceivedTaxAmount()
+    {
+        return $this->received_tax_amount;
     }
 }
