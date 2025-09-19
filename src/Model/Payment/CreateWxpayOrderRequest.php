@@ -71,7 +71,7 @@ class CreateWxpayOrderRequest extends BaseRequest
      */
     public $wxpay_mode;
     /**
-     * 项目标识
+     * 业务线标识
      * @var string
      */
     public $project_id;
@@ -80,6 +80,21 @@ class CreateWxpayOrderRequest extends BaseRequest
      * @var string
      */
     public $notes;
+    /**
+     * 互联网平台名称
+     * @var string
+     */
+    public $dealer_platform_name;
+    /**
+     * 用户名称/昵称
+     * @var string
+     */
+    public $dealer_user_nickname;
+    /**
+     * 用户唯一标识码
+     * @var string
+     */
+    public $dealer_user_id;
 
     public function __construct($params = array())
     {

@@ -74,7 +74,8 @@ $request = new CalcTaxRequest(array(
     'broker_id' => $test_var['app_broker_id'], // 综合服务主体 ID
     'real_name' => "张三", // 姓名
     'id_card' => "11010519491231002X", // 证件号
-    'pay' => "99", // 订单金额
+    'pay' => "99", // 测算金额	
+    'tax_type' => "before_tax", // 测算类型	
 ));
 
 /*
