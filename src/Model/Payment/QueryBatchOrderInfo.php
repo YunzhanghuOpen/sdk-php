@@ -160,6 +160,31 @@ class QueryBatchOrderInfo extends BaseModel
      * @var string
      */
     protected $project_id;
+    /**
+     * 互联网平台名称
+     * @var string
+     */
+    protected $dealer_platform_name;
+    /**
+     * 用户名称/昵称
+     * @var string
+     */
+    protected $dealer_user_nickname;
+    /**
+     * 用户唯一标识码
+     * @var string
+     */
+    protected $dealer_user_id;
+    /**
+     * 预扣个税税率
+     * @var string
+     */
+    protected $personal_tax_rate;
+    /**
+     * 预扣个税速算扣除数
+     * @var string
+     */
+    protected $deduct_tax;
 
     /**
      * 平台企业订单号
@@ -699,5 +724,95 @@ class QueryBatchOrderInfo extends BaseModel
     public function getProjectId()
     {
         return $this->project_id;
+    }
+
+    /**
+     * 互联网平台名称
+     * @var string $dealer_platform_name
+     */
+    public function setDealerPlatformName($dealer_platform_name)
+    {
+        $this->dealer_platform_name = $dealer_platform_name;
+    }
+
+    /**
+     * 互联网平台名称
+     * @return string
+     */
+    public function getDealerPlatformName()
+    {
+        return $this->dealer_platform_name;
+    }
+
+    /**
+     * 用户名称/昵称
+     * @var string $dealer_user_nickname
+     */
+    public function setDealerUserNickname($dealer_user_nickname)
+    {
+        $this->dealer_user_nickname = $dealer_user_nickname;
+    }
+
+    /**
+     * 用户名称/昵称
+     * @return string
+     */
+    public function getDealerUserNickname()
+    {
+        return $this->dealer_user_nickname;
+    }
+
+    /**
+     * 用户唯一标识码
+     * @var string $dealer_user_id
+     */
+    public function setDealerUserId($dealer_user_id)
+    {
+        $this->dealer_user_id = $dealer_user_id;
+    }
+
+    /**
+     * 用户唯一标识码
+     * @return string
+     */
+    public function getDealerUserId()
+    {
+        return $this->dealer_user_id;
+    }
+
+    /**
+     * 预扣个税税率
+     * @var string $personal_tax_rate
+     */
+    public function setPersonalTaxRate($personal_tax_rate)
+    {
+        $this->personal_tax_rate = $personal_tax_rate;
+    }
+
+    /**
+     * 预扣个税税率
+     * @return string
+     */
+    public function getPersonalTaxRate()
+    {
+        return $this->personal_tax_rate;
+    }
+
+    /**
+     * 预扣个税速算扣除数
+     * @var string $deduct_tax
+     */
+    public function setDeductTax($deduct_tax)
+    {
+        $this->deduct_tax = $deduct_tax;
+    }
+
+    /**
+     * 预扣个税速算扣除数
+     * @return string
+     */
+    public function getDeductTax()
+    {
+        return $this->deduct_tax;
     }
 }
