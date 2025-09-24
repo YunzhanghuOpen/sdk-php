@@ -135,6 +135,21 @@ class DealerOrderInfoV2 extends BaseModel
      * @var string
      */
     protected $pay_ref;
+    /**
+     * 预扣税费总额
+     * @var string
+     */
+    protected $tax_amount;
+    /**
+     * 实缴税费总额
+     * @var string
+     */
+    protected $received_tax_amount;
+    /**
+     * 缴税明细
+     * @var OrderTaxDetail
+     */
+    protected $tax_detail;
 
     /**
      * 综合服务主体 ID
@@ -584,5 +599,59 @@ class DealerOrderInfoV2 extends BaseModel
     public function getPayRef()
     {
         return $this->pay_ref;
+    }
+
+    /**
+     * 预扣税费总额
+     * @var string $tax_amount
+     */
+    public function setTaxAmount($tax_amount)
+    {
+        $this->tax_amount = $tax_amount;
+    }
+
+    /**
+     * 预扣税费总额
+     * @return string
+     */
+    public function getTaxAmount()
+    {
+        return $this->tax_amount;
+    }
+
+    /**
+     * 实缴税费总额
+     * @var string $received_tax_amount
+     */
+    public function setReceivedTaxAmount($received_tax_amount)
+    {
+        $this->received_tax_amount = $received_tax_amount;
+    }
+
+    /**
+     * 实缴税费总额
+     * @return string
+     */
+    public function getReceivedTaxAmount()
+    {
+        return $this->received_tax_amount;
+    }
+
+    /**
+     * 缴税明细
+     * @var OrderTaxDetail $tax_detail
+     */
+    public function setTaxDetail($tax_detail)
+    {
+        $this->tax_detail = $tax_detail;
+    }
+
+    /**
+     * 缴税明细
+     * @return OrderTaxDetail
+     */
+    public function getTaxDetail()
+    {
+        return $this->tax_detail;
     }
 }

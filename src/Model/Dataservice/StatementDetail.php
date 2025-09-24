@@ -95,6 +95,11 @@ class StatementDetail extends BaseModel
      * @var string
      */
     protected $project_name;
+    /**
+     * 实纳税费金额
+     * @var string
+     */
+    protected $received_tax_amount;
 
     /**
      * 账单 ID
@@ -400,5 +405,23 @@ class StatementDetail extends BaseModel
     public function getProjectName()
     {
         return $this->project_name;
+    }
+
+    /**
+     * 实纳税费金额
+     * @var string $received_tax_amount
+     */
+    public function setReceivedTaxAmount($received_tax_amount)
+    {
+        $this->received_tax_amount = $received_tax_amount;
+    }
+
+    /**
+     * 实纳税费金额
+     * @return string
+     */
+    public function getReceivedTaxAmount()
+    {
+        return $this->received_tax_amount;
     }
 }
