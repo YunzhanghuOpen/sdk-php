@@ -67,7 +67,7 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
      */
     protected $status_message;
     /**
-     * 订单详细状态码描述
+     * 订单详情状态码描述
      * @var string
      */
     protected $status_detail_message;
@@ -157,7 +157,7 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
      */
     protected $bank_name;
     /**
-     * 项目标识
+     * 业务线标识
      * @var string
      */
     protected $project_id;
@@ -216,6 +216,16 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
      * @var string
      */
     protected $dealer_user_id;
+    /**
+     * 用户实收金额（追缴前）
+     * @var string
+     */
+    protected $user_real_excluding_vat_amount;
+    /**
+     * 已追缴增附税（本笔订单）
+     * @var string
+     */
+    protected $user_recover_tax_amount;
 
     /**
      * 平台企业订单号
@@ -416,7 +426,7 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 订单详细状态码描述
+     * 订单详情状态码描述
      * @var string $status_detail_message
      */
     public function setStatusDetailMessage($status_detail_message)
@@ -425,7 +435,7 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 订单详细状态码描述
+     * 订单详情状态码描述
      * @return string
      */
     public function getStatusDetailMessage()
@@ -740,7 +750,7 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 项目标识
+     * 业务线标识
      * @var string $project_id
      */
     public function setProjectId($project_id)
@@ -749,7 +759,7 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 项目标识
+     * 业务线标识
      * @return string
      */
     public function getProjectId()
@@ -953,5 +963,41 @@ class GetOrderResponseData extends BaseModel implements ResponseDataInterface
     public function getDealerUserId()
     {
         return $this->dealer_user_id;
+    }
+
+    /**
+     * 用户实收金额（追缴前）
+     * @var string $user_real_excluding_vat_amount
+     */
+    public function setUserRealExcludingVatAmount($user_real_excluding_vat_amount)
+    {
+        $this->user_real_excluding_vat_amount = $user_real_excluding_vat_amount;
+    }
+
+    /**
+     * 用户实收金额（追缴前）
+     * @return string
+     */
+    public function getUserRealExcludingVatAmount()
+    {
+        return $this->user_real_excluding_vat_amount;
+    }
+
+    /**
+     * 已追缴增附税（本笔订单）
+     * @var string $user_recover_tax_amount
+     */
+    public function setUserRecoverTaxAmount($user_recover_tax_amount)
+    {
+        $this->user_recover_tax_amount = $user_recover_tax_amount;
+    }
+
+    /**
+     * 已追缴增附税（本笔订单）
+     * @return string
+     */
+    public function getUserRecoverTaxAmount()
+    {
+        return $this->user_recover_tax_amount;
     }
 }

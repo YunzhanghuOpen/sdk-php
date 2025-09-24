@@ -200,6 +200,16 @@ class NotifyOrderData extends BaseModel
      * @var string
      */
     protected $received_tax_amount;
+    /**
+     * 用户实收金额（追缴前）
+     * @var string
+     */
+    protected $user_real_excluding_vat_amount;
+    /**
+     * 已追缴增附税（本笔订单）
+     * @var string
+     */
+    protected $user_recover_tax_amount;
 
     /**
      * 平台企业订单号
@@ -883,5 +893,41 @@ class NotifyOrderData extends BaseModel
     public function getReceivedTaxAmount()
     {
         return $this->received_tax_amount;
+    }
+
+    /**
+     * 用户实收金额（追缴前）
+     * @var string $user_real_excluding_vat_amount
+     */
+    public function setUserRealExcludingVatAmount($user_real_excluding_vat_amount)
+    {
+        $this->user_real_excluding_vat_amount = $user_real_excluding_vat_amount;
+    }
+
+    /**
+     * 用户实收金额（追缴前）
+     * @return string
+     */
+    public function getUserRealExcludingVatAmount()
+    {
+        return $this->user_real_excluding_vat_amount;
+    }
+
+    /**
+     * 已追缴增附税（本笔订单）
+     * @var string $user_recover_tax_amount
+     */
+    public function setUserRecoverTaxAmount($user_recover_tax_amount)
+    {
+        $this->user_recover_tax_amount = $user_recover_tax_amount;
+    }
+
+    /**
+     * 已追缴增附税（本笔订单）
+     * @return string
+     */
+    public function getUserRecoverTaxAmount()
+    {
+        return $this->user_recover_tax_amount;
     }
 }
