@@ -100,16 +100,6 @@ class TaxDetail extends BaseModel
      * @var string
      */
     protected $dealer_received_additional_tax;
-    /**
-     * 预扣个税税率
-     * @var string
-     */
-    protected $personal_tax_rate;
-    /**
-     * 预扣个税速算扣除数
-     * @var string
-     */
-    protected $deduct_tax;
 
     /**
      * 预扣个税
@@ -433,41 +423,5 @@ class TaxDetail extends BaseModel
     public function getDealerReceivedAdditionalTax()
     {
         return $this->dealer_received_additional_tax;
-    }
-
-    /**
-     * 预扣个税税率
-     * @var string $personal_tax_rate
-     */
-    public function setPersonalTaxRate($personal_tax_rate)
-    {
-        $this->personal_tax_rate = $personal_tax_rate;
-    }
-
-    /**
-     * 预扣个税税率
-     * @return string
-     */
-    public function getPersonalTaxRate()
-    {
-        return $this->personal_tax_rate;
-    }
-
-    /**
-     * 预扣个税速算扣除数
-     * @var string $deduct_tax
-     */
-    public function setDeductTax($deduct_tax)
-    {
-        $this->deduct_tax = $deduct_tax;
-    }
-
-    /**
-     * 预扣个税速算扣除数
-     * @return string
-     */
-    public function getDeductTax()
-    {
-        return $this->deduct_tax;
     }
 }

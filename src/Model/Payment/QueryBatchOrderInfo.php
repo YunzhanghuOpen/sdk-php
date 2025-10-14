@@ -185,6 +185,26 @@ class QueryBatchOrderInfo extends BaseModel
      * @var string
      */
     protected $deduct_tax;
+    /**
+     * 实缴税费总额
+     * @var string
+     */
+    protected $received_tax_amount;
+    /**
+     * 用户实收金额
+     * @var string
+     */
+    protected $user_real_amount;
+    /**
+     * 预扣税费总额
+     * @var string
+     */
+    protected $tax;
+    /**
+     * 缴税明细
+     * @var TaxDetail
+     */
+    protected $tax_detail;
 
     /**
      * 平台企业订单号
@@ -814,5 +834,77 @@ class QueryBatchOrderInfo extends BaseModel
     public function getDeductTax()
     {
         return $this->deduct_tax;
+    }
+
+    /**
+     * 实缴税费总额
+     * @var string $received_tax_amount
+     */
+    public function setReceivedTaxAmount($received_tax_amount)
+    {
+        $this->received_tax_amount = $received_tax_amount;
+    }
+
+    /**
+     * 实缴税费总额
+     * @return string
+     */
+    public function getReceivedTaxAmount()
+    {
+        return $this->received_tax_amount;
+    }
+
+    /**
+     * 用户实收金额
+     * @var string $user_real_amount
+     */
+    public function setUserRealAmount($user_real_amount)
+    {
+        $this->user_real_amount = $user_real_amount;
+    }
+
+    /**
+     * 用户实收金额
+     * @return string
+     */
+    public function getUserRealAmount()
+    {
+        return $this->user_real_amount;
+    }
+
+    /**
+     * 预扣税费总额
+     * @var string $tax
+     */
+    public function setTax($tax)
+    {
+        $this->tax = $tax;
+    }
+
+    /**
+     * 预扣税费总额
+     * @return string
+     */
+    public function getTax()
+    {
+        return $this->tax;
+    }
+
+    /**
+     * 缴税明细
+     * @var TaxDetail $tax_detail
+     */
+    public function setTaxDetail($tax_detail)
+    {
+        $this->tax_detail = $tax_detail;
+    }
+
+    /**
+     * 缴税明细
+     * @return TaxDetail
+     */
+    public function getTaxDetail()
+    {
+        return $this->tax_detail;
     }
 }
