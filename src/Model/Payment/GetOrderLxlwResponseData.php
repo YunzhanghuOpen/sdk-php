@@ -177,7 +177,7 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
      */
     protected $sys_amount;
     /**
-     * 税费，该字段已废弃
+     * 预扣税费总额
      * @var string
      */
     protected $tax;
@@ -226,6 +226,16 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
      * @var string
      */
     protected $user_recover_tax_amount;
+    /**
+     * 预扣个税税率
+     * @var string
+     */
+    protected $personal_tax_rate;
+    /**
+     * 预扣个税速算扣除数
+     * @var string
+     */
+    protected $deduct_tax;
 
     /**
      * 平台企业订单号
@@ -822,7 +832,7 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     }
 
     /**
-     * 税费，该字段已废弃
+     * 预扣税费总额
      * @var string $tax
      */
     public function setTax($tax)
@@ -831,7 +841,7 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     }
 
     /**
-     * 税费，该字段已废弃
+     * 预扣税费总额
      * @return string
      */
     public function getTax()
@@ -999,5 +1009,41 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     public function getUserRecoverTaxAmount()
     {
         return $this->user_recover_tax_amount;
+    }
+
+    /**
+     * 预扣个税税率
+     * @var string $personal_tax_rate
+     */
+    public function setPersonalTaxRate($personal_tax_rate)
+    {
+        $this->personal_tax_rate = $personal_tax_rate;
+    }
+
+    /**
+     * 预扣个税税率
+     * @return string
+     */
+    public function getPersonalTaxRate()
+    {
+        return $this->personal_tax_rate;
+    }
+
+    /**
+     * 预扣个税速算扣除数
+     * @var string $deduct_tax
+     */
+    public function setDeductTax($deduct_tax)
+    {
+        $this->deduct_tax = $deduct_tax;
+    }
+
+    /**
+     * 预扣个税速算扣除数
+     * @return string
+     */
+    public function getDeductTax()
+    {
+        return $this->deduct_tax;
     }
 }

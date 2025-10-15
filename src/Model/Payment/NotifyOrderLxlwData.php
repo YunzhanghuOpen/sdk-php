@@ -205,6 +205,16 @@ class NotifyOrderLxlwData extends BaseModel
      * @var string
      */
     protected $user_recover_tax_amount;
+    /**
+     * 预扣个税税率
+     * @var string
+     */
+    protected $personal_tax_rate;
+    /**
+     * 预扣个税速算扣除数
+     * @var string
+     */
+    protected $deduct_tax;
 
     /**
      * 平台企业订单号
@@ -906,5 +916,41 @@ class NotifyOrderLxlwData extends BaseModel
     public function getUserRecoverTaxAmount()
     {
         return $this->user_recover_tax_amount;
+    }
+
+    /**
+     * 预扣个税税率
+     * @var string $personal_tax_rate
+     */
+    public function setPersonalTaxRate($personal_tax_rate)
+    {
+        $this->personal_tax_rate = $personal_tax_rate;
+    }
+
+    /**
+     * 预扣个税税率
+     * @return string
+     */
+    public function getPersonalTaxRate()
+    {
+        return $this->personal_tax_rate;
+    }
+
+    /**
+     * 预扣个税速算扣除数
+     * @var string $deduct_tax
+     */
+    public function setDeductTax($deduct_tax)
+    {
+        $this->deduct_tax = $deduct_tax;
+    }
+
+    /**
+     * 预扣个税速算扣除数
+     * @return string
+     */
+    public function getDeductTax()
+    {
+        return $this->deduct_tax;
     }
 }
