@@ -164,7 +164,8 @@ $request = new UserExemptedInfoRequest(array(
     'birthday' => '20010809',                     // 出生日期
     'gender' => '男',                             // 性别
     'notify_url' => 'https://www.example.com',    // 审核回调地址
-    'ref' => 'test12345678111'                    // 请求流水号，回调时会附带
+    'ref' => 'test12345678111',                    // 请求流水号，回调时会附带
+    'resident_type' => '1'                      // 外籍人员类型
 ));
 
 /*

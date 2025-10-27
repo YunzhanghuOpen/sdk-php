@@ -25,6 +25,16 @@ class CalculationYearH5UrlRequest extends BaseRequest
      * @var string
      */
     public $color;
+    /**
+     * 是否隐藏导航栏 0：展示导航栏（默认） 1：隐藏导航栏
+     * @var int32
+     */
+    public $navbar_hide;
+    /**
+     * 页面标题
+     * @var string
+     */
+    public $title;
 
     public function __construct($params = array())
     {
