@@ -75,6 +75,11 @@ class UserExemptedInfoRequest extends BaseRequest
      * @var string[]
      */
     public $image_urls;
+    /**
+     * 外籍人员类型
+     * @var string
+     */
+    public $resident_type;
 
     public function __construct($params = array())
     {
