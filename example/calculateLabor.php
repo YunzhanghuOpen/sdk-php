@@ -102,6 +102,8 @@ $request = new CalculationYearH5UrlRequest(array(
     'dealer_id' => $test_var['app_dealer_id'], // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'], // 综合服务主体 ID
     'color' => "#FF3D3D", // 主题颜色	
+    'navbar_hide' => 0, // 是否隐藏导航栏
+    'title' => "云账户", // 页面标题
 ));
 
 /*
@@ -128,7 +130,9 @@ $request = new CalculationH5UrlRequest(array(
     'broker_id' => $test_var['app_broker_id'], // 综合服务主体 ID
     'real_name' => "张三", // 姓名
     'id_card' => "11010519491231002X", // 证件号
-    'color' => "#FF3D3D", // 主题颜色	
+    'color' => "#FF3D3D", // 主题颜色
+    'navbar_hide' => 0, // 是否隐藏导航栏
+    'title' => "云账户", // 页面标题
 ));
 
 /*
