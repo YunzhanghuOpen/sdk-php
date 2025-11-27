@@ -100,6 +100,21 @@ class TaxDetail extends BaseModel
      * @var string
      */
     protected $dealer_received_additional_tax;
+    /**
+     * 预扣城建附加税
+     * @var string
+     */
+    protected $additional_urban_tax;
+    /**
+     * 预扣教育附加税
+     * @var string
+     */
+    protected $additional_tuition_tax;
+    /**
+     * 预扣地方教育附加税
+     * @var string
+     */
+    protected $additional_local_tuition_tax;
 
     /**
      * 预扣个税
@@ -423,5 +438,59 @@ class TaxDetail extends BaseModel
     public function getDealerReceivedAdditionalTax()
     {
         return $this->dealer_received_additional_tax;
+    }
+
+    /**
+     * 预扣城建附加税
+     * @var string $additional_urban_tax
+     */
+    public function setAdditionalUrbanTax($additional_urban_tax)
+    {
+        $this->additional_urban_tax = $additional_urban_tax;
+    }
+
+    /**
+     * 预扣城建附加税
+     * @return string
+     */
+    public function getAdditionalUrbanTax()
+    {
+        return $this->additional_urban_tax;
+    }
+
+    /**
+     * 预扣教育附加税
+     * @var string $additional_tuition_tax
+     */
+    public function setAdditionalTuitionTax($additional_tuition_tax)
+    {
+        $this->additional_tuition_tax = $additional_tuition_tax;
+    }
+
+    /**
+     * 预扣教育附加税
+     * @return string
+     */
+    public function getAdditionalTuitionTax()
+    {
+        return $this->additional_tuition_tax;
+    }
+
+    /**
+     * 预扣地方教育附加税
+     * @var string $additional_local_tuition_tax
+     */
+    public function setAdditionalLocalTuitionTax($additional_local_tuition_tax)
+    {
+        $this->additional_local_tuition_tax = $additional_local_tuition_tax;
+    }
+
+    /**
+     * 预扣地方教育附加税
+     * @return string
+     */
+    public function getAdditionalLocalTuitionTax()
+    {
+        return $this->additional_local_tuition_tax;
     }
 }
