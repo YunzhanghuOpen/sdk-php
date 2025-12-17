@@ -40,6 +40,11 @@ class CalcTaxRequest extends BaseRequest
      * @var string
      */
     public $tax_type;
+    /**
+     * 税前订单金额返回值类型
+     * @var string
+     */
+    public $before_tax_amount_type;
 
     public function __construct($params = array())
     {
