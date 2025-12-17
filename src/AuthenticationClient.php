@@ -20,6 +20,8 @@ use Yzh\Model\Authentication\UserWhiteCheckRequest;
 use Yzh\Model\Authentication\UserWhiteCheckResponse;
 use Yzh\Model\Authentication\GetBankCardInfoRequest;
 use Yzh\Model\Authentication\GetBankCardInfoResponse;
+use Yzh\Model\Authentication\GetUserWhiteApproveInfoRequest;
+use Yzh\Model\Authentication\GetUserWhiteApproveInfoResponse;
 
 /**
  * 用户信息验证
@@ -139,5 +141,19 @@ class AuthenticationClient extends BaseClient
             throw new ConfigException("Authentication->getBankCardInfo request 必须是 Yzh\\Model\\Authentication\\GetBankCardInfoRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/card', $request, "Yzh\\Model\\Authentication\\GetBankCardInfoResponse", $option);
+    }
+
+    /**
+     * 非居民身份证验证名单审核结果查询
+     * @param GetUserWhiteApproveInfoRequest $request
+     * @param null $option
+     * @return GetUserWhiteApproveInfoResponse
+     */
+    public function getUserWhiteApproveInfo($request, $option = null)
+    {
+        if (!$request instanceof GetUserWhiteApproveInfoRequest) {
+            throw new ConfigException("Authentication->getUserWhiteApproveInfo request 必须是 Yzh\\Model\\Authentication\\GetUserWhiteApproveInfoRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/payment/v1/user/white/approve', $request, "Yzh\\Model\\Authentication\\GetUserWhiteApproveInfoResponse", $option);
     }
 }

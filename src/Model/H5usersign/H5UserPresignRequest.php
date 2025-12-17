@@ -40,6 +40,11 @@ class H5UserPresignRequest extends BaseRequest
      * @var int32
      */
     public $collect_phone_no;
+    /**
+     * 签约页面打开方式 1：微信小程序打开签约页面
+     * @var int32
+     */
+    public $page_open_way;
 
     public function __construct($params = array())
     {
