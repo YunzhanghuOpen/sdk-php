@@ -78,6 +78,7 @@ $request = new CalcTaxRequest(array(
     'id_card' => "11010519491231002X", // 证件号
     'pay' => "99", // 测算金额	
     'tax_type' => "before_tax", // 测算类型	
+    'before_tax_amount_type' => "max", // 税前订单金额返回值类型
 ));
 
 /*
