@@ -26,10 +26,10 @@ use Yzh\Model\Payment\CreateBatchOrderRequest;
 use Yzh\Model\Payment\CreateBatchOrderResponse;
 use Yzh\Model\Payment\ConfirmBatchOrderRequest;
 use Yzh\Model\Payment\ConfirmBatchOrderResponse;
-use Yzh\Model\Payment\CancelBatchOrderRequest;
-use Yzh\Model\Payment\CancelBatchOrderResponse;
 use Yzh\Model\Payment\QueryBatchOrderRequest;
 use Yzh\Model\Payment\QueryBatchOrderResponse;
+use Yzh\Model\Payment\CancelBatchOrderRequest;
+use Yzh\Model\Payment\CancelBatchOrderResponse;
 use Yzh\Model\Payment\CheckUserAmountRequest;
 use Yzh\Model\Payment\CheckUserAmountResponse;
 use Yzh\Model\Payment\GetOrderLxlwRequest;
@@ -210,7 +210,7 @@ class PaymentClient extends BaseClient
         }
         return $this->send('GET', '/api/payment/v1/query-batch', $request, "Yzh\\Model\\Payment\\QueryBatchOrderResponse", $option);
     }
-    
+
     /**
      * 批次撤销
      * @param CancelBatchOrderRequest $request
