@@ -41,7 +41,7 @@ class TaxDetail extends BaseModel
      */
     protected $received_additional_tax;
     /**
-     * 用户预扣个税
+     * 劳动者预扣个税
      * @var string
      */
     protected $user_personal_tax;
@@ -51,7 +51,7 @@ class TaxDetail extends BaseModel
      */
     protected $dealer_personal_tax;
     /**
-     * 用户预扣增值税
+     * 劳动者预扣增值税
      * @var string
      */
     protected $user_value_added_tax;
@@ -61,7 +61,7 @@ class TaxDetail extends BaseModel
      */
     protected $dealer_value_added_tax;
     /**
-     * 用户预扣附加税费
+     * 劳动者预扣附加税费
      * @var string
      */
     protected $user_additional_tax;
@@ -71,7 +71,7 @@ class TaxDetail extends BaseModel
      */
     protected $dealer_additional_tax;
     /**
-     * 用户实缴个税
+     * 劳动者实缴个税
      * @var string
      */
     protected $user_received_personal_tax;
@@ -81,7 +81,7 @@ class TaxDetail extends BaseModel
      */
     protected $dealer_received_personal_tax;
     /**
-     * 用户实缴增值税
+     * 劳动者实缴增值税
      * @var string
      */
     protected $user_received_value_added_tax;
@@ -91,7 +91,7 @@ class TaxDetail extends BaseModel
      */
     protected $dealer_received_value_added_tax;
     /**
-     * 用户实缴附加税费
+     * 劳动者实缴附加税费
      * @var string
      */
     protected $user_received_additional_tax;
@@ -225,7 +225,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户预扣个税
+     * 劳动者预扣个税
      * @var string $user_personal_tax
      */
     public function setUserPersonalTax($user_personal_tax)
@@ -234,7 +234,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户预扣个税
+     * 劳动者预扣个税
      * @return string
      */
     public function getUserPersonalTax()
@@ -261,7 +261,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户预扣增值税
+     * 劳动者预扣增值税
      * @var string $user_value_added_tax
      */
     public function setUserValueAddedTax($user_value_added_tax)
@@ -270,7 +270,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户预扣增值税
+     * 劳动者预扣增值税
      * @return string
      */
     public function getUserValueAddedTax()
@@ -297,7 +297,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户预扣附加税费
+     * 劳动者预扣附加税费
      * @var string $user_additional_tax
      */
     public function setUserAdditionalTax($user_additional_tax)
@@ -306,7 +306,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户预扣附加税费
+     * 劳动者预扣附加税费
      * @return string
      */
     public function getUserAdditionalTax()
@@ -333,7 +333,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户实缴个税
+     * 劳动者实缴个税
      * @var string $user_received_personal_tax
      */
     public function setUserReceivedPersonalTax($user_received_personal_tax)
@@ -342,7 +342,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户实缴个税
+     * 劳动者实缴个税
      * @return string
      */
     public function getUserReceivedPersonalTax()
@@ -369,7 +369,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户实缴增值税
+     * 劳动者实缴增值税
      * @var string $user_received_value_added_tax
      */
     public function setUserReceivedValueAddedTax($user_received_value_added_tax)
@@ -378,7 +378,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户实缴增值税
+     * 劳动者实缴增值税
      * @return string
      */
     public function getUserReceivedValueAddedTax()
@@ -405,7 +405,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户实缴附加税费
+     * 劳动者实缴附加税费
      * @var string $user_received_additional_tax
      */
     public function setUserReceivedAdditionalTax($user_received_additional_tax)
@@ -414,7 +414,7 @@ class TaxDetail extends BaseModel
     }
 
     /**
-     * 用户实缴附加税费
+     * 劳动者实缴附加税费
      * @return string
      */
     public function getUserReceivedAdditionalTax()

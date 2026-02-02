@@ -34,6 +34,8 @@ use Yzh\Model\Payment\CheckUserAmountRequest;
 use Yzh\Model\Payment\CheckUserAmountResponse;
 use Yzh\Model\Payment\GetOrderLxlwRequest;
 use Yzh\Model\Payment\GetOrderLxlwResponse;
+use Yzh\Model\Payment\CancelOrderInBatchRequest;
+use Yzh\Model\Payment\CancelOrderInBatchResponse;
 
 /**
  * 实时支付
@@ -251,5 +253,19 @@ class PaymentClient extends BaseClient
             throw new ConfigException("Payment->getOrderLxlw request 必须是 Yzh\\Model\\Payment\\GetOrderLxlwRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/query-order', $request, "Yzh\\Model\\Payment\\GetOrderLxlwResponse", $option);
+    }
+
+    /**
+     * 取消批次中单笔订单
+     * @param CancelOrderInBatchRequest $request
+     * @param null $option
+     * @return CancelOrderInBatchResponse
+     */
+    public function cancelOrderInBatch($request, $option = null)
+    {
+        if (!$request instanceof CancelOrderInBatchRequest) {
+            throw new ConfigException("Payment->cancelOrderInBatch request 必须是 Yzh\\Model\\Payment\\CancelOrderInBatchRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('POST', '/api/payment/v1/order-batch/cancel-order', $request, "Yzh\\Model\\Payment\\CancelOrderInBatchResponse", $option);
     }
 }
