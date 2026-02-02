@@ -20,6 +20,7 @@ use Yzh\Model\Payment\QueryBatchOrderRequest;
 use Yzh\Model\Payment\RetryOrderRequest;
 use Yzh\Model\Payment\CheckUserAmountRequest;
 use Yzh\Model\Payment\GetOrderLxlwRequest;
+use Yzh\Model\Payment\CancelOrderInBatchRequest;
 
 // 实时支付
 $config = Config::newFromArray(array(
@@ -449,3 +450,20 @@ if ($response->isSuccess()) {
     // 失败返回
     echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
 }
+
+// 取消批次中单笔订单
+$request = new CancelOrderInBatchRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],     // 平台企业 ID
+    'broker_id' => $test_var['app_broker_id'],     // 综合服务主体 ID
+    'batch_id' => 'batch2032934858483',            // 平台企业批次号
+    'order_id' => 'order_id123456',                // 平台企业订单号
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $paymentClient->cancelOrderInBatch($request);
+echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
