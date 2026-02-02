@@ -79,6 +79,8 @@ $request = new CalcTaxRequest(array(
     'pay' => "99", // 测算金额	
     'tax_type' => "before_tax", // 测算类型	
     'before_tax_amount_type' => "max", // 税前订单金额返回值类型
+    'include_recovery_amount' => 1, // 将追缴税费纳入测算
+    'include_user_service_fee' => 1, // 将劳动者服务费纳入测算
 ));
 
 /*

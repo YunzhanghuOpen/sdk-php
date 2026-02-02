@@ -121,7 +121,7 @@ class NotifyOrderLxlwData extends BaseModel
      */
     protected $broker_deduct_fee;
     /**
-     * 应收用户加成服务费金额
+     * 应收劳动者加成服务费金额
      * @var string
      */
     protected $user_fee;
@@ -141,7 +141,7 @@ class NotifyOrderLxlwData extends BaseModel
      */
     protected $received_broker_deduct_fee;
     /**
-     * 实收用户加成服务费金额
+     * 实收劳动者加成服务费金额
      * @var string
      */
     protected $received_user_fee;
@@ -161,7 +161,7 @@ class NotifyOrderLxlwData extends BaseModel
      */
     protected $project_id;
     /**
-     * 用户实收金额
+     * 劳动者实收金额
      * @var string
      */
     protected $user_real_amount;
@@ -176,12 +176,12 @@ class NotifyOrderLxlwData extends BaseModel
      */
     protected $dealer_platform_name;
     /**
-     * 用户名称/昵称
+     * 劳动者名称/昵称
      * @var string
      */
     protected $dealer_user_nickname;
     /**
-     * 用户唯一标识码
+     * 劳动者唯一标识码
      * @var string
      */
     protected $dealer_user_id;
@@ -196,12 +196,12 @@ class NotifyOrderLxlwData extends BaseModel
      */
     protected $received_tax_amount;
     /**
-     * 用户实收金额（追缴前）
+     * 劳动者应收金额（追缴退回前）
      * @var string
      */
     protected $user_real_excluding_vat_amount;
     /**
-     * 已追缴增附税（本笔订单）
+     * 追缴增附税
      * @var string
      */
     protected $user_recover_tax_amount;
@@ -215,6 +215,11 @@ class NotifyOrderLxlwData extends BaseModel
      * @var string
      */
     protected $deduct_tax;
+    /**
+     * 追缴个税
+     * @var string
+     */
+    protected $user_recover_personal_tax_amount;
 
     /**
      * 平台企业订单号
@@ -613,7 +618,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 应收用户加成服务费金额
+     * 应收劳动者加成服务费金额
      * @var string $user_fee
      */
     public function setUserFee($user_fee)
@@ -622,7 +627,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 应收用户加成服务费金额
+     * 应收劳动者加成服务费金额
      * @return string
      */
     public function getUserFee()
@@ -685,7 +690,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 实收用户加成服务费金额
+     * 实收劳动者加成服务费金额
      * @var string $received_user_fee
      */
     public function setReceivedUserFee($received_user_fee)
@@ -694,7 +699,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 实收用户加成服务费金额
+     * 实收劳动者加成服务费金额
      * @return string
      */
     public function getReceivedUserFee()
@@ -757,7 +762,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户实收金额
+     * 劳动者实收金额
      * @var string $user_real_amount
      */
     public function setUserRealAmount($user_real_amount)
@@ -766,7 +771,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户实收金额
+     * 劳动者实收金额
      * @return string
      */
     public function getUserRealAmount()
@@ -811,7 +816,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户名称/昵称
+     * 劳动者名称/昵称
      * @var string $dealer_user_nickname
      */
     public function setDealerUserNickname($dealer_user_nickname)
@@ -820,7 +825,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户名称/昵称
+     * 劳动者名称/昵称
      * @return string
      */
     public function getDealerUserNickname()
@@ -829,7 +834,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户唯一标识码
+     * 劳动者唯一标识码
      * @var string $dealer_user_id
      */
     public function setDealerUserId($dealer_user_id)
@@ -838,7 +843,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户唯一标识码
+     * 劳动者唯一标识码
      * @return string
      */
     public function getDealerUserId()
@@ -883,7 +888,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户实收金额（追缴前）
+     * 劳动者应收金额（追缴退回前）
      * @var string $user_real_excluding_vat_amount
      */
     public function setUserRealExcludingVatAmount($user_real_excluding_vat_amount)
@@ -892,7 +897,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 用户实收金额（追缴前）
+     * 劳动者应收金额（追缴退回前）
      * @return string
      */
     public function getUserRealExcludingVatAmount()
@@ -901,7 +906,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 已追缴增附税（本笔订单）
+     * 追缴增附税
      * @var string $user_recover_tax_amount
      */
     public function setUserRecoverTaxAmount($user_recover_tax_amount)
@@ -910,7 +915,7 @@ class NotifyOrderLxlwData extends BaseModel
     }
 
     /**
-     * 已追缴增附税（本笔订单）
+     * 追缴增附税
      * @return string
      */
     public function getUserRecoverTaxAmount()
@@ -952,5 +957,23 @@ class NotifyOrderLxlwData extends BaseModel
     public function getDeductTax()
     {
         return $this->deduct_tax;
+    }
+
+    /**
+     * 追缴个税
+     * @var string $user_recover_personal_tax_amount
+     */
+    public function setUserRecoverPersonalTaxAmount($user_recover_personal_tax_amount)
+    {
+        $this->user_recover_personal_tax_amount = $user_recover_personal_tax_amount;
+    }
+
+    /**
+     * 追缴个税
+     * @return string
+     */
+    public function getUserRecoverPersonalTaxAmount()
+    {
+        return $this->user_recover_personal_tax_amount;
     }
 }
