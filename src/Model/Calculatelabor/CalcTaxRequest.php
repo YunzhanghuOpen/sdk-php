@@ -45,6 +45,16 @@ class CalcTaxRequest extends BaseRequest
      * @var string
      */
     public $before_tax_amount_type;
+    /**
+     * 将追缴税费纳入测算
+     * @var int32
+     */
+    public $include_recovery_amount;
+    /**
+     * 将劳动者服务费纳入测算
+     * @var int32
+     */
+    public $include_user_service_fee;
 
     public function __construct($params = array())
     {

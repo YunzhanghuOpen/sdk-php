@@ -22,7 +22,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
      */
     protected $tax;
     /**
-     * 税后结算金额
+     * 劳动者预估到手金额
      * @var string
      */
     protected $after_tax_amount;
@@ -37,7 +37,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
      */
     protected $before_tax_amount;
     /**
-     * 用户税费总额
+     * 劳动者税费总额
      * @var string
      */
     protected $user_tax;
@@ -52,7 +52,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
      */
     protected $broker_tax;
     /**
-     * 用户服务费
+     * 劳动者服务费
      * @var string
      */
     protected $user_fee;
@@ -77,17 +77,17 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
      */
     protected $status_detail_message;
     /**
-     * 用户实收金额（未扣除追缴的增附税）
+     * 劳动者预估应收金额（追缴退回前）
      * @var string
      */
     protected $user_real_excluding_vat_amount;
     /**
-     * 用户还未缴清的增附税
+     * 劳动者还未缴清的增附税
      * @var string
      */
     protected $user_remaining_repayment_amount;
     /**
-     * 已追缴增附税（本笔订单）
+     * 追缴增附税
      * @var string
      */
     protected $user_recover_tax_amount;
@@ -96,6 +96,31 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
      * @var string
      */
     protected $user_total_recover_tax_amount;
+    /**
+     * 劳动者还未缴清的个税
+     * @var string
+     */
+    protected $user_remaining_repayment_personal_amount;
+    /**
+     * 追缴个税
+     * @var string
+     */
+    protected $user_recover_personal_tax_amount;
+    /**
+     * 待追缴个税总金额
+     * @var string
+     */
+    protected $user_total_recover_personal_tax_amount;
+    /**
+     * 退回增附税
+     * @var string
+     */
+    protected $user_refund_tax_amount;
+    /**
+     * 退回个税
+     * @var string
+     */
+    protected $user_refund_personal_tax_amount;
 
     /**
      * 测算金额
@@ -134,7 +159,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 税后结算金额
+     * 劳动者预估到手金额
      * @var string $after_tax_amount
      */
     public function setAfterTaxAmount($after_tax_amount)
@@ -143,7 +168,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 税后结算金额
+     * 劳动者预估到手金额
      * @return string
      */
     public function getAfterTaxAmount()
@@ -188,7 +213,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户税费总额
+     * 劳动者税费总额
      * @var string $user_tax
      */
     public function setUserTax($user_tax)
@@ -197,7 +222,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户税费总额
+     * 劳动者税费总额
      * @return string
      */
     public function getUserTax()
@@ -242,7 +267,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户服务费
+     * 劳动者服务费
      * @var string $user_fee
      */
     public function setUserFee($user_fee)
@@ -251,7 +276,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户服务费
+     * 劳动者服务费
      * @return string
      */
     public function getUserFee()
@@ -332,7 +357,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户实收金额（未扣除追缴的增附税）
+     * 劳动者预估应收金额（追缴退回前）
      * @var string $user_real_excluding_vat_amount
      */
     public function setUserRealExcludingVatAmount($user_real_excluding_vat_amount)
@@ -341,7 +366,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户实收金额（未扣除追缴的增附税）
+     * 劳动者预估应收金额（追缴退回前）
      * @return string
      */
     public function getUserRealExcludingVatAmount()
@@ -350,7 +375,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户还未缴清的增附税
+     * 劳动者还未缴清的增附税
      * @var string $user_remaining_repayment_amount
      */
     public function setUserRemainingRepaymentAmount($user_remaining_repayment_amount)
@@ -359,7 +384,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 用户还未缴清的增附税
+     * 劳动者还未缴清的增附税
      * @return string
      */
     public function getUserRemainingRepaymentAmount()
@@ -368,7 +393,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 已追缴增附税（本笔订单）
+     * 追缴增附税
      * @var string $user_recover_tax_amount
      */
     public function setUserRecoverTaxAmount($user_recover_tax_amount)
@@ -377,7 +402,7 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     }
 
     /**
-     * 已追缴增附税（本笔订单）
+     * 追缴增附税
      * @return string
      */
     public function getUserRecoverTaxAmount()
@@ -401,5 +426,95 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     public function getUserTotalRecoverTaxAmount()
     {
         return $this->user_total_recover_tax_amount;
+    }
+
+    /**
+     * 劳动者还未缴清的个税
+     * @var string $user_remaining_repayment_personal_amount
+     */
+    public function setUserRemainingRepaymentPersonalAmount($user_remaining_repayment_personal_amount)
+    {
+        $this->user_remaining_repayment_personal_amount = $user_remaining_repayment_personal_amount;
+    }
+
+    /**
+     * 劳动者还未缴清的个税
+     * @return string
+     */
+    public function getUserRemainingRepaymentPersonalAmount()
+    {
+        return $this->user_remaining_repayment_personal_amount;
+    }
+
+    /**
+     * 追缴个税
+     * @var string $user_recover_personal_tax_amount
+     */
+    public function setUserRecoverPersonalTaxAmount($user_recover_personal_tax_amount)
+    {
+        $this->user_recover_personal_tax_amount = $user_recover_personal_tax_amount;
+    }
+
+    /**
+     * 追缴个税
+     * @return string
+     */
+    public function getUserRecoverPersonalTaxAmount()
+    {
+        return $this->user_recover_personal_tax_amount;
+    }
+
+    /**
+     * 待追缴个税总金额
+     * @var string $user_total_recover_personal_tax_amount
+     */
+    public function setUserTotalRecoverPersonalTaxAmount($user_total_recover_personal_tax_amount)
+    {
+        $this->user_total_recover_personal_tax_amount = $user_total_recover_personal_tax_amount;
+    }
+
+    /**
+     * 待追缴个税总金额
+     * @return string
+     */
+    public function getUserTotalRecoverPersonalTaxAmount()
+    {
+        return $this->user_total_recover_personal_tax_amount;
+    }
+
+    /**
+     * 退回增附税
+     * @var string $user_refund_tax_amount
+     */
+    public function setUserRefundTaxAmount($user_refund_tax_amount)
+    {
+        $this->user_refund_tax_amount = $user_refund_tax_amount;
+    }
+
+    /**
+     * 退回增附税
+     * @return string
+     */
+    public function getUserRefundTaxAmount()
+    {
+        return $this->user_refund_tax_amount;
+    }
+
+    /**
+     * 退回个税
+     * @var string $user_refund_personal_tax_amount
+     */
+    public function setUserRefundPersonalTaxAmount($user_refund_personal_tax_amount)
+    {
+        $this->user_refund_personal_tax_amount = $user_refund_personal_tax_amount;
+    }
+
+    /**
+     * 退回个税
+     * @return string
+     */
+    public function getUserRefundPersonalTaxAmount()
+    {
+        return $this->user_refund_personal_tax_amount;
     }
 }
