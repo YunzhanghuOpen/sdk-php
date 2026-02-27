@@ -57,6 +57,8 @@ if ($response->isSuccess()) {
 $request = new GetInvoiceAmountRequest(array(
     'dealer_id' => $test_var['app_dealer_id'],   // 平台企业 ID
     'broker_id' => $test_var['app_broker_id'],   // 综合服务主体 ID
+    'start_date' => '2026-01-01',   // 查询开始日期
+    'end_date' => '2026-01-26'   // 查询结束日期
 ));
 
 /*
@@ -86,7 +88,9 @@ $request = new ApplyInvoiceRequest(array(
     'goods_services_name' => '*测试分类*test测试内容', // 货物或应税劳务、服务名称 (选填，若不填写，则使⽤默认值)
     'remark' => '发票备注',                         // 发票备注（选填，每张发票备注栏相同）
     'receive_emails' => ['username1@example.com'],  // 发票接收邮箱（选填，用于接收发票相关信息，邮箱数量不能超过 5 个）
-    'invoice_media' => '1'                          // 发票介质 1：纸质发票（默认） 2：电子发票
+    'invoice_media' => '1',                          // 发票介质 1：纸质发票（默认） 2：电子发票
+    'start_date' => '2026-01-01',   // 查询开始日期
+    'end_date' => '2026-01-26'   // 查询结束日期
 ));
 
 /*

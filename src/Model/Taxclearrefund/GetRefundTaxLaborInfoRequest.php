@@ -1,14 +1,14 @@
 <?php
 
-namespace Yzh\Model\Invoice;
+namespace Yzh\Model\Taxclearrefund;
 
 use Yzh\Model\BaseRequest;
 
 /**
- * 查询可开具发票额度和发票开具信息请求
- * Class GetInvoiceAmountRequest
+ * 查询税费退补涉及劳动者请求
+ * Class GetRefundTaxLaborInfoRequest
  */
-class GetInvoiceAmountRequest extends BaseRequest
+class GetRefundTaxLaborInfoRequest extends BaseRequest
 {
     /**
      * 综合服务主体 ID
@@ -21,15 +21,25 @@ class GetInvoiceAmountRequest extends BaseRequest
      */
     public $dealer_id;
     /**
-     * 查询开始日期
+     * 批次号
      * @var string
      */
-    public $start_date;
+    public $batch_id;
     /**
-     * 查询结束日期
+     * 税款所属期
      * @var string
      */
-    public $end_date;
+    public $tax_month;
+    /**
+     * 偏移量
+     * @var int32
+     */
+    public $offset;
+    /**
+     * 每页返回条数
+     * @var int32
+     */
+    public $length;
 
     public function __construct($params = array())
     {

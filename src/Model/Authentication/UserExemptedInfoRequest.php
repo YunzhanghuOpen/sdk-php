@@ -80,6 +80,11 @@ class UserExemptedInfoRequest extends BaseRequest
      * @var string
      */
     public $resident_type;
+    /**
+     * 港澳台通行证号码
+     * @var string
+     */
+    public $permit_card;
 
     public function __construct($params = array())
     {
