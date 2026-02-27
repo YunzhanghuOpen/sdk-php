@@ -62,9 +62,7 @@ composer require yunzhanghuopen/sdk-php
    - [H5 签约](example/h5UserSign.php )
    - [API 签约](example/apiUserSign.php )
    - [签约信息上传](example/uploadUserSign.php )
-- 个体工商户注册 
-   - [云账户新经济 H5](example/bizlicXjjH5.php) 
-   - [云账户新经济 H5+API](example/bizlicXjjH5Api.php) 
+- [订单税费试算](example/calculateLabor.php )  
 - [实时支付](example/payment.php ) 
 - [异步通知](example/notify.php )     
 - [对账文件获取](example/dataService.php )    
