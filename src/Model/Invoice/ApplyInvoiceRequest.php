@@ -60,6 +60,16 @@ class ApplyInvoiceRequest extends BaseRequest
      * @var string
      */
     public $invoice_media;
+    /**
+     * 查询开始日期
+     * @var string
+     */
+    public $start_date;
+    /**
+     * 查询结束日期
+     * @var string
+     */
+    public $end_date;
 
     public function __construct($params = array())
     {

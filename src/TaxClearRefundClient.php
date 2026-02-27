@@ -13,6 +13,8 @@ use Yzh\Model\Taxclearrefund\GetClearTaxFileRequest;
 use Yzh\Model\Taxclearrefund\GetClearTaxFileResponse;
 use Yzh\Model\Taxclearrefund\GetRefundTaxInfoRequest;
 use Yzh\Model\Taxclearrefund\RefundTaxData;
+use Yzh\Model\Taxclearrefund\GetRefundTaxLaborInfoRequest;
+use Yzh\Model\Taxclearrefund\GetRefundTaxLaborInfoResponse;
 
 /**
  * 连续劳务税费退补
@@ -62,5 +64,19 @@ class TaxClearRefundClient extends BaseClient
             throw new ConfigException("Taxclearrefund->getRefundTaxInfo request 必须是 Yzh\\Model\\Taxclearrefund\\GetRefundTaxInfoRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('GET', '/api/payment/v1/query-clear-status', $request, "Yzh\\Model\\Taxclearrefund\\GetRefundTaxInfoResponse", $option);
+    }
+
+    /**
+     * 查询税费退补涉及劳动者
+     * @param GetRefundTaxLaborInfoRequest $request
+     * @param null $option
+     * @return GetRefundTaxLaborInfoResponse
+     */
+    public function getRefundTaxLaborInfo($request, $option = null)
+    {
+        if (!$request instanceof GetRefundTaxLaborInfoRequest) {
+            throw new ConfigException("Taxclearrefund->getRefundTaxLaborInfo request 必须是 Yzh\\Model\\Taxclearrefund\\GetRefundTaxLaborInfoRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/payment/v1/query-clear-labor-info', $request, "Yzh\\Model\\Taxclearrefund\\GetRefundTaxLaborInfoResponse", $option);
     }
 }
