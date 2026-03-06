@@ -6,9 +6,9 @@ use Yzh\Model\BaseModel;
 
 /**
  * 月度税务信息
- * Class MontTax
+ * Class MonthTax
  */
-class MontTax extends BaseModel
+class MonthTax extends BaseModel
 {
     /**
      * 月份

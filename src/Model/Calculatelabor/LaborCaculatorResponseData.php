@@ -18,7 +18,7 @@ class LaborCaculatorResponseData extends BaseModel implements ResponseDataInterf
     protected $year_tax_info;
     /**
      * 月度税务信息列表
-     * @var MontTax[]
+     * @var MonthTax[]
      */
     protected $month_tax_list;
 
@@ -47,13 +47,13 @@ class LaborCaculatorResponseData extends BaseModel implements ResponseDataInterf
     {
         $this->month_tax_list = array();
         foreach ($items as $k => $v) {
-            array_push($this->month_tax_list, new MontTax($v));
+            array_push($this->month_tax_list, new MonthTax($v));
         }
     }
 
     /**
      * 月度税务信息列表
-     * @return MontTax[]
+     * @return MonthTax[]
      */
     public function getMonthTaxList()
     {
