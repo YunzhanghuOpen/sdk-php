@@ -92,6 +92,6 @@ class H5UserSignServiceClient extends BaseClient
         if (!$request instanceof H5UserReleaseApplyRequest) {
             throw new ConfigException("H5usersign->h5UserReleaseApply request 必须是 Yzh\\Model\\H5usersign\\H5UserReleaseApplyRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
-        return $this->send('POST', '/api/sdk/v1/release/h5', $request, "Yzh\\Model\\H5usersign\\H5UserReleaseApplyResponse", $option);
+        return $this->send('GET', '/api/sdk/v1/release/h5', $request, "Yzh\\Model\\H5usersign\\H5UserReleaseApplyResponse", $option);
     }
 }
