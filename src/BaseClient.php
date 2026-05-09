@@ -48,6 +48,7 @@ class BaseClient
             'calculatelaborservice' => 'https://api-service.yunzhanghu.com', // 连续劳务税费试算接口域名
             'realnameservice' => 'https://api-user.yunzhanghu.com', // 用户实名认证信息收集接口域名
             'taxclearrefund' => 'https://api-service.yunzhanghu.com', // 连续劳务税费退补接口域名
+            'faceauthservice' => 'https://api-user.yunzhanghu.com', // 人脸识别实名核验接口域名
 
         ),
         self::ENV_SANDBOX => array( // 沙箱环境
