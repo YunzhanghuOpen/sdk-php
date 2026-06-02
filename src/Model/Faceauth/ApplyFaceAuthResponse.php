@@ -1,19 +1,19 @@
 <?php
 
-namespace Yzh\Model\Apiusersign;
+namespace Yzh\Model\Faceauth;
 
 use Yzh\Model\BaseResponse;
 use Yzh\Model\ResponseInterface;
 
 /**
- * 用户解约返回
- * Class ApiUserSignReleaseResponse
+ * 申请人脸识别实名核验返回
+ * Class ApplyFaceAuthResponse
  */
-class ApiUserSignReleaseResponse extends BaseResponse implements ResponseInterface
+class ApplyFaceAuthResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return ApiUserSignReleaseResponseData
+     * @return ApplyFaceAuthResponseData
      */
     public function getData()
     {
@@ -27,7 +27,7 @@ class ApiUserSignReleaseResponse extends BaseResponse implements ResponseInterfa
      */
     public function setData($data)
     {
-        $this->data = new ApiUserSignReleaseResponseData($data);
+        $this->data = new ApplyFaceAuthResponseData($data);
         return $this;
     }
 }

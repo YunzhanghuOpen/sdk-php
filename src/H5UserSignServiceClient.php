@@ -4,6 +4,8 @@ namespace Yzh;
 
 use Yzh\Exception\ConfigException;
 use Yzh\Exception\ExceptionCode;
+
+
 use Yzh\Model\H5usersign\H5UserPresignRequest;
 use Yzh\Model\H5usersign\H5UserPresignResponse;
 use Yzh\Model\H5usersign\H5UserSignRequest;
@@ -12,6 +14,8 @@ use Yzh\Model\H5usersign\GetH5UserSignStatusRequest;
 use Yzh\Model\H5usersign\GetH5UserSignStatusResponse;
 use Yzh\Model\H5usersign\H5UserReleaseRequest;
 use Yzh\Model\H5usersign\H5UserReleaseResponse;
+use Yzh\Model\H5usersign\H5UserReleaseApplyRequest;
+use Yzh\Model\H5usersign\H5UserReleaseApplyResponse;
 
 /**
  * H5 签约
@@ -75,5 +79,19 @@ class H5UserSignServiceClient extends BaseClient
             throw new ConfigException("H5usersign->h5UserRelease request 必须是 Yzh\\Model\\H5usersign\\H5UserReleaseRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/sdk/v1/sign/release', $request, "Yzh\\Model\\H5usersign\\H5UserReleaseResponse", $option);
+    }
+
+    /**
+     * 申请解约
+     * @param H5UserReleaseApplyRequest $request
+     * @param null $option
+     * @return H5UserReleaseApplyResponse
+     */
+    public function h5UserReleaseApply($request, $option = null)
+    {
+        if (!$request instanceof H5UserReleaseApplyRequest) {
+            throw new ConfigException("H5usersign->h5UserReleaseApply request 必须是 Yzh\\Model\\H5usersign\\H5UserReleaseApplyRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/sdk/v1/release/h5', $request, "Yzh\\Model\\H5usersign\\H5UserReleaseApplyResponse", $option);
     }
 }
