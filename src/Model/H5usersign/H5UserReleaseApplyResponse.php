@@ -1,19 +1,19 @@
 <?php
 
-namespace Yzh\Model\Apiusersign;
+namespace Yzh\Model\H5usersign;
 
 use Yzh\Model\BaseResponse;
 use Yzh\Model\ResponseInterface;
 
 /**
- * 用户解约返回
- * Class ApiUserSignReleaseResponse
+ * 申请解约返回
+ * Class H5UserReleaseApplyResponse
  */
-class ApiUserSignReleaseResponse extends BaseResponse implements ResponseInterface
+class H5UserReleaseApplyResponse extends BaseResponse implements ResponseInterface
 {
     /**
      * 获取数据对象
-     * @return ApiUserSignReleaseResponseData
+     * @return H5UserReleaseApplyResponseData
      */
     public function getData()
     {
@@ -27,7 +27,7 @@ class ApiUserSignReleaseResponse extends BaseResponse implements ResponseInterfa
      */
     public function setData($data)
     {
-        $this->data = new ApiUserSignReleaseResponseData($data);
+        $this->data = new H5UserReleaseApplyResponseData($data);
         return $this;
     }
 }

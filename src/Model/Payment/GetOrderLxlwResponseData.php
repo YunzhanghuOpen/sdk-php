@@ -241,6 +241,11 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
      * @var string
      */
     protected $user_recover_personal_tax_amount;
+    /**
+     * 支付宝转账备注
+     * @var string
+     */
+    protected $order_title;
 
     /**
      * 平台企业订单号
@@ -1068,5 +1073,23 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     public function getUserRecoverPersonalTaxAmount()
     {
         return $this->user_recover_personal_tax_amount;
+    }
+
+    /**
+     * 支付宝转账备注
+     * @var string $order_title
+     */
+    public function setOrderTitle($order_title)
+    {
+        $this->order_title = $order_title;
+    }
+
+    /**
+     * 支付宝转账备注
+     * @return string
+     */
+    public function getOrderTitle()
+    {
+        return $this->order_title;
     }
 }

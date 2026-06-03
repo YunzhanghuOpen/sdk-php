@@ -80,7 +80,7 @@ class ApiUserSignServiceClient extends BaseClient
     }
 
     /**
-     * 用户解约（测试账号专用接口）
+     * 用户解约
      * @param ApiUserSignReleaseRequest $request
      * @param null $option
      * @return ApiUserSignReleaseResponse

@@ -150,6 +150,11 @@ class DealerOrderInfoV2 extends BaseModel
      * @var OrderTaxDetail
      */
     protected $tax_detail;
+    /**
+     * 平台企业用户 ID
+     * @var string
+     */
+    protected $user_id;
 
     /**
      * 综合服务主体 ID
@@ -653,5 +658,23 @@ class DealerOrderInfoV2 extends BaseModel
     public function getTaxDetail()
     {
         return $this->tax_detail;
+    }
+
+    /**
+     * 平台企业用户 ID
+     * @var string $user_id
+     */
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+    }
+
+    /**
+     * 平台企业用户 ID
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
     }
 }

@@ -85,6 +85,11 @@ class CreateAlipayOrderRequest extends BaseRequest
      * @var string
      */
     public $dealer_user_id;
+    /**
+     * 支付宝转账备注
+     * @var string
+     */
+    public $order_title;
 
     public function __construct($params = array())
     {
