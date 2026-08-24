@@ -81,6 +81,11 @@ class UserExemptedInfoRequest extends BaseRequest
      */
     public $resident_type;
     /**
+     * 证件有效期
+     * @var string
+     */
+    public $expiry_date;
+    /**
      * 港澳台通行证号码
      * @var string
      */

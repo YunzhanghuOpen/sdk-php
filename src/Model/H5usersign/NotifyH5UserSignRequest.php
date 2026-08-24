@@ -35,6 +35,26 @@ class NotifyH5UserSignRequest extends BaseRequest
      * @var string
      */
     public $phone;
+    /**
+     * 签约状态 0：未签约 1：已签约 2：已解约
+     * @var int
+     */
+    public $status;
+    /**
+     * 签约事件类型
+     * @var string
+     */
+    public $event_type;
+    /**
+     * 签约事件状态
+     * @var string
+     */
+    public $event_status;
+    /**
+     * 签约事件状态详情
+     * @var string
+     */
+    public $event_status_detail;
 
     public function __construct($params = array())
     {
