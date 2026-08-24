@@ -11,20 +11,25 @@ use Yzh\Model\BaseRequest;
 class H5UserSignRequest extends BaseRequest
 {
     /**
-     * H5 签约 token
+     * 签约 token
      * @var string
      */
     public $token;
     /**
-     * H5 页面主题颜色
+     * 主题颜色
      * @var string
      */
     public $color;
     /**
-     * 回调 URL 地址
+     * 签约完成回调地址
      * @var string
      */
     public $url;
+    /**
+     * 签约事件状态回调地址
+     * @var string
+     */
+    public $event_callback_url;
     /**
      * 跳转 URL
      * @var string

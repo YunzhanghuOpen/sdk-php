@@ -211,6 +211,11 @@ class NotifyOrderData extends BaseModel
      */
     protected $user_recover_tax_amount;
     /**
+     * 劳动者还未缴清的个税
+     * @var string
+     */
+    protected $user_remaining_repayment_personal_amount;
+    /**
      * 预扣个税税率
      * @var string
      */
@@ -221,10 +226,20 @@ class NotifyOrderData extends BaseModel
      */
     protected $deduct_tax;
     /**
+     * 是否使用基本减除费用
+     * @var string
+     */
+    protected $basic_deducted;
+    /**
      * 追缴个税
      * @var string
      */
     protected $user_recover_personal_tax_amount;
+    /**
+     * 待追缴个税总金额
+     * @var string
+     */
+    protected $user_total_recover_personal_tax_amount;
     /**
      * 支付宝转账备注
      * @var string
@@ -952,6 +967,24 @@ class NotifyOrderData extends BaseModel
     }
 
     /**
+     * 劳动者还未缴清的个税
+     * @var string $user_remaining_repayment_personal_amount
+     */
+    public function setUserRemainingRepaymentPersonalAmount($user_remaining_repayment_personal_amount)
+    {
+        $this->user_remaining_repayment_personal_amount = $user_remaining_repayment_personal_amount;
+    }
+
+    /**
+     * 劳动者还未缴清的个税
+     * @return string
+     */
+    public function getUserRemainingRepaymentPersonalAmount()
+    {
+        return $this->user_remaining_repayment_personal_amount;
+    }
+
+    /**
      * 预扣个税税率
      * @var string $personal_tax_rate
      */
@@ -988,6 +1021,24 @@ class NotifyOrderData extends BaseModel
     }
 
     /**
+     * 是否使用基本减除费用
+     * @var string $basic_deducted
+     */
+    public function setBasicDeducted($basic_deducted)
+    {
+        $this->basic_deducted = $basic_deducted;
+    }
+
+    /**
+     * 是否使用基本减除费用
+     * @return string
+     */
+    public function getBasicDeducted()
+    {
+        return $this->basic_deducted;
+    }
+
+    /**
      * 追缴个税
      * @var string $user_recover_personal_tax_amount
      */
@@ -1003,6 +1054,24 @@ class NotifyOrderData extends BaseModel
     public function getUserRecoverPersonalTaxAmount()
     {
         return $this->user_recover_personal_tax_amount;
+    }
+
+    /**
+     * 待追缴个税总金额
+     * @var string $user_total_recover_personal_tax_amount
+     */
+    public function setUserTotalRecoverPersonalTaxAmount($user_total_recover_personal_tax_amount)
+    {
+        $this->user_total_recover_personal_tax_amount = $user_total_recover_personal_tax_amount;
+    }
+
+    /**
+     * 待追缴个税总金额
+     * @return string
+     */
+    public function getUserTotalRecoverPersonalTaxAmount()
+    {
+        return $this->user_total_recover_personal_tax_amount;
     }
 
     /**

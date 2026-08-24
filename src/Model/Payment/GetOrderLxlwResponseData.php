@@ -17,6 +17,11 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
      */
     protected $order_id;
     /**
+     * 退回类型
+     * @var string
+     */
+    protected $refund_origin;
+    /**
      * 订单金额
      * @var string
      */
@@ -227,6 +232,11 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
      */
     protected $user_recover_tax_amount;
     /**
+     * 劳动者还未缴清的个税
+     * @var string
+     */
+    protected $user_remaining_repayment_personal_amount;
+    /**
      * 预扣个税税率
      * @var string
      */
@@ -237,10 +247,20 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
      */
     protected $deduct_tax;
     /**
+     * 是否使用基本减除费用
+     * @var string
+     */
+    protected $basic_deducted;
+    /**
      * 追缴个税
      * @var string
      */
     protected $user_recover_personal_tax_amount;
+    /**
+     * 待追缴个税总金额
+     * @var string
+     */
+    protected $user_total_recover_personal_tax_amount;
     /**
      * 支付宝转账备注
      * @var string
@@ -263,6 +283,24 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     public function getOrderId()
     {
         return $this->order_id;
+    }
+
+    /**
+     * 退回类型
+     * @var string $refund_origin
+     */
+    public function setRefundOrigin($refund_origin)
+    {
+        $this->refund_origin = $refund_origin;
+    }
+
+    /**
+     * 退回类型
+     * @return string
+     */
+    public function getRefundOrigin()
+    {
+        return $this->refund_origin;
     }
 
     /**
@@ -1022,6 +1060,24 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     }
 
     /**
+     * 劳动者还未缴清的个税
+     * @var string $user_remaining_repayment_personal_amount
+     */
+    public function setUserRemainingRepaymentPersonalAmount($user_remaining_repayment_personal_amount)
+    {
+        $this->user_remaining_repayment_personal_amount = $user_remaining_repayment_personal_amount;
+    }
+
+    /**
+     * 劳动者还未缴清的个税
+     * @return string
+     */
+    public function getUserRemainingRepaymentPersonalAmount()
+    {
+        return $this->user_remaining_repayment_personal_amount;
+    }
+
+    /**
      * 预扣个税税率
      * @var string $personal_tax_rate
      */
@@ -1058,6 +1114,24 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     }
 
     /**
+     * 是否使用基本减除费用
+     * @var string $basic_deducted
+     */
+    public function setBasicDeducted($basic_deducted)
+    {
+        $this->basic_deducted = $basic_deducted;
+    }
+
+    /**
+     * 是否使用基本减除费用
+     * @return string
+     */
+    public function getBasicDeducted()
+    {
+        return $this->basic_deducted;
+    }
+
+    /**
      * 追缴个税
      * @var string $user_recover_personal_tax_amount
      */
@@ -1073,6 +1147,24 @@ class GetOrderLxlwResponseData extends BaseModel implements ResponseDataInterfac
     public function getUserRecoverPersonalTaxAmount()
     {
         return $this->user_recover_personal_tax_amount;
+    }
+
+    /**
+     * 待追缴个税总金额
+     * @var string $user_total_recover_personal_tax_amount
+     */
+    public function setUserTotalRecoverPersonalTaxAmount($user_total_recover_personal_tax_amount)
+    {
+        $this->user_total_recover_personal_tax_amount = $user_total_recover_personal_tax_amount;
+    }
+
+    /**
+     * 待追缴个税总金额
+     * @return string
+     */
+    public function getUserTotalRecoverPersonalTaxAmount()
+    {
+        return $this->user_total_recover_personal_tax_amount;
     }
 
     /**

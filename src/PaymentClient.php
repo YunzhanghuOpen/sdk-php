@@ -36,6 +36,8 @@ use Yzh\Model\Payment\GetOrderLxlwRequest;
 use Yzh\Model\Payment\GetOrderLxlwResponse;
 use Yzh\Model\Payment\CancelOrderInBatchRequest;
 use Yzh\Model\Payment\CancelOrderInBatchResponse;
+use Yzh\Model\Payment\GetLaborRefundOrderRequest;
+use Yzh\Model\Payment\GetLaborRefundOrderResponse;
 
 /**
  * 实时支付
@@ -267,5 +269,19 @@ class PaymentClient extends BaseClient
             throw new ConfigException("Payment->cancelOrderInBatch request 必须是 Yzh\\Model\\Payment\\CancelOrderInBatchRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
         }
         return $this->send('POST', '/api/payment/v1/order-batch/cancel-order', $request, "Yzh\\Model\\Payment\\CancelOrderInBatchResponse", $option);
+    }
+
+    /**
+     * 查询劳动者退款订单信息
+     * @param GetLaborRefundOrderRequest $request
+     * @param null $option
+     * @return GetLaborRefundOrderResponse
+     */
+    public function getLaborRefundOrder($request, $option = null)
+    {
+        if (!$request instanceof GetLaborRefundOrderRequest) {
+            throw new ConfigException("Payment->getLaborRefundOrder request 必须是 Yzh\\Model\\Payment\\GetLaborRefundOrderRequest 实例", ExceptionCode::CONFIG_ERROR_WRONG_PARAM);
+        }
+        return $this->send('GET', '/api/payment/v1/query-labor-refund-order', $request, "Yzh\\Model\\Payment\\GetLaborRefundOrderResponse", $option);
     }
 }
