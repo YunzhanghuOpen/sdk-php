@@ -57,6 +57,11 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
      */
     protected $user_fee;
     /**
+     * 是否使用基本减除费用
+     * @var string
+     */
+    protected $basic_deducted;
+    /**
      * 结果
      * @var string
      */
@@ -282,6 +287,24 @@ class CalcTaxResponseData extends BaseModel implements ResponseDataInterface
     public function getUserFee()
     {
         return $this->user_fee;
+    }
+
+    /**
+     * 是否使用基本减除费用
+     * @var string $basic_deducted
+     */
+    public function setBasicDeducted($basic_deducted)
+    {
+        $this->basic_deducted = $basic_deducted;
+    }
+
+    /**
+     * 是否使用基本减除费用
+     * @return string
+     */
+    public function getBasicDeducted()
+    {
+        return $this->basic_deducted;
     }
 
     /**

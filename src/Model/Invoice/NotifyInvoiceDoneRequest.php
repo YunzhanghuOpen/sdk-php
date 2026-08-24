@@ -47,7 +47,7 @@ class NotifyInvoiceDoneRequest extends BaseRequest
     public $tax_amount;
     /**
      * 发票类型
-     * @var string
+     * @var int
      */
     public $invoice_type;
     /**

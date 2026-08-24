@@ -7,13 +7,13 @@ use Yzh\Utils\Hmac;
 use Yzh\Utils\MessString;
 
 /**
- * 专属客服链接
+ * 专属服务链接管理
  * Class CustomerLinkClient
  */
 class CustomerLinkClient extends BaseClient
 {
         /**
-         * 获取客服链接
+         * 获取专属服务链接
          * @return str
          */
         public function getCustomerLink($base_url, $member_id)

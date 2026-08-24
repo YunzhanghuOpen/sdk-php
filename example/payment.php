@@ -21,6 +21,7 @@ use Yzh\Model\Payment\RetryOrderRequest;
 use Yzh\Model\Payment\CheckUserAmountRequest;
 use Yzh\Model\Payment\GetOrderLxlwRequest;
 use Yzh\Model\Payment\CancelOrderInBatchRequest;
+use Yzh\Model\Payment\GetLaborRefundOrderRequest;
 
 // 实时支付
 $config = Config::newFromArray(array(
@@ -467,4 +468,23 @@ $request = new CancelOrderInBatchRequest(array(
  */
 $request->setRequestID("requestIdExample123456789");
 $response = $paymentClient->cancelOrderInBatch($request);
+echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();
+
+/*
+ * 查询劳动者退款订单信息
+ * API: /api/payment/v1/query-labor-refund-order
+ */
+$request = new GetLaborRefundOrderRequest(array(
+    'dealer_id' => $test_var['app_dealer_id'],       // 平台企业 ID
+    'order_id' => '202009010016562012987',           // 平台企业订单号
+    'channel' => '银行卡',                            // 支付路径名，银⾏卡，⽀付宝，微信（必填，注意 value 值为中文字符）
+));
+
+/*
+ * request-id：请求 ID，请求的唯一标识
+ * 建议平台企业自定义 request-id，并记录在日志中，便于问题发现及排查
+ * 如未自定义 request-id，将使用 SDK 中的 random 方法自动生成。注意：random 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+ */
+$request->setRequestID("requestIdExample123456789");
+$response = $paymentClient->getLaborRefundOrder($request);
 echo 'code:' . $response->getCode() . ' message:' . $response->getMessage() . ' request-id:' . $response->getRequestID();

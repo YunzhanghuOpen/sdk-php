@@ -188,6 +188,7 @@ $request = new UserExemptedInfoRequest(array(
     'notify_url' => 'https://www.example.com',    // 审核回调地址
     'ref' => 'test12345678111',                    // 请求流水号，回调时会附带
     'resident_type' => '1',                      // 外籍人员类型
+    'expiry_date' => '2028-08-08',                 // 证件有效期
     'permit_card' => 'H12345678'                   // 港澳台通行证号码
 ));
 
